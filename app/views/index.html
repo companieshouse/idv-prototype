@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Home – {{serviceName}} – GOV.UK Prototype Kit
+Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -9,14 +9,199 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
+    
+    <h1 class="govuk-heading-l">
+      {{ serviceName}}
+      <span class="govuk-caption-xl">Version 1</span>
     </h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+    {{ govukWarningText({
+      text: "This prototype is being actively worked on - things might break or change very quickly",
+      iconFallbackText: "Warning"
+    }) }}
+
+    <!--{{ govukWarningText({
+      text: "This prototype is not being actively worked on",
+      iconFallbackText: "Warning"
+    }) }}-->
+
+    <p class="govuk-body-s"><a href="" target=”_blank”>
+      Mural flow for this version of the prototype<a/>
+    </p>
+
+    {{ govukButton({
+      text: "Register as an ACSP",
+      classes: "govuk-button--secondary",
+      href:"/register-an-acsp/start-page"
+    }) }}
+
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+
+
+
   </div>
 </div>
 
+
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#code">
+        Entry points and links
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#form-versions">
+        Previous versions
+      </a>
+    </li>
+  </ul>
+
+  <div class="govuk-tabs__panel" id="code">
+
+   <!--  <p class="govuk-body-s govuk-!-margin-bottom-2">Contents</p>
+    <ul class="govuk-list govuk-list govuk-!-margin-bottom-6">
+      <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+        <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#earlyScreens">Early screens</a>
+      </li>
+      <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+        <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#identity">Identity</a>
+      </li>
+      <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+        <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#oebemo">Overseas entity, beneficial owners and managing officers</a>
+      </li>
+    </ul> -->
+
+    <h2 class="govuk-heading-m" id="earlyScreens">Early screens</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link" href="register-an-acsp/start-page">Start page</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="sign-in">Sign in</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m" id="verify">Verify your identity</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list" href="register-an-acsp/before-idv">You need to verify your identity</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="verify-identity/gov-login">GOV verify</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="register-an-acsp/after-idv">Your identity has been verified</a>
+        </li>
+      </ul>
+      <h2 class="govuk-heading-m" id="userRole">The users role</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list" href="register-an-acsp/register-as">What are you registering as?</a>
+        </li>
+      </ul>
+
+
+
+      <h2 class="govuk-heading-m" id="AMLdetails">ACSP and AML details</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list" href="register-an-acsp/acsp-name">ACSP name</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="register-an-acsp/acsp-address">ACSP address lookup</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="register-an-acsp/acsp-details">AML details</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m"id="finalScreens">Final screens</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a class="govuk-list" href="check-your-answers"> Check your answers</a>
+          </li>
+          <li>
+            <a class="govuk-list" href="confirmation"> Confirmation</a>
+          </li> 
+        </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Address lookup</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list" href="#">To add</a>
+        </li>
+      </ul>
+
+
+
+
+        <!-- Previous versions -->
+
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="form-versions">
+        <table class="govuk-table version-history">
+          <caption class="govuk-table__caption govuk-heading-l">Previous versions</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Version</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Tested on</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-half">Changes</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body ">
+
+
+        <!-- Template version -->
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a href="javascript:void(0)">Version 1</a>
+          </th>
+          <td class="govuk-table__cell">TBA</td>
+          <td class="govuk-table__cell">
+
+          <p><a href="/register/trusts/trust-assign">Page name</a><p>
+                          <ul class="govuk-list govuk-list--bullet">
+                            <li>New page added</a></li>
+                          </ul>
+
+          </td>
+          <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--red">
+                  Not ready for user testing
+                </strong>
+          </td>
+        </tr>
+
+      </tbody>
+      </table>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
 {% endblock %}
+
+
+
+

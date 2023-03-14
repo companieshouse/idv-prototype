@@ -1,0 +1,115 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+
+      <h2 class="govuk-heading-m">ACSP details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Sarah Philips
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ACSP address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street
+            <br>London
+            <br>SE23 6FH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Anti-money Laundering (AML) details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            AML professional supervisory body
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Name of supervisory body
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> AML professional supervisory body</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Anti-Money Laundering (AML) registration number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            87654321
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> AML registration number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Legal form of the ACSP
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Example legal form
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Legal form of the ACSP</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Now send your application</h2>
+
+      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form action="/confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Accept and send
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
