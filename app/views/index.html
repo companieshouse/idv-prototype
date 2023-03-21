@@ -40,9 +40,6 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
 </div>
 
 
-
-
-
 <div class="govuk-tabs" data-module="govuk-tabs">
   <h2 class="govuk-tabs__title">
     Contents
@@ -78,12 +75,15 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
     <h2 class="govuk-heading-m" id="earlyScreens">Early screens</h2>
 
       <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link" href="guidance">Guidance page</a>
+        </li>
 
         <li>
-          <a class="govuk-link" href="register-an-acsp/start-page">Start page</a>
+          <a class="govuk-link" href="register-an-acsp/start-page">ACSP start page</a>
         </li>
         <li>
-          <a class="govuk-list" href="sign-in">Sign in</a>
+          <a class="govuk-list" href="sign-in">Sign in to Companies House</a>
         </li>
       </ul>
 
@@ -94,24 +94,32 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
           <a class="govuk-list" href="register-an-acsp/before-idv">You need to verify your identity</a>
         </li>
         <li>
-          <a class="govuk-list" href="verify-identity/gov-login">GOV verify</a>
+          <a class="govuk-list" href="verify-identity/gov-login">Verify journey</a>
         </li>
         <li>
           <a class="govuk-list" href="register-an-acsp/after-idv">Your identity has been verified</a>
         </li>
       </ul>
-      <h2 class="govuk-heading-m" id="userRole">The users role</h2>
+      <h2 class="govuk-heading-m" id="userRole">Tell us who you are</h2>
       <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list" href="register-an-acsp/who-is-making-filing"> Who is completing this registration?</a>
+        </li>
         <li>
           <a class="govuk-list" href="register-an-acsp/register-as">What are you registering as?</a>
         </li>
+
+       
       </ul>
 
       <h2 class="govuk-heading-m" id="AMLdetails">ACSP and AML details</h2>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>
-          <a class="govuk-list" href="register-an-acsp/acsp-details">AML details</a>
+          <a class="govuk-list" href="register-an-acsp/type-of-acsp">Are you registering as an individual or as a firm?</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="register-an-acsp/aml-details">AML details</a>
         </li>
       </ul>
 
@@ -121,9 +129,14 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
             <a class="govuk-list" href="check-your-answers"> Check your answers</a>
           </li>
           <li>
+            <a class="govuk-list" href="payment"> Payment</a>
+          </li>
+          <li>
             <a class="govuk-list" href="confirmation"> Confirmation</a>
           </li> 
         </ul>
+
+      <h2 class="govuk-heading-m"id="finalScreens">Final screens</h2>
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -176,14 +189,12 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
       </tbody>
       </table>
       </div>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
     
-    </div>
   </div>
 </div>
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-{% include "govuk-prototype-kit/includes/homepage-top.njk" %}
 
 
 

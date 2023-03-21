@@ -96,16 +96,38 @@
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Now send your application</h2>
+      {{ govukCheckboxes({
+        idPrefix: "diligence",
+        name: "diligence",
+        fieldset: {
+          legend: {
+            text: "Declaration ",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "agree",
+            text: "I confirm that the ...  "
+          }
+        ]
+      }) }}
 
-      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
-      <form action="/confirmation" method="post" novalidate>
+      {{ govukInsetText({
+        html: '
+            <h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+            <p>We will not show any information you provide on the public register. </p>'
+      }) }}
+
+    
+      <form action="/payment" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
-          Accept and send
+          Continue to payment
         </button>
 
       </form>
