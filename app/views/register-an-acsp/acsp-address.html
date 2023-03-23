@@ -17,7 +17,7 @@
 
         {% call govukFieldset({
           legend: {
-            text: "What is the ACSPs address?",
+            text: "What is the ACSPs registered address?",
             classes: "govuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -72,7 +72,16 @@
         
         {% endcall %}
 
-        
+        <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What we'll use this address for
+    </span>
+      </summary>
+      <div class="govuk-details__text">
+        ***PLACEHOLDER CONTENT*** We'll use this to send the unique ACSP reference. 
+      </div>
+      </details>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

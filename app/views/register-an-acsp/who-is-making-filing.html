@@ -23,6 +23,9 @@ Who is completing this registration? – {{ serviceName }} – GOV.UK Prototype 
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
+          },  
+          hint: {
+          text: "Enter the company name, or your own name if you are self-employed."
           },
           items: [
             {
@@ -35,6 +38,17 @@ Who is completing this registration? – {{ serviceName }} – GOV.UK Prototype 
             }
           ]
         }) }}
+
+      <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What is an MRLO?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    An MRLO is a person who is responsible for Anti-Money Laundering compliance within a business.    
+  </div>
+</details>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
