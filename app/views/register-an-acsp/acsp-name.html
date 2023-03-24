@@ -14,7 +14,7 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="/register-an-acsp/acsp-address" method="post">
+      <form class="form" action="/register-an-acsp/address-lookup/acsp-address-manual" method="post">
 
         {{ govukInput({
           label: {
@@ -28,6 +28,11 @@
           id: "acsp-name",
           name: "acsp-name"
         }) }}
+
+      <!--   {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>Add content here. </p>"
+        }) }} -->
 
        
 

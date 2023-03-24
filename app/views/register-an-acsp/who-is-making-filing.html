@@ -38,15 +38,35 @@ Who is completing this registration? – {{ serviceName }} – GOV.UK Prototype 
         }) }}
 
       <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      What is an MRLO?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    An MRLO is a person who is responsible for Anti-Money Laundering compliance within a business.    
-  </div>
-</details>
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What is an MRLO?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        An MRLO is a person who is responsible for Anti-Money Laundering compliance within a business.    
+      </div>
+    </details>
+
+    {{ govukCheckboxes({
+      idPrefix: "mlro-declaration",
+      name: "mlro-declaration",
+      fieldset: {
+        legend: {
+          text: "Declaration ",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "agree",
+          text: "I confirm that the ...  "
+        }
+      ]
+    }) }}
+
+
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

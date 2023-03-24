@@ -26,7 +26,9 @@ You need to verify your identity – {{ serviceName }} – GOV.UK Prototype Kit
         <li>your current home address (you might also need your previous address if you’ve recently moved) </li>
       </ul>
 
-      <p class="govuk-body">The information you give will only be used to verify your identity.</p>
+      {{ govukInsetText({
+        text: "The information you give will only be used to verify your identity."
+      }) }}
 
 
       <form class="form" action="../verify-identity/gov-login" method="post">
