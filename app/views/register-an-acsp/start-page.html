@@ -33,15 +33,35 @@
         {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
 
-      <p>Use this service to:</p>
+      <p class="govuk-body"> To Firstly, need to verify. </p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>do something</li>
-        <li>update your name, address or other details</li>
-        <li>do something else</li>
-      </ul>
+      {{ govukInsetText({
+        text:"The registration needs to be made by the Money Laundering Reporting Officer (MLRO)."
+      }) }}
 
-      <p>Registering takes around 5 minutes.</p>
+      <!-- director, partnership, primary legilations -->
+
+
+
+
+      
+      <h2 class="govuk-heading-m">Before you start</h2>  
+
+      <p class="govuk-body">You'll need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a GOV.UK account – we’ll ask you to create or sign in to your account </li>
+          <li>your photo ID</li>
+          <li>your current home address (you might also need your previous address if you’ve recently moved) </li>
+          <li>name and registered address of the ACSP</li>
+          <li>legal form of the ACSP</li>
+          <li>supervisory body of the ACSP</li>
+
+        </ul>
+      
+      <p>Registering takes around 15 minutes.</p>
+
+
+
 
       <a href="./sign-in" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
         Start now
@@ -50,11 +70,12 @@
         </svg>
       </a>
 
-      <h2 class="govuk-heading-m">Before you start</h2>
+      <p>You can’t register for this service if you’re not registred in the UK.</p>
+
+      <!-- UK -->
 
 
 
-      <p>You can’t register for this service if you’re not based in the UK.</p>
 
     </div>
 

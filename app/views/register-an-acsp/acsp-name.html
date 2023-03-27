@@ -16,6 +16,8 @@
 
       <form class="form" action="/register-an-acsp/address-lookup/acsp-address-manual" method="post">
 
+        Match the AML supervisory body details 
+
         {{ govukInput({
           label: {
             text: "What is the name of the ACSP?",
@@ -28,6 +30,10 @@
           id: "acsp-name",
           name: "acsp-name"
         }) }}
+
+
+
+        <!-- Company name rather than ACSP -->
 
       <!--   {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
