@@ -28,14 +28,17 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/register-an-acsp/start-page" method="post">
 
       <h1 class="govuk-heading-l">
         {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
 
       <p class="govuk-body"> To register as an Authorised Corporate Service Provider (ACSP), you need to first prove your identity. </p>
+
+      <p class="govuk-body">The registration needs to be made by the Money Laundering Reporting Officer (MLRO), a director or partner.</p>
       
-      <!-- director, partnership, primary legilations -->
+      <p> You need to be registered and AML supervised in the UK.</p>
 
       <h2 class="govuk-heading-m">Before you start</h2>  
 
@@ -48,27 +51,15 @@
       </ul>
 
 
-
-
-
-
       <p class="govuk-body">To register as an ACSP, you'll need:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>indivudual or company name </li>
+          <li>individual or company name </li>
           <li>registered office address </li>
           <li>legal form of the ACSP</li>
           <li>supervisory body of the ACSP</li>
-
         </ul>
 
-        {{ govukInsetText({
-          text: "The registration needs to be made by the Money Laundering Reporting Officer (MLRO), a director or partner (partnerships)."
-        }) }}
-      
-      <p>Registering takes around 15 minutes.</p>
-
-
-
+      <p>Registering takes around 20 minutes.</p>
 
       <a href="./sign-in" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
         Start now
@@ -77,7 +68,12 @@
         </svg>
       </a>
 
-      <p>You can’t register for this service if you’re not registred in the UK.</p>
+   
+       <!-- match supervisor  -->
+
+       <!-- Bill -->
+
+    
 
       <!-- UK -->
 
@@ -114,5 +110,7 @@
       </aside>
 
     </div> -->
+
+  </form>
   </div>
 {% endblock %}

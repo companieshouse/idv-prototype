@@ -1,0 +1,164 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <!-- The action will need to change depending on the location of the confirm-company page -->
+      <form action="/register-an-acsp/aml-supervisor" method="post">
+        <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
+        <dl class="govuk-summary-list">
+
+          
+          {% if (data['companynumber'] === "12345678") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company name</dt>
+            <dd class="govuk-summary-list__value">WESTMINSTER FLOWERS LTD</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company number</dt>
+            <dd class="govuk-summary-list__value">12345678</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Status</dt>
+            <dd class="govuk-summary-list__value">
+              <!-- a set of if and elif conditions depending on the company status-->
+              Active
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Incorporation date</dt>
+            <dd class="govuk-summary-list__value">28 August 1986</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company type</dt>
+            <!-- upper is a way in Nunjucks to convert text into uppercase-->
+            <dd class="govuk-summary-list__value">Private limited Company</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Registered office address</dt>
+            <dd class="govuk-summary-list__value">
+              <!-- if statements are used to stop gaps showing where there is missing information -->
+              100 London Road<br>Westminster <br>SE15 8HH
+            </dd>
+          </div>
+
+
+
+          {% elif (data['companynumber'] === "LP223344") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company name</dt>
+            <dd class="govuk-summary-list__value">JOHNSON & SONS LP</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company number</dt>
+            <dd class="govuk-summary-list__value">LP223344</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Status</dt>
+            <dd class="govuk-summary-list__value">
+              <!-- a set of if and elif conditions depending on the company status-->
+              Active
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Incorporation date</dt>
+            <dd class="govuk-summary-list__value">28 August 1986</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company type</dt>
+            <!-- upper is a way in Nunjucks to convert text into uppercase-->
+            <dd class="govuk-summary-list__value">Limited Partnership</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Registered office address</dt>
+            <dd class="govuk-summary-list__value">
+              <!-- if statements are used to stop gaps showing where there is missing information -->
+              15 Lon Uchaf Lon Uchaf<br>Caerphilly<br>Mid Glamorgan<br>CF83 1BR
+            </dd>
+          </div>
+
+          {% elif (data['companynumber'] === "FC776644") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company name</dt>
+            <dd class="govuk-summary-list__value">ELECTRIC BIKES AND SCOOTERS</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company number</dt>
+            <dd class="govuk-summary-list__value">FC776644</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Status</dt>
+            <dd class="govuk-summary-list__value">
+              <!-- a set of if and elif conditions depending on the company status-->
+              Active
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Incorporation date</dt>
+            <dd class="govuk-summary-list__value">28 August 1986</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company type</dt>
+            <!-- upper is a way in Nunjucks to convert text into uppercase-->
+            <dd class="govuk-summary-list__value">Overseas company</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Registered office address</dt>
+            <dd class="govuk-summary-list__value">
+              <!-- if statements are used to stop gaps showing where there is missing information -->
+              867 Perissac, Esse, France
+            </dd>
+          </div>
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company name</dt>
+            <dd class="govuk-summary-list__value">ZENITH PRINT (UK) LIMITED</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company number</dt>
+            <dd class="govuk-summary-list__value">02050399</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Status</dt>
+            <dd class="govuk-summary-list__value">
+              <!-- a set of if and elif conditions depending on the company status-->
+              Active
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Incorporation date</dt>
+            <dd class="govuk-summary-list__value">28 August 1986</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company type</dt>
+            <!-- upper is a way in Nunjucks to convert text into uppercase-->
+            <dd class="govuk-summary-list__value">Private limited company</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Registered office address</dt>
+            <dd class="govuk-summary-list__value">
+              <!-- if statements are used to stop gaps showing where there is missing information -->
+              15 Lon Uchaf Lon Uchaf<br>Caerphilly<br>Mid Glamorgan<br>CF83 1BR
+            </dd>
+          </div>
+          {% endif %}
+
+        </dl>
+        {{ govukButton({
+          text: "Confirm and continue"
+         }) }}
+      </form>
+      <p class="govuk-body">
+        <a href="company-lookup">Choose a different company</a>
+      </p>
+    </div>
+  </div>
+{% endblock %}

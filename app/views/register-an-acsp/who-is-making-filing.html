@@ -13,7 +13,7 @@ Who is completing this registration? – {{ serviceName }} – GOV.UK Prototype 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/register-an-acsp/acsp-name" method="post">
+      <form class="form" action="/register-an-acsp/registered-in-uk" method="post">
 
         {{ govukRadios({
           name: "registering-as",
@@ -29,6 +29,14 @@ Who is completing this registration? – {{ serviceName }} – GOV.UK Prototype 
             {
               value: "mrlo",
               text: "Someone who is the Money Laundering Reporting Officer (MLRO)? "
+            },
+            {
+              value: "director",
+              text: "Director"
+            },
+            {
+              value: "partner",
+              text: "Partner"
             },
             {
               value: "someone-else",

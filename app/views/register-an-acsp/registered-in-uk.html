@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-What company type are you registering? – {{ serviceName }} – GOV.UK Prototype Kit
+Who is completing this registration? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,29 +13,26 @@ What company type are you registering? – {{ serviceName }} – GOV.UK Prototyp
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/company-lookup" method="post">
+      <form class="form" action="/register-an-acsp/type-of-acsp" method="post">
 
         {{ govukRadios({
-          name: "registering-as",
+          name: "registered-in-uk",
           fieldset: {
             legend: {
-              text: "What are you registering as?",
+              text: "Are you registered in the UK?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
-          },
+          },  
+
           items: [
             {
-              value: "corporate",
-              text: "Corporate body"
+              value: "yes",
+              text: "Yes"
             },
             {
-              value: "firm",
-              text: "Firm"
-            },
-            {
-              value: "individual",
-              text: "Individual"
+              value: "no",
+              text: "No"
             }
           ]
         }) }}
