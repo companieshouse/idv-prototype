@@ -14,6 +14,12 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
       <!-- The action will need to change depending on the location of the confirm-company page -->
       <form action="/register-an-acsp/aml-supervisor" method="post">
         <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
+
+        {{ govukInsetText({
+          html: "The company name and regsistered office address needs to match the details held by the AML supervisor. If the details don't match, <a href='' class=''>update the registered office address </a> before you use this service.  "
+        }) }} 
+        
+
         <dl class="govuk-summary-list">
 
           
