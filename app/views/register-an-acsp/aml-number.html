@@ -14,6 +14,8 @@ What is the Anti-money Laundering (AML) registration number? – {{ serviceName 
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="/register-an-acsp/terms-and-conditions" method="post">
+
+        <span class="govuk-caption-l">JAMES AND SONS LTD</span>
         
         {{ govukInput({
           label: {
@@ -21,17 +23,12 @@ What is the Anti-money Laundering (AML) registration number? – {{ serviceName 
             classes: "govuk-label--l",
             isPageHeading: true
           },
+          hint: {
+            text: "Must be between 6 and 8 digits long "
+          },
           id: "aml-reg-number",
           name: "aml-reg-number"
         }) }}
-
-
-        {{ govukInsetText({
-          html: '
-              <h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
-              <p>We will not show any information you provide on the public register. </p>'
-        }) }}
-
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

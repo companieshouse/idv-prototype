@@ -13,7 +13,9 @@ Who is completing this registration? – {{ serviceName }} – GOV.UK Prototype 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/company-lookup" method="post">
+      <form class="form" action="/register-an-acsp/before-idv" method="post">
+
+        <span class="govuk-caption-l">Hannah Morris</span>
 
         {{ govukRadios({
           name: "registering-as",
@@ -54,6 +56,7 @@ Who is completing this registration? – {{ serviceName }} – GOV.UK Prototype 
         An MLRO is a person who is responsible for Anti-Money Laundering (AML) compliance within a business.    
       </div>
     </details>
+    
 
     {{ govukCheckboxes({
       idPrefix: "mlro-declaration",
@@ -71,12 +74,6 @@ Who is completing this registration? – {{ serviceName }} – GOV.UK Prototype 
           text: "I confirm that I am the relevant officer for this organisation. "
         }
       ]
-    }) }}
-
-    {{ govukInsetText({
-      html: '
-          <h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
-          <p>We will not show any information you provide on the public register. </p>'
     }) }}
 
     <button class="govuk-button" data-module="govuk-button">Continue</button>
