@@ -15,13 +15,12 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
 
       <form class="form" action="/register-an-acsp/who-is-making-filing" method="post">
 
-        <span class="govuk-caption-l">Hannah Morris</span>
         
         {{ govukRadios({
           name: "registering-as",
           fieldset: {
             legend: {
-              text: "What are you registering as?",
+              text: "What type of business are you registering?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -32,15 +31,15 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
           items: [
             {
               value: "corporate",
-              text: "Corporate body"
+              text: "Corporate entity that is on the Copanies House Register"
             },
             {
               value: "firm",
-              text: "Firm"
+              text: "Corporate entity that is not on the Companies House register"
             },
             {
               value: "individual",
-              text: "Individual"
+              text: "Self-employed individual"
             }
           ]
         }) }}
