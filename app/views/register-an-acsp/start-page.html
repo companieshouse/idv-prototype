@@ -34,14 +34,8 @@
         {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
 
-      <p class="govuk-body"> Use this service to register an ACSP with Companies House.  </p>
+      <p class="govuk-body"> Use this service to register as an ACSP with Companies House.  </p>
 
-      <p class="govuk-body">You need to register as an ACSP to: </p>
-      
-      <ul class="govuk-list govuk-list--bullet">
-        <li>verify the identity of officers for the Companies House register</li>
-        <li>form companies or registrable partnerships, or to file on their behalf</li>
-      </ul>
 
 
       <h2 class="govuk-heading-m">What you'll need</h2>  
@@ -56,15 +50,14 @@
           <li>to pay the £XX registration fee using a credit or debit card</li>
         </ul>
 
-      <p>You must be the person who is responsible for Anti-Money Laundering (AML) compliance within the business to apply to register the ACSP.</p>
+     
+      {{ govukInsetText({
+        html: '
+             <p>You must be the person who is responsible for AML compliance within the business to use this service. This is known as a relevant officer.</p>'
+      }) }}
 
       <p>You’ll need to sign in to your Companies House account to start using this service. </p>
 
-      {{ govukInsetText({
-        html: '
-            <h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
-            <p>We will not show any information you provide on the public register. </p>'
-      }) }}
 
       {{ govukButton({
         text: "Start now",
@@ -72,6 +65,8 @@
         isStartButton: true
       }) }}
 
+<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+            <p>We will not show any information you provide on the public register. </p>
    
        <!-- match supervisor  -->
 

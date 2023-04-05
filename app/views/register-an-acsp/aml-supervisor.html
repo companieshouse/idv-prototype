@@ -21,20 +21,13 @@ What is the name of the supervisory body? – {{ serviceName }} – GOV.UK Proto
           name: "aml-supervisor",
           fieldset: {
             legend: {
-              text: "What is the name of the Anti-money laundering supervisory body?",
+              text: "What is the name of the Anti-Money Laundering (AML) supervisory body?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
-            {
-              value: "hmrc",
-              text: " HMRC"
-            },
-            {
-              value: "fca",
-              text: "FCA"
-            },
+
             {
               value: "aat",
               text: "Association of Accounting Technicians"
@@ -76,12 +69,20 @@ What is the name of the supervisory body? – {{ serviceName }} – GOV.UK Proto
               text: "Faculty Office of the Archbishop of Canterbury"
             },
             {
+              value: "fca",
+              text: "Financial Conduct Authority (FCA)"
+            },
+            {
               value: "acca",
               text: "General Council of the Bar"
             },
             {
               value: "acca",
               text: "General Council of the Bar of Northern Ireland"
+            },
+            {
+              value: "hmrc",
+              text: " HMRC"
             },
             {
               value: "acca",
@@ -115,17 +116,18 @@ What is the name of the supervisory body? – {{ serviceName }} – GOV.UK Proto
               value: "acca",
               text: "Law Society"
             },
+
             {
               value: "acca",
-              text: "Solicitors Regulatory Authority"
+              text: "  Law Society of Northern Ireland"
             },
-            {
+                                    {
               value: "acca",
               text: " Law Society of Scotland"
             },
             {
               value: "acca",
-              text: "  Law Society of Northern Ireland"
+              text: "Solicitors Regulatory Authority"
             }
           ]
         }) }}
