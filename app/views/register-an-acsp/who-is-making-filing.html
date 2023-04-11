@@ -21,14 +21,12 @@ Who is completing this registration? – {{ serviceName }} – GOV.UK Prototype 
           name: "registering-as",
           fieldset: {
             legend: {
-              text: "Who is completing this registration?",
+              text: "What is your role within the business?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },  
-            hint: {
-    text: "Tell us what your role is for the business you're registering."
-  },
+
           items: [
             {
               value: "mrlo",
@@ -70,6 +68,9 @@ Who is completing this registration? – {{ serviceName }} – GOV.UK Prototype 
           isPageHeading: false,
           classes: "govuk-fieldset__legend--m"
         }
+      },
+      hint: {
+        text: "You must be a relevant officer to register an ACSP. This means that you are responsible for AML compliance within the business. We will use your details if we need to contact the ACSP."
       },
       items: [
         {
