@@ -1,0 +1,138 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers before sending your application – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+
+      <form class="form" action="/verify-using-an-acsp/payment" method="post">
+
+      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+
+      <h2 class="govuk-heading-m">{{data['firstName']}} {{data['middleName']}} {{data['lastName']}} details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            12 8 1970
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            70 Wentloog Road<br>Rumney<br> Cardiff<br> Wales<br> CF3 3EA
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Home address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['email']}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Authority to file declaration
+          </dt>
+          <dd class="govuk-summary-list__value">
+            I confirm that the I have the authority to file on behalf of this person.
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Identity verification declaration
+          </dt>
+          <dd class="govuk-summary-list__value">
+            I confirm that the identity verification checks have been carried out to meet the Good Practice Guide 45 (GPG45).
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+      <p class="govuk-body"><a href="/verify-using-an-acsp/name" class="govuk-link">Add another person</a></p>
+
+
+
+
+
+
+
+      {{ govukInsetText({
+        html: '
+            <h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+            <p>We will not show any information you provide on the public register. </p>'
+      }) }}
+
+    
+      <form action="/payment" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

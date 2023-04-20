@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Sign in to Companies House – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half-from-desktop">
+
+      <h1 class="govuk-heading-l">
+       Sign in to Companies House
+      </h1>
+
+      {{ govukInsetText({
+        text: "You must sign in to or create a Companies House account. Your WebFiling details will not work with this service."
+      }) }}
+
+      <form class="form" action="/verify-using-an-acsp/name" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Email address"
+          },
+          id: "email",
+          type: "email",
+          name: "email",
+          autocomplete: "email"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Password"
+          },
+          id: "password",
+          name: "password",
+          type: "password"
+        }) }}
+
+        {{ govukButton({
+          text: "Sign in"
+        }) }}
+
+        <p>
+          <a href="create-account" class="govuk-link govuk-link--no-visited-state">Create an account</a>
+        </p>
+        <p>
+          <a href="forgot-password" class="govuk-link govuk-link--no-visited-state">I've forgotten my password</a>
+        </p>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

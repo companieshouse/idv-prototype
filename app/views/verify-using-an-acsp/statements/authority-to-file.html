@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirm the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/verify-using-an-acsp/statements/id-check" method="post">
+
+
+        <span class="govuk-caption-l">
+          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+        </span>
+        <h1 class="govuk-heading-l">Authority to file declaration</h1>
+       
+        {{ govukCheckboxes({
+          idPrefix: "authority-to-file",
+          name: "authority-to-file",
+          fieldset: {
+            legend: {
+              text: "Declaration",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "agree",
+              text: "I confirm that I have the authority to file on behalf of this person.",
+              checked: checked("diligence", "agree")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
