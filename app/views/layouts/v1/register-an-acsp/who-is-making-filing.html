@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Who is completing this registration? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/register-an-acsp/before-idv" method="post">
+
+        <span class="govuk-caption-l">James Morris</span>
+
+        {{ govukRadios({
+          name: "registering-as",
+          fieldset: {
+            legend: {
+              text: "What is your role within the business?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },  
+
+          items: [
+            {
+              value: "mrlo",
+              text: "Money Laundering Reporting Officer (MLRO) "
+            },
+            {
+              value: "director",
+              text: "Director"
+            },
+            {
+              value: "partner",
+              text: "Partner"
+            },
+            {
+              value: "someone-else",
+              text: "Someone else"
+            }
+          ]
+        }) }}
+
+      <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What is an MLRO?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        An MLRO is a person who is responsible for Anti-Money Laundering (AML) compliance within a business.    
+      </div>
+    </details>
+    
+
+    {{ govukCheckboxes({
+      idPrefix: "mlro-declaration",
+      name: "mlro-declaration",
+      fieldset: {
+        legend: {
+          text: "Declaration ",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "You must be a relevant officer to register an ACSP. This means that you are responsible for AML compliance within the business. We will use your details if we need to contact the ACSP."
+      },
+      items: [
+        {
+          value: "agree",
+          text: "I confirm that I am the relevant officer for this organisation. "
+        }
+      ]
+    }) }}
+
+    <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

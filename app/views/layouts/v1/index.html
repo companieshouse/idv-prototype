@@ -1,0 +1,239 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    
+    <h1 class="govuk-heading-l">
+      {{ serviceName}}
+      <span class="govuk-caption-xl">Version 1</span>
+    </h1>
+
+    {{ govukWarningText({
+      text: "This prototype is being actively worked on - things might break or change very quickly",
+      iconFallbackText: "Warning"
+    }) }}
+
+    <!--{{ govukWarningText({
+      text: "This prototype is not being actively worked on",
+      iconFallbackText: "Warning"
+    }) }}-->
+
+    <p class="govuk-body-s"><a href="https://app.mural.co/invitation/mural/companieshouse8589/1674141024210?sender=ejames5948&key=2e9f9c77-c184-43ce-92ed-39508254a70a" target=”_blank”>
+      Mural flow for this version of the prototype<a/>
+    </p>
+
+    {{ govukButton({
+      text: "Register as an ACSP",
+      classes: "govuk-button--secondary",
+      href:"/guidance"
+    }) }}
+
+
+  </div>
+</div>
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#code">
+        ACSP entry points and links
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#form-versions">
+        ACSP previous versions
+      </a>
+    </li>
+  </ul>
+
+  <div class="govuk-tabs__panel" id="code">
+
+   <!--  <p class="govuk-body-s govuk-!-margin-bottom-2">Contents</p>
+    <ul class="govuk-list govuk-list govuk-!-margin-bottom-6">
+      <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+        <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#earlyScreens">Early screens</a>
+      </li>
+      <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+        <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#identity">Identity</a>
+      </li>
+      <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+        <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#oebemo">Overseas entity, beneficial owners and managing officers</a>
+      </li>
+    </ul> -->
+
+    <h2 class="govuk-heading-m" id="earlyScreens">Early screens</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link" href="guidance-ACSPs">Guidance page</a>
+        </li>
+
+        <li>
+          <a class="govuk-link" href="register-an-acsp/start-page">ACSP start page</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="sign-in">Sign in to Companies House</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m" id="verify">Verify your identity</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list" href="register-an-acsp/before-idv">CH handover page - You need to verify your identity</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="verify-identity/gov-login">Verify journey</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="register-an-acsp/after-idv">Bringing the user back to CH - Your identity has been verified</a>
+        </li>
+      </ul>
+      <h2 class="govuk-heading-m" id="userRole">Tell us who you are</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list" href="register-an-acsp/register-as">What are you registering?</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="register-an-acsp/who-is-making-filing"> Who is completing this registration?</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m" id="userRole">Corporate bodies details</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list" href="company-lookup">What is the company number?</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="confirm-company">Confirm this is the correct company</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="auth-code"> Enter the company authentication code</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m" id="userRole">Individual and firm details</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list" href="register-an-acsp/acsp-name">Name</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="register-an-acsp/address-lookup/acsp-address-manual">What is [Name] registered office address?
+          </a>
+        </li>
+        <li>
+          <a class="govuk-list" href="register-an-acsp/legal-form">What is [Name] legal form?
+          </a>
+        </li>
+      </ul>
+
+
+
+
+      <h2 class="govuk-heading-m" id="AMLdetails">ACSP and AML details</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list" href="register-an-acsp/aml-supervisor">What is [Name] Anti-money laundering supervisory body?</a>
+        </li>
+        <li>
+          <a class="govuk-list" href="register-an-acsp/aml-number">What is [Name] Anti-money Laundering (AML) registration number?</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m"id="finalScreens">Final screens</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a class="govuk-list" href="register-an-acsp/terms-and-conditions">Your obligations as an ACSP</a>
+          </li>
+          <li>
+            <a class="govuk-list" href="check-your-answers">Check your answers before sending your application </a>
+          </li>
+          <li>
+            <a class="govuk-list" href="payment"> Payment</a>
+          </li>
+          <li>
+            <a class="govuk-list" href="confirmation"> Confirmation</a>
+          </li> 
+        </ul>
+
+      <h2 class="govuk-heading-m"id="finalScreens">Final screens</h2>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Address lookup</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list" href="#">To add</a>
+        </li>
+      </ul>
+
+      <!-- Previous versions -->
+
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="form-versions">
+        <table class="govuk-table version-history">
+          <caption class="govuk-table__caption govuk-heading-l">Previous versions</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Version</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Tested on</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-half">Changes</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body ">
+
+
+        <!-- Template version -->
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a href="javascript:void(0)">Version 1</a>
+          </th>
+          <td class="govuk-table__cell">TBA</td>
+          <td class="govuk-table__cell">
+
+          <p><a href="/register/trusts/trust-assign">Page name</a><p>
+                          <ul class="govuk-list govuk-list--bullet">
+                            <li>New page added</a></li>
+                          </ul>
+
+          </td>
+          <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--red">
+                  Not ready for user testing
+                </strong>
+          </td>
+        </tr>
+
+      </tbody>
+      </table>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+

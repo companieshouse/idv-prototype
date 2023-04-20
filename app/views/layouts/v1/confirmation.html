@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Application complete – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Application complete</h1>
+        <div class="govuk-panel__body">
+          Your reference number<br><strong>HDJ2123F</strong>
+        </div>
+      </div>
+
+      <p>
+        We have sent a confirmation email to james@jamesaccounting.com.
+      </p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>We'll email you to let you know if your application to register an ACSP has been accepted or rejected. We'll process the application as soon as possible. However, because this is a new service, we're not yet able to tell you exactly how long this will take.</p>
+
+      <h2 class="govuk-heading-m">What happens if the application is accepted</h2>
+      <p>We'll email the ACSP reference number to james@jamesaccounting.com.</p>
+
+      <h2 class="govuk-heading-m">What happens if the application is rejected</h2>
+      <p>If it's rejected, we'll email you at james@jamesaccounting.com to explain what to do next.</p>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

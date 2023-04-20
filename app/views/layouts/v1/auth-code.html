@@ -1,0 +1,62 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter the company authentication code – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/register-an-acsp/aml-supervisor" method="post">
+        {% if errorAuth == true %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Enter the company authentication code",
+              classes: "govuk-label--l"
+            },
+            classes: "govuk-input--width-10",
+            hint: {
+              text: "You need the authentication code to submit company information for JAMES AND SONS LTD."
+            },
+            id: "authNumber",
+            name: "authNumber",
+            type: "password",
+            errorMessage: {
+              text: "Enter the company authentication code"
+            }
+          }) }}
+        {% else %}
+          {{ govukInput({
+          label: {
+            text: "Enter the company authentication code",
+            classes: "govuk-label--l"
+          },
+          classes: "govuk-input--width-10",
+          hint: {
+            text: "This is a 6 character code issued by us to each company."
+          },
+          id: "authNumber",
+          name: "authNumber",
+          type: "password"
+          }) }}
+        {% endif %}
+        {{ govukDetails({
+          summaryText: "I do not have an authentication code",
+          html: "<p>To file online for this company, you’ll need to <a target='blank' href='https://www.gov.uk/guidance/company-authentication-codes-for-online-filing'>request an authentication code (opens in a new tab)</a>.<p>"
+         }) }}
+        {{ govukButton({
+         text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Prove your identity with GOV.UK account GOV.UK – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Prove your identity with GOV.UK account
+      </h1>
+      <form class="form" action="../register-an-acsp/after-idv" method="post">
+
+        <p class="govuk-body">It will take you about 10 minutes to prove your identity this way. </p>
+
+        {{ govukInsetText({
+          html: 'This service is also available in <a href="#" class="govuk-link"> Welsh (Cymraeg)</a>. The GOV.UK ID Check app is currently only available in English.'
+        }) }}
+
+        <p class="govuk-body">You'll need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a GOV.UK account – we’ll ask you to create or sign in to your account when you continue</li>
+          <li>your photo ID</li>
+          <li>your current home address (you might also need your previous address if you’ve recently moved)</li>
+        </ul>
+
+        <p class="govuk-body">We'll only use the information you gave us to make sure that you are who you say you are.</p>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

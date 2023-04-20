@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+You need to prove your identity – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You need to prove your identity
+      </h1>
+
+      <p class="govuk-body">As the relevant officer for the ACSP, you'll need to prove that you are who you say you are. You must do this before you can register the ACSP. </p>
+      
+
+
+      {{ govukInsetText({
+        text: "The information you give will only be used to verify your identity."
+      }) }}
+
+
+      <form class="form" action="../verify-identity/gov-login" method="post">
+
+        
+
+      
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

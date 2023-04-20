@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the company number? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="confirm-company" method="get">
+        {% if errorNum == true %}
+
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "What is the company number?",
+              classes: "govuk-label--l"
+            },
+            hint: {
+              text: "A company number is 8 characters long."
+            },
+            classes: "govuk-input--width-10",
+            id: "companynumber",
+            name: "companynumber",
+            errorMessage: {
+              text: "Enter the company number"
+            }
+          }) }}
+        {% else %}
+          {{ govukInput({
+            label: {
+              text: "What is the company number? ",
+              classes: "govuk-label--l"
+            },
+            hint: {
+              text: "A company number is 8 characters long."
+            },
+            classes: "govuk-input--width-10",
+              id: "companynumber",
+              name: "companynumber"
+            }) }}
+
+        {% endif %}
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              How do I find the company number?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            You can find this by searching for the company on the <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.
+          </div>
+        </details>
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

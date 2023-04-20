@@ -10,17 +10,11 @@ const router = govukPrototypeKit.requests.setupRouter()
 /*
  * Register an ACSP 
  */
-
-
-
-
-
-// Corporate, firm or individual 
-router.post('register-an-acsp/after-idv', function (req, res) {
+  router.post('/register-an-acsp/who-is-making-filing-check', function (req, res) {
     
     if (req.session.data['registering-as'] === 'corporate') {
         
-        res.redirect('company-lookup')
+        res.redirect('../company-lookup')
     }
     else if (req.session.data['registering-as'] === 'firm') {
         
@@ -32,6 +26,7 @@ router.post('register-an-acsp/after-idv', function (req, res) {
     }
     
   }) 
+
 
 
 

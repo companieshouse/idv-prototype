@@ -1,0 +1,142 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the name of the supervisory body? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/register-an-acsp/aml-number" method="post">
+
+        <span class="govuk-caption-l">JAMES ACCOUNTING LTD</span>
+
+        {{ govukRadios({
+          name: "aml-supervisor",
+          fieldset: {
+            legend: {
+              text: "What is the name of the Anti-Money Laundering (AML) supervisory body?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+
+            {
+              value: "aat",
+              text: "Association of Accounting Technicians"
+            },
+            {
+              value: "acca",
+              text: "Association of Chartered Certified Accountants"
+            },
+            {
+              value: "acia",
+              text: "Association of International Accountants"
+            },
+            {
+              value: "att",
+              text: "Association of Taxation Technicians"
+            },
+            {
+              value: "acca",
+              text: "Chartered Institute of for Legal Executives"
+            },
+            {
+              value: "acca",
+              text: "Chartered Institute of Management Accountants"
+            },
+            {
+              value: "acca",
+              text: "Chartered Institute of Taxation"
+            },
+            {
+              value: "acca",
+              text: "Council for Licensed Conveyors"
+            },
+            {
+              value: "acca",
+              text: "Faculty of Advocates"
+            },
+            {
+              value: "acca",
+              text: "Faculty Office of the Archbishop of Canterbury"
+            },
+            {
+              value: "fca",
+              text: "Financial Conduct Authority (FCA)"
+            },
+            {
+              value: "acca",
+              text: "General Council of the Bar"
+            },
+            {
+              value: "acca",
+              text: "General Council of the Bar of Northern Ireland"
+            },
+            {
+              value: "hmrc",
+              text: " HMRC"
+            },
+            {
+              value: "acca",
+              text: "Insolvency Practitioners Association"
+            },
+            {
+              value: "acca",
+              text: "Institute of Certified Bookkeepers"
+            },
+            {
+              value: "acca",
+              text: "Institute of Chartered Accountants in England and Wales"
+            },
+            {
+              value: "acca",
+              text: "  Institute of Chartered Accountants in Ireland"
+            },
+            {
+              value: "acca",
+              text: "Institute of Chartered Accountants of Scotland"
+            },
+            {
+              value: "acca",
+              text: "Institute of Financial Accountants"
+            },
+            {
+              value: "acca",
+              text: "Institute of Accountants and Bookkeepers"
+            },
+            {
+              value: "acca",
+              text: "Law Society"
+            },
+
+            {
+              value: "acca",
+              text: "  Law Society of Northern Ireland"
+            },
+                                    {
+              value: "acca",
+              text: " Law Society of Scotland"
+            },
+            {
+              value: "acca",
+              text: "Solicitors Regulatory Authority"
+            }
+          ]
+        }) }}
+        
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

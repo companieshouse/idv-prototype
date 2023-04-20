@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,39 +13,44 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/register-an-acsp/who-is-making-filing-check" method="post">
+      <form class="form" action="/register-an-acsp/acsp-name" method="post">
 
-        
         {{ govukRadios({
           name: "registering-as",
           fieldset: {
             legend: {
-              text: "What type of business are you registering?",
+              text: "What are you registering as?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
-          hint: {
-            text: "You must be registered in the UK. "
-          },
           items: [
             {
-              value: "corporate",
-              text: "Corporate entity that is on the Companies House register"
+              value: "acsp",
+              text: "ACSP"
             },
             {
-              value: "firm",
-              text: "Corporate entity that is not on the Companies House register"
+              value: "presenter",
+              text: "Presenter"
             },
             {
-              value: "individual",
-              text: "Self-employed individual"
+              value: "director",
+              text: "Officer"
+            },
+            {
+              value: "psc",
+              text: "Person with significant control (PSC)"
+            },
+            {
+              value: "psc-under-16",
+              text: "Person with significant control (PSC) under 16 years old"
+            },
+            {
+              value: "rle",
+              text: "Relevant legal entity"
             }
           ]
         }) }}
-
-
-
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
