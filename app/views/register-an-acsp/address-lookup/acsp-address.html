@@ -13,10 +13,9 @@ What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/register-an-acsp/aml-details" method="post">
+      <form class="form" action="/register-an-acsp/address-lookup/acsp-address-confirm" method="post">
 
-        Match the AML supervisory body details 
-
+              
         {% call govukFieldset({
           legend: {
             text: "What is the ACSPs registered address?",
@@ -52,14 +51,6 @@ What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype
         </p>
         
         {% endcall %}
-
-        {{ govukInsetText({
-          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
-                <p>***PLACEHOLDER CONTENT*** We'll use this to send the unique ACSP reference.</p>"
-        }) }}
-
-    
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
 
