@@ -15,6 +15,15 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
       <span class="govuk-caption-xl">Version 2</span>
     </h1>
 
+    
+
+    {{ govukButton({
+      text: "Register as an ACSP",
+      classes: "govuk-button--secondary",
+      href:"/guidance"
+    }) }}
+
+
     {{ govukWarningText({
       text: "This prototype is being actively worked on - things might break or change very quickly",
       iconFallbackText: "Warning"
@@ -25,15 +34,7 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
       iconFallbackText: "Warning"
     }) }}-->
 
-    <p class="govuk-body-s"><a href="https://app.mural.co/invitation/mural/companieshouse8589/1674141024210?sender=ejames5948&key=2e9f9c77-c184-43ce-92ed-39508254a70a" target=”_blank”>
-      Mural flow for this version of the prototype<a/>
-    </p>
 
-    {{ govukButton({
-      text: "Register as an ACSP",
-      classes: "govuk-button--secondary",
-      href:"/guidance"
-    }) }}
 
 
   </div>
