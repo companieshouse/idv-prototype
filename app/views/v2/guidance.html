@@ -1,0 +1,217 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start - Verify your identity 
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Guidance</span>
+      <h1 class="govuk-heading-l">
+        Verify your identity with Companies House
+      </h1>
+
+      <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
+        <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
+            Contents
+          </h2>
+          <ol class="govuk-prototype-kit-common-templates-contents-list__list">
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+              <a href="verify-screener">
+                Check if you need to verify your identity
+              </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="how-to-verify">
+                Check how to verify yourself
+              </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+              <a href="acsp-guidance">
+                How to register as an Authorised Corporate Service Provider (ACSP)
+              </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="verify-through-acsp">
+                Check how to verify through an ACSP
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+      
+      <h2 id="verify-screener" class="govuk-heading-m">
+        Check if you need to verify your identity
+      </h2>
+      
+      <p>Content goes here.</p>
+
+      <h2 id="how-to-verify" class="govuk-heading-m">
+        Check how to verify yourself
+      </h2>
+      
+      <p>Content goes here.</p>
+
+      <h2 id="acsp-guidance" class="govuk-heading-m">
+        How to register an Authorised Corporate Service Provider (ACSP)
+      </h2>
+      
+      <p>Content goes here.</p>
+
+      <h3 class="govuk-heading-s">What an ACSP is </h3>
+
+      <p>An ACSP is an agent such as an accountant, legal adviser, or company formation agent, that is registered with a supervisory body for Anti-Money Laundering (AML) purposes. </p>
+
+      <p>These businesses must register as an ACSP with Companies House to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>verify the identity of individuals for the Companies House register</li>
+        <li>form companies or registrable partnerships, or to file on their behalf</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Who can use this service </h3>
+      <p>You must be a relevant officer to register an ACSP. This means that you are responsible for AML compliance within the business.</p>  
+
+      <p>To register as an ACSP, a business must:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>be registered with an AML supervisory body</li>
+        <li>already carry out customer due diligence checks on all clients </li>
+      </ul>
+
+      <h3 class="govuk-heading-s">What information you need to submit</h3>
+
+      <p>If you have not verified your own identity with a GOV.UK account, you will be asked to do this before you can register an ACSP. </p>
+      <p>To do this, you’ll need: </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>to create or sign in to a GOV.UK account </li>
+        <li>a relevant photo ID</li>
+        <li>your current home address (you might also need your previous address if you’ve recently moved)</li>
+      </ul>
+
+      <p>To register the ACSP, you'll need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the name of the company, or your own name if you are self-employed</li>
+        <li>the registered address </li>
+        <li>the name of the AML supervisory body </li>
+        <li>the AML registration number</li>
+        <li>to pay the £XX registration fee using a credit or debit card</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">What happens after an ACSP is registered</h3>
+
+      <p>You must provide details about any changes to the ACSP’s AML registration. This includes if the:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>ACSP is no longer registered with an AML supervisory body </li>
+        <li>AML registration details change, for example if the ACSP registers with a different AML supervisory body</li>
+      </ul>
+      <p>If you are no longer the person who is responsible for AML compliance, you must give details for a new relevant officer.</p>
+
+
+
+
+      {{ govukButton({
+        text: "Apply to be an ACSP",
+        href:"/register-an-acsp/start-page"
+      }) }}
+
+
+      
+
+
+
+      <h2 id="verify-through-acsp" class="govuk-heading-m">
+        Check how to verify through an ACSP
+      </h2>
+      
+      <p>Content goes here.</p>
+
+
+      {{ govukButton({
+        text: "Tell us about an officer(s) you have identity verified",
+        href:"/verify-using-an-acsp/start-page"
+      }) }}
+
+
+
+
+
+      <p>
+        <a href="#">
+          View a printable version of the whole guide
+        </a>
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
