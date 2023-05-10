@@ -10,19 +10,19 @@ const router = govukPrototypeKit.requests.setupRouter()
 /*
  * Register an ACSP 
  */
-  router.post('/register-an-acsp/who-is-making-filing-check', function (req, res) {
+  router.post('who-is-making-filing-check', function (req, res) {
     
     if (req.session.data['registering-as'] === 'corporate') {
         
-        res.redirect('../company-lookup')
+        res.redirect('company-lookup')
     }
     else if (req.session.data['registering-as'] === 'firm') {
         
-        res.redirect('/register-an-acsp/acsp-name')
+        res.redirect('acsp-name')
     }
     else if (req.session.data['registering-as'] === 'individual') {
         
-        res.redirect('/register-an-acsp/acsp-name')
+        res.redirect('acsp-name')
     }
     
   }) 
