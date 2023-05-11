@@ -34,15 +34,16 @@
         {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
 
-      <p class="govuk-body"> Use this service to register an ACSP with Companies House.  </p>
+      <p class="govuk-body"> Use this service to register an authorised agent with Companies House.  </p>
 
 
 
       <h2 class="govuk-heading-m">What you'll need</h2>  
 
-      <p class="govuk-body">To register a company or individual as an ACSP, you’ll need:</p>
+      <p class="govuk-body">To register a business as an authorised agent, we'll ask you to verify your own identity first, if you have not done this already. You’ll need to create or sign in to a GOV.UK account to do this. </p>
+
+      <p>To register the authorised agent, you'll need:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>to verify your own identity with a GOV.UK account, if you have not done this already</li>
           <li>the name of the company, or your own name if you are self-employed </li>
           <li>the registered address </li>
           <li>the name of the Anti-Money Laundering (AML) supervisory body the business is registered with</li>
@@ -50,10 +51,11 @@
           <li>to pay the £XX registration fee using a credit or debit card</li>
         </ul>
 
+      <p>You’ll also need to give details about the business you are registering. <a href="/v2/guidance-ACSPs"> Read the guidance to check what information you’ll need</a>.</p>
      
       {{ govukInsetText({
         html: '
-             <p>You must be the person who is responsible for AML compliance within the business to use this service. This is known as a relevant officer.</p>'
+             <p>You must be the person who is responsible for AML compliance within the business to use this service. This is known as a relevant officer. We will use your details if we need to contact the ACSP.</p>'
       }) }}
 
       <p>You’ll need to sign in to your Companies House account to start using this service. </p>
@@ -65,8 +67,8 @@
         isStartButton: true
       }) }}
 
-<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
-            <p>We will not show any information you provide on the public register. </p>
+<!--<h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+            <p>We will not show any information you provide on the public register. </p> -->
    
        <!-- match supervisor  -->
 
