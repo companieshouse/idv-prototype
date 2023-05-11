@@ -28,7 +28,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="register-an-acsp/start-page" method="get">
+      <form class="form" action="start-page" method="post">
 
       <h1 class="govuk-heading-l">
         {% if serviceName %} {{ serviceName }} {% endif %}
@@ -63,7 +63,6 @@
 
       {{ govukButton({
         text: "Start now",
-        href:"sign-in",
         isStartButton: true
       }) }}
 

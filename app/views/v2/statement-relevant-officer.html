@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="statement-relevant-officer" method="post">
+
+          {{ govukCheckboxes({
+          idPrefix: "mlro-declaration",
+          name: "mlro-declaration",
+          fieldset: {
+            legend: {
+              text: "Confirm you are the relevant officer",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "You must be a relevant officer to register an ACSP. This means that you are responsible for AML compliance within the business. We will use your details if we need to contact the ACSP."
+          },
+          items: [
+            {
+              value: "agree",
+              text: "I confirm that I am the relevant officer for this organisation. "
+            }
+          ]
+        }) }}
+    
+        {{ govukInsetText({
+          html: '
+              <h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+              <p>We will not show any information you provide on the public register. </p>'
+        }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

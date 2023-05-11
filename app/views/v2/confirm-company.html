@@ -12,13 +12,8 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <!-- The action will need to change depending on the location of the confirm-company page -->
-      <form action="auth-code" method="post">
+      <form action="confirm-company" method="post">
         <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
-
-        {{ govukInsetText({
-          html: "The company name and registered office address must be exactly the same as the details held by the AML supervisor."
-        }) }} 
-        
 
         <dl class="govuk-summary-list">
 
@@ -56,8 +51,38 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
 
         </dl>
 
-      <p class="govuk-body">If the address shown is incorrect, you will need to <a href='' class=''>update the registered office address</a>. You should also check the AML supervisor holds the correct company name and registered office address. </p>
 
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "aml-details-match",
+          classes: "govuk-!-padding-top-2",
+          fieldset: {
+            legend: {
+              text: "Does the company name and registered office address match the details held by the AML supervisory body?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s govuk-!-padding-top-3"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+     <!--    {{ govukInsetText({
+          html: "The company name and registered office address must be exactly the same as the details held by the AML supervisor."
+        }) }} 
+        
+
+      <p class="govuk-body">If the address shown is incorrect, you will need to <a href='' class=''>update the registered office address</a>. You should also check the AML supervisor holds the correct company name and registered office address. </p>
+      -->
 
         {{ govukButton({
           text: "Confirm and continue"

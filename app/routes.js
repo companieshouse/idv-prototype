@@ -8,3 +8,4 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 router.use('/', require('./routes/routes-v1.js'))
+router.use('/', require('./routes/routes-v2.js'))

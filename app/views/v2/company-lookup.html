@@ -11,7 +11,7 @@ What is the company number? – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="confirm-company" method="get">
+      <form action="company-lookup" method="post">
         {% if errorNum == true %}
 
           {{ govukErrorSummary({

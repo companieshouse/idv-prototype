@@ -14,7 +14,7 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="/register-an-acsp/address-lookup/acsp-address-manual" method="post">
+      <form class="form" action="acsp-name" method="post">
 
        
 
@@ -31,7 +31,9 @@
           name: "acsp-name"
         }) }}
 
-        <p>  Must match the AML supervisory body details </p>
+        {{ govukInsetText({
+          text: "Must match the name held by the AML supervisory body."
+        }) }}
 
 
 
