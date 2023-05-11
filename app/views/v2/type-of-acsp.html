@@ -31,21 +31,22 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
           items: [
             {
               value: "corporate",
-              text: "Corporate entity that is on the Companies House register"
+              text: "Limited company or limited liability partnership (LLP)"
             },
             {
-              value: "firm",
-              text: "Corporate entity that is not on the Companies House register"
+              value: "lp-slp",
+              text: "Limited partnership or Scottish limited partnership (SLP)"
             },
             {
-              value: "individual",
-              text: "Self-employed individual"
+              value: "partnership",
+              text: "Partnership"
+            },
+            {
+              value: "sole-trader",
+              text: "Sole trader"
             }
           ]
         }) }}
-
-
-
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
