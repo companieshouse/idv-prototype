@@ -61,6 +61,15 @@ router.post('/v2/before-idv', function (req, res) {
 }) 
 
 /*
+ * You need to prove your identity
+ */
+router.post('/v2/gov-login', function (req, res) {
+     
+    res.redirect('after-idv')
+    
+}) 
+
+/*
  * You now need to tell us about the authorised agent
  */
 router.post('/v2/after-idv', function (req, res) {
