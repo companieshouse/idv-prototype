@@ -15,7 +15,7 @@
 
       <form class="form" action="statement-relevant-officer" method="post">
 
-          {{ govukCheckboxes({
+          {{ govukRadios({
           idPrefix: "mlro-declaration",
           name: "mlro-declaration",
           fieldset: {
@@ -31,7 +31,11 @@
           items: [
             {
               value: "agree",
-              text: "I confirm that I am the relevant officer for this organisation. "
+              text: "I confirm that I am the relevant officer for this organisation "
+            },
+            {
+              value: "disagree",
+              text: "Someone else "
             }
           ]
         }) }}
