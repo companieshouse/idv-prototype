@@ -127,18 +127,30 @@ router.post('/v2/acsp-name', function (req, res) {
  */
 router.post('/v2/acsp-address', function (req, res) {
      
-    res.redirect('confirm-company')
+    res.redirect('acsp-address-confirm')
+    
+})
+
+/*
+ *  Not registered with Companies House - ACSP address confirming lookup
+ */
+router.post('/v2/acsp-address-confirm', function (req, res) {
+     
+    res.redirect('legal-form')
     
 })
 
 /*
  *  Not registered with Companies House - ACSP address 
  */
-router.post('/v2/acsp-address', function (req, res) {
+router.post('/v2/legal-form', function (req, res) {
      
-    res.redirect('confirm-company')
+    res.redirect('check-your-answers')
     
 })
+
+
+
 
 /*
  * Confirm company

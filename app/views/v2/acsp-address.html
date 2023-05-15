@@ -40,29 +40,33 @@ What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype
           classes: "govuk-input--width-10",
           name: "postcode"
         }) }}
-        {{ govukButton({
-          text: "Find address"
+
+        {{ govukInsetText({
+          text: "Must match the registered address held by the AML supervisory body."
         }) }}
+
+
+        <form class="form" action="acsp-address" method="post">
+          {{ govukButton({
+            text: "Find address"
+          }) }}
+          
+        </form>
+
         <p class="govuk-body">
           <a href="/register-an-acsp/address-lookup/acsp-address-manual" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
         </p>
         
         {% endcall %}
 
-        {{ govukInsetText({
+       <!-- {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
                 <p>***PLACEHOLDER CONTENT*** We'll use this to send the unique ACSP reference.</p>"
-        }) }}
+        }) }} -->
 
-        {{ govukInsetText({
-          text: "Must match the name held by the AML supervisory body."
-        }) }}
+   
+       
 
-        <form class="form" action="acsp-address" method="post">
-    
-          <button class="govuk-button" data-module="govuk-button">Continue</button>
-
-        </form>
 
     </div>
   </div>
