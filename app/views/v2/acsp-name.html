@@ -20,19 +20,19 @@
 
         {{ govukInput({
           label: {
-            text: "Name",
+            text: "What is the agent's name?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
           hint: {
-          text: "Enter the company name, or your own name if you are self-employed."
+          text: "Enter the name the business trades under."
           },
           id: "acsp-name",
           name: "acsp-name"
         }) }}
 
         {{ govukInsetText({
-          text: "Must match the name held by the AML supervisory body."
+          text: "This must be exactly the same as the name held by the anti-money laundering (AML) supervisory body."
         }) }}
 
 

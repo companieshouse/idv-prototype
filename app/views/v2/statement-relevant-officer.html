@@ -26,12 +26,12 @@
             }
           },
           hint: {
-            text: "You must be a relevant officer to register an ACSP. This means that you are responsible for AML compliance within the business. We will use your details if we need to contact the ACSP."
+            text: "You must be a relevant officer to register an authorised agent."
           },
           items: [
             {
               value: "relevant-officer",
-              text: "I confirm that I am the relevant officer for this organisation "
+              text: "I confirm that I am the relevant officer for the agent "
             },
             {
               value: "someone-else",
@@ -39,17 +39,28 @@
             }
           ]
         }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What is a relevant officer?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    A relevant officer is someone who is responsible for anti-money laundering (AML) compliance within the business. This could be a director, partner or a Money Laundering Reporting Officer (MLRO).
+  </div>
+</details>
     
-        {{ govukInsetText({
+<!--        {{ govukInsetText({
           html: '
               <h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
               <p>We will not show any information you provide on the public register. </p>'
         }) }}
-
+-->
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
-      </form>
+      </form> 
 
     </div>
   </div>
