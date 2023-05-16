@@ -17,7 +17,7 @@
 
           {{ govukRadios({
           idPrefix: "mlro-declaration",
-          name: "mlro-declaration",
+          name: "registering-as",
           fieldset: {
             legend: {
               text: "Confirm you are the relevant officer",
@@ -30,12 +30,12 @@
           },
           items: [
             {
-              value: "agree",
+              value: "relevant-officer",
               text: "I confirm that I am the relevant officer for this organisation "
             },
             {
-              value: "disagree",
-              text: "Someone else "
+              value: "someone-else",
+              text: "I am someone else"
             }
           ]
         }) }}

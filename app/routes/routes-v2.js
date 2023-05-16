@@ -20,19 +20,19 @@ router.post('/v2/start-page', function (req, res) {
  */
 router.post('/v2/sign-in', function (req, res) {
      
-    res.redirect('who-is-registering')
+    res.redirect('statement-relevant-officer')
     
 }) 
 
 /*
  * Who is completing this registration?
  */
-router.post('/v2/who-is-registering', function (req, res) {
+router.post('/v2/statement-relevant-officer', function (req, res) {
      
     //If it is the relevant officer, ask to confirm the statement. 
     if (req.session.data['registering-as'] === 'relevant-officer') {
         
-        res.redirect('statement-relevant-officer')
+        res.redirect('before-idv')
     }
     // Otherwise take them to a stop screen
     else{
@@ -42,14 +42,6 @@ router.post('/v2/who-is-registering', function (req, res) {
 
 }) 
 
-/*
- * Confirm you are the relevant officer
- */
-router.post('/v2/statement-relevant-officer', function (req, res) {
-     
-    res.redirect('before-idv')
-    
-}) 
 
 /*
  * You need to prove your identity
