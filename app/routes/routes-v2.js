@@ -156,17 +156,12 @@ router.post('/v2/confirm-company', function (req, res) {
   /*
  * Name and address match those held with the supervisor
  */
-router.post('/v2/confirm-company', function (req, res) {
-    //If the details match with the AML supervisory body
-    if (req.session.data['aml-details-match'] === 'yes') {
-        
+router.post('/v2/name-address-match-supervisor', function (req, res) {
+    
         res.redirect('aml-supervisor')
-    }
-    // Otherwise take them to the stop screen to update details with CH or AML supervisor
-    else{
-
-        res.redirect('stop-details-must-match')
-    }
+    
+       // res.redirect('stop-details-must-match')
+    
 
   })
 
