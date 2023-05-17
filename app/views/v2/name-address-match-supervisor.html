@@ -13,33 +13,13 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <!-- The action will need to change depending on the location of the confirm-company page -->
       <form action="confirm-company" method="post">
-        <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
+        <h1 class="govuk-heading-l">Confirm the company name and registered office address</h1>
 
         <dl class="govuk-summary-list">
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Company name</dt>
             <dd class="govuk-summary-list__value">JAMES ACCOUNTING LTD</dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Company number</dt>
-            <dd class="govuk-summary-list__value">02050399</dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Status</dt>
-            <dd class="govuk-summary-list__value">
-              <!-- a set of if and elif conditions depending on the company status-->
-              Active
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Incorporation date</dt>
-            <dd class="govuk-summary-list__value">28 August 1986</dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Company type</dt>
-            <!-- upper is a way in Nunjucks to convert text into uppercase-->
-            <dd class="govuk-summary-list__value">Private limited company</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Registered office address</dt>
@@ -50,14 +30,19 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
           </div>
 
         </dl>
+
+        <p class="govuk-body"> If the address shown is incorrect, you will need to <a href="">update the registered office address</a>.</p>
+
+
+
        
-    <!--     {{ govukRadios({
-          classes: "govuk-radios",
+      {{ govukRadios({
+          classes: "govukCheckboxes",
           name: "aml-details-match",
           classes: "govuk-!-padding-top-2",
           fieldset: {
             legend: {
-              text: "Does the company name and registered office address match the details held by the AML supervisory body?",
+              text: "The company name and registered office address must be exactly the same as the details held by the AML supervisory body",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--s govuk-!-padding-top-3"
             }
@@ -72,7 +57,7 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
               text: "No"
             }
           ]
-        }) }} -->
+        }) }} 
 
 
      <!--    {{ govukInsetText({
@@ -84,10 +69,9 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
       -->
 
         {{ govukButton({
-          text: "Confirm and continue"
+          text: "Continue"
          }) }}
 
-         <p class="govuk-body"> <a href="company-lookup">Choose a different company</a> </p>
 
       </form>
 
