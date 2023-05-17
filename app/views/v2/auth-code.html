@@ -12,7 +12,7 @@ Enter the company authentication code – {{ serviceName }} – GOV.UK Prototype
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="aml-supervisor" method="post">
+      <form action="auth-code" method="post">
         {% if errorAuth == true %}
           {{ govukErrorSummary({
             titleText: "There is a problem",

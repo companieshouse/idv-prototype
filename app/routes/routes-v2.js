@@ -97,6 +97,27 @@ router.post('/v2/company-lookup', function (req, res) {
 })
 
 /*
+ * Confirm company
+ */
+router.post('/v2/confirm-company', function (req, res) {
+   
+    res.redirect('name-address-match-supervisor')
+    
+})
+
+ /*
+ * Name and address match those held with the supervisor
+ */
+ router.post('/v2/name-address-match-supervisor', function (req, res) {
+    
+    res.redirect('auth-code')
+
+   // res.redirect('stop-details-must-match')
+
+
+})
+
+/*
  * Auth code
  */
 router.post('/v2/auth-code', function (req, res) {
@@ -144,26 +165,9 @@ router.post('/v2/legal-form', function (req, res) {
 
 
 
-/*
- * Confirm company
- */
-router.post('/v2/confirm-company', function (req, res) {
-   
-    res.redirect('name-address-match-supervisor')
-    
-})
 
-  /*
- * Name and address match those held with the supervisor
- */
-router.post('/v2/name-address-match-supervisor', function (req, res) {
-    
-        res.redirect('aml-supervisor')
-    
-       // res.redirect('stop-details-must-match')
-    
 
-  })
+ 
 
 /*
  *  AML supervisory body
