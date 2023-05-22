@@ -149,21 +149,9 @@ router.post('/v2/acsp-address', function (req, res) {
  */
 router.post('/v2/acsp-address-confirm', function (req, res) {
      
-    res.redirect('legal-form')
-    
-})
-
-/*
- *  Not registered with Companies House - ACSP address 
- */
-router.post('/v2/legal-form', function (req, res) {
-     
     res.redirect('check-your-answers')
     
 })
-
-
-
 
 
 
