@@ -149,13 +149,10 @@ router.post('/v2/acsp-address', function (req, res) {
  */
 router.post('/v2/acsp-address-confirm', function (req, res) {
      
-    res.redirect('check-your-answers')
+    res.redirect('aml-supervisor')
     
 })
 
-
-
- 
 
 /*
  *  AML supervisory body
