@@ -101,20 +101,8 @@ router.post('/v2/company-lookup', function (req, res) {
  */
 router.post('/v2/confirm-company', function (req, res) {
    
-    res.redirect('name-address-match-supervisor')
-    
-})
-
- /*
- * Name and address match those held with the supervisor
- */
- router.post('/v2/name-address-match-supervisor', function (req, res) {
-    
     res.redirect('auth-code')
-
-   // res.redirect('stop-details-must-match')
-
-
+    
 })
 
 /*
@@ -153,11 +141,21 @@ router.post('/v2/acsp-address-confirm', function (req, res) {
     
 })
 
+ /*
+ *  AML supervisory body 
+ */
+ router.post('/v2/aml-supervisor', function (req, res) {
+    
+    res.redirect('name-address-match-supervisor')
+
+
+})
+//JAMES ACCOUNTING LTD is registered with Association of Chartered Certified Accountants for Anti-Money Laundering (AML) purposes.
 
 /*
- *  AML supervisory body
+ * Name and address match those held with the supervisor
  */
-router.post('/v2/aml-supervisor', function (req, res) {
+router.post('/v2/name-address-match-supervisor', function (req, res) {
      
     res.redirect('aml-number')
     
