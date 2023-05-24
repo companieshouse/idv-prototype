@@ -146,22 +146,11 @@ router.post('/v2/acsp-address-confirm', function (req, res) {
  */
  router.post('/v2/aml-supervisor', function (req, res) {
     
-     //If the company type is registered with Companies House, ask the user for the company number. 
-     if (req.session.data['registering-as'] === 'corporate' ||  req.session.data['registering-as'] === 'lp-slp') {
-        
-        res.redirect('name-address-match-supervisor')
-    }
-    // Otherwise ask for their name, address etc.
-    else{
-
-        res.redirect('aml-number')
-    }
-    
-   
+    res.redirect('name-address-match-supervisor')
 
 
 })
-//JAMES ACCOUNTING LTD is registered with Association of Chartered Certified Accountants for Anti-Money Laundering (AML) purposes.
+
 
 /*
  * Name and address match those held with the supervisor
