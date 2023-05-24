@@ -146,7 +146,18 @@ router.post('/v2/acsp-address-confirm', function (req, res) {
  */
  router.post('/v2/aml-supervisor', function (req, res) {
     
-    res.redirect('name-address-match-supervisor')
+     //If the company type is registered with Companies House, ask the user for the company number. 
+     if (req.session.data['registering-as'] === 'corporate' ||  req.session.data['registering-as'] === 'lp-slp') {
+        
+        res.redirect('name-address-match-supervisor')
+    }
+    // Otherwise ask for their name, address etc.
+    else{
+
+        res.redirect('aml-number')
+    }
+    
+   
 
 
 })
