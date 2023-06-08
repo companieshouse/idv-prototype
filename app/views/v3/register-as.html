@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/register-an-acsp/acsp-name" method="post">
+
+        {{ govukRadios({
+          name: "registering-as",
+          fieldset: {
+            legend: {
+              text: "What are you registering as?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "acsp",
+              text: "ACSP"
+            },
+            {
+              value: "presenter",
+              text: "Presenter"
+            },
+            {
+              value: "director",
+              text: "Officer"
+            },
+            {
+              value: "psc",
+              text: "Person with significant control (PSC)"
+            },
+            {
+              value: "psc-under-16",
+              text: "Person with significant control (PSC) under 16 years old"
+            },
+            {
+              value: "rle",
+              text: "Relevant legal entity"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

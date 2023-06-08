@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="statement-relevant-officer" method="post">
+
+          {{ govukRadios({
+          idPrefix: "mlro-declaration",
+          name: "registering-as",
+          fieldset: {
+            legend: {
+              text: "Confirm you are the relevant officer",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "We will use your details if we need to contact the agent."
+          },
+          items: [
+            {
+              value: "relevant-officer",
+              text: "I confirm that I am the relevant officer for the agent ",
+              hint: {
+                text: "This could be a director, partner or a Money Laundering Reporting Officer (MLRO)."
+              }
+            },
+            {
+              value: "someone-else",
+              text: "I am someone else"
+            }
+          ]
+        }) }}
+
+ <!--  <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What is a relevant officer?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    A relevant officer is someone who is responsible for anti-money laundering (AML) compliance within the business. 
+  </div>
+</details>  -->
+
+<!--
+<div class="govuk-inset-text">
+  A relevant officer is someone who is responsible for anti-money laundering (AML) compliance within the business. This could be a director, partner or a Money Laundering Reporting Officer (MLRO).
+</div> -->
+    
+<!--        {{ govukInsetText({
+          html: '
+              <h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+              <p>We will not show any information you provide on the public register. </p>'
+        }) }}
+-->
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form> 
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
