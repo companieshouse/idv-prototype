@@ -11,26 +11,28 @@ const router = govukPrototypeKit.requests.setupRouter()
  */
 router.post('/v3/start-page', function (req, res) {
      
-    res.redirect('sign-in')
+    res.redirect('type-of-acsp')
     
-}) 
+})
+
 
 /*
- * Sign in 
+ * What type of business are you registering?
  */
-router.post('/v3/sign-in', function (req, res) {
-     
+router.post('/v3/type-of-acsp', function (req, res) {
+  
     res.redirect('statement-relevant-officer')
-    
-}) 
+
+  }) 
+
 
 /*
- * Who is completing this registration?
+ * Confirm they are the relevant officer
  */
 router.post('/v3/statement-relevant-officer', function (req, res) {
      
-    //If it is the relevant officer, ask to confirm the statement. 
-    if (req.session.data['registering-as'] === 'relevant-officer') {
+      //If it is the relevant officer, ask to confirm the statement. 
+      if (req.session.data['registering-as'] === 'relevant-officer') {
         
         res.redirect('before-idv')
     }
@@ -39,18 +41,28 @@ router.post('/v3/statement-relevant-officer', function (req, res) {
 
         res.redirect('stop-not-relevant-officer')
     }
-
+    
 }) 
-
 
 /*
  * You need to prove your identity
  */
 router.post('/v3/before-idv', function (req, res) {
      
-    res.redirect('gov-login')
+    res.redirect('sign-in')
     
 }) 
+
+
+/*
+ * You need to prove your identity
+ */
+router.post('/v3/sign-in', function (req, res) {
+     
+    res.redirect('gov-login')
+    
+})
+
 
 /*
  * You need to prove your identity
@@ -66,14 +78,6 @@ router.post('/v3/gov-login', function (req, res) {
  */
 router.post('/v3/after-idv', function (req, res) {
      
-    res.redirect('type-of-acsp')
-    
-}) 
-
-/*
- * What type of business are you registering?
- */
-router.post('/v3/type-of-acsp', function (req, res) {
     //If the company type is registered with Companies House, ask the user for the company number. 
     if (req.session.data['registering-as'] === 'corporate' ||  req.session.data['registering-as'] === 'lp-slp') {
         
@@ -85,7 +89,8 @@ router.post('/v3/type-of-acsp', function (req, res) {
         res.redirect('acsp-name')
     }
 
-  }) 
+}) 
+
 
 /*
  * Registered with Companies House - Company lookup
