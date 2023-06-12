@@ -17,13 +17,24 @@ router.post('/v3/start-page', function (req, res) {
 
 
 /*
- * What type of business are you registering?
+ * What general type of business are you registering?
  */
 router.post('/v3/type-of-acsp', function (req, res) {
   
+    res.redirect('type-of-business')
+
+}) 
+
+/*
+ * What specific type of business are you registering?
+ */
+router.post('/v3/type-of-business', function (req, res) {
+  
     res.redirect('statement-relevant-officer')
 
-  }) 
+})
+
+
 
 
 /*

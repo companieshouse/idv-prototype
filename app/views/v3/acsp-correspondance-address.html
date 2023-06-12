@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/address-lookup/correspondence-address" method="post">
+
+        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
+
+        What is the director's correspondence address?
+
+
+        {# Radio options to select the correspondence address #}
+        {{ govukRadios({
+          idPrefix: "correspondence-address",
+          name: "correspondence-address",
+          fieldset: {
+            legend: {
+              text: title,
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in the UK."
+          },
+          items: [
+            {
+              value: "registered-office-address",
+              text: "15 New Road, Cardiff, Wales CF5 1BR",
+              hint: {
+                text: "This is the company's registered office address"
+              }
+            },
+            {
+              value: "different-address",
+              text: "A different address"
+            }
+          ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

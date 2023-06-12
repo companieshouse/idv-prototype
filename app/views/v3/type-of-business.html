@@ -13,11 +13,11 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="type-of-acsp" method="post">
+      <form class="form" action="type-of-business" method="post">
 
         
         {{ govukRadios({
-          name: "registering-as",
+          name: "business-type",
           fieldset: {
             legend: {
               text: "What type of business are you registering?",
@@ -26,32 +26,40 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
             }
           },
           hint: {
-            text: "You must be registered in the UK. "
+            text: "Select one option."
           },
           items: [
             {
-              value: "corporate",
-              text: "Limited company"
+              value: "auditors",
+              text: "Auditors, insolvency practitioners, external accountants and tax advisers"
             },
             {
-              value: "llp",
-              text: "Limited liability partnership (LLP)"
+              value: "indep",
+              text: "Independant legal professionals"
             },
             {
-              value: "lp",
-              text: "Limited partnership"
+              value: "trust",
+              text: "Trust or company service providers"
             },
             {
-              value: "scot-lp",
-              text: "Scottish limited partnership (SLP)"
+              value: "ci",
+              text: "Credit institutions"
             },
             {
-              value: "partnership",
-              text: "Partnership"
+              value: "fi",
+              text: "Financial institutions"
             },
             {
-              value: "sole-trader",
-              text: "Sole trader"
+              value: "ea",
+              text: "Estate agents"
+            },
+            {
+              value: "dealers",
+              text: "High value dealers"
+            },
+            {
+              value: "casino",
+              text: "Casinos"
             }
           ]
         }) }}
