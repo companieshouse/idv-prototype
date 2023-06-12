@@ -15,60 +15,56 @@
 
       <form class="form" action="statement-relevant-officer" method="post">
 
+          {{ govukRadios({
+          idPrefix: "mlro-declaration",
+          name: "registering-as",
+          fieldset: {
+            legend: {
+              text: "Confirm you are the relevant officer",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "We will use your details if we need to contact the agent."
+          },
+          items: [
+            {
+              value: "relevant-officer",
+              text: "I confirm that I am the relevant officer for the agent ",
+              hint: {
+                text: "This could be a director, partner or a Money Laundering Reporting Officer (MLRO)."
+              }
+            },
+            {
+              value: "someone-else",
+              text: "I am someone else"
+            }
+          ]
+        }) }}
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="relevant-officer-confirm">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                Confirm you are the relevant officer
-              </h1>
-            </legend>
-            <div id="relevant-officer-confirm" class="govuk-hint">
-              We will use your details if we need to contact the agent.
-            </div>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="relevant-officer" name="relevant-officer" type="radio" value="relevant-officer-yes" aria-describedby="relevant-officer-confirm">
-                <label class="govuk-label govuk-radios__label" for="relevant-officer">
-                  I confirm that I am the relevant officer for the agent
-                </label>
+ <!--  <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What is a relevant officer?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    A relevant officer is someone who is responsible for anti-money laundering (AML) compliance within the business. 
+  </div>
+</details>  -->
 
-                <!-- Limited company - director/MLRO -->
-                {% if ((data['registering-as'] === "corporate"))  %}
-                <div id="relevant-officer-yes-confirm" class="govuk-hint govuk-radios__hint">
-                  This could be a director or a Money Laundering Reporting Officer (MLRO).
-                </div>
-                
-                <!--  Sole trader -Director(THE SOLETRADER) and MLRO -->
-                {% elseif ((data['registering-as'] === "sole-trader")) %}
-                <div id="relevant-officer-yes-confirm" class="govuk-hint govuk-radios__hint">
-                  This could be a director or a Money Laundering Reporting Officer (MLRO).
-                </div>
-
-                <!-- Limited liability partnership (LLP) - member/MLRO -->
-                {% elseif ((data['registering-as'] === "llp")) %}
-                <div id="relevant-officer-yes-confirm" class="govuk-hint govuk-radios__hint">
-                  This could be a member or a Money Laundering Reporting Officer (MLRO).
-                </div>
-                <!-- Limited partnership, Scottish limited partnership (SLP) and Partnership  -- Partner/MLRO -->
-                {% else %}
-                <div id="relevant-officer-yes-confirm" class="govuk-hint govuk-radios__hint">
-                  This could be a partner or a Money Laundering Reporting Officer (MLRO).
-                </div>
-                {% endif %} 
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="relevant-officer-no" name="relevant-officer-no" type="radio" value="govuk-verify" aria-describedby="relevant-officer-no-confirm">
-                <label class="govuk-label govuk-radios__label" for="sign-in-2">
-                  I am someone else
-                </label>
-               <!--  <div id="relevant-officer-no-confirm" class="govuk-hint govuk-radios__hint">
-                  You’ll have an account if you’ve already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity.
-                </div> -->
-              </div>
-            </div>
-          </fieldset>
-        </div>
+<!--
+<div class="govuk-inset-text">
+  A relevant officer is someone who is responsible for anti-money laundering (AML) compliance within the business. This could be a director, partner or a Money Laundering Reporting Officer (MLRO).
+</div> -->
+    
+<!--        {{ govukInsetText({
+          html: '
+              <h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+              <p>We will not show any information you provide on the public register. </p>'
+        }) }}
+-->
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
