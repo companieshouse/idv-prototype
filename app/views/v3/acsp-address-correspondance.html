@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 {% block pageTitle %}
-  {{title}}
-  -
+
+What is the correspondence address? -
   {{serviceName}}
   - GOV.UK
 {% endblock %}
@@ -14,27 +14,19 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/address-lookup/correspondence-address" method="post">
+      <form action="acsp-address-correspondance" method="post">
 
         <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
 
-
-        What is the director's correspondence address?
-
-
         {# Radio options to select the correspondence address #}
         {{ govukRadios({
-          idPrefix: "correspondence-address",
           name: "correspondence-address",
           fieldset: {
             legend: {
-              text: title,
+              text:"What is the correspondence address?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
-          },
-          hint: {
-            text: "We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in the UK."
           },
           items: [
             {
