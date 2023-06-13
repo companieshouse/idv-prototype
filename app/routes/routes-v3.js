@@ -92,12 +92,12 @@ router.post('/v3/after-idv', function (req, res) {
     //If the company type is registered with Companies House, ask the user for the company number. 
     if ((req.session.data['registering-as'] === "partnership") ||  (req.session.data['registering-as'] === "sole-trader")){
         
-        res.redirect('company-lookup')
+        res.redirect('acsp-name') 
     }
     // Otherwise ask for their name, address etc.
     else{
 
-        res.redirect('acsp-name')
+        res.redirect('company-lookup')
     }
 
 }) 
@@ -149,13 +149,25 @@ router.post('/v3/acsp-address', function (req, res) {
 })
 
 /*
- *  Not registered with Companies House - ACSP address confirming lookup
+ *  Not registered with Companies House - ACSP correspondace address confirming lookup
  */
 router.post('/v3/acsp-address-confirm', function (req, res) {
+     
+    res.redirect('acsp-address-correspondance')
+    
+})
+
+
+/*
+ *  Not registered with Companies House - ACSP correspondace address confirming lookup
+ */
+router.post('/v3/acsp-address-correspondance', function (req, res) {
      
     res.redirect('aml-supervisor')
     
 })
+
+
 
  /*
  *  AML supervisory body 
