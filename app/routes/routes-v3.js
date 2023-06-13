@@ -43,7 +43,7 @@ router.post('/v3/type-of-business', function (req, res) {
 router.post('/v3/statement-relevant-officer', function (req, res) {
      
       //If it is the relevant officer, ask to confirm the statement. 
-      if (req.session.data['registering-as'] === 'relevant-officer') {
+      if (req.session.data['confirm-relevant-person'] === 'relevant-officer') {
         
         res.redirect('before-idv')
     }
