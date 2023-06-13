@@ -15,7 +15,13 @@
 
       <form class="form" action="statement-relevant-officer" method="post">
 
-          {{ govukRadios({
+         
+        
+      
+        
+        
+        
+        {{ govukRadios({
           idPrefix: "mlro-declaration",
           name: "registering-as",
           fieldset: {
@@ -43,28 +49,7 @@
           ]
         }) }}
 
- <!--  <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      What is a relevant officer?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    A relevant officer is someone who is responsible for anti-money laundering (AML) compliance within the business. 
-  </div>
-</details>  -->
 
-<!--
-<div class="govuk-inset-text">
-  A relevant officer is someone who is responsible for anti-money laundering (AML) compliance within the business. This could be a director, partner or a Money Laundering Reporting Officer (MLRO).
-</div> -->
-    
-<!--        {{ govukInsetText({
-          html: '
-              <h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
-              <p>We will not show any information you provide on the public register. </p>'
-        }) }}
--->
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

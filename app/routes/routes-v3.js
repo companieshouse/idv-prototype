@@ -90,7 +90,7 @@ router.post('/v3/gov-login', function (req, res) {
 router.post('/v3/after-idv', function (req, res) {
      
     //If the company type is registered with Companies House, ask the user for the company number. 
-    if (req.session.data['registering-as'] === 'corporate' ||  req.session.data['registering-as'] === 'lp-slp') {
+    if ((req.session.data['registering-as'] === "partnership") ||  (req.session.data['registering-as'] === "sole-trader")){
         
         res.redirect('company-lookup')
     }
