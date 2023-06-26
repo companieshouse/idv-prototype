@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="statement-relevant-officer" method="post">
+
+         
+
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="confirm-relevant-person-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Confirm you are the relevant officer
+              </h1>
+            </legend>
+            <div id="confirm-relevant-person-hint" class="govuk-hint">
+              We will use your details if we need to contact the agent.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="onfirm-relevant-person-item-hint">
+                <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                  I confirm that I am the relevant officer for the agent
+                </label>
+
+                      <!-- Limited company - director/MLRO -->
+                      {% if ((data['registering-as'] === "corporate"))  %}
+                      <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
+                      This could be a director or a Money Laundering Reporting Officer (MLRO).
+                      </div>
+                                     
+                      <!--  Sole trader -Director(THE SOLETRADER) and MLRO -->
+                      {% elseif ((data['registering-as'] === "sole-trader")) %}
+                      <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
+                      This means you are the sole trader.
+                      </div>
+                     
+                      <!-- Limited liability partnership (LLP) - member/MLRO -->
+                      {% elseif ((data['registering-as'] === "llp")) %}
+                      <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
+                      This could be a member or a Money Laundering Reporting Officer (MLRO).
+                      </div>
+                      <!-- Limited partnership, Scottish limited partnership (SLP) and Partnership  -- Partner/MLRO -->
+                      {% else %}
+                      <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
+                      This could be a partner or a Money Laundering Reporting Officer (MLRO).
+                      </div>
+                      {% endif %} 
+              
+            
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="someone-else" name="confirm-relevant-person" type="radio" value="someone-else" aria-describedby="onfirm-relevant-person-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="onfirm-relevant-person-2">
+                  I am someone else
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+  <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What is a relevant officer?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    A relevant officer is the person who is responsible for Anti-Money Laundering (AML) compliance within a business.
+  </div>
+</details>
+    
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form> 
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

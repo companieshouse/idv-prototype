@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="who-is-making-filing" method="post">
+
+        <h1 class="govuk-heading-l">What is your full name?</h1>
+
+        <!--{{ govukInput({
+          label: {
+            text: "Professional or honorary title (if relevant)"
+          },
+          classes: "govuk-input--width-20",
+          id: "title",
+          value: data['title'],
+          name: "title"
+        }) }}-->
+
+        {{ govukInput({
+          label: {
+            text: "First name"
+          },
+          hint: {
+            text: "Enter the director's full first name"
+          },
+          classes: "govuk-input--width-20",
+          id: "firstname",
+          value: data['firstname'],
+          name: "firstname"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Middle name or names (optional)"
+          },
+          hint: {
+            text: "Enter the director's full middle name or names"
+          },
+          classes: "govuk-input--width-20",
+          id: "middle-name",
+          value: data['middle-name'],
+          name: "middle-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name"
+          },
+          classes: "govuk-input--width-20",
+          id: "last-name",
+          value: data['last-name'],
+          name: "last-name"
+        }) }}
+
+
+      <!--   {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>Must match the AML supervisory body details.</p>"
+        }) }} -->
+
+       
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
