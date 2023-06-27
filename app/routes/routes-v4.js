@@ -151,7 +151,7 @@ router.post('/v4/acsp-address', function (req, res) {
 /*
  *  Not registered with Companies House - ACSP correspondace address confirming lookup
  */
-router.post('/v3/acsp-address-confirm', function (req, res) {
+router.post('/v4/acsp-address-confirm', function (req, res) {
      
     res.redirect('acsp-address-correspondance')
     
