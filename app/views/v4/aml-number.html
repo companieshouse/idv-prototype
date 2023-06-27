@@ -14,17 +14,21 @@ What is the Anti-money Laundering (AML) registration number? – {{ serviceName 
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="aml-number" method="post">
-
-        <span class="govuk-caption-l">MORRIS ACCOUNTING LTD</span>
+       
+        <h1 class="govuk-heading-l">What is the Anti-Money Laundering (AML) registration number?</h1>
+     
         
         {{ govukInput({
           label: {
-            text: "What is the Anti-Money Laundering (AML) registration number?",
-            classes: "govuk-label--l",
-            isPageHeading: true
+            text: "Registration number for Association of Accounting Technicians (AAT) "
           },
-          hint: {
-            text: "We will check this with your AML supervisory body."
+          id: "aml-reg-number",
+          name: "aml-reg-number"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Registration number for Association of Chartered Certified Accountants (ACCA)"
           },
           id: "aml-reg-number",
           name: "aml-reg-number"
