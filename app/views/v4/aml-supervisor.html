@@ -17,7 +17,7 @@ What is the name of the supervisory body? – {{ serviceName }} – GOV.UK Proto
 
         <span class="govuk-caption-l">MORRIS ACCOUNTING LTD</span>
 
-        {{ govukRadios({
+        {{ govukCheckboxes({
           name: "aml-supervisor",
           fieldset: {
             legend: {
@@ -25,6 +25,9 @@ What is the name of the supervisory body? – {{ serviceName }} – GOV.UK Proto
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
+          },
+          hint: {
+            text: "Select all that apply."
           },
           items: [
 
