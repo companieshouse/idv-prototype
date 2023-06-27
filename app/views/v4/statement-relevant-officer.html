@@ -39,24 +39,24 @@
                       <!-- Limited company - director/MLRO -->
                       {% if ((data['registering-as'] === "corporate"))  %}
                       <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
-                      This could be a director or a Money Laundering Reporting Officer (MLRO).
+                      You must be a company director.
                       </div>
                                      
                       <!--  Sole trader -Director(THE SOLETRADER) and MLRO -->
                       {% elseif ((data['registering-as'] === "sole-trader")) %}
                       <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
-                      This means you are the sole trader.
+                      You must be the sole trader.
                       </div>
                      
-                      <!-- Limited liability partnership (LLP) - member/MLRO -->
-                      {% elseif ((data['registering-as'] === "llp")) %}
+                      <!-- Limited partnership - member/MLRO -->
+                      {% elseif ((data['registering-as'] === "lp")) %}
                       <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
-                      This could be a member or a Money Laundering Reporting Officer (MLRO).
+                      You must be a general partner.
                       </div>
-                      <!-- Limited partnership, Scottish limited partnership (SLP) and Partnership  -- Partner/MLRO -->
+                      <!-- Limited liability partnership (LLP), Scottish limited partnership (SLP) and Partnership  -- Partner/MLRO -->
                       {% else %}
                       <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
-                      This could be a partner or a Money Laundering Reporting Officer (MLRO).
+                      You  must be a partner.
                       </div>
                       {% endif %} 
               
@@ -71,7 +71,7 @@
             </div>
           </fieldset>
         </div>
-
+<!--
   <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
@@ -82,7 +82,7 @@
     A relevant officer is the person who is responsible for Anti-Money Laundering (AML) compliance within a business.
   </div>
 </details>
-    
+    -->
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form> 
