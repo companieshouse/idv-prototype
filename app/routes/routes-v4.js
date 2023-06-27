@@ -133,7 +133,7 @@ router.post('/v4/auth-code', function (req, res) {
 /*
  *  Not registered with Companies House - ACSP name 
  */
-router.post('/v3/acsp-name', function (req, res) {
+router.post('/v4/acsp-name', function (req, res) {
      
     res.redirect('acsp-address')
     
