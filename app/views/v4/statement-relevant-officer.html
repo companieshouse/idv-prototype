@@ -23,7 +23,7 @@
           <fieldset class="govuk-fieldset" aria-describedby="confirm-relevant-person-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Are you a relevant officer?
+                What is your role?
               </h1>
             </legend>
             <!--<div id="confirm-relevant-person-hint" class="govuk-hint">
@@ -33,32 +33,32 @@
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="onfirm-relevant-person-item-hint">
                 <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                  I confirm that I am the relevant officer for the agent
+                  I am a director
                 </label>
 
                       <!-- Limited company - director/MLRO -->
-                      {% if ((data['registering-as'] === "corporate"))  %}
+                     <!-- {% if ((data['registering-as'] === "corporate"))  %}
                       <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
                       You must be a company director.
-                      </div>
+                      </div> -->
                                      
                       <!--  Sole trader -Director(THE SOLETRADER) and MLRO -->
-                      {% elseif ((data['registering-as'] === "sole-trader")) %}
+                      <!--{% elseif ((data['registering-as'] === "sole-trader")) %}
                       <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
                       You must be the sole trader.
-                      </div>
+                      </div> -->
                      
                       <!-- Limited partnership - member/MLRO -->
-                      {% elseif ((data['registering-as'] === "lp")) %}
+                     <!-- {% elseif ((data['registering-as'] === "lp")) %}
                       <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
                       You must be a general partner.
-                      </div>
+                      </div> -->
                       <!-- Limited liability partnership (LLP), Scottish limited partnership (SLP) and Partnership  -- Partner/MLRO -->
-                      {% else %}
+                     <!-- {% else %}
                       <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
                       You  must be a partner.
                       </div>
-                      {% endif %} 
+                      {% endif %} -->
               
             
               </div>
