@@ -14,57 +14,51 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="statement-relevant-officer" method="post">
-
-         
-
-
-
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="confirm-relevant-person-hint">
+          <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
                 What is your role?
               </h1>
             </legend>
-            <!--<div id="confirm-relevant-person-hint" class="govuk-hint">
-              We will use your details if we need to contact the agent.
-            </div> -->
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="onfirm-relevant-person-item-hint">
-                <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                  I am a director
-                </label>
-
-                      <!-- Limited company - director/MLRO -->
-                     <!-- {% if ((data['registering-as'] === "corporate"))  %}
-                      <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
-                      You must be a company director.
-                      </div> -->
+                
+                      <!-- Director -->
+                      {% if ((data['registering-as'] === "corporate"))  %}
+                      <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="onfirm-relevant-person-item-hint">
+                      <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                        I am a director
+                      </label>
                                      
-                      <!--  Sole trader -Director(THE SOLETRADER) and MLRO -->
-                      <!--{% elseif ((data['registering-as'] === "sole-trader")) %}
-                      <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
-                      You must be the sole trader.
-                      </div> -->
+                      <!-- Sole trader -->
+                      {% elseif ((data['registering-as'] === "sole-trader")) %}
+                      <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="onfirm-relevant-person-item-hint">
+                      <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+
+                        I am the sole trader
+                      </label>
                      
-                      <!-- Limited partnership - member/MLRO -->
-                     <!-- {% elseif ((data['registering-as'] === "lp")) %}
-                      <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
-                      You must be a general partner.
-                      </div> -->
+                      <!-- Limited partnership - general partner -->
+                     {% elseif ((data['registering-as'] === "lp")) %}
+                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="onfirm-relevant-person-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                        I am a general partner
+                      </label>
+
                       <!-- Limited liability partnership (LLP), Scottish limited partnership (SLP) and Partnership  -- Partner/MLRO -->
-                     <!-- {% else %}
-                      <div id="confirm-relevant-person-hint" class="govuk-hint govuk-radios__hint">
-                      You  must be a partner.
-                      </div>
-                      {% endif %} -->
+                     {% else %}
+                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="onfirm-relevant-person-item-hint">
+                      <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                      I am a partner
+                      </label>
+                      {% endif %}
               
-            
+        
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="someone-else" name="confirm-relevant-person" type="radio" value="someone-else" aria-describedby="onfirm-relevant-person-2-item-hint">
-                <label class="govuk-label govuk-radios__label" for="onfirm-relevant-person-2">
+                <input class="govuk-radios__input" id="someone-else" name="confirm-relevant-person" type="radio" value="someone-else">
+                <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
                   I am someone else
                 </label>
               </div>
