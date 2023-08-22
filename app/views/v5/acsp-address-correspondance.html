@@ -18,29 +18,20 @@ What is the correspondence address? -
 
         <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
 
-        {# Radio options to select the correspondence address #}
-        {{ govukRadios({
-          name: "correspondence-address",
-          fieldset: {
-            legend: {
-              text:"What is the correspondence address?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
+        {{ govukInput({
+          label: {
+            text: "What email address do you want to use for correspondence?",
+            isPageHeading: true,
+            classes: "govuk-label--l"
           },
-          items: [
-            {
-              value: "registered-office-address",
-              text: "15 New Road, Cardiff, Wales CF5 1BR",
-              hint: {
-                text: "This is the company's registered office address"
-              }
-            },
-            {
-              value: "different-address",
-              text: "A different address"
-            }
-          ]
+          hint: {
+            text: "We’ll only use this to send you a receipt"
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false
         }) }}
 
 

@@ -49,7 +49,7 @@ router.post('/v5/statement-relevant-officer', function (req, res) {
         //sole traders need to verify their identity
         if ((req.session.data['registering-as'] === "sole-trader")){
         
-            res.redirect('before-idv')
+            res.redirect('sign-in')
         }
         // Otherwise ask for their name, address etc.
         else{
@@ -77,14 +77,14 @@ router.post('/v5/before-idv', function (req, res) {
 
 
 /*
- * You need to prove your identity
+ * Sign in 
  */
 router.post('/v5/sign-in', function (req, res) {
      
    
     if ((req.session.data['registering-as'] === "sole-trader")){
         
-        res.redirect('gov-login')
+        res.redirect('enter-uvid-code')
     }
     // Otherwise ask for their name, address etc.
     else{
@@ -94,6 +94,27 @@ router.post('/v5/sign-in', function (req, res) {
 
     
 })
+
+
+/*
+ * sole trader - do you have a uvid 
+ */
+router.post('/v5/enter-uvid-code', function (req, res) {
+     
+   
+    if ((req.session.data['enter-uvid'] === "yes")){
+        
+        res.redirect('acsp-name')
+    }
+    // Otherwise ask for their name, address etc.
+    else{
+
+        res.redirect('before-idv')
+    }
+
+    
+})
+
 
 
 /*
@@ -144,9 +165,36 @@ router.post('/v5/auth-code', function (req, res) {
 })
 
 /*
- *  Not registered with Companies House - ACSP name 
+ *  Not registered with Companies House - Name
  */
 router.post('/v5/acsp-name', function (req, res) {
+     
+    res.redirect('date-of-birth')
+    
+})
+
+/*
+ *  Not registered with Companies House - Date of birth
+ */
+router.post('/v5/date-of-birth', function (req, res) {
+     
+    res.redirect('nationality')
+    
+})
+
+/*
+ *  Not registered with Companies House - Date of birth
+ */
+router.post('/v5/nationality', function (req, res) {
+     
+    res.redirect('home-address')
+    
+})
+
+/*
+ *  Not registered with Companies House - Home address
+ */
+router.post('/v5/home-address', function (req, res) {
      
     res.redirect('acsp-address')
     

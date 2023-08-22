@@ -39,6 +39,8 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
   </div>
 </div>
 
+<p> Summary: Updating the flow to use the standalone journey for verifying a users identity and reviewing data for sole traders and firms.</p>
+
 
 <div class="govuk-tabs" data-module="govuk-tabs">
   <h2 class="govuk-tabs__title">
@@ -103,24 +105,43 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
 
       <h2 class="govuk-heading-m" id="verify">Sole trader</h2>
 
+
       <ul class="govuk-list govuk-list--bullet">
+
         <li>
-          <a class="govuk-list govuk-link--no-visited-state" href="before-idv">CH handover page - You need to verify your identity</a>
+          <a class="govuk-list govuk-link--no-visited-state" href="sign-in">*** Move **** Sign in</a>
         </li>
 
         <li>
-          <a class="govuk-list govuk-link--no-visited-state" href="sign-in">Sign in</a>
+          <a class="govuk-list govuk-link--no-visited-state" href="sign-in">*** ADD ****Do you have a Companies House user ID?</a>
         </li>
 
+        <!-- <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="before-idv">*** Remove CH handover page - You need to verify your identity</a>
+        </li>
+
+
+
         <li>
-          <a class="govuk-list govuk-link--no-visited-state" href="gov-login">Prove your identity with GOV.UK One Login</a>
+          <a class="govuk-list govuk-link--no-visited-state" href="gov-login"> **** Remove Prove your identity with GOV.UK One Login</a>
         </li>
         <li>
-          <a class="govuk-list govuk-link--no-visited-state" href="after-idv">Bringing the user back to CH - You now need to tell us about the business</a>
-        </li>
+          <a class="govuk-list govuk-link--no-visited-state" href="after-idv">**** Remove Bringing the user back to CH - You now need to tell us about the business</a>
+        </li> -->
+        
+        <!-- forename and surname, unless they’re a peer or known by a title-->
 
           <li>
-            <a class="govuk-list govuk-link--no-visited-state" href="register-an-acsp/acsp-name">Name</a>
+            <a class="govuk-list govuk-link--no-visited-state" href="acsp-name">Name</a>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="date-of-birth">Date of birth</a>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="nationality">Nationality</a>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="home-address"> *** Review --- the part of the UK in which the person is usually resident, or the country or state resident outside of the UK </a>
           </li>
           <li>
             <a class="govuk-list govuk-link--no-visited-state" href="acsp-address">What is the registered office address?
@@ -131,7 +152,7 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
             </a>
           </li>
           <li>
-            <a class="govuk-list govuk-link--no-visited-state" href="acsp-address-correspondance">What is the correspondence address?
+            <a class="govuk-list govuk-link--no-visited-state" href="acsp-address-correspondance">*** Review What is the correspondence email address?
             </a>
           </li>
 
