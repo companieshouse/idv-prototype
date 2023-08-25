@@ -156,13 +156,23 @@ router.post('/v5/confirm-company', function (req, res) {
 })
 
 /*
- * Auth code
+ * Auth code  ***have updated this to go to correspondence email as we need to collect this for firms
  */
 router.post('/v5/auth-code', function (req, res) {
      
-    res.redirect('aml-supervisor')
+    res.redirect('acsp-address-correspondance')
     
 })
+
+/*
+ *  Correspondence email
+*/
+
+router.post('/v5/acsp-address-correspondance', function (req, res) {
+     
+    res.redirect('aml-supervisor')
+    
+})   
 
 /*
  *  Not registered with Companies House - Name
@@ -210,23 +220,23 @@ router.post('/v5/acsp-address', function (req, res) {
 })
 
 /*
- *  Not registered with Companies House - ACSP correspondace address confirming lookup
+ *  Not registered with Companies House - ACSP correspondace address confirming lookup ***I've updated this to go to the AML supervisor page as I don't think correspondence email is needed for sole traders. 
  */
 router.post('/v5/acsp-address-confirm', function (req, res) {
      
-    res.redirect('acsp-address-correspondance')
+    res.redirect('aml-supervisor')
     
 })
 
 
 /*
  *  Not registered with Companies House - ACSP correspondace address confirming lookup
- */
+
 router.post('/v5/acsp-address-correspondance', function (req, res) {
      
     res.redirect('aml-supervisor')
     
-})
+})   */
 
 
 

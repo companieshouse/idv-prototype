@@ -14,24 +14,18 @@ You need to prove your identity – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        You need to prove your identity
+        You need to verify your identity
       </h1>
 
-      <p class="govuk-body">To register an authorised agent, you'll need to prove that you are who you say you are. </p>
+      <p class="govuk-body">You need a Companies House user ID to register as an authorised agent.</p>
       
 
 
-      {{ govukInsetText({
-        text: "The information you give will only be used to verify your identity. We will not show this information on the Companies House register. "
-      }) }}
-
-      <p class="govuk-body">You'll need to sign in or create a Companies House account.</p>
 
 
       <form class="form" action="before-idv" method="post">
 
-        <p class="govuk-body">
-          <a href="https://prove-your-identity-prototype.herokuapp.com/v5/pre-one-login/start" class="govuk-link" rel="noreferrer noopener" target="_blank">Verify your identity for Companies House (opens in new tab)</a>
+        <p class="govuk-body"> You'll need to <a href="https://prove-your-identity-prototype.herokuapp.com/v5/pre-one-login/start" class="govuk-link" rel="noreferrer noopener" target="_blank">verify your identity for Companies House (opens in new tab)</a> to get your user ID before you apply.
         </p>
 
       </form>
