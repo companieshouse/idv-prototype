@@ -17,6 +17,207 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
       <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
 
+
+      <!-- Sole traders -->
+
+      {% if (data['registering-as'] === "sole-trader")%}
+
+      <h2 class="govuk-heading-m">Your details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            James Morris
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            I am the sole trader
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business sector 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Auditors, insolvency practitioners, external accountants and tax advisers
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Companies House user ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            RFF05623
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Companies House user ID</span>
+            </a>
+          </dd>
+        </div>
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            8 August 1988
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            British
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Where do you live?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            England
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street
+            <br>London
+            <br>SE23 6FH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden">Correspondence address</span>
+            </a>
+          </dd>
+        </div>
+
+        
+      </dl>
+
+
+
+
+
+      <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            AML professional supervisory bodies
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Association of Accounting Technicians</li>
+              <li>Association of Chartered Certified Accountants</li>
+            </ul>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> AML professional supervisory body</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            AML membership numbers
+          </dt>
+          <dd class="govuk-summary-list__value">
+                        <ul class="govuk-list govuk-list--bullet">
+              <li>87654321</li>
+              <li>554-6325-4555</li>
+            </ul>
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> AML registration number</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+    <!--   {{ govukCheckboxes({
+        idPrefix: "diligence",
+        name: "diligence",
+        fieldset: {
+          legend: {
+            text: "Declaration ",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "agree",
+            text: "I confirm that the ...  "
+          }
+        ]
+      }) }} -->
+
+<!--
+      {{ govukInsetText({
+        html: '
+            <p>We will not show any information you provide on the public register. </p>'
+      }) }}  -->
+
+
+
+    
+    
+    
+      <!-- Firms -->
+
+      {% else %}
+
       <h2 class="govuk-heading-m">Your details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -40,7 +241,12 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           <dd class="govuk-summary-list__value">
             I am a director
           </dd>
-
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
         </div>
       </dl>
 
@@ -65,6 +271,34 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            Company number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            02050399
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business sector 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Auditors, insolvency practitioners, external accountants and tax advisers
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Registered office address
           </dt>
           <dd class="govuk-summary-list__value">
@@ -78,12 +312,23 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Correspondance address
+            Correspondance address **Check if required**
           </dt>
           <dd class="govuk-summary-list__value">
             56 Hope Street 
             <br> Cardiff 
             <br> CF26 JOH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div> 
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondance email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            j-morris-accounting@gmail.com
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -104,10 +349,6 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             
             Partnership
 
-            <!-- Sole trader -->
-            {% elif (data['registering-as'] === "sole-trader")%}
-
-            Sole trader
 
             {% endif %}
           </dd>
@@ -180,6 +421,13 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         html: '
             <p>We will not show any information you provide on the public register. </p>'
       }) }}  -->
+
+
+      {% endif %}
+
+
+
+      
 
     
       <form action="/payment" method="post" novalidate>
