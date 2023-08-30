@@ -160,9 +160,20 @@ router.post('/v5/confirm-company', function (req, res) {
  */
 router.post('/v5/auth-code', function (req, res) {
      
+    res.redirect('director-selection')
+    
+})
+
+/*
+ * Director selection   
+ */
+router.post('/v5/director-selection', function (req, res) {
+     
     res.redirect('acsp-address-correspondance')
     
 })
+
+
 
 /*
  *  Correspondence email
