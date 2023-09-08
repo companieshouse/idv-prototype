@@ -18,7 +18,7 @@
       <form action="home-address" method="post">
 
 
-       <!-- {{ govukRadios({
+        {{ govukRadios({
           name: "where-do-you-live",
           fieldset: {
             legend: {
@@ -52,14 +52,7 @@
               text: "Country or state outside of the UK"
             }
           ]
-        }) }} -->
-
-        <div class="govuk-form-group ">
-          <h1 class="govuk-label-wrapper"> <label for="autocomplete-default" class="govuk-label govuk-label--l">Where do you live?</label></h1> 
-
-          <p class="govuk-hint">Start typing a nationality, then choose from the list.</p>
-          <div id="nationality" class="autocomplete-wrapper"></div>
-        </div>
+        }) }} 
 
 
         {{ govukButton({
@@ -69,5 +62,5 @@
     </div>
   </div>
   <script src="/public/javascripts/accessible-autocomplete.js"></script>
-  <script src="/public/javascripts/nationality-appoint.js"></script>
+  <script src="/public/javascripts/region-country-appoint.js"></script>
 {% endblock %}

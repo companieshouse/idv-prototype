@@ -84,7 +84,7 @@ router.post('/v5/sign-in', function (req, res) {
    
     if ((req.session.data['registering-as'] === "sole-trader")){
         
-        res.redirect('enter-uvid-code')
+        res.redirect('before-idv')
     }
     // Otherwise ask for their name, address etc.
     else{
