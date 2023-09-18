@@ -16,7 +16,7 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
       <form class="form" action="type-of-acsp" method="post">
 
         
-        {{ govukRadios({
+  <!--       {{ govukRadios({
           name: "registering-as",
           fieldset: {
             legend: {
@@ -31,7 +31,7 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
           items: [
             {
               value: "corporate",
-              text: "Limited company"
+              text: "Private limited company"
             },
             {
               value: "llp",
@@ -48,6 +48,51 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
             {
               value: "partnership",
               text: "Partnership"
+            },
+            {
+              value: "sole-trader",
+              text: "Sole trader"
+            }
+          ]
+        }) }} -->
+
+        {{ govukRadios({
+          name: "registering-as",
+          fieldset: {
+            legend: {
+              text: "What type of business are you registering?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "You must be registered in the UK. "
+          },
+          items: [
+            {
+              value: "corporate",
+              text: "Private limited company"
+            },
+            {
+              value: "puc",
+              text: "Corporate body"
+            },
+            {
+              value: "puc",
+              text: "Public limited company"
+            },
+
+            {
+              value: "partnership-ch",
+              text: "Partnership, registered with Companies House"
+            },
+            {
+              value: "partnership-not-ch",
+              text: "Partnership, not registered with Companies House"
+            },
+            {
+              value: "unincorporated-body",
+              text: "Unregistered company"
             },
             {
               value: "sole-trader",

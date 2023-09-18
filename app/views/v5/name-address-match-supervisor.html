@@ -14,7 +14,9 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
       <!-- The action will need to change depending on the location of the confirm-company page -->
       <form action="name-address-match-supervisor" method="post">
 
-        <h1 class="govuk-heading-l">Confirm the details are the same as those held by the AML supervisory body</h1>
+        <h1 class="govuk-heading-l">Details do not match the ones held by the AML supervisors </h1>
+        
+        <!-- Confirm the details are the same as those held by the AML supervisory body -->
 
          <!-- Sole traders -->
 
@@ -23,14 +25,42 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
         <dl class="govuk-summary-list">
 
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Business name</dt>
-            <dd class="govuk-summary-list__value">MORRIS ACCOUNTING LTD</dd>
+            <dt class="govuk-summary-list__key">Name</dt>
+            <dd class="govuk-summary-list__value">James Morris</dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Registered office address</dt>
+            <dt class="govuk-summary-list__key">AML professional supervisory bodies</dt>
             <dd class="govuk-summary-list__value">
               <!-- if statements are used to stop gaps showing where there is missing information -->
               72 Guild Street <br> London <br> SE23 6FH
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              AML professional supervisory bodies
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Association of Accounting Technicians</li>
+                <li>Association of Chartered Certified Accountants</li>
+              </ul>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> AML professional supervisory body</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">AML membership numbers</dt>
+            <dd class="govuk-summary-list__value">
+              
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>87654321</li>
+                  <li>554-6325-4555</li>
+                </ul>
+                <dd class="govuk-summary-list__actions"><a href="">Change</a></dd>
             </dd>
           </div>
 
@@ -41,9 +71,6 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
 
     <p class="govuk-body">If the details held by the Anti-Money Laundering (AML) supervisory body are incorrect, you must update these before you apply to register the authorised agent.</p>
 
-
-
-
         <!-- Firms -->
 
       {% else %}
@@ -51,35 +78,54 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
       <dl class="govuk-summary-list">
 
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Your name</dt>
-          <dd class="govuk-summary-list__value">Kate Williams</dd>
+          <dt class="govuk-summary-list__key">Company name</dt>
+          <dd class="govuk-summary-list__value">MORRIS ACCOUNTING LTD</dd>
           <dd class="govuk-summary-list__actions"><a href="">Change</a></dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Correspondence address</dt>
+          <dt class="govuk-summary-list__key">
+            AML professional supervisory bodies
+          </dt>
           <dd class="govuk-summary-list__value">
-            <!-- if statements are used to stop gaps showing where there is missing information -->
-            72 Guild Street <br> London <br> SE23 6FH
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Association of Accounting Technicians</li>
+              <li>Association of Chartered Certified Accountants</li>
+            </ul>
           </dd>
-          <dd class="govuk-summary-list__actions"><a href="">Change</a></dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> AML professional supervisory body</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">AML membership numbers</dt>
+          <dd class="govuk-summary-list__value">
 
+              <ul class="govuk-list govuk-list--bullet">
+                <li>87654321</li>
+                <li>554-6325-4555</li>
+              </ul>
+              <dd class="govuk-summary-list__actions"><a href="">Change</a></dd>
+          </dd>
         </div>
 
       </dl>
 
        <!--    <p class="govuk-body">The company name and registered office address must be exactly the same as the details held by the anti-money laundering (AML) supervisory body.</p> -->
 
-       <p class="govuk-body"> If the address shown is incorrect, you will need to <a href="">update the registered office address</a>.</p>
-
-       <p class="govuk-body">If the details held by the Anti-Money Laundering (AML) supervisory body are incorrect, you must update these before you apply to register the authorised agent.</p>
- 
 
 
+       <!-- <p class="govuk-body"> If the address shown is incorrect, you will need to <a href="">update the registered office address</a>.</p> -->
 
+       {{ govukInsetText({
+        text: "If the details held by the Anti-Money Laundering (AML) supervisory body are incorrect, you must update these before you apply to register the authorised agent."
+      }) }}
 
       {% endif %}
 
-      {{ govukCheckboxes({
+   <!--   {{ govukCheckboxes({
         idPrefix: "aml-details-match",
         name: "aml-details-match",
           classes: "govuk-!-padding-top-2",
@@ -97,7 +143,7 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
             checked: checked("details-match", "agree")
           }
           ]
-        }) }} 
+        }) }} -->
 
 
      <!--    {{ govukInsetText({

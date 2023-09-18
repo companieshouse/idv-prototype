@@ -21,19 +21,9 @@ router.post('/v5/start-page', function (req, res) {
  */
 router.post('/v5/type-of-acsp', function (req, res) {
   
-    res.redirect('type-of-business')
-
-}) 
-
-/*
- * What specific type of business are you registering?
- */
-router.post('/v5/type-of-business', function (req, res) {
-  
     res.redirect('statement-relevant-officer')
 
-})
-
+}) 
 
 
 
@@ -81,9 +71,16 @@ router.post('/v5/before-idv', function (req, res) {
  */
 router.post('/v5/sign-in', function (req, res) {
      
-   
-    if ((req.session.data['registering-as'] === "sole-trader")){
+    if ((req.session.data['registering-as'] === "sole-trader") && req.session.data['gChangesMade'] == true ){
         
+
+        res.redirect('acsp-name')
+    }
+    else if ((req.session.data['registering-as'] === "sole-trader")){
+        
+        // they have have done ID verification 
+        req.session.data['gChangesMade'] = true;
+
         res.redirect('before-idv')
     }
     // Otherwise ask for their name, address etc.
@@ -169,9 +166,51 @@ router.post('/v5/auth-code', function (req, res) {
  */
 router.post('/v5/director-selection', function (req, res) {
      
-    res.redirect('acsp-address-correspondance')
+    res.redirect('check-director-details')
     
 })
+
+/*
+ * Director details check   
+ */
+router.post('/v5/check-director-details', function (req, res) {
+     
+    res.redirect('type-of-business')
+    
+})
+
+/*
+ * What specific type of business are you registering?
+ */
+router.post('/v5/type-of-business', function (req, res) {
+
+
+    //if other is selected
+
+    if ((req.session.data['business-type'] === "other")){
+        
+        res.redirect('type-of-business-other')
+    }
+    // Otherwise ask for their name, address etc.
+    else{
+
+        res.redirect('acsp-address-correspondance')
+    } 
+
+})
+
+
+/*
+ *  other business type
+*/
+
+router.post('/v5/type-of-business-other', function (req, res) {
+     
+    res.redirect('acsp-address-correspondance')
+    
+})   
+
+
 
 
 
@@ -256,10 +295,21 @@ router.post('/v5/acsp-address-correspondance', function (req, res) {
  */
  router.post('/v5/aml-supervisor', function (req, res) {
     
-    res.redirect('name-address-match-supervisor')
+    res.redirect('aml-number')
 
 
 })
+
+
+/*
+ *  AML number
+ */
+router.post('/v5/aml-number', function (req, res) {
+     
+    res.redirect('name-address-match-supervisor')
+    
+})
+
 
 
 /*
@@ -267,27 +317,19 @@ router.post('/v5/acsp-address-correspondance', function (req, res) {
  */
 router.post('/v5/name-address-match-supervisor', function (req, res) {
      
-    res.redirect('aml-number')
+    res.redirect('check-your-answers')
     
 })
 
-/*
- *  AML number
- */
-router.post('/v5/aml-number', function (req, res) {
-     
-    res.redirect('terms-and-conditions')
-    
-})
 
 /*
  *  Terms and conditions
- */
+ 
 router.post('/v5/terms-and-conditions', function (req, res) {
      
     res.redirect('check-your-answers')
     
-})
+}) */
 
 /*
  *  Check your answers
