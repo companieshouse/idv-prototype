@@ -12,13 +12,73 @@ What is the correspondence address? -
 }) }}
 {% endblock %}
 {% block content %}
+
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="acsp-address-correspondance" method="post">
 
         <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
 
-        {{ govukInput({
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+
+{% set phoneHtml %}
+{{ govukInput({
+  id: "other-email",
+  name: "otherEmail",
+  type: "other-email",
+  autocomplete: "other-email",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Email address"
+  }
+}) }}
+{% endset -%}
+
+
+
+{{ govukRadios({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "What email address should we use for correspondence?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "We'll use this to send the authorised agent number."
+  },
+  items: [
+    {
+      value: "email",
+      text: "james@morrisaccounting.com"
+    },
+    {
+      value: "other-email",
+      text: "A different email address",
+      conditional: {
+        html: phoneHtml
+      }
+    }
+  ]
+}) }}
+
+
+
+
+
+
+
+
+
+
+   <!--     {{ govukInput({
           label: {
             text: "What email address do you want to use for correspondence?",
             isPageHeading: true,
@@ -32,7 +92,7 @@ What is the correspondence address? -
           type: "email",
           autocomplete: "email",
           spellcheck: false
-        }) }}
+        }) }}    -->
 
 
         {{ govukButton({
