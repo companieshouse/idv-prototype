@@ -83,10 +83,15 @@ router.post('/v5/sign-in', function (req, res) {
 
         res.redirect('before-idv')
     }
-    // Otherwise ask for their name, address etc.
-    else{
+    //limited company or corporate or PLC or partnership reg with CH
+    else if ((req.session.data['registering-as'] === "plc")| (req.session.data['registering-as'] === "corporate")| (req.session.data['registering-as'] === "puc") | (req.session.data['registering-as'] === "partnership-ch")){
 
         res.redirect('company-lookup')
+    }
+    // partnership-not-ch | "unincorporated-body
+    else{
+
+        res.redirect('acsp-name')
     }
 
     
