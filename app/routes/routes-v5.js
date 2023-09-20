@@ -199,7 +199,7 @@ router.post('/v5/type-of-business', function (req, res) {
     // Otherwise ask for their name, address etc.
     else{
 
-        res.redirect('acsp-address-correspondance')
+        res.redirect('email-address-correspondance')
     } 
 
 })
@@ -211,7 +211,7 @@ router.post('/v5/type-of-business', function (req, res) {
 
 router.post('/v5/type-of-business-other', function (req, res) {
      
-    res.redirect('acsp-address-correspondance')
+    res.redirect('email-address-correspondance')
     
 })   
 
@@ -223,7 +223,7 @@ router.post('/v5/type-of-business-other', function (req, res) {
  *  Correspondence email
 */
 
-router.post('/v5/acsp-address-correspondance', function (req, res) {
+router.post('/v5/email-address-correspondance', function (req, res) {
      
     res.redirect('aml-supervisor')
     
@@ -252,16 +252,26 @@ router.post('/v5/date-of-birth', function (req, res) {
  */
 router.post('/v5/nationality', function (req, res) {
      
-    res.redirect('home-address')
+    res.redirect('location-lives')
     
 })
 
 /*
  *  Not registered with Companies House - Home address
  */
-router.post('/v5/home-address', function (req, res) {
-     
-    res.redirect('acsp-address')
+router.post('/v5/location-lives', function (req, res) {
+
+        //if sole trader go to correspondance address page
+    if ((req.session.data['registering-as'] == "sole-trader")){
+        
+        res.redirect('address-correspondance-lookup')
+    }
+    // Otherwise ask for their business name, address etc.
+    else{
+
+        res.redirect('acsp-name')
+    } 
+    
     
 })
 
