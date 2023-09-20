@@ -17,6 +17,9 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="home-address" method="post">
 
+        <!-- sole trader - state or county -->
+        {% if (data['registering-as'] === "sole-trader")%}
+
 
         {{ govukRadios({
           name: "where-do-you-live",
@@ -55,6 +58,21 @@
         }) }} 
 
 
+        <!-- others - Country --> 
+        {% else %}
+
+        <div class="govuk-form-group ">
+          <h1 class="govuk-label-wrapper"> <label for="autocomplete-default" class="govuk-label govuk-label--l">Where do you live?</label></h1> 
+
+          <p class="govuk-hint">Start typing a country, then choose from the list.</p>
+          <div id="nationality" class="autocomplete-wrapper govuk-!-width-two-thirds"></div>
+        </div>
+
+
+
+        {% endif %}
+
+
         {{ govukButton({
           text: "Continue"
         }) }}
@@ -63,4 +81,5 @@
   </div>
   <script src="/public/javascripts/accessible-autocomplete.js"></script>
   <script src="/public/javascripts/region-country-appoint.js"></script>
+  <script src="/public/javascripts/nationality-appoint.js"></script>
 {% endblock %}
