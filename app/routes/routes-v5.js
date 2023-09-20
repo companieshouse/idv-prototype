@@ -74,7 +74,7 @@ router.post('/v5/sign-in', function (req, res) {
     if ((req.session.data['registering-as'] === "sole-trader") && req.session.data['gChangesMade'] == true ){
         
 
-        res.redirect('acsp-name')
+        res.redirect('name')
     }
     else if ((req.session.data['registering-as'] === "sole-trader")){
         
@@ -91,7 +91,7 @@ router.post('/v5/sign-in', function (req, res) {
     // partnership-not-ch | "unincorporated-body
     else{
 
-        res.redirect('acsp-name')
+        res.redirect('name')
     }
 
     
@@ -106,7 +106,7 @@ router.post('/v5/enter-uvid-code', function (req, res) {
    
     if ((req.session.data['enter-uvid'] === "yes")){
         
-        res.redirect('acsp-name')
+        res.redirect('name')
     }
     // Otherwise ask for their name, address etc.
     else{
@@ -134,7 +134,7 @@ router.post('/v5/gov-login', function (req, res) {
 router.post('/v5/after-idv', function (req, res) {
      
    
-    res.redirect('acsp-name') 
+    res.redirect('name') 
 
 }) 
 
@@ -232,7 +232,7 @@ router.post('/v5/email-address-correspondance', function (req, res) {
 /*
  *  Not registered with Companies House - Name
  */
-router.post('/v5/acsp-name', function (req, res) {
+router.post('/v5/name', function (req, res) {
      
     res.redirect('date-of-birth')
     
@@ -269,18 +269,33 @@ router.post('/v5/location-lives', function (req, res) {
     // Otherwise ask for their business name, address etc.
     else{
 
-        res.redirect('acsp-name')
+        res.redirect('name')
     } 
     
     
 })
 
 /*
+ * correspondance address lookup
+    //if number and postcode added address-correspondance-confirm
+ 
+    // only postcode  address-correspondance-list
+ */
+router.post('/v5/address-correspondance-lookup', function (req, res) {
+
+
+     
+    res.redirect('address-correspondance-confirm')
+    
+})
+
+
+/*
  *  Not registered with Companies House - ACSP address 
  */
-router.post('/v5/acsp-address', function (req, res) {
+router.post('/v5/address-correspondance-confirm', function (req, res) {
      
-    res.redirect('acsp-address-confirm')
+    res.redirect('type-of-business')
     
 })
 
