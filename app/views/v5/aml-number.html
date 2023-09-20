@@ -15,7 +15,16 @@ What is the Anti-money Laundering (AML) registration number? – {{ serviceName 
 
       <form class="form" action="aml-number" method="post">
        
-        <h1 class="govuk-heading-l">What is the membership number?</h1>
+
+
+<h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--l" for="event-name">
+      What is the membership number?
+    </label>
+  </h1>
+  <div id="event-name-hint" class="govuk-hint">
+    We will check this with the AML supervisory body.
+  </div>
      
         
         {{ govukInput({
