@@ -12,6 +12,14 @@ What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="address-correspondance-lookup" method="post">
+         
+        <!-- ************* sole trader - The address needs to be in UK ****** -->
+         {% if (data['registering-as'] === "sole-trader")%}
+
+
+         {% endif %}
+
 
         {% call govukFieldset({
           legend: {
@@ -46,7 +54,7 @@ What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype
         }) }}
 
 
-        <form class="form" action="acsp-address" method="post">
+        
           {{ govukButton({
             text: "Find address"
           }) }}
@@ -54,7 +62,7 @@ What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype
         </form>
 
         <p class="govuk-body">
-          <a href="/register-an-acsp/address-lookup/acsp-address-manual" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
+          <a href="/register-an-acsp/address-lookup/address-correspondance-manual" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
         </p>
         
         {% endcall %}

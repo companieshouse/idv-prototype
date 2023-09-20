@@ -74,7 +74,7 @@ router.post('/v5/sign-in', function (req, res) {
     if ((req.session.data['registering-as'] === "sole-trader") && req.session.data['gChangesMade'] == true ){
         
 
-        res.redirect('acsp-name')
+        res.redirect('name')
     }
     else if ((req.session.data['registering-as'] === "sole-trader")){
         
@@ -84,14 +84,14 @@ router.post('/v5/sign-in', function (req, res) {
         res.redirect('before-idv')
     }
     //limited company or corporate or PLC or partnership reg with CH
-    else if ((req.session.data['registering-as'] === "plc")| (req.session.data['registering-as'] === "corporate")| (req.session.data['registering-as'] === "puc") | (req.session.data['registering-as'] === "partnership-ch")){
+    else if ((req.session.data['registering-as'] === "plc")| (req.session.data['registering-as'] === "corporate")| (req.session.data['registering-as'] === "ltd")| (req.session.data['registering-as'] === "puc") | (req.session.data['registering-as'] === "partnership-ch")){
 
         res.redirect('company-lookup')
     }
     // partnership-not-ch | "unincorporated-body
     else{
 
-        res.redirect('acsp-name')
+        res.redirect('name')
     }
 
     
@@ -106,7 +106,7 @@ router.post('/v5/enter-uvid-code', function (req, res) {
    
     if ((req.session.data['enter-uvid'] === "yes")){
         
-        res.redirect('acsp-name')
+        res.redirect('name')
     }
     // Otherwise ask for their name, address etc.
     else{
@@ -134,7 +134,7 @@ router.post('/v5/gov-login', function (req, res) {
 router.post('/v5/after-idv', function (req, res) {
      
    
-    res.redirect('acsp-name') 
+    res.redirect('name') 
 
 }) 
 
@@ -196,10 +196,14 @@ router.post('/v5/type-of-business', function (req, res) {
         
         res.redirect('type-of-business-other')
     }
+    else if ((req.session.data['registering-as'] === "sole-trader")){
+        
+        res.redirect('address-correspondance-lookup')
+    }
     // Otherwise ask for their name, address etc.
     else{
 
-        res.redirect('acsp-address-correspondance')
+        res.redirect('email-address-correspondance')
     } 
 
 })
@@ -210,8 +214,19 @@ router.post('/v5/type-of-business', function (req, res) {
 */
 
 router.post('/v5/type-of-business-other', function (req, res) {
+
+    if ((req.session.data['registering-as'] === "sole-trader")){
+        
+        res.redirect('address-correspondance-lookup')
+    }
+    else{
+
+        res.redirect('email-address-correspondance')
+
+    }
+
+
      
-    res.redirect('acsp-address-correspondance')
     
 })   
 
@@ -223,7 +238,7 @@ router.post('/v5/type-of-business-other', function (req, res) {
  *  Correspondence email
 */
 
-router.post('/v5/acsp-address-correspondance', function (req, res) {
+router.post('/v5/email-address-correspondance', function (req, res) {
      
     res.redirect('aml-supervisor')
     
@@ -232,7 +247,7 @@ router.post('/v5/acsp-address-correspondance', function (req, res) {
 /*
  *  Not registered with Companies House - Name
  */
-router.post('/v5/acsp-name', function (req, res) {
+router.post('/v5/name', function (req, res) {
      
     res.redirect('date-of-birth')
     
@@ -252,25 +267,51 @@ router.post('/v5/date-of-birth', function (req, res) {
  */
 router.post('/v5/nationality', function (req, res) {
      
-    res.redirect('home-address')
+    res.redirect('location-lives')
     
 })
 
 /*
  *  Not registered with Companies House - Home address
  */
-router.post('/v5/home-address', function (req, res) {
-     
-    res.redirect('acsp-address')
+router.post('/v5/location-lives', function (req, res) {
+
+        //if sole trader go to correspondance address page
+    if ((req.session.data['registering-as'] == "sole-trader")){
+        
+        res.redirect('type-of-business')
+    }
+    // Otherwise ask for their business name, address etc.
+    else{
+
+        res.redirect('name')
+    } 
+    
     
 })
 
 /*
+ * correspondance address lookup
+    //if number and postcode added address-correspondance-confirm
+ 
+    // only postcode  address-correspondance-list
+ */
+router.post('/v5/address-correspondance-lookup', function (req, res) {
+
+
+     
+    res.redirect('address-correspondance-confirm')
+    
+})
+
+
+/*
  *  Not registered with Companies House - ACSP address 
  */
-router.post('/v5/acsp-address', function (req, res) {
+router.post('/v5/address-correspondance-confirm', function (req, res) {
+    
      
-    res.redirect('acsp-address-confirm')
+    res.redirect('email-address-correspondance')
     
 })
 
