@@ -84,7 +84,7 @@ router.post('/v5/sign-in', function (req, res) {
         res.redirect('before-idv')
     }
     //limited company or corporate or PLC or partnership reg with CH
-    else if ((req.session.data['registering-as'] === "plc")| (req.session.data['registering-as'] === "corporate")| (req.session.data['registering-as'] === "puc") | (req.session.data['registering-as'] === "partnership-ch")){
+    else if ((req.session.data['registering-as'] === "plc")| (req.session.data['registering-as'] === "corporate")| (req.session.data['registering-as'] === "ltd")| (req.session.data['registering-as'] === "puc") | (req.session.data['registering-as'] === "partnership-ch")){
 
         res.redirect('company-lookup')
     }
@@ -196,6 +196,10 @@ router.post('/v5/type-of-business', function (req, res) {
         
         res.redirect('type-of-business-other')
     }
+    else if ((req.session.data['registering-as'] === "sole-trader")){
+        
+        res.redirect('address-correspondance-lookup')
+    }
     // Otherwise ask for their name, address etc.
     else{
 
@@ -210,8 +214,19 @@ router.post('/v5/type-of-business', function (req, res) {
 */
 
 router.post('/v5/type-of-business-other', function (req, res) {
+
+    if ((req.session.data['registering-as'] === "sole-trader")){
+        
+        res.redirect('address-correspondance-lookup')
+    }
+    else{
+
+        res.redirect('email-address-correspondance')
+
+    }
+
+
      
-    res.redirect('email-address-correspondance')
     
 })   
 
@@ -264,7 +279,7 @@ router.post('/v5/location-lives', function (req, res) {
         //if sole trader go to correspondance address page
     if ((req.session.data['registering-as'] == "sole-trader")){
         
-        res.redirect('address-correspondance-lookup')
+        res.redirect('type-of-business')
     }
     // Otherwise ask for their business name, address etc.
     else{
@@ -294,8 +309,9 @@ router.post('/v5/address-correspondance-lookup', function (req, res) {
  *  Not registered with Companies House - ACSP address 
  */
 router.post('/v5/address-correspondance-confirm', function (req, res) {
+    
      
-    res.redirect('type-of-business')
+    res.redirect('email-address-correspondance')
     
 })
 
