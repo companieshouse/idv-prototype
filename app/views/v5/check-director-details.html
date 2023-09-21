@@ -74,29 +74,10 @@
           ]
         }) }}
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-fieldset__heading govuk-!-margin-top-2">
-              Are your details correct?
-            </h2>
-            </legend>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="director-details-correct" name="director-details-correct" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="director-details-correct">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="director-details-correct-2" name="director-details-correct" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="director-details-correct-2">
-                  No
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+        {{ govukInsetText({
+          text: "*If the details are incorrector you will need to make an update to the directors details --- using the CH01.*"
+        }) }} 
+
 
         {{ govukButton({
           text: "Continue"
