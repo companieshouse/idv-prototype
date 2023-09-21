@@ -57,7 +57,7 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
         }) }} -->
         
 
-        {{ govukRadios({
+        <!-- {{ govukRadios({
           name: "registering-as",
           fieldset: {
             legend: {
@@ -100,7 +100,51 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
               text: "Sole trader"
             }
           ]
+        }) }} -->
+
+
+        {{ govukRadios({
+          name: "registering-as",
+          fieldset: {
+            legend: {
+              text: "What type of business are you registering?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "You must be registered in the UK. "
+          },
+          items: [
+            {
+              value: "ltd",
+              text: "Private limited company"
+            },
+            {
+              value: "corporate-body",
+              text: "Corporate body"
+            },
+
+            {
+              value: "partnership-ch",
+              text: "Partnership, registered with Companies House"
+            },
+            {
+              value: "partnership-not-ch",
+              text: "Partnership, not registered with Companies House"
+            },
+            {
+              value: "sole-trader",
+              text: "Sole trader"
+            },
+            {
+              value: "other",
+              text: "Other"
+            }
+
+          ]
         }) }}
+
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
