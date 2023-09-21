@@ -13,17 +13,31 @@ What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="address-principle-confirm" method="post">
+      <form class="form" action="address-correspondance-selector" method="post">
 
-        <h1 class="govuk-heading-l">Confirm the registered office address</h1>
-        <ul class="govuk-list">
-          <li>70, Wentloog Road</li>
-          <li>Rumney</li>
-          <li>Cardiff</li>
-          <li>Wales</li>
-          <li>CF3 3EA</li>
-        </ul>
-        <p> <a href="javascript:void(0);">Edit address</a> </p>
+        {{ govukRadios({
+          idPrefix: "address-corresponance-selector",
+          name: "address-correspondance-selector",
+          fieldset: {
+            legend: {
+              text: "What is the correspondance address?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "wentloog1",
+              text: "70 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
+            },
+            {
+              value: "different",
+              text: "A different address"
+            }
+          ]
+        }) }}
+
+        <p> <a href="/address-lookup/address-manual-home">Enter address manually </a> </p>
 
        <!--  {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
@@ -35,7 +49,7 @@ What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype
         }) }}
         
        {{ govukButton({
-          text: "Confirm and continue"
+          text: "Continue"
         }) }}
 
 

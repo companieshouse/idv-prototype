@@ -200,6 +200,10 @@ router.post('/v5/type-of-business', function (req, res) {
         
         res.redirect('address-correspondance-lookup')
     }
+    else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") ){
+        
+        res.redirect('address-principle-lookup')
+    }
     // Otherwise ask for their name, address etc.
     else{
 
@@ -207,6 +211,47 @@ router.post('/v5/type-of-business', function (req, res) {
     } 
 
 })
+
+
+
+/*
+ *
+ * Principle/registered office address 
+ */
+ router.post('/v5/address-principle-lookup', function (req, res) {
+     
+    res.redirect('address-principle-confirm')
+    
+})
+
+/*
+ *
+ * Principle address 
+ */
+router.post('/v5/address-principle-confirm', function (req, res) {
+     
+    res.redirect('address-correspondance-selector')
+    
+})
+
+/*
+ *
+ * Correspondance address selector
+ */
+router.post('/v5/address-correspondance-selector', function (req, res) {
+     
+    if ((req.session.data['address-correspondance-selector'] === "different")){
+        
+        res.redirect('address-correspondance-lookup')
+    }
+    else{
+
+        res.redirect('address-correspondance-confirm')
+
+    }
+    
+})
+
 
 
 /*
@@ -284,11 +329,24 @@ router.post('/v5/location-lives', function (req, res) {
     // Otherwise ask for their business name, address etc.
     else{
 
-        res.redirect('name')
+        res.redirect('name-of-business')
     } 
     
     
 })
+
+
+/*
+ *  Not registered with Companies House - Date of birth
+ */
+router.post('/v5/name-of-business', function (req, res) {
+     
+    res.redirect('type-of-business')
+    
+})
+
+
+
 
 /*
  * correspondance address lookup
