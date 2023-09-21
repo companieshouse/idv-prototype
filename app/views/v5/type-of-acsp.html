@@ -118,17 +118,18 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
           items: [
             {
               value: "ltd",
-              text: "Private limited company"
+              text: "Limited company"
             },
-            {
-              value: "corporate-body",
-              text: "Corporate body"
-            },
+
 
             {
               value: "partnership-ch",
-              text: "Partnership, registered with Companies House"
+              text: "Registrable partnership",
+                     hint: {
+            text: "This includes limited partnerships and limited liability partnerships (LLPs)."
+          }
             },
+  
             {
               value: "partnership-not-ch",
               text: "Partnership, not registered with Companies House"
@@ -136,6 +137,10 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
             {
               value: "sole-trader",
               text: "Sole trader"
+            },
+                        {
+              value: "corporate-body",
+              text: "Corporate body"
             },
             {
               value: "other",
