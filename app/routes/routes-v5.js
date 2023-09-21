@@ -348,9 +348,18 @@ router.post('/v5/acsp-address-correspondance', function (req, res) {
 
 
 /*
- *  AML number
+ *  AML number for first supervisor
  */
 router.post('/v5/aml-number', function (req, res) {
+     
+    res.redirect('aml-number-2')
+    
+})
+
+/*
+ *  AML number for second  supervisor
+ */
+router.post('/v5/aml-number-2', function (req, res) {
      
     res.redirect('name-address-match-supervisor')
     
