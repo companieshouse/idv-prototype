@@ -44,7 +44,7 @@ router.post('/v5/statement-relevant-officer', function (req, res) {
         // Otherwise ask for their name, address etc.
         else{
     
-            res.redirect('sign-in')
+            res.redirect('how-are-you-aml-supervised')
         }
         
     }
@@ -55,6 +55,38 @@ router.post('/v5/statement-relevant-officer', function (req, res) {
     }
     
 }) 
+
+/*
+ * How are you supervised
+ */
+router.post('/v5/how-are-you-aml-supervised', function (req, res) {
+
+
+    //if selected company and they are individually supervised
+    if ((req.session.data['how-are-you-aml-supervised'] === "individually")){
+        
+        res.redirect('aml-interrupt')
+    }
+    //if they select as a company - Fine
+    else{
+
+        res.redirect('sign-in')
+    }
+     
+    
+}) 
+
+/*
+ * AML interrupt
+ */
+router.post('/v5/aml-interrupt', function (req, res) {
+     
+    res.redirect('sign-in')
+    
+}) 
+
+
+
 
 /*
  * You need to prove your identity
