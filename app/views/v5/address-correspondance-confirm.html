@@ -15,6 +15,17 @@ What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype
 
       <form class="form" action="address-correspondance-confirm" method="post">
 
+
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+        <span class="govuk-caption-l"> James Morris </span>
+
+        {% else %}
+
+        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
+        {% endif %}
+
         <h1 class="govuk-heading-l">Confirm your correspondence address</h1>
         <ul class="govuk-list">
           <li>15 New Road,</li>

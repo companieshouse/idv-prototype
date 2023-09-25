@@ -15,7 +15,18 @@ What are you registering as? – {{ serviceName }} – GOV.UK Prototype Kit
 
       <form class="form" action="type-of-business" method="post">
 
-        
+
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+        <span class="govuk-caption-l"> James Morris </span>
+
+        {% else %}
+
+        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
+        {% endif %}
+
+
 
       {{ govukRadios({
           name: "business-type",

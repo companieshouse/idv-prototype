@@ -17,7 +17,18 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="date-of-birth" method="post">
 
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+        <span class="govuk-caption-l"> James Morris </span>
+
+        {% else %}
+
         <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
+        {% endif %}
+        
+
+
 
         {{ govukDateInput({
           id: "dob",
