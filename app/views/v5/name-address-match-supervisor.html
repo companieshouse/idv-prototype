@@ -74,8 +74,11 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
 
         <!--    <p class="govuk-body">The company name and registered office address must be exactly the same as the details held by the anti-money laundering (AML) supervisory body.</p> -->
 
+        {{ govukInsetText({
+          text: "We have not been able to confirm these details with an automatic check. You should review the details and change them if they are incorrect. "
+        }) }}
 
-    <p class="govuk-body">If the details held by the Anti-Money Laundering (AML) supervisory body are incorrect, you must update these before you apply to register the authorised agent.</p>
+   <!--  <p class="govuk-body">If the details held by the Anti-Money Laundering (AML) supervisory body are incorrect, you must update these before you apply to register the authorised agent.</p> -->
 
         <!-- Firms -->
 
@@ -137,7 +140,7 @@ Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype K
       }) }}
 
 
-<p>If the details are correct, this could be a technical error. Continue with your application and we will contact the supervisory body to check.</p>
+<!-- <p>If the details are correct, this could be a technical error. Continue with your application and we will contact the supervisory body to check.</p> -->
       {% endif %}
 
    <!--   {{ govukCheckboxes({
