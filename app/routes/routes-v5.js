@@ -389,9 +389,19 @@ router.post('/v5/name-of-business', function (req, res) {
 router.post('/v5/address-correspondance-lookup', function (req, res) {
 
 
-     
-    res.redirect('address-correspondance-confirm')
+
+    //if house number is empty
+    if (req.session.data['cor-number'] === '') {
+
+        res.redirect('address-correspondance-list')
+
+      } else {
+        // go to the confirm address page
+        res.redirect('address-correspondance-confirm')
     
+      }
+     
+   
 })
 
 
