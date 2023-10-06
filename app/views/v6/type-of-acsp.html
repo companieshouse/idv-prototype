@@ -1,0 +1,161 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What type of business are you registering? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="type-of-acsp" method="post">
+
+        
+  <!--       {{ govukRadios({
+          name: "registering-as",
+          fieldset: {
+            legend: {
+              text: "What type of business are you registering?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "You must be registered in the UK. "
+          },
+          items: [
+            {
+              value: "corporate",
+              text: "Private limited company"
+            },
+            {
+              value: "llp",
+              text: "Limited liability partnership (LLP)"
+            },
+            {
+              value: "lp",
+              text: "Limited partnership"
+            },
+            {
+              value: "scot-lp",
+              text: "Scottish limited partnership (SLP)"
+            },
+            {
+              value: "partnership",
+              text: "Partnership"
+            },
+            {
+              value: "sole-trader",
+              text: "Sole trader"
+            }
+          ]
+        }) }} -->
+        
+
+        <!-- {{ govukRadios({
+          name: "registering-as",
+          fieldset: {
+            legend: {
+              text: "What type of business are you registering?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "You must be registered in the UK. "
+          },
+          items: [
+            {
+              value: "ltd",
+              text: "Private limited company"
+            },
+            {
+              value: "corporate-body",
+              text: "Corporate body"
+            },
+            {
+              value: "public-limited-company",
+              text: "Public limited company"
+            },
+
+            {
+              value: "partnership-ch",
+              text: "Partnership, registered with Companies House"
+            },
+            {
+              value: "partnership-not-ch",
+              text: "Partnership, not registered with Companies House"
+            },
+            {
+              value: "unincorporated-body",
+              text: "Unregistered company"
+            },
+            {
+              value: "sole-trader",
+              text: "Sole trader"
+            }
+          ]
+        }) }} -->
+
+
+        {{ govukRadios({
+          name: "registering-as",
+          fieldset: {
+            legend: {
+              text: "What type of business are you registering?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "You must be registered in the UK. "
+          },
+          items: [
+            {
+              value: "ltd",
+              text: "Limited company"
+            },
+
+
+            {
+              value: "partnership-ch",
+              text: "Registrable partnership",
+                     hint: {
+            text: "This includes limited partnerships and limited liability partnerships (LLPs)."
+          }
+            },
+  
+            {
+              value: "partnership-not-ch",
+              text: "Partnership, not registered with Companies House"
+            },
+            {
+              value: "sole-trader",
+              text: "Sole trader"
+            },
+                        {
+              value: "corporate-body",
+              text: "Corporate body"
+            },
+            {
+              value: "other",
+              text: "Other"
+            }
+
+          ]
+        }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

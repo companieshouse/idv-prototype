@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirm the details are the same as those held by the AML supervisory body – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <!-- The action will need to change depending on the location of the confirm-company page -->
+      <form action="name-address-match-supervisor" method="post">
+        <h1 class="govuk-heading-l">Confirm the details are the same as those held by the AML supervisory body</h1>
+
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Your name</dt>
+            <dd class="govuk-summary-list__value">Kate Williams</dd>
+            <dd class="govuk-summary-list__actions"><a href="">Change</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Correspondence address</dt>
+            <dd class="govuk-summary-list__value">
+              <!-- if statements are used to stop gaps showing where there is missing information -->
+              72 Guild Street <br> London <br> SE23 6FH
+            </dd>
+            <dd class="govuk-summary-list__actions"><a href="">Change</a></dd>
+
+          </div>
+
+        </dl>
+
+ <!--    <p class="govuk-body">The company name and registered office address must be exactly the same as the details held by the anti-money laundering (AML) supervisory body.</p> -->
+
+
+      <p class="govuk-body">If the details held by the Anti-Money Laundering (AML) supervisory body are incorrect, you must update these before you apply to register the authorised agent.</p>
+
+
+      {{ govukCheckboxes({
+        idPrefix: "aml-details-match",
+        name: "aml-details-match",
+          classes: "govuk-!-padding-top-2",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m govuk-!-padding-top-3"
+            }
+          },
+          items: [
+          {
+            value: "agree",
+            text: "I confirm the company name and registered office address are exactly the same as those held by the AML supervisory body.",
+            checked: checked("details-match", "agree")
+          }
+          ]
+        }) }} 
+
+
+     <!--    {{ govukInsetText({
+          html: "The company name and registered office address must be exactly the same as the details held by the AML supervisor."
+        }) }} 
+        
+
+      <p class="govuk-body">If the address shown is incorrect, you will need to <a href='' class=''>update the registered office address</a>. You should also check the AML supervisor holds the correct company name and registered office address. </p>
+      -->
+
+        {{ govukButton({
+          text: "Continue"
+         }) }}
+
+
+      </form>
+
+      </p>
+    </div>
+  </div>
+{% endblock %}
