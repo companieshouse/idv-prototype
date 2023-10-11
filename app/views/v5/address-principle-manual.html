@@ -76,21 +76,15 @@ What is your registered office address? – {{ serviceName }} – GOV.UK Prototy
           name: "postcode"
         }) }}
 
-        {{ govukButton({
-          text: "Find address"
-        }) }}
-        <p class="govuk-body">
-          <a href="address-manual-postal" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
-        </p>
-        
         {% endcall %}
 
-        {{ govukInsetText({
-          html: "<p>***PLACEHOLDER CONTENT*** We'll use this to send the unique ACSP reference.</p>"
+
+        {{ govukButton({
+          text: "Continue",
+          href:"address-principle-confirm"
         }) }}
 
-      
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
 
       </form>
 
