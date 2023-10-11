@@ -23,17 +23,19 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
+
+                <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
                 
                       <!-- Director -->
                       {% if ((data['registering-as'] === "ltd"))  %}
-                      <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
+                    
                       <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
                         I am a director
                       </label>
                                      
                       <!-- Sole trader -->
                       {% elseif ((data['registering-as'] === "sole-trader")) %}
-                      <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
+                  
                       <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
 
                         I am the sole trader
@@ -41,25 +43,24 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
                      
                       <!-- Limited partnership - general partner -->
                      {% elseif ((data['registering-as'] === "partnership-ch")) %}
-                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
+                   
                     <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
                         I am a general partner
                       </label>
 
                       <!-- Limited liability partnership (LLP), Scottish limited partnership (SLP) and Partnership  -- Partner/MLRO -->
                       {% elseif ((data['registering-as'] === "partnership-not-ch")) %}
-                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
+                    
                       <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
                       I am a member of the partnership
                       </label>
                       {% elseif ((data['registering-as'] === "corporate-body")) %}
-                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
-                      <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                     
                         I am a member of the body
                       </label>
                       </div>
                       <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="confirm-relevant-person-2" name="confirm-relevant-person-2" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
+                      <input class="govuk-radios__input" id="confirm-relevant-person-2" name="confirm-relevant-person-2" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint-2">
                       <label class="govuk-label govuk-radios__label" for="confirm-relevant-person-2">
                         I am the equivalent to a director
                       </label>
