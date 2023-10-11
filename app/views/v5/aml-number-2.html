@@ -16,15 +16,16 @@ What is the membership number for Association of Accounting Technicians (AAT)? â
       <form class="form" action="aml-number-2" method="post">
        
 
-
-<h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--l" for="event-name">
-      What is the membership number for Association of Accounting Technicians (AAT)?
-    </label>
-  </h1>
-  <div id="event-name-hint" class="govuk-hint">
-    We will check this with the AML supervisory body.
-  </div>
+        {% call govukFieldset({
+          legend: {
+            text: " What is the membership number for Association of Accounting Technicians (AAT)?",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          },
+          hint:{
+            text:" We will check this with the AML supervisory body."
+          }
+        }) %}
      
         
         {{ govukInput({
@@ -34,6 +35,8 @@ What is the membership number for Association of Accounting Technicians (AAT)? â
           id: "aml-reg-number",
           name: "aml-reg-number"
         }) }}
+
+        {% endcall %}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
