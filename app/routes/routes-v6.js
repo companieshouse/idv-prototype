@@ -93,7 +93,7 @@ router.post('/v6/aml-interrupt', function (req, res) {
  */
 router.post('/v6/before-idv', function (req, res) {
      
-    res.redirect('sign-in')
+    res.redirect('https://prove-your-identity-prototype.herokuapp.com/v6/pre-one-login/create-or-sign-in')
     
 }) 
 
