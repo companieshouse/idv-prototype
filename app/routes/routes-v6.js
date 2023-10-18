@@ -113,7 +113,7 @@ router.post('/v6/sign-in', function (req, res) {
         // they have have done ID verification 
         req.session.data['gChangesMade'] = true;
 
-        res.redirect('before-idv')
+        res.redirect('https://prove-your-identity-prototype.herokuapp.com/release1-v1/pre-one-login/you-need-to-verify?version=sole-trader')
     }
     //limited company or corporate or PLC or partnership reg with CH
     else if ((req.session.data['registering-as'] === "ltd")| (req.session.data['registering-as'] === "corporate-body")| (req.session.data['registering-as'] === "public-limited-company")| (req.session.data['registering-as'] === "puc") | (req.session.data['registering-as'] === "partnership-ch")){
