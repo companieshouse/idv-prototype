@@ -137,7 +137,7 @@ router.get('/v6/verify-identity-prototype', function (req, res) {
     // they have have done ID verification 
     req.session.data['gChangesMade'] = true;
      
-    res.redirect('https://prove-your-identity-prototype.herokuapp.com/release1-v1/pre-one-login/you-need-to-verify?version=sole-trader')
+    res.redirect('https://prove-your-identity-prototype.herokuapp.com/release1-v1/pre-one-login/you-need-to-verify')
     
 }) 
 
