@@ -39,7 +39,7 @@ router.post('/v6/statement-relevant-officer', function (req, res) {
         //sole traders need to verify their identity
         if ((req.session.data['registering-as'] === "sole-trader")){
         
-            res.redirect('sign-in')
+            res.redirect('create-or-sign-in')
         }
         // Otherwise ask for their name, address etc.
         else{
@@ -81,7 +81,7 @@ router.post('/v6/how-are-you-aml-supervised', function (req, res) {
  */
 router.post('/v6/aml-interrupt', function (req, res) {
      
-    res.redirect('sign-in')
+    res.redirect('create-or-sign-in')
     
 }) 
 
@@ -101,7 +101,7 @@ router.post('/v6/before-idv', function (req, res) {
 /*
  * Sign in 
  */
-router.post('/v6/sign-in', function (req, res) {
+router.post('/v6/one-login-enter-password', function (req, res) {
      
     if ((req.session.data['registering-as'] === "sole-trader") && req.session.data['gChangesMade'] == true ){
         
