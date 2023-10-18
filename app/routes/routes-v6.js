@@ -70,7 +70,7 @@ router.post('/v6/how-are-you-aml-supervised', function (req, res) {
     //if they select as a company - Fine
     else{
 
-        res.redirect('sign-in')
+        res.redirect('create-or-sign-in')
     }
      
     
