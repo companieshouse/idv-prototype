@@ -37,7 +37,11 @@ router.post('/v6/statement-relevant-officer', function (req, res) {
       if (req.session.data['confirm-relevant-person'] === 'relevant-officer') {
 
         //sole traders need to verify their identity
-        if ((req.session.data['registering-as'] === "sole-trader")){
+        if ((req.session.data['registering-as'] === "sole-trader") && (req.session.data['gChangesMade'] == true )){
+        
+            res.redirect('name')
+        }
+        else if ((req.session.data['registering-as'] === "sole-trader")){
         
             res.redirect('create-or-sign-in')
         }
@@ -103,12 +107,8 @@ router.post('/v6/before-idv', function (req, res) {
  */
 router.post('/v6/one-login-enter-password', function (req, res) {
      
-    if ((req.session.data['registering-as'] === "sole-trader") && req.session.data['gChangesMade'] == true ){
-        
-
-        res.redirect('name')
-    }
-    else if ((req.session.data['registering-as'] === "sole-trader")){
+    
+    if ((req.session.data['registering-as'] === "sole-trader")){
         
         // they have have done ID verification 
 
