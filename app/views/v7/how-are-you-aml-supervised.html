@@ -1,0 +1,41 @@
+{% set title = "How are you registered with your anti-money laundering (AML) supervisor?" %}
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="how-are-you-aml-supervised" method="post">
+
+        {{ govukRadios({
+          name: "how-are-you-aml-supervised",
+          fieldset: {
+            legend: {
+              text: "How are you registered with your anti-money laundering (AML) supervisor?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "company",
+              text: "As a company"
+            },
+            {
+              value: "individually",
+              text: "As an individual"
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% set title = "Check your details" %}
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="check-director-details" method="post">
+
+
+
+        <h1 class="govuk-heading-l">Check your details </h1>
+
+        {{ govukSummaryList({
+          card: {
+            title: {
+              text: "James Morris"
+            }
+            
+          },
+          rows: [
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                html: "May 1977"
+              }
+            },
+            {
+              key: {
+                text: "Nationality"
+              },
+              value: {
+                html: "British"
+              }
+            },
+            {
+              key: {
+                text: "Correspondence address"
+              },
+              value: {
+                html: "12 London Place<br> London <br>SE77 8GG"
+              }
+            },
+            {
+              key: {
+                text: "Home address"
+              },
+              value: {
+                html: "700 Bryn Road  <br>
+                Swansea<br>
+                SA6 87U"
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukInsetText({
+          html: 'You must update the home and correspondence address if they are incorrect. You will need to do this before you apply. <a href="#" class="govuk-link">Change the details of a director (CH01)</a>.'
+        }) }} 
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the membership number for Association of Chartered Certified Accountants (ACCA)? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="aml-number" method="post">
+       
+
+        {% call govukFieldset({
+          legend: {
+            text: "What is the membership number for Association of Chartered Certified Accountants (ACCA)?",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          },
+          hint:{
+            text:" We will check this with the AML supervisory body."
+          }
+        }) %}
+     
+        
+        {{ govukInput({
+          label: {
+            text: "Membership number"
+          },
+          id: "aml-reg-number",
+          name: "aml-reg-number"
+        }) }}
+
+        {% endcall %}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
