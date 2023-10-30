@@ -77,8 +77,8 @@ Guidance - Applying to register as an authorised agent - {{serviceName}}
  
   <p>Agents must register with Companies House to:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>form companies or registrable partnerships on behalf of clients</li>
         <li>file on behalf of clients</li>
+        <li>form companies or registrable partnerships on behalf of clients</li>
         <li>verify someone's identity for Companies House</li>
       </ul>
 
@@ -93,7 +93,7 @@ Guidance - Applying to register as an authorised agent - {{serviceName}}
           </ul>
 
 
-      <p>You'll need to be a relevant officer for the business to use this service. This means you are one of the following:</p>  
+      <p>You'll need to be a relevant officer for the business. This means you are one of the following:</p>  
 
       <ul class="govuk-list govuk-list--bullet">
         <li>director</li>
@@ -180,9 +180,31 @@ We will check the AML supervisory body has the same name and membership number f
 
    <!--   <p> You can give an email address for correspondence if it's different to the one you use to sign in to Companies House.</p> -->
 
-       <h3 class="govuk-heading-s">If your business is not registered with Companies House</h3>
 
-<p>This includes partnerships and other firms that are not incorporated. </p>
+       <h3 class="govuk-heading-s" id="sole-trader">If you are a sole trader</h3>
+
+   <div class="ch-info-panel">
+        
+        <div class="govuk-panel__body">
+        <p class="govuk-body govuk-!-margin-bottom-1">You'll need to <a href="/v6/verify-identity-prototype">verify your identity for Companies House</a> before you can apply to register as an authorised agent.</p>
+        </div>
+      </div>
+
+<p>To register as an authorised agent, you'll need to give:</p>
+
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>your name</li>
+                <li>your date of birth</li>
+                <li>your nationality</li>
+                <li>the state or county where you live</li>
+                <li>your correspondence address (this must be in the UK)</li>
+              </ul>
+
+
+       <h3 class="govuk-heading-s">If you're a partnership or another unincorporated business</h3>
+
+<p>This does not include sole traders. </p>
 <p>You will need to give your:</p>
 
               <ul class="govuk-list govuk-list--bullet">
@@ -199,34 +221,17 @@ We will check the AML supervisory body has the same name and membership number f
 
 
 
-       <h3 class="govuk-heading-s" id="sole-trader">If you are a sole trader</h3>
-
-   <div class="ch-info-panel">
-        
-        <div class="govuk-panel__body">
-        <p class="govuk-body govuk-!-margin-bottom-1">You'll need to <a href="/v6/verify-identity-prototype">verify your identity for Companies House</a> before you can apply to register as an authorised agent.</p>
-        </div>
-      </div>
 
 
 
-<p>To register as an authorised agent, you'll need to give:</p>
 
-
-              <ul class="govuk-list govuk-list--bullet">
-                <li>your name</li>
-                <li>your date of birth</li>
-                <li>your nationality</li>
-                <li>the state or county where you live</li>
-                <li>your correspondence address (this must be in the UK)</li>
-              </ul>
 
 
    
 
     <h2 id="verify-through-acsp" class="govuk-heading-m">What happens after the authorised agent is registered</h2>
 
-          <p>You'll be able to sign in to your Companies House account to access online services for authorised agents.</p>
+          <p>You'll be able to sign in to your Companies House account to access online services for authorised agents and manage your account.</p>
 
 
       <p>We’ll email you the authorised agent number. You should keep the number secure and must not share it with anyone outside of your organisation. You will need to use it: </p>
@@ -242,19 +247,16 @@ We will check the AML supervisory body has the same name and membership number f
 
        <h3 id="identity-checks" class="govuk-heading-s">Add or remove members who work for the authorised agent</h3>
 
-<p>Members can sign in or create a Companies House account to: </p>
+<p>You can add people who work for the business as members to the authorised agent account. You can choose if you want members to be able to: </p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>form companies and registrable partnerships on behalf of clients</li>
-        <li>file on behalf of clients</li>
+        <li>file on behalf of clients </li>
+        <li>verify someone’s identity</li>
+        <li>make changes to the authorised agent's details</li>
+        <li>add or remove other members</li>
       </ul>
 
-      <p>You can choose if you want members to be able to: </p>
-            <ul class="govuk-list govuk-list--bullet">
-                      <li>verify someone's identity</li>
-                <li>add other members </li>
-                <li>change the authorised agent details, for example the AML supervisory body </li>
-            </ul>
+        <p>You can remove members from the account when you need to.  </p>
 
 
    <h3 class="govuk-heading-s">What you'll need to do as an authorised agent</h3>
@@ -275,13 +277,13 @@ We will check the AML supervisory body has the same name and membership number f
       <p><a href="https://acsp-verify-identity-prototype.herokuapp.com/v6/guidance">Read the guidance about verifying someone's identity for Companies House</a>.</p>
 
 
-
+<!--
 
       {{ govukButton({
         text: "Apply to register an authorised agent",
         href:"start-page"
       }) }}
-
+-->
       
   
 
