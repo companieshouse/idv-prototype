@@ -340,7 +340,7 @@ router.post('/v7/email-address-correspondance', function (req, res) {
 /*
  *  Not registered with Companies House - Name
  */
-router.post('/v6/name', function (req, res) {
+router.post('/v7/name', function (req, res) {
      
     res.redirect('date-of-birth')
     
