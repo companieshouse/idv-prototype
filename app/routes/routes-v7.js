@@ -226,7 +226,7 @@ router.post('/v7/director-selection', function (req, res) {
 /*
  * Director details check   
  */
-router.post('/v6/check-director-details', function (req, res) {
+router.post('/v7/check-director-details', function (req, res) {
      
     res.redirect('type-of-business')
     
