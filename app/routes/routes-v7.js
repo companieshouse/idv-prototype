@@ -97,7 +97,7 @@ router.post('/v7/aml-interrupt', function (req, res) {
  */
 router.post('/v7/before-idv', function (req, res) {
      
-    res.redirect('https://prove-your-identity-prototype.herokuapp.com/v6/pre-one-login/create-or-sign-in')
+    res.redirect('https://prove-your-identity-prototype.herokuapp.com/release1-v2/pre-one-login/start?version=sole-trader')
     
 }) 
 
@@ -110,9 +110,9 @@ router.post('/v7/one-login-enter-password', function (req, res) {
     
     if ((req.session.data['registering-as'] === "sole-trader")){
         
-        // they have have done ID verification 
+        // they have not done ID verification 
 
-        res.redirect('/v6/verify-identity-prototype')
+        res.redirect('/v7/verify-identity-prototype')
     }
     //limited company or corporate or PLC or partnership reg with CH
     else if ((req.session.data['registering-as'] === "ltd")| (req.session.data['registering-as'] === "corporate-body")| (req.session.data['registering-as'] === "public-limited-company")| (req.session.data['registering-as'] === "puc") | (req.session.data['registering-as'] === "partnership-ch")){
@@ -137,7 +137,7 @@ router.get('/v7/verify-identity-prototype', function (req, res) {
     // they have have done ID verification 
     req.session.data['gChangesMade'] = true;
      
-    res.redirect('https://prove-your-identity-prototype.herokuapp.com/release1-v1/pre-one-login/you-need-to-verify')
+    res.redirect('https://prove-your-identity-prototype.herokuapp.com/release1-v2/pre-one-login/start?version=sole-trader')
     
 }) 
 
