@@ -1,0 +1,22 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Company not active – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Company is not active</h1>
+    <p class="govuk-body">
+      You cannot register [COMPANY NAME] as an authorised agent because it is not an active company.
+    </p>
+    <p class="govuk-body">To register an active company, you will need to <a class="govuk-link" href="type-of-acsp">start the application again</a>.
+    </p>
+
+ <!--   <p class="govuk-body"> <a class="govuk-link" href="https://www.gov.uk/contact-companies-house">Contact us</a> if you have any questions.</p> -->
+  </div>
+</div>
+{% endblock %}
+
