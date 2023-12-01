@@ -15,79 +15,112 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
               <h1 class="govuk-fieldset__heading">
                 What is your role?
               </h1>
             </legend>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
 
-                <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
+              <!-- Director -->
+
+              {% if ((data['registering-as'] === "ltd"))  %}
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
                 
-                      <!-- Director -->
-                      {% if ((data['registering-as'] === "ltd"))  %}
-                    
-                      <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                        I am a director
-                      </label>
-                                     
-                      <!-- Sole trader -->
-                      {% elseif ((data['registering-as'] === "sole-trader")) %}
-                  
-                      <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                  <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                    I am a director
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="someone-else" name="confirm-relevant-person" type="radio" value="someone-else">
+                  <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                    I am someone else
+                  </label>
+                </div>
+              </div>
 
-                        I am the sole trader
-                      </label>
-                     
-                      <!-- Limited partnership - general partner -->
-                     {% elseif ((data['registering-as'] === "partnership-ch")) %}
-                   
+                <!-- Sole trader -->
+                {% elseif ((data['registering-as'] === "sole-trader")) %}
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
                     <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                        I am a general partner
-                      </label>
-
-                      <!-- Limited liability partnership (LLP), Scottish limited partnership (SLP) and Partnership  -- Partner/MLRO -->
-                      {% elseif ((data['registering-as'] === "partnership-not-ch")) %}
-                    
-                      <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                      I am a member of the partnership
-                      </label>
-                      {% elseif ((data['registering-as'] === "corporate-body")) %}
+                      I am the sole trader
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="someone-else" name="confirm-relevant-person" type="radio" value="someone-else">
+                    <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                      I am someone else
+                    </label>
+                  </div>
+                </div>
                      
-                        I am a member of the body
-                      </label>
-                      </div>
-                      <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="confirm-relevant-person-2" name="confirm-relevant-person-2" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint-2">
-                      <label class="govuk-label govuk-radios__label" for="confirm-relevant-person-2">
-                        I am the equivalent to a director
-                      </label>
+                <!-- Limited partnership - general partner -->
+                {% elseif ((data['registering-as'] === "partnership-ch")) %}
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                      I am a general partner
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="someone-else" name="confirm-relevant-person" type="radio" value="someone-else">
+                    <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                      I am someone else
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Limited liability partnership (LLP), Scottish limited partnership (SLP) and Partnership  -- Partner/MLRO -->
+                {% elseif ((data['registering-as'] === "partnership-not-ch")) %}
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">I am a member of the partnership
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="someone-else" name="confirm-relevant-person" type="radio" value="someone-else">
+                    <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                      I am someone else
+                    </label>
+                  </div>
+                </div>
+
+                {% elseif ((data['registering-as'] === "corporate-body")) %}
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                      I am a member of the body
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="confirm-relevant-person-2" name="confirm-relevant-person-2" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint-2">
+                    <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                      I am the equivalent to a director
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="someone-else" name="confirm-relevant-person" type="radio" value="someone-else">
+                    <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
+                      I am someone else
+                    </label>
+                  </div>
+                </div>
                       
-                      {% endif %}
+                {% endif %}
               
-        
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="someone-else" name="confirm-relevant-person" type="radio" value="someone-else">
-                <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                  I am someone else
-                </label>
-              </div>
-            </div>
+    
           </fieldset>
         </div>
-<!--
-  <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      What is a relevant officer?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    A relevant officer is the person who is responsible for Anti-Money Laundering (AML) compliance within a business.
-  </div>
-</details>
-    -->
+
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form> 
