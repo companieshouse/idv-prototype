@@ -240,7 +240,7 @@ router.post('/v8/type-of-business', function (req, res) {
 
     //if other is selected
 
-    if ((req.session.data['business-type'] === "other")){
+     if ((req.session.data['business-type'] === "other")){
         
         res.redirect('type-of-business-other')
     }

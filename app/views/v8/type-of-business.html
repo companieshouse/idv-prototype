@@ -22,7 +22,7 @@ What sector do you work in? – {{ serviceName }} – GOV.UK Prototype Kit
 
         {% endif %}
 
-        {% set otherBusinessTypeHtml %}
+<!--         {% set otherBusinessTypeHtml %}
 
        
         {{ govukRadios({
@@ -48,7 +48,7 @@ What sector do you work in? – {{ serviceName }} – GOV.UK Prototype Kit
           ]
         }) }}
 
-        {% endset -%}
+        {% endset -%} -->
 
 
 
@@ -87,13 +87,10 @@ What sector do you work in? – {{ serviceName }} – GOV.UK Prototype Kit
             },
             {
               value: "other",
-              text: "Other",
-              conditional: {
-                html: otherBusinessTypeHtml
-              }
+              text: "Other"
             } 
           ]
-        }) }}
+        }) }} 
 
 
 
