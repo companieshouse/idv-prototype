@@ -74,16 +74,53 @@ router.post('/v8/how-are-you-aml-supervised', function (req, res) {
     //if they select as a company - Fine
     else{
 
-        res.redirect('create-or-sign-in')
+        res.redirect('choose-sign-in')
+
     }
      
     
 }) 
 
+
+// Migration of account screens 
+
+
+/*
+ * Choose how to sign in
+ */
+router.post('/v8/choose-sign-in', function (req, res) {
+     
+  //If they have an existing chs account
+  if (req.session.data['sign-in-using'] === 'OL') {
+       
+    res.redirect('/v8/create-or-sign-in')
+  }
+  else if (req.session.data['sign-in-using'] === 'CHS') {
+        
+    res.redirect('/v8/chs-sign-in-email')
+  }
+  else if (req.session.data['sign-in-using'] === 'new') {
+        
+    res.redirect('/v8/create-or-sign-in')
+  } 
+ 
+    
+}) 
+
+/*
+ * account interrupt
+ */
+router.post('/v8/chs-sign-in-email', function (req, res) {
+     
+    res.redirect('account-interrupt')
+    
+}) 
+
+
 /*
  * AML interrupt
  */
-router.post('/v8/aml-interrupt', function (req, res) {
+router.post('/v8/account-interrupt', function (req, res) {
      
     res.redirect('create-or-sign-in')
     

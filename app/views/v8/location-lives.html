@@ -26,6 +26,13 @@
         <!-- sole trader - state or county -->
         {% if (data['registering-as'] === "sole-trader")%}
 
+        {% set outsideUKHtml %}
+        <div class="govuk-form-group ">
+          <p class="govuk-hint">Start typing a country, then choose from the list.</p>
+          <div id="country" class="autocomplete-wrapper govuk-!-width-two-thirds"></div>
+        </div>
+          {% endset -%}
+
 
         {{ govukRadios({
           name: "where-do-you-live",
@@ -57,8 +64,11 @@
               divider: "or"
             },
             {
-              value: "abroad",
-              text: "Country or state outside of the UK"
+              value: "outside-UK",
+              text: "Country or state outside of the UK",
+              conditional:{
+                html: outsideUKHtml
+              }
             }
           ]
         }) }} 
@@ -86,6 +96,6 @@
     </div>
   </div>
   <script src="/public/javascripts/accessible-autocomplete.js"></script>
-  <script src="/public/javascripts/region-country-appoint.js"></script>
+  <script src="/public/javascripts/region-country.js"></script>
   <script src="/public/javascripts/nationality-appoint.js"></script>
 {% endblock %}
