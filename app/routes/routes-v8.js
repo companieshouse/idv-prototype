@@ -505,7 +505,7 @@ router.post('/v5/acsp-address-correspondance', function (req, res) {
  */
 router.post('/v8/aml-number', function (req, res) {
      
-    res.redirect('aml-number-2')
+    res.redirect('name-address-match-supervisor')
     
 })
 
