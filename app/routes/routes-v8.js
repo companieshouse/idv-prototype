@@ -310,6 +310,18 @@ router.post('/v8/type-of-business', function (req, res) {
 })
 
 /*
+ *  Principle/registered office address manually entering address
+ */
+router.post('/v8/address-principle-manual', function (req, res) {
+    
+     
+    res.redirect('address-principle-confirm')
+    
+})
+
+
+
+/*
  *
  * Principle address 
  */
