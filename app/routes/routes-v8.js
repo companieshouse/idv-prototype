@@ -360,10 +360,6 @@ router.post('/v8/type-of-business-other', function (req, res) {
     
 })   
 
-
-
-
-
 /*
  *  Correspondence email
 */
@@ -446,6 +442,18 @@ router.post('/v8/address-correspondance-lookup', function (req, res) {
      
    
 })
+
+/*
+ *  Not registered with Companies House - ACSP address manually entering address
+ */
+router.post('/v8/address-correspondance-manual', function (req, res) {
+    
+     
+    res.redirect('address-correspondance-confirm')
+    
+})
+
+
 
 
 /*
