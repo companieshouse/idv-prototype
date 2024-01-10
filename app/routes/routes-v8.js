@@ -406,17 +406,7 @@ router.post('/v8/nationality', function (req, res) {
  */
 router.post('/v8/location-lives', function (req, res) {
 
-        //if sole trader go to correspondance address page
-    if ((req.session.data['registering-as'] == "sole-trader")){
-        
-        res.redirect('type-of-business')
-    }
-    // Otherwise ask for their business name, address etc.
-    else{
-
-        res.redirect('name-of-business')
-    } 
-    
+    res.redirect('name-of-business')    
     
 })
 
