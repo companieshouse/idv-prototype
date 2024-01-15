@@ -43,7 +43,7 @@ router.post('/v8/statement-relevant-officer', function (req, res) {
         }
         else if ((req.session.data['registering-as'] === "sole-trader")){
         
-            res.redirect('create-or-sign-in')
+            res.redirect('choose-sign-in')
         }
         // Otherwise ask for their name, address etc.
         else{
