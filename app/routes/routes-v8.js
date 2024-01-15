@@ -134,7 +134,7 @@ router.post('/v8/account-interrupt', function (req, res) {
  */
 router.post('/v8/before-idv', function (req, res) {
      
-    res.redirect('https://prove-your-identity-prototype.herokuapp.com/release1-v2/pre-one-login/start?version=sole-trader')
+    res.redirect('/v8/verify-identity-prototype')
     
 }) 
 
@@ -149,7 +149,7 @@ router.post('/v8/one-login-enter-password', function (req, res) {
         
         // they have not done ID verification 
 
-        res.redirect('/v8/verify-identity-prototype')
+        res.redirect('/v8/before-idv')
     }
     //limited company or corporate or PLC or partnership reg with CH
     else if ((req.session.data['registering-as'] === "ltd")| (req.session.data['registering-as'] === "corporate-body")| (req.session.data['registering-as'] === "public-limited-company")| (req.session.data['registering-as'] === "puc") | (req.session.data['registering-as'] === "partnership-ch")){
@@ -164,6 +164,7 @@ router.post('/v8/one-login-enter-password', function (req, res) {
 
     
 })
+
 
 
 /*
