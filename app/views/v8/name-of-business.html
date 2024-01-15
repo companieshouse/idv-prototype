@@ -26,7 +26,16 @@ What is the name of your business? – {{ serviceName }}
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
         <label class="govuk-label govuk-radios__label" for="contact">
-          [Person's name]
+
+          {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+          James Morris 
+          
+          {% else %}
+
+          {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+  
+          {% endif %}
         </label>
       </div>
      
@@ -38,10 +47,10 @@ What is the name of your business? – {{ serviceName }}
       </div>
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
         <div class="govuk-form-group">
-          <label class="govuk-label" for="contact-by-phone">
+          <label class="govuk-label" for="trading-name">
             What is the trading name?
           </label>
-          <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel">
+          <input class="govuk-input govuk-!-width-full" id="trading-name" name="trading-name" type="text" spellcheck="false">
         </div>
       </div>
     
