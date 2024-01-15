@@ -293,7 +293,8 @@ router.post('/v8/type-of-business', function (req, res) {
     // Otherwise ask for their name, address etc.
     else{
 
-        res.redirect('email-address-correspondance')
+        
+        
     } 
 
 })
