@@ -374,7 +374,7 @@ router.post('/v8/type-of-business-other', function (req, res) {
 })   
 
 /*
- *  Correspondence email
+ *  Correspondence email - REMOVED from version 8
 */
 
 router.post('/v8/email-address-correspondance', function (req, res) {
@@ -475,7 +475,7 @@ router.post('/v8/address-correspondance-manual', function (req, res) {
 router.post('/v8/address-correspondance-confirm', function (req, res) {
     
      
-    res.redirect('email-address-correspondance')
+    res.redirect('aml-supervisor')
     
 })
 
