@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What type of business are you registering? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="type-of-acsp-other" method="post">
+
+
+
+        {{ govukRadios({
+          name: "registering-as",
+          fieldset: {
+            legend: {
+              text: "What other type of business are you registering?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+
+          items: [
+            {
+              value: "unincorporated-body",
+              text: "Unincorporated association"
+            },
+            {
+              value: "corporate-body",
+              text: "Corporate body (registered with Companies House)",
+              hint: {
+                text: "This does not include limited companies or registrable partnerships."
+              }
+            }
+
+          ]
+        }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

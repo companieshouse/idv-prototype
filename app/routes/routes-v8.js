@@ -17,12 +17,32 @@ router.post('/v8/start-page', function (req, res) {
 
 
 /*
- * What general type of business are you registering?
+ * What type of business are you registering?
  */
 router.post('/v8/type-of-acsp', function (req, res) {
-  
-    res.redirect('statement-relevant-officer')
 
+    //Relevant officer
+    if (req.session.data['registering-as'] === 'other') {
+
+        res.redirect('type-of-acsp-other')
+
+    }
+    else{
+
+        res.redirect('statement-relevant-officer')
+    }
+
+
+
+}) 
+
+/*
+ * ACSP other business types 
+ */
+router.post('/v8/type-of-acsp-other', function (req, res) {
+     
+    res.redirect('statement-relevant-officer')
+    
 }) 
 
 
