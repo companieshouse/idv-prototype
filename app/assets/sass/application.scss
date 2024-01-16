@@ -43,3 +43,84 @@
     top:15px;
   }
 }
+
+//Styles for user bar
+
+ul#navigation {
+  font-size: 0.9em;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: right;
+  display: inline-block;
+  float: right;
+  
+  li {
+    display: inline;
+    font-family: 'nta', Arial;
+    font-size: 16px;
+    overflow-wrap: break-word;
+    a {margin-left: 0.9em;}
+  }
+}
+
+// Card background
+.one-filing {
+  margin-bottom: 2em;
+  background-color: #f8f8f8;
+  padding: 1em;
+  clear: both;
+}
+
+// Links under header
+.js-toggle-nav {
+  text-align: right;
+  font-size: 16px;
+  font-family: 'proxima_nova', Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  z-index: 60;
+  clear: none;
+  background: transparent;
+  border-bottom: 1px solid #bfc1c3;
+  vertical-align: middle;
+  padding-bottom: 20px;
+}
+
+.js-signout {
+  text-align: right;
+  font-size: 16px;
+  font-family: 'proxima_nova', Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  z-index: 60;
+  clear: none;
+  background: transparent;
+  border-bottom: 1px solid #bfc1c3;
+  vertical-align: middle;
+  padding-bottom: 20px;
+}
+
+.user {
+  display: inline;
+  font-size: 16px;
+}
+
+.content {
+  display: inline;
+}
+
+.content-email {
+  display: inline;
+  padding-right: 20px;
+}
+
+.nav-spacing {
+  padding-left: 20px;
+}
+
+.text-description {
+  font-size: 16px;
+}
+
+
+
