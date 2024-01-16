@@ -277,7 +277,20 @@ router.post('/v8/auth-code', function (req, res) {
  */
 router.post('/v8/director-selection', function (req, res) {
      
-    res.redirect('check-director-details')
+    
+    if ((req.session.data['director-selection'] === "not-listed")){
+        
+        res.redirect('stop-screen-appoint-director')
+        
+    }
+    // Otherwise ask for their name, address etc.
+    else{
+
+        res.redirect('check-director-details')
+    }
+    
+    
+
     
 })
 
