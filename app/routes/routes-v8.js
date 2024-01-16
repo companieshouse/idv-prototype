@@ -311,13 +311,39 @@ router.post('/v8/type-of-business', function (req, res) {
         res.redirect('address-principle-lookup')
     }
     // Otherwise ask for their name, address etc.
-    else{
+    else if ((req.session.data['registering-as'] === "ltd")  | (req.session.data['registering-as'] === "partnership-ch") |  (req.session.data['registering-as'] === "corporate-body") ){
 
-        
+        res.redirect('aml-supervisor')
         
     } 
 
 })
+
+/*
+ *  other business type
+*/
+
+router.post('/v8/type-of-business-other', function (req, res) {
+
+ 
+
+    if ((req.session.data['registering-as'] === "sole-trader")){
+        
+        res.redirect('address-correspondance-lookup')
+    }
+    else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") ){
+        
+        res.redirect('address-principle-lookup')
+    }
+    // aml supervisor if ltd 
+    else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch")  ){
+
+        res.redirect('aml-supervisor')
+        
+    } 
+ 
+
+})  
 
 
 
@@ -373,26 +399,7 @@ router.post('/v8/address-correspondance-selector', function (req, res) {
 
 
 
-/*
- *  other business type
-*/
-
-router.post('/v8/type-of-business-other', function (req, res) {
-
-    if ((req.session.data['registering-as'] === "sole-trader")){
-        
-        res.redirect('address-correspondance-lookup')
-    }
-    else{
-
-        res.redirect('email-address-correspondance')
-
-    }
-
-
-     
-    
-})   
+ 
 
 /*
  *  Correspondence email - REMOVED from version 8
