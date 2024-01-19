@@ -20,9 +20,12 @@ What is the name of your business? – {{ serviceName }}
   <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        What name do you trade under?
+        What name is registered with your Anti-Money Laundering (AML) supervisory body?
       </h1>
     </legend>
+        <div id="signIn-hint" class="govuk-hint">
+      We'll check this matches what your AML supervisory body holds.
+    </div>
    <!-- <div id="contact-hint" class="govuk-hint">
       Select one option.
     </div> -->
@@ -53,7 +56,7 @@ What is the name of your business? – {{ serviceName }}
         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-trading-name">
           <div class="govuk-form-group">
             <label class="govuk-label" for="trading-name">
-              What is the trading name? 
+              What is the name? 
             </label>
             <input class="govuk-input govuk-!-width-full" id="trading-name" name="trading-name" type="text" spellcheck="false">
           </div>
