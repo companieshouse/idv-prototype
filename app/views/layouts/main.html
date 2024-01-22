@@ -14,6 +14,12 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 
+
+
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% include "includes/user-bar.html" %}
+
 <div class="govuk-width-container">
 
   <nav class="govuk-language-select" aria-label="Choose a language">
@@ -29,7 +35,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 </div>
 
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
 
 {% endblock %}
 

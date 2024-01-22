@@ -5,12 +5,26 @@ Application submitted – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+
+
 {{ govukPhaseBanner({
   tag: {
-    text: "Alpha"
+    text: "Prototype"
   },
   html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+
+
 }) }}
+
+<ul id="navigation" class="mobile-hidden">
+  <li class="user" id="signed-in-user">
+    {{ data['email'] }}
+  </li>
+  <li>
+    <a href="/register/sign-out" id="user-signout">Sign out</a>
+  </li>
+</ul>
+
 
 <div class="govuk-width-container">
 
@@ -24,11 +38,12 @@ Application submitted – {{ serviceName }} – GOV.UK Prototype Kit
           </li>
         </ul>
       </nav>
-
 </div>
 
 
+
 {% endblock %}
+
 
 
 {% block content %}
