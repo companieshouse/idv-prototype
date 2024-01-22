@@ -35,26 +35,31 @@ What is your correspondence address? – {{ serviceName }} – GOV.UK Prototype 
             text: "Address line 1"
           },
           id: "addressOne",
-          name: "addressOne"
+          name: "addressOne",
+          autocomplete: "address-line1"
         }) }}
         {{ govukInput({
           label: {
             text: "Address line 2 (optional)"
           },
           id: "addressTwo",
-          name: "addressTwo"
+          name: "addressTwo",
+          autocomplete: "address-line2"
         }) }}
         {{ govukInput({
           label: {
             text: "City or town"
           },
-          id: "town",
-          name: "town"
+          classes: "govuk-!-width-two-thirds",
+          id: "address-town",
+          name: "address-town",
+          autocomplete: "address-level2"
         }) }}
         {{ govukInput({
           label: {
             text: "County (optional)"
           },
+          classes: "govuk-!-width-two-thirds",
           id: "county",
           name: "county"
         }) }}
@@ -62,6 +67,7 @@ What is your correspondence address? – {{ serviceName }} – GOV.UK Prototype 
           label: {
             text: "Country"
           },
+          classes: "govuk-!-width-two-thirds",
           id: "country",
           name: "country"
         }) }}
@@ -69,8 +75,10 @@ What is your correspondence address? – {{ serviceName }} – GOV.UK Prototype 
           label: {
             text: "Postcode"
           },
+          classes: "govuk-input--width-10",
           id: "postcode",
-          name: "postcode"
+          name: "postcode",
+          autocomplete: "postal-code"
         }) }}
 
         
