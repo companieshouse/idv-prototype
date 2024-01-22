@@ -4,6 +4,18 @@
 Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+
 {% block content %}
 
 <div class="govuk-grid-row">
