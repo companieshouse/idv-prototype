@@ -15,58 +15,20 @@ What is the name of your business? – {{ serviceName }}
 
       <form action="name-of-business" method="post">
 
-
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-        What name is registered with your Anti-Money Laundering (AML) supervisory body?
-      </h1>
-    </legend>
-        <div id="signIn-hint" class="govuk-hint">
-      We'll check this matches what your AML supervisory body holds.
-    </div>
-   <!-- <div id="contact-hint" class="govuk-hint">
-      Select one option.
-    </div> -->
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="personal-name" name="personal-name" type="radio" value="text">
-        <label class="govuk-label govuk-radios__label" for="contact">
-
-          {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-          James Morris 
-          
-          {% else %}
-
-          {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
-  
-          {% endif %}
-        </label>
-      </div>
+        {{ govukInput({
+          label: {
+            text: "What is the business name?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Add content here"
+          },
+          id: "businessName",
+          name: "businessName"
+        }) }}
 
 
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="trading-name" name="trading-name" type="radio" value="email" data-aria-controls="conditional-trading-name">
-          <label class="govuk-label govuk-radios__label" for="trading-name">
-            A different name
-          </label>
-        </div>
-        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-trading-name">
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="trading-name">
-              What is the name? 
-            </label>
-            <input class="govuk-input govuk-!-width-full" id="trading-name" name="trading-name" type="text" spellcheck="false">
-          </div>
-        </div>
-     
-
-    
-    </div>
-  </fieldset>
-</div>
 
 
 

@@ -462,13 +462,23 @@ router.post('/v8/location-lives', function (req, res) {
 
 
 /*
- *  Not registered with Companies House - Date of birth
+ *  Not registered with Companies House - Name of business
  */
 router.post('/v8/name-of-business', function (req, res) {
+     
+    res.redirect('name-held-with-supervisor')
+    
+})
+
+/*
+ *  Verison 8 - new - Not registered with Companies House - Business/trading name
+ */
+router.post('/v8/name-held-with-supervisor', function (req, res) {
      
     res.redirect('type-of-business')
     
 })
+
 
 
 
