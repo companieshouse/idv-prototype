@@ -465,8 +465,18 @@ router.post('/v8/location-lives', function (req, res) {
  *  Not registered with Companies House - Name of business
  */
 router.post('/v8/name-of-business', function (req, res) {
+
+    //they they are sole trader ask what name is held with the supervisor
+    if ((req.session.data['registering-as'] === "sole-trader")) {
+        
+        res.redirect('name-held-with-supervisor')
+    }
+    else {
+    
+        res.redirect('type-of-business')
+    }
      
-    res.redirect('name-held-with-supervisor')
+   
     
 })
 
