@@ -64,11 +64,16 @@
 
         {% if ((data['registering-as'] === "partnership-ch")) %}
        {{ govukInsetText({
-          html: 'You must update the home and correspondence address if they are incorrect. You will need to do this before you apply. <a href="#" target="_blank" class="govuk-link">Update the details of a partner (opens in a new tab)</a>.'
+          html: 'You must update the home and correspondence address if they are incorrect. You will need to do this before you apply. Complete the form to <a href="https://www.gov.uk/government/publications/specify-the-nature-of-a-change-in-the-limited-partnership-lp6" target="_blank" class="govuk-link">change of details for a limited partnership (opens in a new tab)</a>.'
+        }) }} 
+
+                {% elseif ((data['registering-as'] === "partnership-llp")) %}
+        {{ govukInsetText({
+          html: 'You must update the home and correspondence address if they are incorrect. You will need to do this before you apply. <a href="https://www.gov.uk/government/publications/change-details-of-a-member-of-a-limited-liability-partnership-ll-ch01" target="_blank" class="govuk-link">Change details of a member of a limited liability partnership (opens in a new tab)</a>.'
         }) }} 
 
 
-                {% else %}
+                {% elseif ((data['registering-as'] === "ltd")) %}
         {{ govukInsetText({
           html: 'You must update the home and correspondence address if they are incorrect. You will need to do this before you apply. <a href="#" target="_blank" class="govuk-link">Update the details of a director (opens in a new tab)</a>.'
         }) }} 
