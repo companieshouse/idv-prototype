@@ -172,7 +172,7 @@ router.post('/v8/one-login-enter-password', function (req, res) {
         res.redirect('/v8/before-idv')
     }
     //limited company or corporate or PLC or partnership reg with CH
-    else if ((req.session.data['registering-as'] === "ltd")| (req.session.data['registering-as'] === "corporate-body")| (req.session.data['registering-as'] === "public-limited-company")| (req.session.data['registering-as'] === "puc") | (req.session.data['registering-as'] === "partnership-ch")){
+    else if ((req.session.data['registering-as'] === "ltd")| (req.session.data['registering-as'] === "partnership-llp")|(req.session.data['registering-as'] === "corporate-body")| (req.session.data['registering-as'] === "public-limited-company")| (req.session.data['registering-as'] === "puc") | (req.session.data['registering-as'] === "partnership-ch")){
 
         res.redirect('company-lookup')
     }

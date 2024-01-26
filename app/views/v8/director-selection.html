@@ -14,7 +14,7 @@
 
         <span class="govuk-caption-l">MORRIS ACCOUNTING LTD</span>
 
-        <!-- ** Registrable partnership ** -->
+        <!-- ** Limited partnership ** -->
 
         {% if ((data['registering-as'] === "partnership-ch")) %}
         
@@ -54,11 +54,47 @@
           }) }}
 
 
-  
+     <!-- LLP's - which member are you -->
+        {% elseif ((data['registering-as'] === "partnership-llp")) %}
+
+
+        {{ govukRadios({
+          name: "director-selection",
+          fieldset: {
+            legend: {
+              text: "Which member are you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "dir1",
+              text: "James Morris",
+              hint: {
+                text: "Born May 1977"
+              }
+            },
+            {
+              value: "dir2",
+              text: "Tomos South",
+              hint: {
+                text: "Born March 2007"
+              }
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "not-listed",
+              text: "None of these"
+            }
+          ]
+        }) }}
         
 
-        <!-- All other types - which director are you -->
-        {% else %}
+        <!-- Ltd co's - which director are you -->
+        {% elseif ((data['registering-as'] === "ltd")) %}
 
 
         {{ govukRadios({
