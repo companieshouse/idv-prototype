@@ -1,0 +1,150 @@
+{% set title = "Which director are you?" %}
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="director-selection" method="post">
+
+        <span class="govuk-caption-l">MORRIS ACCOUNTING LTD</span>
+
+        <!-- ** Limited partnership ** -->
+
+        {% if ((data['registering-as'] === "partnership-ch")) %}
+        
+        
+          {{ govukRadios({
+            name: "director-selection",
+            fieldset: {
+              legend: {
+                text: "Which general partner are you?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "dir1",
+                text: "James Morris",
+                hint: {
+                  text: "Born May 1977"
+                }
+              },
+              {
+                value: "dir2",
+                text: "Tomos South",
+                hint: {
+                  text: "Born March 2007"
+                }
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "not-listed",
+                text: "None of these"
+              }
+            ]
+          }) }}
+
+
+     <!-- LLP's - which member are you -->
+        {% elseif ((data['registering-as'] === "partnership-llp")) %}
+
+
+        {{ govukRadios({
+          name: "director-selection",
+          fieldset: {
+            legend: {
+              text: "Which member are you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "dir1",
+              text: "James Morris",
+              hint: {
+                text: "Born May 1977"
+              }
+            },
+            {
+              value: "dir2",
+              text: "Tomos South",
+              hint: {
+                text: "Born March 2007"
+              }
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "not-listed",
+              text: "None of these"
+            }
+          ]
+        }) }}
+        
+
+        <!-- Ltd co's - which director are you -->
+        {% elseif ((data['registering-as'] === "ltd")) %}
+
+
+        {{ govukRadios({
+          name: "director-selection",
+          fieldset: {
+            legend: {
+              text: "Which director are you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "dir1",
+              text: "James Morris",
+              hint: {
+                text: "Born May 1977"
+              }
+            },
+            {
+              value: "dir2",
+              text: "Tomos South",
+              hint: {
+                text: "Born March 2007"
+              }
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "not-listed",
+              text: "None of these"
+            }
+          ]
+        }) }}
+      
+          
+        {% endif %}
+
+        
+
+
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

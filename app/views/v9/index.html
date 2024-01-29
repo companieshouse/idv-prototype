@@ -1,0 +1,535 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    
+    <h1 class="govuk-heading-l">
+      {{ serviceName}}
+      <span class="govuk-caption-xl">Version 8</span>
+    </h1>
+
+    {{ govukWarningText({
+      text: "This prototype is being actively worked on - things might break or change very quickly",
+      iconFallbackText: "Warning"
+    }) }}
+
+    <!--{{ govukWarningText({
+      text: "This prototype is not being actively worked on",
+      iconFallbackText: "Warning"
+    }) }}
+
+    <p class="govuk-body-s"><a href="https://app.mural.co/invitation/mural/companieshouse8589/1674141024210?sender=ejames5948&key=2e9f9c77-c184-43ce-92ed-39508254a70a" target=”_blank”>
+      Mural flow for this version of the prototype<a/>
+    </p> -->
+
+    {{ govukButton({
+      text: "Start now",
+      classes: "govuk-button",
+      href:"guidance-ACSPs"
+    }) }}
+
+
+  </div>
+</div>
+
+<!-- <p> Summary: Updating the flow to use the standalone journey for verifying a users identity and reviewing data for sole traders and firms.</p>
+
+-->
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#code">
+        ACSP entry points and links
+      </a>
+    </li>
+  </ul>
+
+  <div class="govuk-tabs__panel" id="code">
+
+   <!--  <p class="govuk-body-s govuk-!-margin-bottom-2">Contents</p>
+    <ul class="govuk-list govuk-list govuk-!-margin-bottom-6">
+      <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+        <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#earlyScreens">Early screens</a>
+      </li>
+      <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+        <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#identity">Identity</a>
+      </li>
+      <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+        <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#oebemo">Overseas entity, beneficial owners and managing officers</a>
+      </li>
+    </ul> -->
+
+    <h2 class="govuk-heading-m" id="earlyScreens">Early screens</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="guidance-ACSPs">Guidance page</a> <strong class="govuk-tag govuk-tag--turquoise">
+            Content TBC
+          </strong> <strong class="govuk-tag govuk-tag--yellow">
+            User Testing
+          </strong>
+        </li>
+
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="start-page">Start page</a> <strong class="govuk-tag govuk-tag--turquoise">
+            Content TBC
+          </strong>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m" id="earlyScreens">Save and resume <strong class="govuk-tag govuk-tag">
+        Design in progress
+      </strong></h2> 
+      
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="saved-application">Do you want to continue with a saved application?</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="your-filings">Your filings</a>
+         </li>
+
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="sign-out">Sign out</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="signed-out">Signed out</a> 
+        </li>
+      </ul>
+
+
+
+
+      <h2 class="govuk-heading-m" id="earlyScreens">Type of business registering</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="type-of-acsp">What type of business are you registering?</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="type-of-acsp-other">What other type of business are you registering?</a><strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong> 
+        </li>
+
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="type-of-business">What business sector is it in?</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="type-of-business-other">Other - What business sector is it in?</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m" id="earlyScreens">Relevant officer</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="statement-relevant-officer">Relevant officer</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="stop-not-relevant-officer">Stop screen - Relevant officer</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m" id="verify">Sole trader</h2>
+
+
+      <ul class="govuk-list govuk-list--bullet">
+
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="sign-in">Sign in</a> <strong class="govuk-tag govuk-tag--red">
+            IDAM 
+          </strong>
+        </li>
+
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="before-idv">You need to verify your identity </a> <strong class="govuk-tag govuk-tag--yellow">
+            User Testing
+          </strong> <strong class="govuk-tag govuk-tag--turquoise">
+            Content TBC
+          </strong>
+        </li>
+
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="name">Name</a> <strong class="govuk-tag govuk-tag--pink">
+              Dev ready
+            </strong>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="date-of-birth">Date of birth</a> <strong class="govuk-tag govuk-tag--pink">
+              Dev ready
+            </strong>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="nationality">Nationality</a> <strong class="govuk-tag govuk-tag--pink">
+              Dev ready
+            </strong>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="location-lives">Where do you live?</a><strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong> 
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="name-of-business">Name of business</a> <strong class="govuk-tag govuk-tag--yellow">
+              User Testing
+            </strong> <strong class="govuk-tag govuk-tag--turquoise">
+              Content TBC
+            </strong>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="name-held-with-supervisor">What name are you registered with for AML supervision?</a> 
+            <strong class="govuk-tag">
+              Under review
+            </strong>
+            <strong class="govuk-tag govuk-tag--yellow">
+              User Testing
+            </strong> <strong class="govuk-tag govuk-tag--turquoise">
+              Content TBC
+            </strong>
+          </li>
+
+
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="type-of-business">What business sector is it in?</a> <strong class="govuk-tag govuk-tag--pink">
+              Dev ready
+            </strong>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="type-of-business-other">Other - What business sector is it in?</a> <strong class="govuk-tag govuk-tag--pink">
+              Dev ready
+            </strong>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="address-correspondance-lookup">What is your correspondence address? (lookup)
+            </a> 
+            <strong class="govuk-tag govuk-tag--pink">
+              Dev ready
+            </strong>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="address-correspondance-manual">What is your correspondence address? (manually)
+            </a> 
+            <strong class="govuk-tag govuk-tag--pink">
+              Dev ready
+            </strong>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="address-correspondance-list">Choose an address (correspondance)<strong class="govuk-tag govuk-tag--pink">
+              dev ready
+            </strong> 
+            </a>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="address-correspondance-confirm">Confirm your correspondence address
+            </a> 
+            <strong class="govuk-tag govuk-tag--pink">
+              Dev ready
+            </strong>
+          </li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m" id="userRole">Limited companies and Registrable partnerships</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="how-are-you-aml-supervised">How are you registered with your anti-money laundering (AML) supervisor? </a> <strong class="govuk-tag govuk-tag--turquoise">
+            CONTENT TBC
+          </strong> <strong class="govuk-tag govuk-tag--yellow">
+            User Testing
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="aml-interrupt">Interrupt screen - Your company must be registered with an AML supervisory body 
+          </a> <strong class="govuk-tag govuk-tag--turquoise">
+            CONTENT TBC
+          </strong> <strong class="govuk-tag govuk-tag--yellow">
+            User Testing
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="sign-in">Sign in</a> <strong class="govuk-tag govuk-tag--red">
+            IDAM
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="company-lookup">What is the company number?</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="confirm-company">Is this your company?</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="auth-code">Enter the company authentication code</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="director-selection">Which director are you?</a> <strong class="govuk-tag govuk-tag--pink">
+              Dev ready
+            </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="stop-screen-appoint-director">Stop screen - Which director are you?</a> <strong class="govuk-tag govuk-tag">
+            New
+          </strong> <strong class="govuk-tag govuk-tag--turquoise">
+              CONTENT TBC
+            </strong> <strong class="govuk-tag govuk-tag--yellow">
+              user testing
+            </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="check-director-details">Check your details</a> <strong class="govuk-tag govuk-tag--turquoise">
+            CONTENT TBC
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="type-of-business">What sector do you work in?</a> <strong class="govuk-tag govuk-tag--turquoise">
+            CONTENT TBC
+          </strong>
+        </li> 
+      </ul>
+
+      <h2 class="govuk-heading-m" id="userRole">Partnerships, not registered with Companies House</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="how-are-you-aml-supervised">How are you registered with your anti-money laundering (AML) supervisor?</a> <strong class="govuk-tag govuk-tag--turquoise">
+            CONTENT TBC
+          </strong> <strong class="govuk-tag govuk-tag--yellow">
+            User Testing
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="aml-interrupt">Interrupt screen - Your company must be registered with an AML supervisory body
+          </a> <strong class="govuk-tag govuk-tag--turquoise">
+            CONTENT TBC
+          </strong> <strong class="govuk-tag govuk-tag--yellow">
+            User Testing
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="sign-in">Sign in</a> <strong class="govuk-tag govuk-tag--red">
+            IDAM
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="name">Name</a> <strong class="govuk-tag govuk-tag--pink">
+            dev ready
+          </strong> 
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="date-of-birth">Date of birth</a> <strong class="govuk-tag govuk-tag--pink">
+            dev ready
+          </strong> 
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="nationality">Nationality</a> <strong class="govuk-tag govuk-tag--pink">
+            dev ready
+          </strong> 
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="location-lives">Where do you live?</a> <strong class="govuk-tag govuk-tag">
+            Review design
+          </strong> 
+        </li>
+
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="name-of-business"> What is the name of your business?</a> <strong class="govuk-tag govuk-tag">
+            Review design
+          </strong> <strong class="govuk-tag govuk-tag--yellow">
+            Content TBC
+          </strong><strong class="govuk-tag govuk-tag--pink">
+            User testing
+          </strong>
+        </li>
+
+
+       
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="type-of-business">What sector do you work in?</a> <strong class="govuk-tag govuk-tag--pink">
+            dev ready
+          </strong> 
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="address-principle-lookup">What is your registered office address? (lookup) <strong class="govuk-tag govuk-tag--pink">
+            dev ready
+          </strong> 
+          </a>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="address-principle-manual">What is the registered office address? (manually)
+          </a> 
+          {{govukTag({
+            text: "Content TBC",
+            classes: "govuk-tag--turquoise"
+          })}}
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="address-principle-confirm">Confirm the registered office address <strong class="govuk-tag govuk-tag--turquoise">
+            Content TBC
+          </strong>
+          </a>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="address-correspondance-selector">What is the correspondance address? (lookup) <strong class="govuk-tag govuk-tag--pink">
+            dev ready
+          </strong> 
+          </a>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="address-correspondance-manual">What is the correspondance address? (manually)
+          </a> 
+          {{govukTag({
+            text: "Content TBC",
+            classes: "govuk-tag--turquoise"
+          })}}
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="address-correspondance-confirm">Confirm the correspondance office address <strong class="govuk-tag govuk-tag--turquoise">
+            Content TBC
+          </strong> 
+          </a>
+        </li>
+        
+      </ul>
+
+
+
+      <h2 class="govuk-heading-m" id="AMLdetails">AML details</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="aml-supervisor">What is the name of the Anti-Money Laundering (AML) supervisory body?</a> <strong class="govuk-tag govuk-tag--pink">
+            dev ready
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="aml-number">What is the membership number for Association of Chartered Certified Accountants (ACCA)?</a> <strong class="govuk-tag govuk-tag">
+            Review design
+          </strong> <strong class="govuk-tag govuk-tag--turquoise">
+            Content TBC
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="name-address-match-supervisor">Details may not match those held by the AML supervisory body</a> <strong class="govuk-tag govuk-tag--turquoise">
+            Content TBC
+          </strong> <strong class="govuk-tag govuk-tag--yellow">
+            User testing
+          </strong>
+        </li>
+
+      </ul>
+
+      <h2 class="govuk-heading-m"id="finalScreens">Final screens</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="check-your-answers">Check your answers before sending your application </a> <strong class="govuk-tag govuk-tag">
+             Design review
+            </strong>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="payment"> Payment</a> <strong class="govuk-tag govuk-tag--red">
+              Payment
+            </strong>
+          </li>
+          <li>
+            <a class="govuk-list govuk-link--no-visited-state" href="confirmation"> Confirmation</a> <strong class="govuk-tag govuk-tag--turquoise">
+              Content TBC
+            </strong>
+          </li> 
+        </ul>
+
+        <h2 class="govuk-heading-m" id="verify">Emails <strong class="govuk-tag govuk-tag">
+          Waiting for design decisions 
+         </strong> <strong class="govuk-tag govuk-tag--turquoise">
+          Content TBC
+        </strong> <strong class="govuk-tag govuk-tag--yellow">
+          User testing
+        </strong> </h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="email-acsp-application-received">Email application received</a>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="email-acsp-registration-accepted">Email confirmation accepted </a>
+        </li>
+
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="email-acsp-registration-rejected">Email confirmation rejected</a>
+        </li>
+
+      </ul>
+
+      <h2 class="govuk-heading-m" id="verify">Stop screens <strong class="govuk-tag govuk-tag">
+       Review design 
+      </strong> </h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="stop-screen-not-active">
+            Company is not active
+          </a>
+        </li>
+
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="">
+            Stop screen or error message for DOB less than 16 yrs old
+          </a>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="stop-screen-incorrect-company-type">
+            Selected 'other' on the company type page (review SCRS)
+          </a>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="stop-screen-not-a-soletrader">
+            Sole trader on the banned or suspended list (appears after name, DOB, nationality)
+          </a>
+        </li>
+      </ul>   
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+

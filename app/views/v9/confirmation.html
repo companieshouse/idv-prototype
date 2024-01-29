@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Application submitted – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+
+
+}) }}
+
+<ul id="navigation" class="mobile-hidden">
+  <li class="user" id="signed-in-user">
+    {{ data['email'] }}
+  </li>
+  <li>
+    <a href="/register/sign-out" id="user-signout">Sign out</a>
+  </li>
+</ul>
+
+
+<div class="govuk-width-container">
+
+  <nav class="govuk-language-select" aria-label="Choose a language">
+        <ul class="govuk-language-select__list">
+          <li class="govuk-language-select__list-item">
+            <span aria-current="true">English</span>
+          </li>
+          <li class="govuk-language-select__list-item">
+            <a href="#lang-cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg"><span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span><span aria-hidden="true">Cymraeg</span></a>
+          </li>
+        </ul>
+      </nav>
+</div>
+
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Application submitted</h1>
+        <div class="govuk-panel__body">
+          Your application reference:<br><strong>HDJ2123F</strong>
+        </div>
+      </div>
+
+      <p>
+        We have sent a confirmation email to <strong>james@morrisaccounting.com</strong>.
+      </p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>We'll email you to let you know if your application to register an authorised agent has been accepted or rejected.</p>
+      
+      <p> We'll process the application as soon as possible. This is a new service, so we're not able to tell you exactly how long this will take.</p>
+
+      <h2 class="govuk-heading-m">What happens if the application is accepted</h2>
+      <p>We'll email the authorised agent number to <strong>james@morrisaccounting.com</strong>.</p>
+      <p> You should keep the number secure and must not share it with anyone outside of your organisation. You will need to use it for paper filings and to update the authorised agent's details.</p>
+
+      <h2 class="govuk-heading-m">What happens if the application is rejected</h2>
+      <p>If it's rejected, we'll email you at <strong>james@morrisaccounting.com</strong> to explain what to do next.</p>
+
+
+
+      <p class="govuk-body govuk-!-static-margin-top-9"> <a href="email-acsp-registration-accepted" class="govuk-link govuk-!-font-size-14 govuk-link--no-visited-state">Email confirmation accepted</a></p>
+
+
+      <p class="govuk-body govuk-!-static-margin-top-2"> <a href="" class="govuk-link govuk-!-font-size-14 govuk-link--no-visited-state">Email confirmation rejected</a></p>
+  
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+
+

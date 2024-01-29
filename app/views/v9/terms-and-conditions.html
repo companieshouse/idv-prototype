@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What you’ll need to do as a Companies House authorised agent – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">MORRIS ACCOUNTING LTD</span>
+      <h1 class="govuk-heading-l">
+        What you’ll need to do as a Companies House authorised agent
+      </h1>
+      
+      <p class="govuk-body">Once registered, you must provide details about any changes to the authorised agent's Anti-Money Laundering (AML) registration. This includes if the:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>agent is no longer registered with an AML supervisory body</li>
+          <li>AML registration details change, for example if the agent registers with a different AML supervisory body</li>
+        </ul>
+
+      <!--<p class="govuk-body">If you are no longer responsible for AML compliance, the agent must give details for a new relevant officer. </p> -->
+    <!--  <p class="govuk-body">Authorised agents must keep records of any identity verification checks they complete. We may ask for more information on individual checks if we need to.</p> 
+
+      <p>[Placeholder content - subject to secondary legislation.]</p> -->
+
+      <form class="form" action="terms-and-conditions" method="post">
+
+        
+      
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
