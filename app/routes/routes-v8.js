@@ -65,6 +65,12 @@ router.post('/v8/statement-relevant-officer', function (req, res) {
         
             res.redirect('choose-sign-in')
         }
+         // partnership not registered with CH
+         else if ((req.session.data['registering-as'] === "partnership-not-ch")){
+
+            res.redirect('choose-sign-in')
+
+        }
         // Otherwise ask for their name, address etc.
         else{
     

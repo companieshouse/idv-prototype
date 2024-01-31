@@ -11,9 +11,32 @@ const router = govukPrototypeKit.requests.setupRouter()
  */
 router.post('/v9/start-page', function (req, res) {
      
-    res.redirect('type-of-acsp')
+    res.redirect('choose-sign-in')
     
 })
+
+/*
+ * Saved application 
+ */
+router.post('/v9/saved-application', function (req, res) {
+
+
+    // new application
+    if (req.session.data['startingNew'] === 'no') {
+
+        res.redirect('type-of-acsp')
+
+    }
+     // continue with a saved application
+    else{
+
+        res.redirect('your-filings')
+    }
+
+    
+})
+
+
 
 
 /*
@@ -63,8 +86,15 @@ router.post('/v9/statement-relevant-officer', function (req, res) {
         }
         else if ((req.session.data['registering-as'] === "sole-trader")){
         
-            res.redirect('choose-sign-in')
+            res.redirect('before-idv')
         }
+        // partnership not registered with CH
+        else if ((req.session.data['registering-as'] === "partnership-not-ch")){
+
+            res.redirect('choose-sign-in')
+
+        }
+
         // Otherwise ask for their name, address etc.
         else{
     
@@ -80,6 +110,26 @@ router.post('/v9/statement-relevant-officer', function (req, res) {
     
 }) 
 
+
+/* //emma sort 
+if ((req.session.data['registering-as'] === "sole-trader")){
+        
+    // they have not done ID verification 
+
+    res.redirect('/v9/before-idv')
+}
+//limited company or corporate or PLC or partnership reg with CH
+else if ((req.session.data['registering-as'] === "ltd")| (req.session.data['registering-as'] === "partnership-llp")|(req.session.data['registering-as'] === "corporate-body")| (req.session.data['registering-as'] === "public-limited-company")| (req.session.data['registering-as'] === "puc") | (req.session.data['registering-as'] === "partnership-ch")){
+
+    res.redirect('company-lookup')
+}
+// partnership-not-ch | "unincorporated-body
+else{
+
+    res.redirect('name')
+} */
+ 
+
 /*
  * How are you supervised
  */
@@ -94,7 +144,7 @@ router.post('/v9/how-are-you-aml-supervised', function (req, res) {
     //if they select as a company - Fine
     else{
 
-        res.redirect('choose-sign-in')
+        res.redirect('company-lookup')
 
     }
      
@@ -165,25 +215,14 @@ router.post('/v9/before-idv', function (req, res) {
 router.post('/v9/one-login-enter-password', function (req, res) {
      
     
-    if ((req.session.data['registering-as'] === "sole-trader")){
-        
-        // they have not done ID verification 
-
-        res.redirect('/v9/before-idv')
-    }
-    //limited company or corporate or PLC or partnership reg with CH
-    else if ((req.session.data['registering-as'] === "ltd")| (req.session.data['registering-as'] === "partnership-llp")|(req.session.data['registering-as'] === "corporate-body")| (req.session.data['registering-as'] === "public-limited-company")| (req.session.data['registering-as'] === "puc") | (req.session.data['registering-as'] === "partnership-ch")){
-
-        res.redirect('company-lookup')
-    }
-    // partnership-not-ch | "unincorporated-body
-    else{
-
-        res.redirect('name')
-    }
-
+    res.redirect('/v9/saved-application')
     
 })
+
+
+
+
+
 
 
 
