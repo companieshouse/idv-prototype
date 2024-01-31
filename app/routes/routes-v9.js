@@ -91,7 +91,7 @@ router.post('/v9/statement-relevant-officer', function (req, res) {
         // partnership not registered with CH
         else if ((req.session.data['registering-as'] === "partnership-not-ch")){
 
-            res.redirect('choose-sign-in')
+            res.redirect('name')
 
         }
 
