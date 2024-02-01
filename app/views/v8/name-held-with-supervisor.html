@@ -47,12 +47,19 @@ What is the name of your business? – {{ serviceName }}
                   {% if (data['businessName'] == "") %}
 
                   Morris Accounting 
-                  
+
                   {% else %}
         
-                  {{data['businesName']}}
+                  {{data['businessName']}}
           
                   {% endif %}
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="amlSupervisorName-3" name="amlSupervisorName" type="radio" value="businessName">
+                <label class="govuk-label govuk-radios__label" for="amlSupervisorName-3">
+
+                  Both
                 </label>
               </div>
             </div>
