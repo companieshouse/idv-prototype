@@ -15,6 +15,29 @@ What is the name of your business? – {{ serviceName }}
 
       <form action="name-of-business" method="post">
 
+        <!-- sole-trader -->
+
+        {% if ((data['registering-as'] === "sole-trader")) %}
+        
+
+        {{ govukInput({
+          label: {
+            text: "What is the business name (optional)?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "This is the name your business trades under, if it’s different to your own name."
+          },
+          id: "businessName",
+          name: "businessName"
+        }) }}
+
+        {% else %}
+        
+
+
+
         {{ govukInput({
           label: {
             text: "What is the business name?",
@@ -22,12 +45,14 @@ What is the name of your business? – {{ serviceName }}
             isPageHeading: true
           },
           hint: {
-            text: "Add content here"
+            text: "This is the name your business trades under."
           },
           id: "businessName",
           name: "businessName"
         }) }}
 
+
+        {% endif %}
 
 
 
