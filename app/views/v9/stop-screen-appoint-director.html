@@ -8,18 +8,29 @@ ADD HERE – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Review officers currently on the Companies House register </h1>
-    <p class="govuk-body">
     
-    </p>
-
-    <h2 class="govuk-heading-m">Limited companies</h2>
-
-    <p class="govuk-body"> Review the <a class="govuk-link" href="https://find-and-update.company-information.service.gov.uk/company/06694810/officers">current officers on the companies house register (opens in a new tab)</a>.</p>
-
-    <p class="govuk-body"> Appoint a new director - <a class="govuk-link" href="https://www.gov.uk/guidance/director-information-hub-appointing-directors">Guidance for appointing directors</p>
-
-
+    {% if ((data['registering-as'] === "partnership-ch")) %}
+    <h1 class="govuk-heading-l">You must be a general partner </h1>
+        <p class="govuk-body">
+        You must be added as a general partner of the limited partnership (LP) before you can use this service. </p>
+    
+        <p>You will need to complete the <a href="https://www.gov.uk/government/publications/specify-the-nature-of-a-change-in-the-limited-partnership-lp6">change of details for a limited partnership form</a>.  </p>
+    
+                    {% elseif ((data['registering-as'] === "partnership-llp")) %}
+    <h1 class="govuk-heading-l">You must be a member  </h1>
+        <p class="govuk-body">
+        You must be appointed as a member of the limited liability partnership (LLP) before you can use this service.  </p>
+    
+        <p>You will need to complete the <a href="https://www.gov.uk/government/publications/appoint-a-member-of-a-limited-liability-partnership-ll-ap01">appoint a member of an LLP form</a>.   </p>
+    
+                    {% elseif ((data['registering-as'] === "ltd")) %}
+    <h1 class="govuk-heading-l">You must be a director  </h1>
+        <p class="govuk-body">
+        You must be appointed as a director for the company before you can use this service.  </p>
+    
+        <p>You will need to <a href="https://www.gov.uk/government/publications/appoint-a-director-ap01">complete the appoint a director form</a>. </p>
+                  {% endif %}      
+    
       
 
   
