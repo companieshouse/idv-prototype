@@ -1,0 +1,149 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the name of the Anti-Money Laundering (AML) supervisory body? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="aml-supervisor" method="post">
+
+
+        {% if (data['registering-as'] == "sole-trader") %}
+
+        <span class="govuk-caption-l"> {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}} </span>
+
+        {% else %}
+
+        <span class="govuk-caption-l">MORRIS ACCOUNTING LTD</span>
+
+        {% endif %}
+
+
+
+        {{ govukCheckboxes({
+          name: "aml-supervisor",
+          fieldset: {
+            legend: {
+              text: "Which Anti-Money Laundering (AML) supervisory bodies are you registered with?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+  hint: {
+    text: "Select all that apply."
+  },
+          items: [
+
+            {
+              value: "aat",
+              text: "Association of Accounting Technicians (AAT)"
+            },
+            {
+              value: "acca",
+              text: "Association of Chartered Certified Accountants (ACCA)"
+            },
+            {
+              value: "acia",
+              text: "Association of International Accountants (AIA)"
+            },
+            {
+              value: "iab",
+              text: "International Association of Bookkeepers (IAB)"
+            },
+            {
+              value: "att",
+              text: "Association of Taxation Technicians (ATT)"
+            },
+            {
+              value: "acca",
+              text: "Chartered Institute of for Legal Executives (CILEX)"
+            },
+            {
+              value: "acca",
+              text: "Chartered Institute of Management Accountants (CIMA)"
+            },
+            {
+              value: "acca",
+              text: "Chartered Institute of Taxation (CIOT)"
+            },
+            {
+              value: "acca",
+              text: "Council for Licensed Conveyors (CLC)"
+            },
+            {
+              value: "acca",
+              text: "Faculty Office of the Archbishop of Canterbury (FO)"
+            },
+            {
+              value: "fca",
+              text: "Financial Conduct Authority (FCA)"
+            },
+            {
+              value: "acca",
+              text: "General Council of the Bar"
+            },
+            {
+              value: "acca",
+              text: "General Council of the Bar of Northern Ireland (BONI)"
+            },
+            {
+              value: "hmrc",
+              text: " HMRC"
+            },
+            {
+              value: "acca",
+              text: "Insolvency Practitioners Association (IPA)"
+            },
+            {
+              value: "acca",
+              text: "Institute of Certified Bookkeepers (ICB)"
+            },
+            {
+              value: "acca",
+              text: "Institute of Chartered Accountants in England and Wales (ICAEW)"
+            },
+            {
+              value: "icai",
+              text: "  Institute of Chartered Accountants in Ireland (ICAI)"
+            },
+            {
+              value: "acca",
+              text: "Institute of Chartered Accountants of Scotland (ICAS)"
+            },
+            {
+              value: "acca",
+              text: "Institute of Financial Accountants (IFA)"
+            },
+            {
+              value: "acca",
+              text: "Institute of Accountants and Bookkeepers (IAB)"
+            },
+            {
+              value: "lsni",
+              text: "Law Society of Northern Ireland (LSNI)"
+            },
+            {
+              value: "acca",
+              text: " Law Society of Scotland"
+            },
+            {
+              value: "acca",
+              text: "The Law Society of England and Wales (Solicitors Regulatory Authority - SRA)"
+            }
+          ]
+        }) }}
+        
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
