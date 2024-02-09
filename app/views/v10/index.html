@@ -175,18 +175,25 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
       <ul class="govuk-list govuk-list--bullet">
 
 
-        <li>
-          <a class="govuk-list govuk-link--no-visited-state" href="name">Name</a> <strong class="govuk-tag govuk-tag--pink">
-            Dev ready
-          </strong>
-        </li>
-
 
         <li>
           <a class="govuk-list govuk-link--no-visited-state" href="before-idv">You need to verify your identity </a> <strong class="govuk-tag govuk-tag--yellow">
             User Testing
           </strong> <strong class="govuk-tag govuk-tag--turquoise">
             Content TBC
+          </strong>
+        </li>
+        </ul>
+
+        <h3 class="govuk-heading-s" id="verify">Sole trader that has verified their identity</h3>
+
+
+
+        <ul class="govuk-list govuk-list--bullet">
+
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="name">What is your name?</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
           </strong>
         </li>
 
@@ -213,6 +220,8 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
               Content TBC
             </strong>
           </li>
+
+         <!-- *** REMOVED FROM FLOW ****
           <li>
             <a class="govuk-list govuk-link--no-visited-state" href="name-held-with-supervisor">What name are you registered with for AML supervision?</a> 
             <strong class="govuk-tag">
@@ -224,7 +233,7 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
               Content TBC
             </strong>
           </li>
-
+            -->
 
           <li>
             <a class="govuk-list govuk-link--no-visited-state" href="type-of-business">What business sector is it in?</a> <strong class="govuk-tag govuk-tag--pink">
@@ -266,7 +275,7 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
       </ul>
 
 
-      <h2 class="govuk-heading-m" id="userRole">Limited companies and Registrable partnerships</h2>
+      <h2 class="govuk-heading-m" id="userRole">Limited company (LTD), Limited liability partnership (LLP) and Limited partnership (LP)</h2>
 
       <ul class="govuk-list govuk-list--bullet">
 
@@ -333,12 +342,25 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
         </li> 
       </ul>
 
+      <!-- Partnerships (not registered with Companies House), Unincorporated entities and Corporate bodies -->
+
       <h2 class="govuk-heading-m" id="userRole">Partnerships (not registered with Companies House), Unincorporated entities and Corporate bodies </h2>
       <ul class="govuk-list govuk-list--bullet">
+
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="how-are-you-aml-supervised">How are you registered with your anti-money laundering (AML) supervisor? </a> <strong class="govuk-tag govuk-tag--turquoise">
+            CONTENT TBC
+          </strong> <strong class="govuk-tag govuk-tag--yellow">
+            User Testing
+          </strong>
+        </li>
+
+        <!-- Only capture name if they are supervised by name -->
+
       
 
         <li>
-          <a class="govuk-list govuk-link--no-visited-state" href="name">Name</a> <strong class="govuk-tag govuk-tag--pink">
+          <a class="govuk-list govuk-link--no-visited-state" href="name">What is your name? (only captured if they are supervised by name)</a> <strong class="govuk-tag govuk-tag--pink">
             dev ready
           </strong> 
         </li>
@@ -353,6 +375,20 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
           </strong>
         </li>
 
+
+       
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="type-of-business">What sector do you work in?</a> <strong class="govuk-tag govuk-tag--pink">
+            dev ready
+          </strong> 
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="type-of-business-other">Other - What business sector is it in?</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
+        
+
        <!--  <li>
           <a class="govuk-list govuk-link--no-visited-state" href="date-of-birth">Date of birth</a> <strong class="govuk-tag govuk-tag--pink">
             dev ready
@@ -362,12 +398,12 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
           <a class="govuk-list govuk-link--no-visited-state" href="nationality">Nationality</a> <strong class="govuk-tag govuk-tag--pink">
             dev ready
           </strong> 
-        </li> -->
+        </li> 
         <li>
-          <a class="govuk-list govuk-link--no-visited-state" href="location-lives">Where do you live?</a> <strong class="govuk-tag govuk-tag">
-            Review design
+          <a class="govuk-list govuk-link--no-visited-state" href="location-lives">Where do you live?</a> <strong class="govuk-tag govuk-tag--red">
+            **Removed**
           </strong> 
-        </li>
+        </li>-->
 
         <li>
           <a class="govuk-list govuk-link--no-visited-state" href="address-principle-lookup">What is the business address? (lookup) <strong class="govuk-tag govuk-tag--pink">
@@ -390,7 +426,13 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
           </a>
         </li>
         <li>
-          <a class="govuk-list govuk-link--no-visited-state" href="address-correspondance-selector">What is the correspondance address? (lookup) <strong class="govuk-tag govuk-tag--pink">
+          <a class="govuk-list govuk-link--no-visited-state" href="address-correspondance-selector">What is the correspondance address? (radio selection - business address displayed) <strong class="govuk-tag govuk-tag--pink">
+            dev ready
+          </strong> 
+          </a>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="address-correspondance-lookup">What is the correspondance address? (lookup) <strong class="govuk-tag govuk-tag--pink">
             dev ready
           </strong> 
           </a>
@@ -410,19 +452,6 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
           </a>
         </li>
 
-
-       
-        <li>
-          <a class="govuk-list govuk-link--no-visited-state" href="type-of-business">What sector do you work in?</a> <strong class="govuk-tag govuk-tag--pink">
-            dev ready
-          </strong> 
-        </li>
-        <li>
-          <a class="govuk-list govuk-link--no-visited-state" href="type-of-business-other">Other - What business sector is it in?</a> <strong class="govuk-tag govuk-tag--pink">
-            Dev ready
-          </strong>
-        </li>
-        
       </ul>
 
 
