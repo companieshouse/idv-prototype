@@ -89,14 +89,7 @@ router.post('/v10/statement-relevant-officer', function (req, res) {
             res.redirect('before-idv')
         }
         // partnership not registered with CH
-        else if ((req.session.data['registering-as'] === "partnership-not-ch")){
-
-            res.redirect('name')
-
-        }
-
-        // Otherwise ask for their name, address etc.
-        else{
+        else {
     
             res.redirect('how-are-you-aml-supervised')
         }
@@ -130,23 +123,39 @@ else{
 } */
  
 
-/*
+/*FGFG
  * How are you supervised
  */
 router.post('/v10/how-are-you-aml-supervised', function (req, res) {
 
 
     //if selected company and they are individually supervised
-    if ((req.session.data['how-are-you-aml-supervised'] === "individually")){
+    if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")){
+
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually")){
         
-        res.redirect('aml-interrupt')
-    }
-    //if they select as a company - Fine
-    else{
+            res.redirect('aml-interrupt')
+        }
+        else{
 
-        res.redirect('company-lookup')
+            res.redirect('company-lookup') 
 
+        }
     }
+    else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
+
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually")){
+        
+            res.redirect('name')
+        }
+        else{
+
+            res.redirect('name-of-business') 
+
+        }
+        
+    }
+    
      
     
 }) 
@@ -204,7 +213,7 @@ router.post('/v10/account-interrupt', function (req, res) {
  */
 router.post('/v10/before-idv', function (req, res) {
      
-    res.redirect('/v9/verify-identity-prototype')
+    res.redirect('/v10/verify-identity-prototype')
     
 }) 
 
@@ -215,7 +224,7 @@ router.post('/v10/before-idv', function (req, res) {
 router.post('/v10/one-login-enter-password', function (req, res) {
      
     
-    res.redirect('/v9/saved-application')
+    res.redirect('/v10/saved-application')
     
 })
 
@@ -307,7 +316,7 @@ router.post('/v10/confirm-company', function (req, res) {
  */
 router.post('/v10/auth-code', function (req, res) {
      
-    res.redirect('director-selection')
+    res.redirect('type-of-business')
     
 })
 
@@ -358,12 +367,12 @@ router.post('/v10/type-of-business', function (req, res) {
         
         res.redirect('address-correspondance-lookup')
     }
-    else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") ){
+    else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")){
         
         res.redirect('address-principle-lookup')
     }
     // Otherwise ask for their name, address etc.
-    else if ((req.session.data['registering-as'] === "ltd")  | (req.session.data['registering-as'] === "partnership-ch") |  (req.session.data['registering-as'] === "corporate-body") ){
+    else if ((req.session.data['registering-as'] === "ltd")  | (req.session.data['registering-as'] === "partnership-ch") |  (req.session.data['registering-as'] === "corporate-body") |  (req.session.data['registering-as'] === "partnership-llp")  ){
 
         res.redirect('aml-supervisor')
         
@@ -388,7 +397,7 @@ router.post('/v10/type-of-business-other', function (req, res) {
         res.redirect('address-principle-lookup')
     }
     // aml supervisor if ltd 
-    else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch")  ){
+    else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") |  (req.session.data['registering-as'] === "partnership-llp")  ){
 
         res.redirect('aml-supervisor')
         
@@ -467,8 +476,19 @@ router.post('/v10/email-address-correspondance', function (req, res) {
  *  Not registered with Companies House - Name
  */
 router.post('/v10/name', function (req, res) {
-     
-    res.redirect('date-of-birth')
+
+    //sole trader 
+    if ((req.session.data['registering-as'] === "sole-trader")) {
+        
+        res.redirect('date-of-birth')
+    }
+    else{
+
+        res.redirect('name-of-business')
+
+
+    }
+
     
 })
 
@@ -505,17 +525,7 @@ router.post('/v10/location-lives', function (req, res) {
  */
 router.post('/v10/name-of-business', function (req, res) {
 
-    //they they are sole trader ask what name is held with the supervisor
-    if ((req.session.data['registering-as'] === "sole-trader")) {
-        
-        res.redirect('name-held-with-supervisor')
-    }
-    else {
-    
-        res.redirect('type-of-business')
-    }
-     
-   
+     res.redirect('type-of-business')
     
 })
 
