@@ -16,23 +16,26 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
       <form class="form" action="statement-relevant-officer" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-
-              <h1 class="govuk-fieldset__heading">
-                What is your role in the business?
-              </h1>
-            </legend>
-
+            
               <!-- Director -->
 
               {% if ((data['registering-as'] === "ltd"))  %}
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                <h1 class="govuk-fieldset__heading">
+                  What is your role?
+                </h1>
+              </legend>
+  
+    
 
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
                 
                   <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                    I am a director
+                    I am a director of MORRIS ACCOUNTING (128787)
                   </label>
                 </div>
                 <div class="govuk-radios__item">
@@ -45,6 +48,14 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
 
                 <!-- Sole trader -->
                 {% elseif ((data['registering-as'] === "sole-trader")) %}
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                  <h1 class="govuk-fieldset__heading">
+                    What is your role in the business?
+                  </h1>
+                </legend>
+    
 
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
@@ -63,11 +74,21 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
                      
                 <!-- Limited partnership - general partner -->
                 {% elseif ((data['registering-as'] === "partnership-ch")) %}
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                  <h1 class="govuk-fieldset__heading">
+                    What is your role?
+                  </h1>
+                </legend>
+
+                
+
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
                     <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                      I am a general partner
+                      I am a general partner 
                     </label>
                   </div>
                   <div class="govuk-radios__item">
@@ -81,6 +102,14 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
 
                 <!-- Limited liability partnership - member -->
                 {% elseif ((data['registering-as'] === "partnership-llp")) %}
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                  <h1 class="govuk-fieldset__heading">
+                    What is your role?
+                  </h1>
+                </legend>
+    
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
@@ -98,15 +127,22 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-                
 
                 <!-- Limited liability partnership (LLP), Scottish limited partnership (SLP) and Partnership  -- Partner/MLRO -->
                 {% elseif ((data['registering-as'] === "partnership-not-ch")) %}
 
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                  <h1 class="govuk-fieldset__heading">
+                    What is your role?
+                  </h1>
+                </legend>
+    
+
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
-                    <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">I am a member of the partnership
+                    <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">I am a member of the partnership [business name]
                     </label>
                   </div>
                   <div class="govuk-radios__item">
@@ -118,6 +154,14 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
                 </div>
 
                 {% elseif ((data['registering-as'] === "corporate-body")) %}
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                  <h1 class="govuk-fieldset__heading">
+                    What is your role?
+                  </h1>
+                </legend>
+    
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
@@ -139,6 +183,14 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
                 </div>
                 {% elseif ((data['registering-as'] === "unincorporated-body")) %}
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                  <h1 class="govuk-fieldset__heading">
+                    What is your role?
+                  </h1>
+                </legend>
+
+                
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">

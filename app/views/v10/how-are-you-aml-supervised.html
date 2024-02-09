@@ -14,6 +14,42 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="how-are-you-aml-supervised" method="post">
 
+
+
+       <!-- ltd --- {company name} -->
+
+       {% if ((data['registering-as'] === "ltd")) %}
+
+       {{ govukRadios({
+        name: "how-are-you-aml-supervised",
+        fieldset: {
+          legend: {
+            text: "Which name is registered with your Anti-Money Laundering (AML) supervisory body?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "We'll check this matches what your AML supervisory body holds."
+        },
+        items: [
+          {
+            value: "company",
+            text: "[Company Name]"
+          },
+          {
+            value: "individually",
+            text: "Your name"
+          },
+          {
+            value: "company",
+            text: "Both"
+          }
+        ]
+      }) }}
+
+      {% else %}
+
         {{ govukRadios({
           name: "how-are-you-aml-supervised",
           fieldset: {
@@ -41,6 +77,8 @@
             }
           ]
         }) }}
+
+        {% endif %}
         {{ govukButton({
           text: "Save and continue"
         }) }}
