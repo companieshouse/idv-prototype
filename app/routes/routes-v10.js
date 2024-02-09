@@ -50,11 +50,21 @@ router.post('/v10/type-of-acsp', function (req, res) {
         res.redirect('type-of-acsp-other')
 
     }
-    else{
+    else if ((req.session.data['registering-as'] === "sole-trader")){
 
-        res.redirect('statement-relevant-officer')
+        res.redirect('statement-relevant-officer') 
+    
     }
+    else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")){
 
+        res.redirect('company-lookup') 
+
+    }
+    else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
+
+        res.redirect('how-are-you-aml-supervised') 
+
+    }
 
 
 }) 
@@ -88,11 +98,20 @@ router.post('/v10/statement-relevant-officer', function (req, res) {
         
             res.redirect('before-idv')
         }
-        // partnership not registered with CH
-        else {
+        else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")){
     
-            res.redirect('how-are-you-aml-supervised')
+            res.redirect('how-are-you-aml-supervised') 
+    
         }
+        else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
+    
+            res.redirect('type-of-business')
+    
+        }
+
+
+
+        
         
     }
     // Otherwise take them to a stop screen
@@ -138,7 +157,7 @@ router.post('/v10/how-are-you-aml-supervised', function (req, res) {
         }
         else{
 
-            res.redirect('company-lookup') 
+            res.redirect('type-of-business') 
 
         }
     }
@@ -316,7 +335,20 @@ router.post('/v10/confirm-company', function (req, res) {
  */
 router.post('/v10/auth-code', function (req, res) {
      
-    res.redirect('type-of-business')
+    // res.redirect('type-of-business')
+
+   
+    if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")){
+
+        res.redirect('statement-relevant-officer') 
+
+    }else{
+
+    }
+
+
+
+
     
 })
 
@@ -525,7 +557,17 @@ router.post('/v10/location-lives', function (req, res) {
  */
 router.post('/v10/name-of-business', function (req, res) {
 
-     res.redirect('type-of-business')
+   
+    if ((req.session.data['registering-as'] === "sole-trader")){
+        
+        res.redirect('type-of-business')
+    }
+    else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") ){
+        
+        res.redirect('statement-relevant-officer')
+    }
+ 
+
     
 })
 

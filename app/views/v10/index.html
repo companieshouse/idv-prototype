@@ -153,7 +153,7 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
 
         
         
-        <h2 class="govuk-heading-m" id="earlyScreens">Relevant officer</h2>
+      <!--  <h2 class="govuk-heading-m" id="earlyScreens">Relevant officer</h2>
         <ul class="govuk-list govuk-list--bullet">
           <li>
             <a class="govuk-list govuk-link--no-visited-state" href="statement-relevant-officer">Relevant officer</a> <strong class="govuk-tag govuk-tag--pink">
@@ -165,8 +165,13 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
               Dev ready
             </strong>
           </li>
-        </ul>
+        </ul> -->
 
+
+        {{ govukWarningText({
+          text: "The flows below are currently being worked on. The index page and slack channel will be updated once the prototype is ready to be reviewed.",
+          iconFallbackText: "Warning"
+        }) }}
 
 
       <h2 class="govuk-heading-m" id="verify">Sole trader</h2>
@@ -174,7 +179,26 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
 
       <ul class="govuk-list govuk-list--bullet">
 
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="statement-relevant-officer">Relevant officer</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
 
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="stop-not-relevant-officer">Stop screen - Relevant officer</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
+
+        </ul>
+
+
+        <h3 class="govuk-heading-s" id="verify">- Sole trader that has not verified their identity</h3>
+
+
+
+        <ul class="govuk-list govuk-list--bullet">
 
         <li>
           <a class="govuk-list govuk-link--no-visited-state" href="before-idv">You need to verify your identity </a> <strong class="govuk-tag govuk-tag--yellow">
@@ -185,7 +209,7 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
         </li>
         </ul>
 
-        <h3 class="govuk-heading-s" id="verify">Sole trader that has verified their identity</h3>
+        <h3 class="govuk-heading-s" id="verify">- Sole trader that has verified their identity</h3>
 
 
 
@@ -214,7 +238,7 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
           </strong> 
           </li>
           <li>
-            <a class="govuk-list govuk-link--no-visited-state" href="name-of-business">Name of business</a> <strong class="govuk-tag govuk-tag--yellow">
+            <a class="govuk-list govuk-link--no-visited-state" href="name-of-business">What is the business name? (radio selection) </a> <strong class="govuk-tag govuk-tag--yellow">
               User Testing
             </strong> <strong class="govuk-tag govuk-tag--turquoise">
               Content TBC
@@ -279,21 +303,6 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
 
       <ul class="govuk-list govuk-list--bullet">
 
-      <li>
-        <a class="govuk-list govuk-link--no-visited-state" href="how-are-you-aml-supervised">How are you registered with your anti-money laundering (AML) supervisor? </a> <strong class="govuk-tag govuk-tag--turquoise">
-          CONTENT TBC
-        </strong> <strong class="govuk-tag govuk-tag--yellow">
-          User Testing
-        </strong>
-      </li>
-      <li>
-        <a class="govuk-list govuk-link--no-visited-state" href="aml-interrupt">Interrupt screen - Your company must be registered with an AML supervisory body 
-        </a> <strong class="govuk-tag govuk-tag--turquoise">
-          CONTENT TBC
-        </strong> <strong class="govuk-tag govuk-tag--yellow">
-          User Testing
-        </strong>
-      </li>
 
         <li>
           <a class="govuk-list govuk-link--no-visited-state" href="company-lookup">What is the company number?</a> <strong class="govuk-tag govuk-tag--pink">
@@ -310,6 +319,35 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
             Dev ready
           </strong>
         </li>
+
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="statement-relevant-officer">** Relevant officer **</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
+
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="stop-not-relevant-officer">** Stop screen - Relevant officer **</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="how-are-you-aml-supervised"> ** How are you registered with your anti-money laundering (AML) supervisor? ** </a> <strong class="govuk-tag govuk-tag--turquoise">
+            CONTENT TBC
+          </strong> <strong class="govuk-tag govuk-tag--yellow">
+            User Testing
+          </strong>
+        </li>
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="aml-interrupt">** Interrupt screen - Your company must be registered with an AML supervisory body **
+          </a> <strong class="govuk-tag govuk-tag--turquoise">
+            CONTENT TBC
+          </strong> <strong class="govuk-tag govuk-tag--yellow">
+            User Testing
+          </strong>
+        </li>
+
+
 
 
 
@@ -372,6 +410,18 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
             Content TBC
           </strong><strong class="govuk-tag govuk-tag--pink">
             User testing
+          </strong>
+        </li>
+
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="statement-relevant-officer">** Relevant officer **</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
+          </strong>
+        </li>
+
+        <li>
+          <a class="govuk-list govuk-link--no-visited-state" href="stop-not-relevant-officer">** Stop screen - Relevant officer **</a> <strong class="govuk-tag govuk-tag--pink">
+            Dev ready
           </strong>
         </li>
 
