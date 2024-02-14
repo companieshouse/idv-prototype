@@ -148,6 +148,8 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
                 </div>
 
+                <!-- Corporate body -->
+
                 {% elseif ((data['registering-as'] === "corporate-body")) %}
 
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -161,13 +163,13 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
                     <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                      I am a member of the body
+                      I am a member of the body for {{data['businessName']}}
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="confirm-relevant-person-2" name="confirm-relevant-person-2" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint-2">
                     <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                      I am the equivalent to a director
+                      I am the equivalent to a director for {{data['businessName']}}
                     </label>
                   </div>
                   <div class="govuk-radios__item">
