@@ -60,7 +60,7 @@ router.post('/v10/type-of-acsp', function (req, res) {
         res.redirect('company-lookup') 
 
     }
-    else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
+    else if ((req.session.data['registering-as'] === "partnership-not-ch")){
 
         res.redirect('how-are-you-aml-supervised') 
 
@@ -73,8 +73,15 @@ router.post('/v10/type-of-acsp', function (req, res) {
  * ACSP other business types 
  */
 router.post('/v10/type-of-acsp-other', function (req, res) {
-     
-    res.redirect('statement-relevant-officer')
+
+    if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
+
+        res.redirect('how-are-you-aml-supervised') 
+
+    }
+    else{
+
+    }
     
 }) 
 
@@ -163,7 +170,7 @@ router.post('/v10/how-are-you-aml-supervised', function (req, res) {
     }
     else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
 
-        if ((req.session.data['how-are-you-aml-supervised'] === "individually")){
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually") | (req.session.data['how-are-you-aml-supervised'] === "both")){
         
             res.redirect('name')
         }
@@ -562,7 +569,7 @@ router.post('/v10/name-of-business', function (req, res) {
         
         res.redirect('type-of-business')
     }
-    else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") ){
+    else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")){
         
         res.redirect('statement-relevant-officer')
     }

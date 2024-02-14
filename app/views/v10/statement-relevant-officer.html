@@ -22,20 +22,17 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
               {% if ((data['registering-as'] === "ltd"))  %}
 
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-
                 <h1 class="govuk-fieldset__heading">
                   What is your role?
                 </h1>
               </legend>
   
-    
-
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
                 
                   <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                    I am a director of MORRIS ACCOUNTING (128787)
+                    I am a director of MORRIS ACCOUNTING LTD (02050399)
                   </label>
                 </div>
                 <div class="govuk-radios__item">
@@ -82,13 +79,11 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
                   </h1>
                 </legend>
 
-                
-
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
                     <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                      I am a general partner of MORRIS ACCOUNTING (128787)
+                      I am a general partner of MORRIS LIMITED PARTNERSHIP (LP128787)
                     </label>
                   </div>
                   <div class="govuk-radios__item">
@@ -114,7 +109,7 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
                     <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                      I am a member of MORRIS ACCOUNTING (128787)
+                      I am a member of MORRIS ACCOUNTING LLP (OC357842)
                     </label>
                   </div>
                   <div class="govuk-radios__item">
@@ -128,7 +123,7 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-                <!-- Limited liability partnership (LLP), Scottish limited partnership (SLP) and Partnership  -- Partner/MLRO -->
+                <!-- Partnership not registered with CH -->
                 {% elseif ((data['registering-as'] === "partnership-not-ch")) %}
 
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -142,7 +137,7 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
-                    <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">I am a member of [business name]
+                    <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">I am a member of {{data['businessName']}}
                     </label>
                   </div>
                   <div class="govuk-radios__item">
@@ -195,13 +190,13 @@ What is your role? – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="confirm-relevant-person" name="confirm-relevant-person" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint">
                     <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                      I am a member of the body for [business name]
+                      I am a member of the body for {{data['businessName']}}
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="confirm-relevant-person-2" name="confirm-relevant-person-2" type="radio" value="relevant-officer" aria-describedby="confirm-relevant-person-item-hint-2">
                     <label class="govuk-label govuk-radios__label" for="confirm-relevant-person">
-                      I am a member of the governing body for [business name]
+                      I am a member of the governing body for {{data['businessName']}}
                     </label>
                   </div>
                   <div class="govuk-radios__item">
