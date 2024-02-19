@@ -250,6 +250,16 @@ router.post('/v10/before-idv', function (req, res) {
 router.post('/v10/one-login-enter-password', function (req, res) {
      
     
+    res.redirect('/v10/enter-code')
+    
+})
+
+/*
+ * Sign in - mfa
+ */
+router.post('/v10/enter-code', function (req, res) {
+     
+    
     res.redirect('/v10/saved-application')
     
 })

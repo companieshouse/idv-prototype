@@ -23,15 +23,11 @@
     <p class="govuk-notification-banner__heading">
       We have changed the way you sign in to some of our services
     </p>
-    <p class="govuk-body">Select the option that applies to you.</p>
   {% endset %}
 
   {{ govukNotificationBanner({
     html: html
   }) }}
-
-
-
 
 
     {{ govukRadios({
@@ -49,28 +45,17 @@
       items: [
         {
           value: "OL",
-          text: "Sign in to or create a GOV.UK One Login",
+          text: "Sign in to GOV.UK One Login, or create new sign in details",
           hint: {
-            text: ""
+            text: "This is the new way to sign in to government services. In the future, you’ll be able to use it to access all services on GOV.UK. "
           }
         },
         {
           value: "CHS",
-          text: "Sign in to a Companies House account",
-          hint: {
-            text: "You cannot use your WebFiling details to sign in to this account."
-          }
-        },
-        {
-          divider: "or"
-        },
-        {
-          value: "new",
-          text: "Create new sign in details"
+          text: "Sign in to an existing Companies House account"
         }
       ]
     }) }}
-         
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
@@ -80,9 +65,14 @@
       <div class="govuk-details__text">
         <p class="govuk-body">This is the account you can use to sign in to:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>the Companies House register - sometimes known as 'Companies House service' or 'Find and update company information'</li>
+          <li>the Companies House register - sometimes known as 'Companies House service'     
+     or 'Find and update company information'</li>
           <li>some of our online services - for example, 'Register your company' or 'Upload a document to Companies House'</li>
         </ul>
+          <p class="govuk-body">A Companies House account is not the same as WebFiling.</p>
+
+          
+      
       </div>
     </details>
 
