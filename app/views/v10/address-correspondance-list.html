@@ -66,11 +66,40 @@ What is your correspondence address? – {{ serviceName }} – GOV.UK Prototype 
         ]
       }) }}
 
+
+
+
+          {% if ((data['registering-as'] === "sole-trader")) %}
+     <div class="govuk-inset-text">
+  <p>We'll show which county the correspondence address is in on the public register. </p>
+</div>
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+          {% else %}
+
+       
+
            
       {{ govukButton({
         text: "Confirm and continue",
         href:"address-correspondance-confirm"
       }) }}
+      </form>
+
+    </div>
+  </div>
+
+          {% endif %}
+
+
+
 
 
 

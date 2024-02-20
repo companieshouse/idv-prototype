@@ -56,40 +56,21 @@ What is your name? – {{ serviceName }} – GOV.UK Prototype Kit
        
 
 
-    <!--    {{ govukInsetText({
-          text: "This must be the same as the name held by the anti-money laundering (AML) supervisory body. "
-        }) }} -->
-        
+  
+          {% if ((data['registering-as'] === "sole-trader")) %}
+     <div class="govuk-inset-text">
+  <p>We'll show this on the public register, unless you have a different business name that you trade under. </p>
+</div>
 
 
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
+      </form>
 
+    </div>
+  </div>
 
-       
-
-      <!--  {{ govukInput({
-          label: {
-            text: "What is the name of the business?",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          },
-
-          id: "acsp-name",
-          name: "acsp-name"
-        }) }} -->
-
-      <!--  {{ govukInsetText({
-          text: "This must be the same as the name held by the anti-money laundering (AML) supervisory body. If the AML supervisory body has an incorrect name, you must update this before you apply. "
-        }) }}  -->
-
-
-
-        <!-- Company name rather than ACSP -->
-
-      <!--   {{ govukInsetText({
-          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
-                <p>Add content here. </p>"
-        }) }} -->
+          {% else %}
 
        
 
@@ -99,5 +80,8 @@ What is your name? – {{ serviceName }} – GOV.UK Prototype Kit
 
     </div>
   </div>
+
+          {% endif %}
+
 
 {% endblock %}
