@@ -29,9 +29,9 @@ What is the name of your business? – {{ serviceName }}
         What is the business name?
       </h1>
     </legend>
-    <div id="contact-hint" class="govuk-hint">
+   <!-- <div id="contact-hint" class="govuk-hint">
       This is the name your business trades under.
-    </div>
+    </div> -->
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
@@ -86,9 +86,7 @@ What is the name of your business? – {{ serviceName }}
             classes: "govuk-label--l",
             isPageHeading: true
           },
-          hint: {
-            text: "This is the name your business trades under."
-          },
+
           id: "businessName",
           name: "businessName"
         }) }}
