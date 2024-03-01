@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirm the registered office address – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="address-principle-confirm" method="post">
+
+        <h1 class="govuk-heading-l">Confirm the business address</h1>
+        <ul class="govuk-list">
+          <li>70, Wentloog Road</li>
+          <li>Rumney</li>
+          <li>Cardiff</li>
+          <li>Wales</li>
+          <li>CF3 3EA</li>
+        </ul>
+        <p> <a href="javascript:void(0);">Edit address</a> </p>
+
+       <!--  {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>***PLACEHOLDER CONTENT*** We'll use this to send the unique ACSP reference.</p>"
+        }) }} -->
+
+    <div class="govuk-inset-text">
+  <h2 class="govuk-heading-m">What information we’ll show on the public register</h2>
+  <p>We'll show which county the business is located in. </p>
+</div>
+
+        
+       {{ govukButton({
+          text: "Confirm and continue"
+        }) }}
+
+
+
+
+  
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+You now need to tell us about the business – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You now need to tell us about the business
+      </h1>
+
+      <p class="govuk-body">You’ll need to give details about the business you're registering as an authorised agent. </p>
+
+      <form class="form" action="after-idv" method="post">
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      
+    </div>
+  </div>
+
+{% endblock %}

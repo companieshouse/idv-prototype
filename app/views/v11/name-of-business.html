@@ -1,0 +1,138 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the name of your business? – {{ serviceName }} 
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="name-of-business" method="post">
+
+
+        <!-- sole-trader -->
+
+        {% if ((data['registering-as'] === "sole-trader")) %}
+        
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        What is the business name?
+      </h1>
+    </legend>
+   <!-- <div id="contact-hint" class="govuk-hint">
+      This is the name your business trades under.
+    </div> -->
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+        <label class="govuk-label govuk-radios__label" for="business">
+          
+          James Morris
+
+        {% else %}
+
+        <span class="govuk-label govuk-radios__label">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
+        {% endif %}
+        </label>
+      </div>
+
+     
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-business-name">
+            <label class="govuk-label govuk-radios__label" for="name-of-business">
+              A different name
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-business-name">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="name-of-business">
+                Enter the business name
+              </label>
+              <input class="govuk-input" id="business-name" name="businessName">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+     <div class="govuk-inset-text">
+  <p>We'll show this on the public register. </p>
+</div>
+
+
+
+
+        {% else %}
+        
+
+
+
+        {{ govukInput({
+          label: {
+            text: "What is the business name?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+
+          id: "businessName",
+          name: "businessName"
+        }) }}
+
+
+        {{ govukInsetText({
+          html: '
+                   <p>We will show this on the public register. </p>
+
+                '
+        }) }}
+
+
+
+        {% endif %}
+
+
+
+
+   <!--   <form class="form" action="name-of-business" method="post">
+
+
+
+
+        {{ govukInput({
+          label: {
+            text: "What is the name of your business?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          id: "trading-name",
+          name: "tradingName"
+        }) }} -->
+
+        
+
+
+ <!--       {{ govukInsetText({
+          text: "This must be the same as the name held by the anti-money laundering (AML) supervisory body. If the AML supervisory body has an incorrect name, you must update this before you apply. "
+        }) }} -->
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
