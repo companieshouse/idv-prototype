@@ -11,7 +11,7 @@ const router = govukPrototypeKit.requests.setupRouter()
  */
 router.post('/v11/start-page', function (req, res) {
      
-    res.redirect('choose-sign-in')
+    res.redirect('create-or-sign-in')
     
 })
 
