@@ -705,19 +705,19 @@ router.post('/v10/aml-number-2', function (req, res) {
  */
 router.post('/v11/name-address-match-supervisor-mvp', function (req, res) {
      
-    res.redirect('check-your-answers')
+    res.redirect('terms-and-conditions')
     
 })
 
 
 /*
  *  Terms and conditions
- 
-router.post('/v5/terms-and-conditions', function (req, res) {
+ */
+router.post('/v11/terms-and-conditions', function (req, res) {
      
     res.redirect('check-your-answers')
     
-}) */
+}) 
 
 /*
  *  Check your answers
