@@ -206,29 +206,15 @@ Check your answers before sending your application – {{ serviceName }} – GOV
     
     
     
-      <!-- Limited companies -->
+      <!-- Limited companies, LLPs or LPs -->
 
-       {% elseif ((data['registering-as'] === "ltd"))  %}
+       {% elseif ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp")) %}
 
 
       <h2 class="govuk-heading-m">Company details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Type of business
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Limited Company
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -237,12 +223,12 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           <dd class="govuk-summary-list__value">
             MORRIS ACCOUNTING LTD
           </dd>
-          <dd class="govuk-summary-list__actions">
+          <!-- <dd class="govuk-summary-list__actions">
             <a href="#">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
-          </dd>
+          </dd> -->
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -251,42 +237,26 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           <dd class="govuk-summary-list__value">
             02050399
           </dd>
-          <dd class="govuk-summary-list__actions">
+         <!--  <dd class="govuk-summary-list__actions">
             <a href="#">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
-          </dd>
+          </dd> -->
         </div>
-
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Registered office address
+            Type of business
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street<br>London<br>SE23 6FH
+            Limited Company
           </dd>
-          <dd class="govuk-summary-list__actions">
+          <!-- <dd class="govuk-summary-list__actions">
             <a href="#">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Correspondence address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            72 Guild Street<br>London<br>SE23 6FH
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
+          </dd> -->
         </div>
 
         <div class="govuk-summary-list__row">
@@ -303,6 +273,40 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             </a>
           </dd>
         </div>
+
+        <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+            Registered office address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+         <!-- <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd> -->
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+         <!-- <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd> -->
+        </div>
+
+     
+
+
  
 
         <div class="govuk-summary-list__row">
@@ -327,6 +331,23 @@ Check your answers before sending your application – {{ serviceName }} – GOV
       <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name registered with the AML supervisory body
+          </dt>
+          <dd class="govuk-summary-list__value">
+            MORRIS ACCOUNTING LTD and your name
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> AML supervisory body</span>
+            </a>
+          </dd>
+        </div>
+
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             AML supervisory body and membership number
@@ -366,13 +387,13 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
 
       <!--non-registrable partnerships -->
-      {% elseif ((data['registering-as'] === "partnership-not-ch")) %}
+      {% elseif ((data['registering-as'] === "partnership-not-ch")) or ((data['registering-as'] === "unincorporated-body")) or ((data['registering-as'] === "corporate-body")) %}
 
 
       <h2 class="govuk-heading-m">Business details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Type of business
@@ -380,14 +401,26 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           <dd class="govuk-summary-list__value">
             Partnership
           </dd>
+          
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name registered with the AML supervisory body
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Name of the business and your name
+          </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
               Change
-              <span class="govuk-visually-hidden"> name</span>
+              <span class="govuk-visually-hidden"> name registered with AML supervisory body</span>
             </a>
           </dd>
         </div>
-
+        
+        
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Your name
@@ -402,6 +435,8 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             </a>
           </dd>
         </div>
+
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Business name
