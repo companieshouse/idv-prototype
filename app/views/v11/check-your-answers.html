@@ -63,7 +63,71 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            8 August 1988
+
+
+             <!-- Formatting of day -->
+
+
+            {% if (data['dob-day'] === "01") %}
+              1
+            {% elif (data['dob-day'] === "02") %}
+              2
+            {% elif (data['dob-day'] === "03") %}
+              3
+            {% elif (data['dob-day'] === "04") %}
+              4
+            {% elif (data['dob-day'] === "05") %}
+              5
+            {% elif (data['dob-day'] === "06") %}
+              6
+            {% elif (data['dob-day'] === "07") %}
+              7
+            {% elif (data['dob-day'] === "08") %}
+              8
+            {% elif (data['dob-day'] === "09") %}
+              9
+            {% else %}
+              {{data['dob-day']}}
+
+            {% endif %}
+
+
+            
+
+
+            <!-- Formatting of month -->
+
+            {% if (data['dob-month'] === "01") or (data['dob-month'] === "1") %}
+              January
+            {% elif (data['dob-month'] === "02") or (data['dob-month'] === "2") %}
+              February
+            {% elif (data['dob-month'] === "03") or (data['dob-month'] === "3") %}
+              March
+            {% elif (data['dob-month'] === "04") or (data['dob-month'] === "4") %}
+              April
+            {% elif (data['dob-month'] === "05") or (data['dob-month'] === "5") %}
+              May
+            {% elif (data['dob-month'] === "06") or (data['dob-month'] === "6") %}
+              June
+            {% elif (data['dob-month'] === "07") or (data['dob-month'] === "7") %}
+              July
+            {% elif (data['dob-month'] === "08") or (data['dob-month'] === "8") %}
+              August
+            {% elif (data['dob-month'] === "09") or (data['dob-month'] === "9") %}
+              September
+            {% elif (data['dob-month'] === "10") %}
+              October
+            {% elif (data['dob-month'] === "11") %}
+              November
+            {% elif (data['dob-month'] === "12") %}
+              December
+            {% else %}
+              {{data['dob-month']}}
+            {% endif %}
+            {{data['dob-year']}}
+
+
+    
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
