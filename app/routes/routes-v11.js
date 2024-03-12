@@ -501,7 +501,7 @@ router.post('/v11/address-correspondance-selector', function (req, res) {
     }
     else{
 
-        res.redirect('address-correspondance-confirm')
+        res.redirect('aml-supervisor')
 
     }
     
