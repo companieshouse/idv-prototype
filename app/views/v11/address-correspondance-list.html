@@ -10,7 +10,7 @@ What is your correspondence address? – {{ serviceName }} – GOV.UK Prototype 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="address-correspondance-list" method="post"></form>
+      <form class="form" action="address-correspondance-list" method="post">
 
       {{ govukRadios({
         idPrefix: "address-service-list",
@@ -70,45 +70,34 @@ What is your correspondence address? – {{ serviceName }} – GOV.UK Prototype 
 
 
           {% if ((data['registering-as'] === "sole-trader")) %}
-     <div class="govuk-inset-text">
-  <p>We'll show which county the correspondence address is in on the public register. </p>
-</div>
+          <div class="govuk-inset-text">
+        <p>We'll show which county the correspondence address is in on the public register. </p>
+      </div>
 
-
-        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
-
-      </form>
-
-    </div>
-  </div>
-
-          {% else %}
+      {% else %}
 
        
+      {% endif %}
+      
 
            
       {{ govukButton({
-        text: "Confirm and continue",
+        text: "Save and continue",
         href:"address-correspondance-confirm"
       }) }}
+
+      <p class="govuk-body">
+        <a href="/register-an-acsp/address-lookup/acsp-address-manual" class="govuk-link govuk-link--no-visited-state">Enter the address manually</a>
+      </p>
       </form>
 
     </div>
   </div>
 
-          {% endif %}
 
 
 
-
-
-
-          
-        </form>
-
-        <p class="govuk-body">
-          <a href="/register-an-acsp/address-lookup/acsp-address-manual" class="govuk-link govuk-link--no-visited-state">Enter the address manually</a>
-        </p>
+        
         
  
 

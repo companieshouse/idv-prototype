@@ -237,7 +237,7 @@ router.post('/v11/account-interrupt', function (req, res) {
 /*
  * You need to prove your identity
  */
-router.post('/v110/before-idv', function (req, res) {
+router.post('/v11/before-idv', function (req, res) {
      
     res.redirect('/v11/verify-identity-prototype')
     
