@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% block pageTitle %}
+  Start page – {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="account-interrupt" method="post" novalidate>
+      <h1 class="govuk-heading-xl">We have changed the way you sign in to some of our services</h1>
+     
+     <p class="govuk-body">We’ll ask you to sign in or create a GOV.UK One Login, which will allow you to access many government services using the same email address and password.</p>
+
+      <h2 class="govuk-heading-m">You can save your existing information</h2>
+      <p class="govuk-body">If you use the same email address for your GOV.UK One Login as your existing Companies House account, we'll save any information stored, such as:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your filing history</li>
+        <li>companies you follow</li>
+      </ul>
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+           What is a Companies House account?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">This is the account you can use to sign in to:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the Companies House register - sometimes known as 'Companies House service' or 'Find and update company information'</li>
+            <li>some of our online services - for example, 'Register your company' or 'Upload a document to Companies House'</li>
+          </ul>
+          <p class="govuk-body">A Companies House account is not the same as WebFiling.</p>
+        </div>
+      </details>
+
+   
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-8",
+        isStartButton: true
+      }) }}
+
+    </form>
+    </div>
+  </div>
+{% endblock %}

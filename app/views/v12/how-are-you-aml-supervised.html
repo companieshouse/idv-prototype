@@ -1,0 +1,88 @@
+{% set title = "How are you registered with your anti-money laundering (AML) supervisor?" %}
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="how-are-you-aml-supervised" method="post">
+
+
+
+       <!-- ltd --- {company name} -->
+
+       {% if ((data['registering-as'] === "ltd")) %}
+
+       {{ govukRadios({
+        name: "how-are-you-aml-supervised",
+        fieldset: {
+          legend: {
+            text: "Which name is registered with your Anti-Money Laundering (AML) supervisory body?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "We'll check this matches what your AML supervisory body holds."
+        },
+        items: [
+          {
+            value: "company",
+            text: "[Company Name]"
+          },
+          {
+            value: "individually",
+            text: "Your name"
+          },
+          {
+            value: "both",
+            text: "Both"
+          }
+        ]
+      }) }}
+
+      {% else %}
+
+        {{ govukRadios({
+          name: "how-are-you-aml-supervised",
+          fieldset: {
+            legend: {
+              text: "Which name is registered with your Anti-Money Laundering (AML) supervisory body?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "We'll check this matches what your AML supervisory body holds."
+          },
+          items: [
+            {
+              value: "company",
+              text: "Name of the business"
+            },
+            {
+              value: "individually",
+              text: "Your name"
+            },
+            {
+              value: "both",
+              text: "Both"
+            }
+          ]
+        }) }}
+
+        {% endif %}
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
