@@ -12,15 +12,26 @@ What sector do you work in? – {{ serviceName }} – GOV.UK Prototype Kit
       <form class="form" action="type-of-business" method="post">
 
 
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+        {% if (((data['registering-as'] === "sole-trader"))  or  ((data['registering-as'] === "partnership-not-ch")))  %}
 
-        <span class="govuk-caption-l"> James Morris </span>
 
-        {% else %}
+          {% if (data['first-name'] == "") and (data['last-name'] == "") %}
 
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
+          <span class="govuk-caption-l"> James Morris </span>
 
-        {% endif %}
+          {% else %}
+
+          <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
+          {% endif %}
+        
+          {% else %}
+
+          <span class="govuk-caption-l">MORRIS ACCOUNTING LTD </span>
+
+
+
+          {% endif %}
 
 <!--         {% set otherBusinessTypeHtml %}
 

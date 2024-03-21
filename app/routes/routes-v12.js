@@ -462,10 +462,38 @@ router.post('/v12/type-of-business-other', function (req, res) {
  * Principle/registered office address 
  */
  router.post('/v12/address-principle-lookup', function (req, res) {
+
+
+     //if house number is empty
+     if (req.session.data['principle-name'] === '') {
+
+        res.redirect('address-principle-list')
+
+      } else {
+        // go to the confirm address page
+        res.redirect('address-principle-confirm')
+    
+      }
+     
+
+    
+})
+
+/*
+ *  Principle/registered office address list
+ */
+router.post('/v12/address-principle-list', function (req, res) {
+    
      
     res.redirect('address-principle-confirm')
     
 })
+
+
+
+
+
+
 
 /*
  *  Principle/registered office address manually entering address
