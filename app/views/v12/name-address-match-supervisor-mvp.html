@@ -29,21 +29,30 @@ Details may not match those held by the AML supervisory body – {{ serviceName 
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">AML supervisory body</th>
           <th scope="col" class="govuk-table__header">AML membership number</th>
+          <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden"> Change AML details</span></th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Association of Chartered Certified Accountants (ACCA)</th>
           <td class="govuk-table__cell">554-6325-4555</td>
+
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Association of Chartered Certified Accountants (ACCA)</span></a> 
+          </td>
+
+
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Association of Accounting Technicians (AAT)</th>
           <td class="govuk-table__cell">87654321</td>
-        </tr>
         
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">Association of Accounting Technicians (AAT)</span></a> 
+          </td>
+      </tr>
       </tbody>
     </table>
-
 
 
 
@@ -78,9 +87,9 @@ Details may not match those held by the AML supervisory body – {{ serviceName 
   </tbody>
 </table> -->
 
-<p class="govuk-body">
+<!-- <p class="govuk-body">
   <a href="aml-supervisor" class="govuk-link">Change AML details</a>
-</p>
+</p> -->
 
 
 
@@ -135,24 +144,21 @@ Details may not match those held by the AML supervisory body – {{ serviceName 
         </dl> -->
 
 
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Confirm and continue"
+          }) }}
 
- 
+         <!--  <a class="govuk-link" href="#">Change AML details</a>
+        
+          {{ govukButton({
+            text: "Change AML details",
+            classes: "govuk-button--secondary"
+          }) }} -->
+        </div>
 
 
 
-
-
-
-
-
-
-
-
-
-   
-        {{ govukButton({
-          text: "Confirm and continue"
-         }) }}
 
 
       </form>
