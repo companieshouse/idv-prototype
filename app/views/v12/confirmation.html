@@ -15,7 +15,7 @@ Application submitted – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 }) }}
-
+<div class="govuk-width-container">
 <ul id="navigation" class="mobile-hidden">
   <li class="user" id="signed-in-user">
     {{ data['email'] }}
@@ -24,7 +24,11 @@ Application submitted – {{ serviceName }} – GOV.UK Prototype Kit
     <a href="/register/sign-out" id="user-signout">Sign out</a>
   </li>
 </ul>
+</div>
 
+<div class="govuk-width-container">
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-padding-top-3">
+</div>
 
 <div class="govuk-width-container">
 
@@ -66,6 +70,14 @@ Application submitted – {{ serviceName }} – GOV.UK Prototype Kit
       <p>We'll email you to let you know if your application to register an authorised agent has been accepted or rejected.</p>
       
       <p> We'll process the application as soon as possible. This is a new service, so we're not able to tell you exactly how long this will take.</p>
+
+      <h2 class="govuk-heading-m">Feedback</h2>
+
+
+      <p class="govuk-body">
+        This is a new service. Help us improve it by completing our
+        <a href="#" class="govuk-link"> quick survey </a>.
+      </p>
 
       <h2 class="govuk-heading-m">If the application is accepted</h2>
 
