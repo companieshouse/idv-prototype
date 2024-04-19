@@ -23,43 +23,49 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="start-page" method="post">
+      <form class="form" action="choose-data-to-update" method="post">
 
       <h1 class="govuk-heading-l">
-        Update an authorised agents details
+       
       </h1>
 
 
-
-      <p class="govuk-body">Use this service to tell us about an update to the authorise agent details.</p>
-
-      {{ govukWarningText({
-        text: "Companies House must be told of any updates to the authorised agents details.",
-        iconFallbackText: "Warning"
+      {{ govukRadios({
+        name: "choose-update",
+        fieldset: {
+          legend: {
+            text: "What information about the authorised agent do you want to update?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "name",
+            text: "Name"
+          },
+          {
+            value: "home-address",
+            text: "Home address"
+          },
+          {
+            value: "business-name",
+            text: "Business name"
+          },
+          {
+            value: "cor-address",
+            text: "Correspondence address"
+          },
+          {
+            value: "aml",
+            text: "Anti-Money Laundering (AML) details"
+          }
+        ]
       }) }}
 
-
-      <h2 class="govuk-heading-m">What you'll need</h2>  
-
-      <p class="govuk-body">You’ll need to tell us if their are updates to: </p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>full name</li>
-          <li>business address</li>
-          <li>home address</li>
-        </ul>
-
-
-      <p>It takes around 5 minutes to use this service.</p>
-
-
-
-
-
-
       {{ govukButton({
-        text: "Start now",
-        isStartButton: true, 
-        href:"choose-data-to-update"
+        text: "Continue",
+        href:"update-form"
       }) }}
 
  <!--     <h2 class="govuk-heading-m">Before you start</h2>  
