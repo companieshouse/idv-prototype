@@ -13,7 +13,7 @@ What is your correspondence address? – {{ serviceName }} – GOV.UK Prototype 
       <form class="form" action="address-correspondance-lookup" method="post">
 
 
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+     <!--   {% if (data['first-name'] == "") and (data['last-name'] == "") %}
 
         <span class="govuk-caption-l"> James Morris </span>
 
@@ -23,7 +23,7 @@ What is your correspondence address? – {{ serviceName }} – GOV.UK Prototype 
 
         {% endif %}
          
-        <!-- ************* sole trader - The address needs to be in UK ****** -->
+         ************* sole trader - The address needs to be in UK ****** -->
          {% if (data['registering-as'] === "sole-trader")%}
 
 

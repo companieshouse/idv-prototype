@@ -12,6 +12,18 @@
 //Defining new language toggle style
 @import "govuk-language-select";
 
+
+/* Changes made tag  */
+.changes-made {
+  position: relative;
+  
+  margin: 0 0 0 1em;
+
+  p {
+    margin: 0.5em 0 1em 0;
+  }
+}
+
 .highlight-box {
     background-color: #f9f9f8;
     border-style: solid;

@@ -55,6 +55,10 @@ router.post('/v12/type-of-acsp', function (req, res) {
         res.redirect('statement-relevant-officer') 
     
     }
+    
+    /*
+     * IDV Flow change - Needs to be moved 
+     */
     else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")){
 
         res.redirect('company-lookup') 
@@ -554,14 +558,34 @@ router.post('/v12/email-address-correspondance', function (req, res) {
  */
 router.post('/v12/name', function (req, res) {
 
-    //sole trader 
-    if ((req.session.data['registering-as'] === "sole-trader")) {
+    // Update journey 
+
+    if ((req.session.data['update-journey'] == true )){
+
+        req.session.data['name-has-been-updated'] = true;
+
+
+        res.redirect('/v1-update/update-details')
+
+
+
         
-        res.redirect('date-of-birth')
     }
+
+    // registtration journey
     else{
 
-        res.redirect('name-of-business')
+        //sole trader 
+        if ((req.session.data['registering-as'] === "sole-trader")) {
+            
+            res.redirect('date-of-birth')
+        }
+        else{
+
+            res.redirect('name-of-business')
+
+
+        }
 
 
     }
@@ -602,16 +626,35 @@ router.post('/v12/location-lives', function (req, res) {
  */
 router.post('/v12/name-of-business', function (req, res) {
 
+
+     // Update journey 
+
+     if ((req.session.data['update-journey'] == true )){
+
+        req.session.data['business-name-has-been-updated'] = true;
+
+
+        res.redirect('/v1-update/update-details')
+
+
+
+        
+    }
+
    
-    if ((req.session.data['registering-as'] === "sole-trader")){
-        
-        res.redirect('type-of-business')
-    }
-    else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")){
-        
-        res.redirect('statement-relevant-officer')
-    }
+ // registtration journey
+    else{
+
  
+        if ((req.session.data['registering-as'] === "sole-trader")){
+            
+            res.redirect('type-of-business')
+        }
+        else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")){
+            
+            res.redirect('statement-relevant-officer')
+        }
+    }
 
     
 })
@@ -764,6 +807,61 @@ router.post('/v12/payment', function (req, res) {
     res.redirect('confirmation')
     
 })
+
+
+
+
+ // ************************ version 1 of update ********************************
+
+
+/*
+ * index page
+ */
+router.post('/v1-update/index-update', function (req, res) {
+
+
+
+
+    res.redirect('start-page')
+    
+})
+
+
+
+
+/*
+ * Start page 
+ */
+router.post('/v1-update/start-page', function (req, res) {
+
+      // they have have done ID verification 
+      req.session.data['update-journey'] = true;
+      req.session.data['register-journey'] = false;
+     
+
+    res.redirect('update-details')
+    
+})
+
+
+/*
+ * Start page 
+ */
+router.post('/v1-update/update-details', function (req, res) {
+
+    res.redirect('check-your-answers')
+    
+})
+
+/*
+ * Start page 
+ */
+router.post('/v1-update/check-your-answers', function (req, res) {
+
+    res.redirect('confirmation')
+    
+})
+
 
 
 

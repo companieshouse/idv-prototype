@@ -1,0 +1,210 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    
+    <h1 class="govuk-heading-l">
+      Update an authorised agents details with Companies House 
+      <span class="govuk-caption-xl">Version 1</span>
+    </h1>
+
+
+    {{ govukWarningText({
+      text: "This prototype is being actively worked on - things might break or change very quickly",
+      iconFallbackText: "Warning"
+    }) }}
+
+
+    <form class="form" action="index-update" method="post">
+
+
+    {{ govukRadios({
+      name: "prototype-set-up",
+      fieldset: {
+        legend: {
+          text: "Choose business type:",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "sole-trader",
+          text: "Sole trader"
+        },
+        {
+          value: "limited",
+          text: "Limited company (LTD), Limited liability partnership (LLP) and Limited partnership (LP)"
+        },
+        {
+          value: "partnerships",
+          text: "Partnerships (not registered with Companies House), Unincorporated entities and Corporate bodies"
+        }
+      ]
+    }) }}
+
+
+    {{ govukButton({
+      text: "Start the prototype"
+    }) }}
+
+    </form>
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+  <h2 class="govuk-heading-m">Entry points</h2>
+    
+
+    <!-- Verify someone identity shortcuts -->
+
+    <ul class="govuk-list govuk-list--bullet">
+
+      <li>
+        <a class="govuk-list" href="guidance-update">Guidance</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="">Sign in to Companies House</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="">CHS account home</a>
+      </li>
+  </ul>
+
+<h2 class="govuk-heading-m" id="earlyScreens">Early screens</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+    <li>
+      <a class="govuk-link" href="start-page">Start page</a>
+    </li>
+  </ul>
+
+  <h2 class="govuk-heading-m" id="userRole">Update sole trader</h2>
+
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      <a class="govuk-list" href="update-details-soletrader">Update the authorised agent's details</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">Name</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">Business name</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">Correspondance address</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">Supervisory body</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">AML membership number</a>
+    </li>
+  </ul>
+
+ 
+
+  <h2 class="govuk-heading-m" id="userRole">Update Limited company (LTD), Limited liability partnership (LLP) and Limited partnership (LP)</h2>
+
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      <a class="govuk-list" href="update-details-limited">Update the authorised agent's details</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">Business name</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">Business address</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">Supervisory body</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">AML membership number</a>
+    </li>
+  </ul>
+
+  <h2 class="govuk-heading-m" id="userRole">Partnerships (not registered with Companies House), Unincorporated entities and Corporate bodies</h2>
+
+
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      <a class="govuk-list" href="update-details-partnership">Update the authorised agent's details</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">Name (if AML supervised individually)</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">Business name</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">Business address</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">Supervisory body</a>
+    </li>
+    <li>
+      <a class="govuk-list" href="">AML membership number</a>
+    </li>
+  </ul>
+
+  
+
+  <h2 class="govuk-heading-m"id="finalScreens">Final screens</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-list" href="check-your-answers">Check your answers before submitting the update</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="Confirmation">Confirmation</a>
+      </li>
+      <li>
+        <a class="govuk-list" href=""> Interrupt for closing the authorised agent</a>
+      </li> 
+    </ul>
+
+
+  <h2 class="govuk-heading-m"id="finalScreens">Emails</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-list" href="">Email for updates</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="">Email for changing status</a>
+      </li> 
+    </ul>
+
+
+
+  </div>
+  
+</div>
+
+{% endblock %}
+
+
+
+

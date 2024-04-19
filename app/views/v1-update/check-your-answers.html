@@ -1,0 +1,413 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers before sending your application – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+
+      <form class="form" action="check-your-answers" method="post">
+
+      <h1 class="govuk-heading-xl">Check your answers before submitting the update</h1>
+
+      <div class="govuk-inset-text">
+        Any updates you make to an authorised agent's details are pending until you’ve submitted this filing, and we’ve accepted it.
+      </div>
+
+
+      <!-- Sole traders -->
+
+      {% if (data['prototype-set-up'] === "sole-trader")%}
+
+      <h2 class="govuk-heading-m">Your details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+    
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            James Morris
+          </dd>
+        
+        </div>
+
+       
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            James Morris Accounting
+          </dd>
+          
+        </div>
+
+
+      </dl>
+
+
+
+
+
+      <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            AML supervisory body and membership number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Association of Accounting Technicians</li>
+              <li>87654321</li>
+            </ul>
+          </dd>
+          
+        </div>
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          AML supervisory body and membership number
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Association of Chartered Certified Accountants</li>
+            <li>554-6325-4555</li>
+          </ul>
+        </dd>
+        
+      </div>
+      </dl>
+
+
+
+
+    
+    
+    
+      <!-- Limited companies, LLPs or LPs -->
+
+       {% elseif ((data['prototype-set-up'] === "limited")) %}
+
+
+      <h2 class="govuk-heading-m">Company details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            MORRIS ACCOUNTING LTD
+          </dd>
+          <!-- <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd> -->
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Company number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            02050399
+          </dd>
+         <!--  <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd> -->
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type of business
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Limited Company
+          </dd>
+          <!-- <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd> -->
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            I am a director
+          </dd>
+         <!-- <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>--> 
+        </div>
+
+        <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+            Registered office address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+         <!-- <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd> -->
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+         <!-- <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd> -->
+        </div>
+
+     
+
+
+ 
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business sector 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Auditors, insolvency practitioners, external accountants and tax advisers
+          </dd>
+        
+        </div>
+
+
+        
+      </dl>
+
+      <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name registered with the AML supervisory body
+          </dt>
+          <dd class="govuk-summary-list__value">
+            MORRIS ACCOUNTING LTD and your name
+          </dd>
+          
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            AML supervisory body and membership number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Association of Accounting Technicians</li>
+              <li>87654321</li>
+            </ul>
+          </dd>
+          
+        </div>
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          AML supervisory body and membership number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Association of Chartered Certified Accountants</li>
+            <li>554-6325-4555</li>
+          </ul>
+        </dd>
+        
+      </div>
+      </dl>
+
+
+
+      <!--non-registrable partnerships -->
+      {% elseif ((data['prototype-set-up'] === "partnerships")) %}
+
+
+      <h2 class="govuk-heading-m">Business details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type of business
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Partnership
+          </dd>
+          
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name registered with the AML supervisory body
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Name of the business and your name
+          </dd>
+          
+        </div>
+        
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            James Morris
+          </dd>
+    
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            James Morris Accounting
+          </dd>
+          
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            I am a member
+          </dd>
+          
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business sector 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Auditors, insolvency practitioners, external accountants and tax advisers
+          </dd>
+  
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+          
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+          
+        </div>
+
+
+ 
+
+
+
+
+        
+      </dl>
+
+      <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            AML supervisory body and membership number
+          </dt>
+          
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Association of Accounting Technicians</li>
+              <li>87654321</li>
+            </ul>
+          </dd>
+          
+        </div>
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          AML supervisory body and membership number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Association of Chartered Certified Accountants</li>
+            <li>554-6325-4555</li>
+          </ul>
+        </dd>
+        
+      </dl>
+
+
+      {% endif %}
+
+
+
+      
+
+    
+      <form action="update-details" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Confirm and submit"
+          }) }}
+        
+          <a class="govuk-link" href="#">Cancel</a>
+        </div>
+
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
