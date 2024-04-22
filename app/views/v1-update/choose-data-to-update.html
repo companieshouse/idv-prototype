@@ -23,13 +23,13 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="choose-data-to-update" method="post">
+      <form class="form" action="/v1-update/choose-data-to-update" method="post">
 
       {% if (data['prototype-set-up'] === "sole-trader") %}
 
 
       {{ govukRadios({
-        name: "choose-data",
+        name: "choose-update",
         fieldset: {
           legend: {
             text: "What information about the authorised agent do you want to update?",
@@ -60,6 +60,7 @@
           }
         ]
       }) }}
+
 
       {% elseif (data['prototype-set-up'] === "limited") %}
 

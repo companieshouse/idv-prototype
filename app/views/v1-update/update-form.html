@@ -27,7 +27,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
        <!--- Name -->
 
 
-          <h1 class="govuk-heading-m">Full name</h1>
+          <h1 class="govuk-heading-l">Full name</h1>
 
 
           {{ govukInput({
@@ -231,19 +231,15 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
       {% elseif (data['prototype-set-up'] === "partnerships") and (data['choose-update'] === "business-name")  %}
 
-      <h1 class="govuk-heading-s"> Business name</h1>
 
       {{ govukInput({
         label: {
-          text: "Business name"
+          text: "Business name",
+          classes: "govuk-label--l",
+          isPageHeading: true
         },
-        classes: "govuk-input--width-full",
         id: "business-name",
-        name: "business-name",
-        type: "business-name",
-        value: business-name,
-        autocomplete: "business-name",
-        spellcheck: false
+        name: "businessName"
       }) }}
 
 
