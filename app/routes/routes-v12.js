@@ -819,9 +819,6 @@ router.post('/v12/payment', function (req, res) {
  */
 router.post('/v1-update/index-update', function (req, res) {
 
-
-
-
     res.redirect('start-page')
     
 })
@@ -832,26 +829,32 @@ router.post('/v1-update/index-update', function (req, res) {
 /*
  * Start page 
  */
-router.post('/v1-update/start-page', function (req, res) {
+router.post('/v1-update/update-start-page', function (req, res) {
 
-      // they have have done ID verification 
-      req.session.data['update-journey'] = true;
-      req.session.data['register-journey'] = false;
-     
-
-    res.redirect('update-details')
+    res.redirect('choose-data-to-update')
     
 })
-
 
 /*
  * Start page 
  */
-router.post('/v1-update/update-details', function (req, res) {
+router.post('/v1-update/choose-data-to-update', function (req, res) {
+
+
+    res.redirect('update-form')
+    
+})
+
+/*
+ * Start page 
+ */
+router.post('/v1-update/update-form', function (req, res) {
+
 
     res.redirect('check-your-answers')
     
 })
+
 
 /*
  * Start page 

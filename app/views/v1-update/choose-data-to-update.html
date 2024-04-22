@@ -25,10 +25,74 @@
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="choose-data-to-update" method="post">
 
-      <h1 class="govuk-heading-l">
-       
-      </h1>
+      {% if (data['prototype-set-up'] === "sole-trader") %}
 
+
+      {{ govukRadios({
+        name: "choose-data",
+        fieldset: {
+          legend: {
+            text: "What information about the authorised agent do you want to update?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "name",
+            text: "Name"
+          },
+          {
+            value: "home-address",
+            text: "Home address"
+          },
+          {
+            value: "business-name",
+            text: "Business name"
+          },
+          {
+            value: "cor-address",
+            text: "Correspondence address"
+          },
+          {
+            value: "aml",
+            text: "Anti-Money Laundering (AML) details"
+          }
+        ]
+      }) }}
+
+      {% elseif (data['prototype-set-up'] === "limited") %}
+
+      {{ govukRadios({
+        name: "choose-update",
+        fieldset: {
+          legend: {
+            text: "What information about the authorised agent do you want to update?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "business-name",
+            text: "Company name"
+          },
+          {
+            value: "home-address",
+            text: "Home address"
+          },
+          {
+            value: "cor-address",
+            text: "Correspondence address"
+          },
+          {
+            value: "aml",
+            text: "Anti-Money Laundering (AML) details"
+          }
+        ]
+      }) }}
+
+      {% elseif (data['prototype-set-up'] === "partnerships") %}
 
       {{ govukRadios({
         name: "choose-update",
@@ -63,53 +127,19 @@
         ]
       }) }}
 
+      {% endif %}
+
+
+
+
       {{ govukButton({
-        text: "Continue",
-        href:"update-form"
+        text: "Continue"
       }) }}
 
- <!--     <h2 class="govuk-heading-m">Before you start</h2>  
-
-      <p class="govuk-body">You must verify the identity of the person you are telling us about. The checks you carry out to verify someone’s identity must meet the Companies House identity verification standard.</p> -->
-   
-       <!-- match supervisor  -->
-
-       <!-- Bill -->
-
-    
-
-      <!-- UK -->
 
     </div>
 
- <!-- <div class="govuk-grid-column-one-third">
 
-      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Subsection
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#" class="govuk-!-font-weight-bold">
-                More <span class="govuk-visually-hidden">in Subsection</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
-    </div> -->
 
   </form>
   </div>
