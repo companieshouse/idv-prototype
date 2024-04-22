@@ -246,6 +246,24 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         spellcheck: false
       }) }}
 
+
+      {% else %}
+
+      {{ govukInput({
+        label: {
+          text: "Company name",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        id: "business-name",
+        name: "businessName"
+      }) }}
+
+
+
+
+
+
       {% endif %}
 
 

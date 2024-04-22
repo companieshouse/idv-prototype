@@ -127,6 +127,40 @@
         ]
       }) }}
 
+
+      {% else %}
+
+
+      {{ govukRadios({
+        name: "choose-update",
+        fieldset: {
+          legend: {
+            text: "What information about the authorised agent do you want to update?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "business-name",
+            text: "Company name"
+          },
+          {
+            value: "home-address",
+            text: "Home address"
+          },
+          {
+            value: "cor-address",
+            text: "Correspondence address"
+          },
+          {
+            value: "aml",
+            text: "Anti-Money Laundering (AML) details"
+          }
+        ]
+      }) }}
+
+
       {% endif %}
 
 
