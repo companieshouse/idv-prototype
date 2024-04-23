@@ -26,27 +26,46 @@
       <form class="form" action="update-start-page" method="post">
 
       <h1 class="govuk-heading-l">
-        Update an authorised agents details
+        Update an authorised agent's details
       </h1>
 
 
 
-      <p class="govuk-body">Use this service to tell us about an update to the authorise agent details.</p>
+      <p class="govuk-body">Use this service to tell us about an update to your authorised agent details.</p>
+
 
       {{ govukWarningText({
-        text: "Companies House must be told of any updates to the authorised agents details.",
+        text: "You must tell us about any changes to the agent's Anti-Money Laundering (AML) registration within 14 days.",
         iconFallbackText: "Warning"
       }) }}
 
 
       <h2 class="govuk-heading-m">What you'll need</h2>  
 
-      <p class="govuk-body">You’ll need to tell us if their are updates to: </p>
+      <p class="govuk-body">You'll need to tell us which details have changed, then give the updated details. </p>
+
+      <p class="govuk-body">We'll usually email you within 2 working days to let you know if your update has been accepted or rejected. </p>
+
+      <p class="govuk-body">If you're updating details that we show on the public list of authorised agents, we'll show the new details if your update is accepted. </p>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Details we'll show on the public list of authorised agents
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>We will update the information shown on the public list of authorised agents if you change the:</p>
+    
+
         <ul class="govuk-list govuk-list--bullet">
-          <li>full name</li>
-          <li>business address</li>
-          <li>home address</li>
+          <li>name of your business, or you own name if you’re a sole trader and do not have a different business name</li>
+          <li>town or city of your business address, or your correspondence address if you’re a sole trader</li>
+          <li>AML supervisory bodies your business is registered with</li>
         </ul>
+  </div>
+</details>
+
 
 
       <p>It takes around 5 minutes to use this service.</p>

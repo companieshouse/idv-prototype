@@ -27,7 +27,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
        <!--- Name -->
 
 
-          <h1 class="govuk-heading-l">Full name</h1>
+          <h1 class="govuk-heading-l">What is your name?</h1>
 
 
           {{ govukInput({
@@ -70,7 +70,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         
 
           <div class="govuk-inset-text">
-          We'll show this on the public register, unless you have a different business name that you trade under. 
+          We'll show this on the public list of authorised agents, unless you have a different business name that you trade under. 
           </div>
 
   
@@ -81,7 +81,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
       {% call govukFieldset({
         legend: {
-          text: "Home address",
+          text: "What is your home address?",
           classes: "govuk-fieldset__legend--l"
         }
       }) %}
@@ -128,7 +128,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
       {% call govukFieldset({
         legend: {
-          text: "Correspondence address",
+          text: "What is the correspondence address?",
           classes: "govuk-fieldset__legend--l"
         }
       }) %}
@@ -166,11 +166,16 @@ Check your answers before sending your application – {{ serviceName }} – GOV
  
         {% endcall %}
 
-         <!-- Correspondence address -->
+     <div class="govuk-inset-text">
+  <h2 class="govuk-heading-m">What information we’ll show on the public list of authorised agents </h2>
+  <p>We’ll show the town or city of the correspondence address. </p>
+</div>
+
+         <!-- AML details -->
       {% elseif (data['choose-update'] === "aml")%}
 
 
-        <h1 class="govuk-heading-l">Anti-Money Laundering (AML) details</h1>
+        <h1 class="govuk-heading-l">Anti-Money Laundering (AML) registration details</h1>
 
         {{ govukSelect({
           id: "aml",
@@ -206,17 +211,20 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         }) }}
 
         
-
+     <div class="govuk-inset-text">
+  <h2 class="govuk-heading-m">What information we’ll show on the public list of authorised agents </h2>
+  <p>We'll show the names of the supervisory bodies the business is registered with.  </p>
+</div>
       
       <!-- Business name -->
 
 
-      {% elseif (data['choose-update'] === "business-name") and  (data['prototype-set-up'] === "limited") %}
+      {% elseif (data['choose-update'] === "business-name") %}
 
 
       {{ govukInput({
         label: {
-          text: "Company name",
+          text: "What is the business name?",
           classes: "govuk-label--l",
           isPageHeading: true
         },
@@ -225,6 +233,9 @@ Check your answers before sending your application – {{ serviceName }} – GOV
       }) }}
 
    
+          <div class="govuk-inset-text">
+          We'll show this on the public list of authorised agents. 
+          </div>
 
     
       <!-- Limited companies, LLPs or LPs -->
