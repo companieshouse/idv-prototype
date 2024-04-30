@@ -11,9 +11,136 @@ const router = govukPrototypeKit.requests.setupRouter()
  */
 router.post('/v12/start-page', function (req, res) {
      
-    res.redirect('create-or-sign-in')
+    res.redirect('account-interrupt')
     
 })
+
+
+/*
+ * We have changed the way you sign in to Companies House 
+ */
+router.post('/v12/account-interrupt', function (req, res) {
+     
+    res.redirect('create-or-sign-in')
+    
+}) 
+
+/*
+ * GOV.UK One Login
+ */
+router.post('/v12/create-or-sign-in', function (req, res) {
+     
+    res.redirect('one-login-sign-in')
+    
+}) 
+
+
+/*
+ *  GOV.UK One Login
+ */
+router.post('/v12/one-login-enter-password', function (req, res) {
+     
+    
+    res.redirect('/v12/enter-code')
+    
+})
+
+/*
+ * GOV.UK One Login
+ */
+router.post('/v12/enter-code', function (req, res) {
+
+
+    /*
+    * Check to see if the account is verified 
+    */
+    if (req.session.data['verified-their-id'] == true ) {
+        
+        res.redirect('saved-application')
+    }
+    else{
+
+        res.redirect('before-idv')
+
+    }
+
+
+
+    /*
+      * Important to know where to start each of the journeys
+      */
+
+/* 
+        if (req.session.data['confirm-relevant-person'] === 'relevant-officer') {
+
+            //sole traders need to verify their identity
+            if ((req.session.data['registering-as'] === "sole-trader") && (req.session.data['verified-their-id'] == true )){
+            
+                res.redirect('name')
+            }
+            else if ((req.session.data['registering-as'] === "sole-trader")){
+            
+                res.redirect('before-idv')
+            }
+            else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")){
+        
+                res.redirect('how-are-you-aml-supervised') 
+        
+            }
+            else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
+        
+                res.redirect('type-of-business')
+        
+            }
+ */
+
+})
+
+
+/*
+ * You need to prove your identity
+ */
+router.post('/v12/before-idv', function (req, res) {
+     
+    res.redirect('/v12/verify-identity-prototype')
+    
+}) 
+
+/*
+ * Go to the Verify your identity prototype
+ */
+router.get('/v12/verify-identity-prototype', function (req, res) {
+
+    // they have have done ID verification 
+    req.session.data['verified-their-id'] = true;
+     
+    res.redirect('https://prove-your-identity-prototype.herokuapp.com/release1-v2/pre-one-login/start?version=sole-trader')
+    
+}) 
+
+
+/*
+ * sole trader - do you have a uvid 
+ */
+router.post('/v12/enter-uvid-code', function (req, res) {
+     
+   
+    if ((req.session.data['enter-uvid'] === "yes")){
+        
+        res.redirect('name')
+    }
+    // Otherwise ask for their name, address etc.
+    else{
+
+        res.redirect('before-idv')
+    }
+
+    
+})
+
+
+
+
 
 /*
  * Saved application 
@@ -39,13 +166,15 @@ router.post('/v12/saved-application', function (req, res) {
 
 
 
+
 /*
  * What type of business are you registering?
  */
 router.post('/v12/type-of-acsp', function (req, res) {
 
-    //Relevant officer
-    if (req.session.data['registering-as'] === 'other') {
+
+     //Relevant officer
+     if (req.session.data['registering-as'] === 'other') {
 
         res.redirect('type-of-acsp-other')
 
@@ -71,6 +200,38 @@ router.post('/v12/type-of-acsp', function (req, res) {
     }
 
 
+    
+
+
+
+
+    
+/* IMPORTANT TO KEEP TO REVIEW NEW IDV FLOWS 
+    //Relevant officer
+    if (req.session.data['registering-as'] === 'other') {
+
+        res.redirect('type-of-acsp-other')
+
+    }
+    else if ((req.session.data['registering-as'] === "sole-trader")){
+
+        res.redirect('statement-relevant-officer') 
+    
+    }
+    
+ 
+    else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")){
+
+        res.redirect('company-lookup') 
+
+    }
+    else if ((req.session.data['registering-as'] === "partnership-not-ch")){
+
+        res.redirect('how-are-you-aml-supervised') 
+
+    }
+ */
+
 }) 
 
 /*
@@ -78,25 +239,29 @@ router.post('/v12/type-of-acsp', function (req, res) {
  */
 router.post('/v12/type-of-acsp-other', function (req, res) {
 
-    if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
+
+    res.redirect('statement-relevant-officer') 
+
+    /* IMPORTANT TO KEEP TO REVIEW STARTING POINTS OF IDV FLOWS 
+     if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
 
         res.redirect('how-are-you-aml-supervised') 
 
     }
     else{
 
-    }
+    } */
     
 }) 
 
-
+// **** HERE ****
 
 /*
  * Confirm they are the relevant officer
  */
 router.post('/v12/statement-relevant-officer', function (req, res) {
 
-     
+
       //Relevant officer
       if (req.session.data['confirm-relevant-person'] === 'relevant-officer') {
 
@@ -130,6 +295,9 @@ router.post('/v12/statement-relevant-officer', function (req, res) {
 
         res.redirect('stop-not-relevant-officer')
     }
+
+
+
     
 }) 
 
@@ -191,82 +359,6 @@ router.post('/v12/how-are-you-aml-supervised', function (req, res) {
 }) 
 
 
-// Migration of account screens 
-
-
-/*
- * Choose how to sign in
- */
-router.post('/v12/choose-sign-in', function (req, res) {
-     
-  //If they have an existing chs account
-  if (req.session.data['sign-in-using'] === 'OL') {
-       
-    res.redirect('/v12/create-or-sign-in')
-  }
-  else if (req.session.data['sign-in-using'] === 'CHS') {
-        
-    res.redirect('/v12/chs-sign-in-email')
-  }
-  else if (req.session.data['sign-in-using'] === 'new') {
-        
-    res.redirect('/v12/create-or-sign-in')
-  } 
- 
-    
-}) 
-
-/*
- * account interrupt
- */
-router.post('/v12/chs-sign-in-email', function (req, res) {
-     
-    res.redirect('account-interrupt')
-    
-}) 
-
-
-/*
- * AML interrupt
- */
-router.post('/v12/account-interrupt', function (req, res) {
-     
-    res.redirect('create-or-sign-in')
-    
-}) 
-
-
-
-
-/*
- * You need to prove your identity
- */
-router.post('/v12/before-idv', function (req, res) {
-     
-    res.redirect('/v12/verify-identity-prototype')
-    
-}) 
-
-
-/*
- * Sign in 
- */
-router.post('/v12/one-login-enter-password', function (req, res) {
-     
-    
-    res.redirect('/v12/enter-code')
-    
-})
-
-/*
- * Sign in - mfa
- */
-router.post('/v12/enter-code', function (req, res) {
-     
-    
-    res.redirect('/v12/saved-application')
-    
-})
 
 
 
@@ -274,63 +366,6 @@ router.post('/v12/enter-code', function (req, res) {
 
 
 
-
-/*
- * Go to the Verify your identity prototype
- */
-router.get('/v12/verify-identity-prototype', function (req, res) {
-
-    // they have have done ID verification 
-    req.session.data['gChangesMade'] = true;
-     
-    res.redirect('https://prove-your-identity-prototype.herokuapp.com/release1-v2/pre-one-login/start?version=sole-trader')
-    
-}) 
-
-
-
-
-
-
-/*
- * sole trader - do you have a uvid 
- */
-router.post('/v12/enter-uvid-code', function (req, res) {
-     
-   
-    if ((req.session.data['enter-uvid'] === "yes")){
-        
-        res.redirect('name')
-    }
-    // Otherwise ask for their name, address etc.
-    else{
-
-        res.redirect('before-idv')
-    }
-
-    
-})
-
-
-
-/*
- * You need to prove your identity
- */
-router.post('/v12/gov-login', function (req, res) {
-     
-    res.redirect('after-idv')
-    
-}) 
-
-/*
- * You now need to tell us about the trading name
- */
-router.post('/v12/after-idv', function (req, res) {
-     
-   
-    res.redirect('name') 
-
-}) 
 
 
 /*
@@ -356,9 +391,7 @@ router.post('/v12/confirm-company', function (req, res) {
  */
 router.post('/v12/auth-code', function (req, res) {
      
-    // res.redirect('type-of-business')
-
-   
+ 
     if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")){
 
         res.redirect('statement-relevant-officer') 
@@ -366,6 +399,7 @@ router.post('/v12/auth-code', function (req, res) {
     }else{
 
     }
+
 
 
 
@@ -553,27 +587,16 @@ router.post('/v12/email-address-correspondance', function (req, res) {
     
 })   
 
+
+
+
+/* ******* Sole trader ******* */
+
+
 /*
  *  Not registered with Companies House - Name
  */
 router.post('/v12/name', function (req, res) {
-
-    // Update journey 
-
-    if ((req.session.data['update-journey'] == true )){
-
-        req.session.data['name-has-been-updated'] = true;
-
-
-        res.redirect('/v1-update/update-details')
-
-
-
-        
-    }
-
-    // registtration journey
-    else{
 
         //sole trader 
         if ((req.session.data['registering-as'] === "sole-trader")) {
@@ -587,10 +610,6 @@ router.post('/v12/name', function (req, res) {
 
         }
 
-
-    }
-
-    
 })
 
 /*
@@ -625,38 +644,17 @@ router.post('/v12/location-lives', function (req, res) {
  *  Not registered with Companies House - Name of business
  */
 router.post('/v12/name-of-business', function (req, res) {
-
-
-     // Update journey 
-
-     if ((req.session.data['update-journey'] == true )){
-
-        req.session.data['business-name-has-been-updated'] = true;
-
-
-        res.redirect('/v1-update/update-details')
-
-
-
-        
-    }
-
-   
- // registtration journey
-    else{
-
- 
-        if ((req.session.data['registering-as'] === "sole-trader")){
+    
+    if ((req.session.data['registering-as'] === "sole-trader")){
             
-            res.redirect('type-of-business')
-        }
-        else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")){
+        res.redirect('type-of-business')
+    }
+    else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")){
             
             res.redirect('statement-relevant-officer')
-        }
     }
-
     
+
 })
 
 /*
@@ -667,7 +665,6 @@ router.post('/v12/name-held-with-supervisor', function (req, res) {
     res.redirect('type-of-business')
     
 })
-
 
 
 
