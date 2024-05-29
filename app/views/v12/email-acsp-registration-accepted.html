@@ -13,10 +13,10 @@ Register an ACSP: application approved
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukPanel({
+   <!--   {{ govukPanel({
         titleText: "Register an authorised agent: application approved",
         html: buttonHref
-      }) }}
+      }) }} -->
     <!--  <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
@@ -34,9 +34,13 @@ Register an ACSP: application approved
         </tbody>
       </table> -->
 
+          <h1 style="font-family: Helvetica, Arial, sans-serif; font-size: 36px; line-height: 1.2; font-weight: 700;margin 0; mso-line-height-rule:exactly;">Register an authorised agent: application approved</h1>
+
 
       <p class="govuk-body">We have approved your application and registered MORRIS ACCOUNTING LTD (02050399) as a Companies House authorised agent.</p>
 
+
+<!--
       <div class="highlight-box">
 
       <p class="govuk-body">The authorised agent number for MORRIS ACCOUNTING LTD is: <strong>06254821</strong></p>
@@ -44,37 +48,48 @@ Register an ACSP: application approved
       <p class="govuk-body">Keep the number secure and do not share it with anyone outside of your organisation. You will need this for paper filings.</p>
 
 
-      </div>
-      <h2 class="govuk-heading-m govuk-!-margin-top-8">What happens next</h2>
+      </div> -->
+      <h2 class="govuk-heading-m "">What to do next</h2>
       
       
-      <p class="govuk-body">You can sign in to your Companies House account to access and update your authorised agent account: <a href="sign-in" class="govuk-link govuk-link--no-visited-state">https://find-and-update.company-information.service.gov.uk</a> </p>
+      <p class="govuk-body">You can access the authorised agent account for MORRIS ACCOUNTING LTD  when you sign in to your Companies House account.  </p>
+
+      <p class="govuk-body">From XX DATE you'll be able to file as an authorised agent and use our service to tell us you've verified someone's identity.</p>      
       
-      <p>You can also access services to:</p>
-
-            <ul class="govuk-list govuk-list--bullet">
-              <li>file online as an authorised agent</li>
-              <li>tell us you have verified someone's identity</li>
-            </ul>
-
-       <h3 class="govuk-heading-s">Add people who work for the authorised agent</h3>
-
-            <p class="govuk-body">You can add people to your authorised agent account if they need to access services for authorised agents. </p>
+      <h3 class="govuk-heading-s">Add people who work for the authorised agent</h3>
 
 
-  <p class="govuk-body">You can choose if you want them to be able to add and remove other people who work for the authorised agent. </p>
-          
 
 
-      <h2 class="govuk-heading-m">Your responsibilities as an authorised agent </h2>
-      <p>You must: </p>
-                  <ul class="govuk-list govuk-list--bullet">
+      <p>You should add people who work for your business if they need to file with Companies House. They do not need to verify their identity.</p>
+
+
+      <div class="govuk-inset-text">
+ <p> Sign in to your Companies House account to access and add people to MORRIS ACCOUNTING LTD: </p>
+ <p><a href="https://find-update-company-info.herokuapp.com/authorised-agent/acsp-home-super-admin">https://find-and-update.company-information.service.gov.uk</a></p>
+</div>
+
+       <h2 class="govuk-heading-m">Your responsibilities</h2>
+
+            <p class="govuk-body">As an authorised agent, you must:  </p>
+
+                              <ul class="govuk-list govuk-list--bullet">
                 <li>tell us if there is a change to your Anti-Money Laundering (AML) registration status, or the supervisory body details you have provided – you must do this within 14 days</li>
                 <li>provide more information to Companies House if requested – this could be about your business, or records of your filings with Companies House</li>
                 <li>keep records of any evidence used to verify someone’s identity for 7 years, if you verify the identity of clients for Companies House</li>
 
             </ul>
 
+
+          <!--
+
+       <h3 class="govuk-heading-s">File as an authorised agent from XX DATE</h3>
+
+            <p class="govuk-body">You will be able to file online when you’re signed in to your Companies House account.</p>
+            <p class="govuk-body">To file on paper or using software, you’ll need the authorised agent number. You can find this on your authorised agent account. </p>
+
+
+       <h3 class="govuk-heading-s">Verify someone’s identity for Companies House from XX DATE</h3> -->
 
 
 
@@ -86,8 +101,7 @@ Register an ACSP: application approved
     <!--  <h3 class="govuk-heading-m">Feedback</h3>
       <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p> -->
       <h2 class="govuk-heading-m">Contact us</h2>
-      <p class="govuk-body">If you have a question about your submission, you can contact us.</p>
-      <h3 class="govuk-heading-s">Telephone</h3>
+            <h3 class="govuk-heading-s">Telephone</h3>
       <ul class="govuk-list">
         <li>0303 1234 500</li>
         <li>Monday to Friday, 8:30am to 6pm</li>
@@ -102,8 +116,7 @@ Register an ACSP: application approved
         </li>
       </ul>
 
-            <h3 class="govuk-heading-m">Get news and updates</h3>
-      <p class="govuk-body">Sign up to our email newsletters</a> to keep up to date with news and updates from Companies House: <a href="https://public.govdelivery.com/accounts/UKCH/subscriber/new" class="govuk-link govuk-link--no-visited-state">https://public.govdelivery.com/accounts/UKCH/subscriber/new</a></p>
+
     </div>
     </div>
 
