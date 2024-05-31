@@ -19,33 +19,29 @@ Do you want to continue with your current application? – {{ serviceName }} –
   name: "startingNew",
   fieldset: {
     legend: {
-      text: "Do you want to continue with a saved application?",
+      text: "Do you want to start a new application?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }  
   },
-  hint: {
-    text: "If you have saved applications, you can continue with one of these or start a new one. "
-  },
+
 
 
 
   items: [
     {
       value: "yes",
-      text: "Yes - continue with a saved application",
+      text: "Yes, start a new application",
       hint: {
-        text: "You’ll be able to choose which application you want to continue with."
-      }
+        text: "If you have a saved application, this will be deleted."
+      },
+      checked: checked("statements", "noneIdentified")
     },
     {
       value: "no",
-      text: "No - start a new application",
-      hint: {
-        text: "This will not delete any saved applications."
-      },
-      checked: checked("statements", "noneIdentified")
+      text: "No, continue with a saved application"
     }
+
   ]
 }) }}
 

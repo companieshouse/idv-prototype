@@ -149,7 +149,7 @@ router.post('/v12/saved-application', function (req, res) {
 
 
     // new application
-    if (req.session.data['startingNew'] === 'no') {
+    if (req.session.data['startingNew'] === 'yes') {
 
         res.redirect('type-of-acsp')
 
