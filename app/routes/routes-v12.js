@@ -266,14 +266,11 @@ router.post('/v12/statement-relevant-officer', function (req, res) {
       if (req.session.data['confirm-relevant-person'] === 'relevant-officer') {
 
         //sole traders need to verify their identity
-        if ((req.session.data['registering-as'] === "sole-trader") && (req.session.data['gChangesMade'] == true )){
+        if ((req.session.data['registering-as'] === "sole-trader")){
         
             res.redirect('name')
         }
-        else if ((req.session.data['registering-as'] === "sole-trader")){
-        
-            res.redirect('before-idv')
-        }
+
         else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")){
     
             res.redirect('how-are-you-aml-supervised') 
