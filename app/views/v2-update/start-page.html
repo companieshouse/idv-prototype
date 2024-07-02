@@ -1,0 +1,128 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="update-start-page" method="post">
+
+      <h1 class="govuk-heading-l">
+        Update an authorised agent's details
+      </h1>
+
+
+
+      <p class="govuk-body">Use this service to tell us about an update to your authorised agent details.</p>
+
+
+      {{ govukWarningText({
+        text: "You must tell us about any changes to the agent's Anti-Money Laundering (AML) registration within 14 days.",
+        iconFallbackText: "Warning"
+      }) }}
+
+
+      <h2 class="govuk-heading-m">What you'll need</h2>  
+
+      <p class="govuk-body">You'll need to tell us which details have changed, then give the updated details. </p>
+
+      <p class="govuk-body">We'll usually email you within 2 working days to let you know if your update has been accepted or rejected. </p>
+
+      <p class="govuk-body">If you're updating details that we show on the public list of authorised agents, we'll show the new details if your update is accepted. </p>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Details we'll show on the public list of authorised agents
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>We will update the information shown on the public list of authorised agents if you change the:</p>
+    
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>name of your business, or you own name if you’re a sole trader and do not have a different business name</li>
+          <li>town or city of your business address, or your correspondence address if you’re a sole trader</li>
+          <li>AML supervisory bodies your business is registered with</li>
+        </ul>
+  </div>
+</details>
+
+
+
+      <p>It takes around 5 minutes to use this service.</p>
+
+
+
+
+
+
+      {{ govukButton({
+        text: "Start now",
+        isStartButton: true
+      }) }}
+
+ <!--     <h2 class="govuk-heading-m">Before you start</h2>  
+
+      <p class="govuk-body">You must verify the identity of the person you are telling us about. The checks you carry out to verify someone’s identity must meet the Companies House identity verification standard.</p> -->
+   
+       <!-- match supervisor  -->
+
+       <!-- Bill -->
+
+    
+
+      <!-- UK -->
+
+    </div>
+
+ <!-- <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div> -->
+
+  </form>
+  </div>
+{% endblock %}

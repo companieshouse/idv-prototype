@@ -1,0 +1,181 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/v1-update/choose-data-to-update" method="post">
+
+      {% if (data['prototype-set-up'] === "sole-trader") %}
+
+
+      {{ govukRadios({
+        name: "choose-update",
+        fieldset: {
+          legend: {
+            text: "What information about the authorised agent do you want to update?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "name",
+            text: "Your name"
+          },
+          {
+            value: "business-name",
+            text: "Business name"
+          },
+          {
+            value: "home-address",
+            text: "Home address"
+          },
+          {
+            value: "cor-address",
+            text: "Correspondence address"
+          },
+          {
+            value: "aml",
+            text: "Anti-Money Laundering (AML) registration details"
+          }
+        ]
+      }) }}
+
+
+      {% elseif (data['prototype-set-up'] === "limited") %}
+
+      {{ govukRadios({
+        name: "choose-update",
+        fieldset: {
+          legend: {
+            text: "What information about the authorised agent do you want to update?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "business-name",
+            text: "Company name"
+          },
+          {
+            value: "home-address",
+            text: "Home address"
+          },
+          {
+            value: "cor-address",
+            text: "Correspondence address"
+          },
+          {
+            value: "aml",
+            text: "Anti-Money Laundering (AML) registration details"
+          }
+        ]
+      }) }}
+
+      {% elseif (data['prototype-set-up'] === "partnerships") %}
+
+      {{ govukRadios({
+        name: "choose-update",
+        fieldset: {
+          legend: {
+            text: "What information about the authorised agent do you want to update?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "name",
+            text: "Your name"
+          },
+          {
+            value: "home-address",
+            text: "Home address"
+          },
+          {
+            value: "business-name",
+            text: "Business name"
+          },
+          {
+            value: "cor-address",
+            text: "Correspondence address"
+          },
+          {
+            value: "aml",
+            text: "Anti-Money Laundering (AML) registration details"
+          }
+        ]
+      }) }}
+
+
+      {% else %}
+
+
+      {{ govukRadios({
+        name: "choose-update",
+        fieldset: {
+          legend: {
+            text: "What information about the authorised agent do you want to update?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "business-name",
+            text: "Business name"
+          },
+          {
+            value: "home-address",
+            text: "Home address"
+          },
+          {
+            value: "cor-address",
+            text: "Correspondence address"
+          },
+          {
+            value: "aml",
+            text: "Anti-Money Laundering (AML) registration details"
+          }
+        ]
+      }) }}
+
+
+      {% endif %}
+
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+    </div>
+
+
+
+  </form>
+  </div>
+{% endblock %}

@@ -6,7 +6,7 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-
+//registration
 router.use('/', require('./routes/routes-v1.js'))
 router.use('/', require('./routes/routes-v2.js'))
 router.use('/', require('./routes/routes-v3.js'))
@@ -19,3 +19,7 @@ router.use('/', require('./routes/routes-v9.js'))
 router.use('/', require('./routes/routes-v10.js'))
 router.use('/', require('./routes/routes-v11.js'))
 router.use('/', require('./routes/routes-v12.js'))
+
+//update 
+router.use('/', require('./routes/routes-update-v1.js'))
+router.use('/', require('./routes/routes-update-v2.js'))
