@@ -24,21 +24,64 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
        <h1 class="govuk-heading-l">Update authorised agent details</h1>
 
+          <h2 class="govuk-heading-m">Your name</h2>
+
+          <p class="govuk-body">* Sole trader *</p>
+
+
+          {{ govukInput({
+            label: {
+              text: "First name"
+            },
+            classes: "govuk-input--width-20",
+            id: "first-name",
+            name: "firstName",
+            spellcheck: false
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Middle names"
+            },
+
+            classes: "govuk-input--width-20",
+            id: "middle-name",
+            value: middle-name,
+            name: "middle-name"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Last name"
+            },
+            classes: "govuk-input--width-20",
+            id: "last-name",
+            name: "last-name",
+            type: "last-name",
+            value: last-name,
+            autocomplete: "last-name",
+            spellcheck: false
+          }) }}
+        
+
+          <div class="govuk-inset-text">
+          We'll show this on the public list of authorised agents, unless you have a different business name that you trade under. 
+          </div>
+
+
 
       {{ govukInput({
         label: {
-          text: "Company name",
+          text: "Business name / Company name",
           classes: "govuk-label--m"
         },
         id: "business-name",
         name: "businessName"
       }) }}
 
-        
 
-          <div class="govuk-inset-text">
-          We'll show this on the public list of authorised agents, unless you have a different business name that you trade under. 
-          </div>
+
+
 
   
       <!--- Where you live  -->
@@ -106,6 +149,9 @@ Check your answers before sending your application – {{ serviceName }} – GOV
   
       
       {% endcall %}
+
+
+      
 
 
            <!--- Correspondance address  -->

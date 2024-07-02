@@ -27,7 +27,9 @@ router.post('/v2-update/index-update', function (req, res) {
  */
 router.post('/v2-update/update-start-page', function (req, res) {
 
-    if ((req.session.data['prototype-set-up'] === "sole-trader")){
+    res.redirect('update-all-types')
+
+  /*   if ((req.session.data['prototype-set-up'] === "sole-trader")){
         
         res.redirect('sole-trader-form')
     }
@@ -40,7 +42,7 @@ router.post('/v2-update/update-start-page', function (req, res) {
 
         res.redirect('partnership-form')
     }
-    
+     */
 })
 
 
