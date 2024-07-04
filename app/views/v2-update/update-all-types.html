@@ -24,10 +24,13 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
        <h1 class="govuk-heading-l">Update authorised agent details</h1>
 
+<!-- 
+       --radio (How are you AML supervised) Firm supervised for AML - hint -->
+
           <h2 class="govuk-heading-m">Your name</h2>
 
-          <p class="govuk-body">* Sole trader *</p>
-
+<!--           <p class="govuk-body">* Sole trader - Partnerships if they are supervised by AML by name *</p>
+ -->
 
           {{ govukInput({
             label: {
@@ -152,7 +155,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
 
       
-
+<!-- ** serivce address ** -->
 
            <!--- Correspondance address  -->
 
@@ -241,8 +244,10 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             spellcheck: false
           }) }}
 
+<!-- 
+*** Override of all AML supervisory data.  ***
 
-
+** How many AML supervisory bodies we need? **  -->
 
           {{ govukSelect({
             id: "aml",
@@ -328,7 +333,12 @@ Check your answers before sending your application – {{ serviceName }} – GOV
     
     
 
-          
+         <!--  ** supervisory body details need to  change on the register **
+
+          ** tell us about that data that's changed - tell us all? **
+
+          ** no change **
+ -->
        <div class="govuk-inset-text">
     <h2 class="govuk-heading-m">What information we’ll show on the public list of authorised agents </h2>
     <p>We'll show the names of the supervisory bodies the business is registered with.  </p>
