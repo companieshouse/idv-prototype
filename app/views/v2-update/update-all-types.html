@@ -28,7 +28,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
        --radio (How are you AML supervised) Firm supervised for AML - hint -->
 
           <h2 class="govuk-heading-m">Your name</h2>
-
+          <p class="govuk-hint">You only need to update your name if it's registered with your Anti-Money Laundering (AML) supervisory body.  </p>
 <!--           <p class="govuk-body">* Sole trader - Partnerships if they are supervised by AML by name *</p>
  -->
 
@@ -72,22 +72,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           </div>
 
 
-
-      {{ govukInput({
-        label: {
-          text: "Business name / Company name",
-          classes: "govuk-label--m"
-        },
-        id: "business-name",
-        name: "businessName"
-      }) }}
-
-
-
-
-
-  
-      <!--- Where you live  -->
+     <!--- Where you live  -->
 
       {% call govukFieldset({
         legend: {
@@ -231,6 +216,26 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
 
 
+      {{ govukInput({
+        label: {
+          text: "Business name ",
+          classes: "govuk-label--m"
+        },
+                 hint: {
+              text: "For example, the name of your company, partnership, or trading name if you're a sole trader."
+            },
+        id: "business-name",
+        name: "businessName"
+      }) }}
+
+
+
+
+
+  
+ 
+
+
 
           <h2 class="govuk-heading-m">Anti-Money Laundering (AML) registration details</h2>
 
@@ -239,6 +244,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             label: {
               text: "Name held by AML supervisory body"
             },
+            
             id: "first-name",
             name: "firstName",
             spellcheck: false
