@@ -25,6 +25,96 @@
           name: "legal-form"
         }) }}
 
+        {{ govukInput({
+          label: {
+            text: "What is the governing law?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "This is the law that the business operates under"
+          },
+          id: "legal-form",
+          name: "legal-form"
+        }) }}
+
+
+
+        {{ govukRadios({
+          idPrefix: "bo-corp-public-register",
+          name: "bo-corp-public-register",
+          fieldset: {
+            legend: {
+              text: "Is the other legal entity already on a public register in the country it was formed in?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: boCorpPublicRegisterHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {% set boCorpPublicRegisterHtml %}
+        {{ govukInput({
+          id: "bo-corp-public-register-name",
+          name: "bo-corp-public-register-name",
+          value: boCorpPublicName,
+          hint: {
+           text: "Include the full name. For example, Jersey Financial Services Commission."
+         },
+          label: {
+            text: "Name of register"
+          }
+        }) }}
+
+        {{ govukInput({
+          id: "bo-corp-public-register-jurisdiction",
+          name: "bo-corp-public-register-jurisdiction",
+            value: boCorpPublicJurisdiction,
+          hint: {
+          text: "For example, Jersey."
+        },
+          label: {
+            text: "Jurisdiction"
+          }
+        }) }}
+
+        {{ govukInput({
+          id: "bo-corp-public-register-number",
+          name: "bo-corpe-public-register-number",
+          value: boCorpPublicNumber,
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Entity's registration number"
+          },
+          errorMessage: {
+                  text: "Enter the entity's registration number"
+                }
+        }) }}
+
+        {{ govukInput({
+          id: "bo-corp-public-register-number",
+          name: "bo-corp-public-register-number",
+          value: boCorpPublicNumber,
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Entity’s registration number"
+          }
+        }) }}
+
+        {% endset -%}
+
 <!--
         {{ govukInsetText({
           html: '
