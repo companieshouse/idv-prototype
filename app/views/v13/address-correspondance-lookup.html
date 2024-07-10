@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is your correspondence address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="address-correspondance-lookup" method="post">
+
+
+     <!--   {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+        <span class="govuk-caption-l"> James Morris </span>
+
+        {% else %}
+
+        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
+        {% endif %}
+         
+         ************* sole trader - The address needs to be in UK ****** -->
+         {% if (data['registering-as'] === "sole-trader")%}
+
+
+         {% endif %}
+
+
+        {% call govukFieldset({
+          legend: {
+            text: "What is the correspondence address?",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        {{ govukInput({
+          label: {
+            text: "UK postcode"
+          },
+          hint: {
+            text: "You'll need to enter the address manually if it's not in the UK."
+          },
+          id: "cor-postcode",
+          classes: "govuk-input--width-10",
+          name: "cor-postcode"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Property name or number"
+          },
+          hint: {
+            text: "For example, 'The Mill', '116' or 'Flat 37a'"
+          },
+          id: "cor-number",
+          classes: "govuk-input--width-10",
+          name: "cor-number"
+        }) }}
+
+
+
+        
+          {{ govukButton({
+            text: "Find address"
+          }) }}
+          
+        </form>
+
+        <p class="govuk-body">
+          <a href="address-correspondance-manual" class="govuk-link govuk-link--no-visited-state">Enter the address manually</a>
+        </p>
+        
+        {% endcall %}
+
+       <!-- {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>***PLACEHOLDER CONTENT*** We'll use this to send the unique ACSP reference.</p>"
+        }) }} -->
+
+   
+       
+
+
+    </div>
+  </div>
+
+{% endblock %}
