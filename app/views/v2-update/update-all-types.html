@@ -28,7 +28,8 @@ Check your answers before sending your application – {{ serviceName }} – GOV
        --radio (How are you AML supervised) Firm supervised for AML - hint -->
 
           <h2 class="govuk-heading-m">Your name</h2>
-          <p class="govuk-hint">You only need to update your name if it's registered with your Anti-Money Laundering (AML) supervisory body.  </p>
+      <!--    <p class="govuk-hint">You only need to update your name if it's registered with your Anti-Money Laundering (AML) supervisory body.  </p> -->
+       <p class="govuk-hint">You only need to update your name if you're a sole trader.</p>
 <!--           <p class="govuk-body">* Sole trader - Partnerships if they are supervised by AML by name *</p>
  -->
 
@@ -80,6 +81,8 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           classes: "govuk-fieldset__legend--m"
         }
       }) %}
+             <p class="govuk-hint">You only need to update your home address if you're a sole trader.</p>
+
 
       {{ govukInput({
         label: {
@@ -238,6 +241,8 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
 
           <h2 class="govuk-heading-m">Anti-Money Laundering (AML) registration details</h2>
+
+       <p class="govuk-hint">Any AML details you enter will replace those we currently hold. If you need to update AML registration details, you should also include any details that have not changed.</p>
 
 
           {{ govukInput({
