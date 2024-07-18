@@ -9,7 +9,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 /*
  * Start page
  */
-router.post('/v13/start-page', function (req, res) {
+router.post('/v13/start-page-under-review', function (req, res) {
      
     res.redirect('account-interrupt')
     
