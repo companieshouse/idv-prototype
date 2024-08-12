@@ -532,7 +532,7 @@ router.post('/v13/address-principle-confirm', function (req, res) {
 
 /*
  *
- * Correspondance address selector
+ * Correspondance address selector ----updated to go to correspondence email
  */
 router.post('/v13/address-correspondance-selector', function (req, res) {
      
@@ -542,7 +542,7 @@ router.post('/v13/address-correspondance-selector', function (req, res) {
     }
     else{
 
-        res.redirect('aml-supervisor')
+        res.redirect('email-address-correspondance')
 
     }
     
@@ -554,13 +554,13 @@ router.post('/v13/address-correspondance-selector', function (req, res) {
 
 /*
  *  Correspondence email - REMOVED from version 8
-*/
+
 
 router.post('/v13/email-address-correspondance', function (req, res) {
      
     res.redirect('aml-supervisor')
     
-})   
+})   */
 
 
 
@@ -682,12 +682,22 @@ router.post('/v13/address-correspondance-manual', function (req, res) {
 })
 
 
-
-
 /*
  *  Correspondance address confirm
  */
+
 router.post('/v13/address-correspondance-confirm', function (req, res) {
+    
+     
+    res.redirect('email-address-correspondance')
+    
+})
+
+
+/*
+ *  Correspondance email address 
+ */
+router.post('/v13/email-address-correspondance', function (req, res) {
 
 
     //if ltd and LLP - how-are-you-aml-supervised' YYYYY
