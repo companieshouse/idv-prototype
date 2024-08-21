@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    
+    <h1 class="govuk-heading-l">
+      Apply to close an authorised agent with Companies House 
+      <span class="govuk-caption-xl">Version 1</span>
+    </h1>
+
+
+    {{ govukWarningText({
+      text: "This prototype is being actively worked on - things might break or change very quickly",
+      iconFallbackText: "Warning"
+    }) }}
+
+    {{ govukButton({
+      text: "Start prototype",
+      href: "start-page"
+    }) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+  <h2 class="govuk-heading-m">Entry points</h2>
+    
+
+    <!-- Verify someone identity shortcuts -->
+
+    <ul class="govuk-list govuk-list--bullet">
+
+      <li>
+        <a class="govuk-list" href="">Guidance (TBC)</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="">Authorised agent account home</a>
+      </li>
+  </ul>
+
+<h2 class="govuk-heading-m" id="earlyScreens">Early screens</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+    <li>
+      <a class="govuk-link" href="start-page">Start page</a>
+    </li>
+
+    <li>
+      <a class="govuk-link" href="closing-details">Closing your Authorised corporate service provider (ACSP)</a>
+    </li>
+
+    <li>
+      <a class="govuk-link" href="confirm-closing">Confirm you want to close your Authorised corporate service provider (ACSP)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="confirmation">Confirmation
+      </a>
+    </li>
+
+  </ul>
+
+
+
+
+  <h2 class="govuk-heading-m"id="finalScreens">Emails (TBC)</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-list" href="">Email confirmation of submission</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="">Email for acceptance</a>
+      </li> 
+    </ul>
+
+
+
+  </div>
+  
+</div>
+
+{% endblock %}
+
+
+
+
