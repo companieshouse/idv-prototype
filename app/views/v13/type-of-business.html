@@ -69,10 +69,13 @@ What sector do you work in? – {{ serviceName }} – GOV.UK Prototype Kit
             legend: {
               text: "Which sector do you work in?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-2"
             }
           },
-
+          hint: {
+            text: "Optional",
+            classes: "govuk-!-padding-bottom-2"
+          },
           items: [
             {
               value: "auditors",

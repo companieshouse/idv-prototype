@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<div class="govuk-width-container">
+
+  <nav class="govuk-language-select" aria-label="Choose a language">
+        <ul class="govuk-language-select__list">
+          <li class="govuk-language-select__list-item">
+            <span aria-current="true">English</span>
+          </li>
+          <li class="govuk-language-select__list-item">
+            <a href="#lang-cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg"><span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span><span aria-hidden="true">Cymraeg</span></a>
+          </li>
+        </ul>
+      </nav>
+
+</div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="details-for-closing" method="post">
+
+      <h1 class="govuk-heading-l">
+        Close your Authorised corporate service provider (ACSP)
+      </h1>
+
+      <p class="govuk-body">Use this service to register your business as an authorised agent with Companies House. Authorised agents are also known as Authorised Corporate Service Providers (ACSPs). </p>
+
+
+      {{ govukWarningText({
+        text: "You must read the following statements.",
+        iconFallbackText: "Warning"
+      }) }}
+  
+
+
+      <p class="govuk-body">By closing the Authoirsed agent:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you will be shut down</li>
+        <li>you can't restore the authorised agent</li>
+        <li>... </li>
+      </ul>
+
+
+
+
+    
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      <h1 class="govuk-fieldset__heading">
+        Confirm you have read the statements
+      </h1>
+    </legend>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          I confirm I have read and understood the statements 
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+  
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue",
+    href:"confirm-closing"
+  }) }}
+
+  <a class="govuk-link" href="#">Cancel</a>
+</div>
+
+
+
+
+
+ 
+  </form>
+  </div>
+{% endblock %}
