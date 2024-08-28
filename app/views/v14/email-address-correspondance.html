@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+
+What is the correspondence address? -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="email-address-correspondance" method="post">
+
+        
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+        <span class="govuk-caption-l"> James Morris </span>
+
+        {% else %}
+
+        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
+        {% endif %}
+
+        {% set phoneHtml %}
+        {{ govukInput({
+          id: "other-email",
+          name: "otherEmail",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false,
+          label: {
+            text: "Email address"
+          }
+        }) }}
+        {% endset -%}
+
+
+
+        {{ govukRadios({
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "What email address should we use for correspondence?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "We'll use this to send information about the authorised agent account once the business is registered."
+          },
+          items: [
+            {
+              value: "email",
+              text: "james@morrisaccounting.com"
+            },
+            {
+              value: "other-email",
+              text: "A different email address",
+              conditional: {
+                html: phoneHtml
+              }
+            }
+          ]
+        }) }}
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What correspondence we'll send to the email address
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>We'll use this to send essential emails about the agent account. For example, if we need to: </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>ask for more information about the agent’s filings</li>
+          <li>check the agent is complying with its legal responsibilities</li>
+          <li>suspend the agent account, or take other enforcement action</li>
+
+        </ul>
+  <p>You’ll be able to update the email address after you’ve registered the authorised agent.</p>
+
+
+  </div>
+</details>
+
+   <!--     {{ govukInput({
+          label: {
+            text: "What email address do you want to use for correspondence?",
+            isPageHeading: true,
+            classes: "govuk-label--l"
+          },
+          hint: {
+            text: "We’ll use this to send information about your authorised agent account"
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false
+        }) }}    -->
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

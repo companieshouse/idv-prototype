@@ -1,0 +1,117 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Register as an authorised agent: application approved
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+   <!--   {{ govukPanel({
+        titleText: "Register an authorised agent: application approved",
+        html: buttonHref
+      }) }} -->
+    <!--  <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Company number</th>
+            <td class="govuk-table__cell">00445790</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Company name</th>
+            <td class="govuk-table__cell"> MORRIS ACCOUNTING LTD </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Name </th>
+            <td class="govuk-table__cell">James Morris </td>
+          </tr>
+        </tbody>
+      </table> -->
+
+ <h1 style="font-family: Helvetica, Arial, sans-serif; font-size: 36px; line-height: 1.2; font-weight: 700;margin 0; mso-line-height-rule:exactly;">Register as an authorised agent: application approved</h1> 
+
+
+      <p class="govuk-body">We have approved your application and registered MORRIS ACCOUNTING LTD (02050399) as a Companies House authorised agent. This is also known as an Authorised Corporate Service Provider (ACSP).</p>
+
+      <p class="govuk-body">We've added the agent's details to the <a href="">public list of authorised agents</a>.</p>
+
+
+
+<!--
+      <div class="highlight-box">
+
+      <p class="govuk-body">The authorised agent number for MORRIS ACCOUNTING LTD is: <strong>06254821</strong></p>
+
+      <p class="govuk-body">Keep the number secure and do not share it with anyone outside of your organisation. You will need this for paper filings.</p>
+
+
+      </div> -->
+      <h2 class="govuk-heading-m ">What to do next</h2>
+      
+      
+      <p class="govuk-body">You can access the authorised agent account for MORRIS ACCOUNTING LTD  when you sign in to Companies House: <a href="https://find-update-company-info.herokuapp.com/authorised-agent-v5-r1/acsp-home-super-admin">https://find-and-update.company-information.service.gov.uk</a> </p>
+
+   <!--   <h3 class="govuk-heading-s "">Add users to the account</h3>
+
+      <p>You can add other people who work for the business to the account if they need to verify peoples' identity for Companies House. 
+      
+      <p>You can choose if you want them to be able to update the authorised agent's details, and add and remove other users.</p> -->
+
+
+
+            <p>You can:</p>
+                          <ul class="govuk-list govuk-list--bullet">
+                            <li>add users who work for the business</li>
+                            <li>update the authorised agent's details</li>
+                            <li>tell us you've verified someone's identity from XX DATE</li>
+                            </ul>
+      
+
+
+      <div class="govuk-inset-text">
+ <p> Read the guidance for authorised agents to find out how to use your agent account: </p>
+ <p><a href="guidance-ACSPs">https://www.gov.uk/guidance/register-an-authorised-agent</a></p>
+</div>
+
+
+
+     
+
+    <!--  <h3 class="govuk-heading-m">Feedback</h3>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p> -->
+      <h2 class="govuk-heading-m">Contact us</h2>
+            <h3 class="govuk-heading-s">Telephone</h3>
+      <ul class="govuk-list">
+        <li>0303 1234 500</li>
+        <li>Monday to Friday, 8:30am to 6pm</li>
+      </ul>
+
+
+      <h3 class="govuk-heading-s">Email</h3>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/call-charges">enquiries@companieshouse.gov.uk</a>
+        </li>
+      </ul>
+
+
+    </div>
+    </div>
+
+
+  </div>
+</div>
+{% endblock %}

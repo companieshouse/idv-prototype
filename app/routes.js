@@ -20,6 +20,7 @@ router.use('/', require('./routes/routes-v10.js'))
 router.use('/', require('./routes/routes-v11.js'))
 router.use('/', require('./routes/routes-v12.js'))
 router.use('/', require('./routes/routes-v13.js'))
+router.use('/', require('./routes/routes-v14.js'))
 
 //update 
 router.use('/', require('./routes/routes-update-v1.js'))
