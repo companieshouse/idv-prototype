@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is your name? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="name" method="post">
+
+
+        <h1 class="govuk-heading-l">What is your name?</h1>
+
+        {{ govukInput({
+          label: {
+            text: "First name"
+          },
+          classes: "govuk-input--width-20",
+          id: "first-name",
+          name: "first-name",
+          type: "first-name",
+          value: "James",
+          autocomplete: "first-name",
+          spellcheck: false
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "Middle names"
+          },
+
+          classes: "govuk-input--width-20",
+          id: "middle-name",
+          value: middle-name,
+          name: "middle-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name"
+          },
+          classes: "govuk-input--width-20",
+          id: "last-name",
+          name: "last-name",
+          type: "last-name",
+          value: "Morris",
+          autocomplete: "last-name",
+          spellcheck: false
+        }) }}
+       
+
+
+  
+         
+     <div class="govuk-inset-text">
+        <h2 class="govuk-heading-m">What information we’ll show on the public list of authorised agents</h2>
+  <p>We'll show your name on the public list of authorised agents, unless you have a different business name that you trade under. </p>
+</div>
+
+
+
+
+<div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+  <a class="govuk-link" href="../check-your-answers">Cancel</a>
+</div>
+
+</form>
+
+</div> 
+</div>
+
+
+
+{% endblock %}

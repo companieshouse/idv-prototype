@@ -24,3 +24,4 @@ router.use('/', require('./routes/routes-v13.js'))
 //update 
 router.use('/', require('./routes/routes-update-v1.js'))
 router.use('/', require('./routes/routes-update-v2.js'))
+router.use('/', require('./routes/routes-update-v3.js'))
