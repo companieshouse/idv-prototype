@@ -24,6 +24,20 @@ What is the correspondence address? -
         <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
 
         {% endif %}
+        <h1 class="govuk-heading-l">
+          Correspondence email address
+        </h1>
+
+        <p class="govuk-body">You need to provide an email address for the business you are registering.</p>
+
+              <p>We'll use this to send essential emails about the authorised agent. For example, if we need to: </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>ask for more information about the agent’s filings</li>
+          <li>check the agent is complying with its legal responsibilities</li>
+          <li>suspend the agent account, or take other enforcement action</li>
+
+        </ul>
+  <p>You’ll be able to update the email address after you’ve registered the authorised agent.</p>
 
         {% set phoneHtml %}
         {{ govukInput({
@@ -45,13 +59,11 @@ What is the correspondence address? -
           fieldset: {
             legend: {
               text: "What email address should we use for correspondence?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
             }
           },
-          hint: {
-            text: "We'll use this to send information about the authorised agent account once the business is registered."
-          },
+
           items: [
             {
               value: "email",
@@ -67,6 +79,7 @@ What is the correspondence address? -
           ]
         }) }}
 
+<!--
 <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
@@ -85,7 +98,7 @@ What is the correspondence address? -
 
 
   </div>
-</details>
+</details> -->
 
    <!--     {{ govukInput({
           label: {
