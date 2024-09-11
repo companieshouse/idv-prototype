@@ -244,7 +244,7 @@ router.post('/v14/statement-relevant-officer', function (req, res) {
 
         else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp")){
     
-            res.redirect('address-correspondance-lookup') 
+            res.redirect('how-are-you-aml-supervised') 
     
         }
         else if ((req.session.data['registering-as'] === "partnership-ch")|(req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
@@ -304,7 +304,7 @@ router.post('/v14/how-are-you-aml-supervised', function (req, res) {
         }
         else{
 
-            res.redirect('type-of-business') 
+            res.redirect('address-correspondance-lookup') 
 
         }
     }
@@ -431,7 +431,7 @@ router.post('/v14/type-of-business', function (req, res) {
         // Otherwise ask for their name, address etc.
         else if ((req.session.data['registering-as'] === "ltd")  | (req.session.data['registering-as'] === "partnership-llp")){
     
-            res.redirect('aml-supervisor')
+            res.redirect('email-address-correspondance')
             
         } 
         
@@ -459,9 +459,14 @@ router.post('/v14/type-of-business-other', function (req, res) {
         res.redirect('address-principle-lookup')
     }
     // aml supervisor if ltd 
-    else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") |  (req.session.data['registering-as'] === "partnership-llp")  ){
+    else if ((req.session.data['registering-as'] === "partnership-ch")){
 
         res.redirect('aml-supervisor')
+        
+    }
+     else if ((req.session.data['registering-as'] === "ltd")  | (req.session.data['registering-as'] === "partnership-llp")){
+    
+        res.redirect('email-address-correspondance')
         
     } 
  
@@ -542,7 +547,7 @@ router.post('/v14/address-correspondance-selector', function (req, res) {
     }
     else{
 
-        res.redirect('email-address-correspondance')
+        res.redirect('address-correspondance-confirm')
 
     }
     
@@ -687,9 +692,21 @@ router.post('/v14/address-correspondance-manual', function (req, res) {
  */
 
 router.post('/v14/address-correspondance-confirm', function (req, res) {
-    
+
+
+    //if ltd and LLP 
+    if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp")){
+        
+        res.redirect('type-of-business') 
+
+    }
+    else{
+
+        res.redirect('email-address-correspondance')
+
+    }
      
-    res.redirect('email-address-correspondance')
+
     
 })
 
@@ -699,19 +716,9 @@ router.post('/v14/address-correspondance-confirm', function (req, res) {
  */
 router.post('/v14/email-address-correspondance', function (req, res) {
 
+    res.redirect('aml-supervisor')
 
-    //if ltd and LLP - how-are-you-aml-supervised' YYYYY
-    if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp")){
-        
-        res.redirect('how-are-you-aml-supervised') 
 
-    }
-
-    //sole trader
-    else{
-        res.redirect('aml-supervisor')
-    }
-    
 })
 
 /*
