@@ -1,0 +1,26 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+You have already submitted an application
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">You’ve already been added to an authorised agent account</h1>
+
+
+
+             <p class="govuk-body">Your email address can only be linked to one Companies House authorised agent account at a time.  </p>  
+        <p>To register a business as an authorised agent, you’ll need to remove yourself from the <a href="#" class="govuk-link">authorised agent account</a>.</p>
+
+        <p>If you’ve been added as a standard user, you’ll need to ask an account owner or administrator to remove you. </p>
+
+
+
+    </div>
+  </div>
+{% endblock %}
