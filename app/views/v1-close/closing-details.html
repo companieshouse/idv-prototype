@@ -38,16 +38,13 @@
       <form class="form" action="details-for-closing" method="post">
 
       <h1 class="govuk-heading-l">
-        Closing your Authorised corporate service provider (ACSP)
+        Are you sure you want to close the authorised agent?
       </h1>
 
       <p class="govuk-body">Use this service to register your business as an authorised agent with Companies House. Authorised agents are also known as Authorised Corporate Service Providers (ACSPs). </p>
 
 
-      {{ govukWarningText({
-        text: "You must read the following statements.",
-        iconFallbackText: "Warning"
-      }) }}
+
   
 
 
@@ -81,6 +78,11 @@
   </fieldset>
 </div>
   
+
+        {{ govukWarningText({
+        text: "If you select continue, you will not be able to undo this change.",
+        iconFallbackText: "Warning"
+      }) }}
 
 <div class="govuk-button-group">
   {{ govukButton({
