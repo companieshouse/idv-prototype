@@ -38,25 +38,32 @@
       <form class="form" action="details-for-closing" method="post">
 
       <h1 class="govuk-heading-l">
-        Are you sure you want to close the authorised agent?
+        Before you close the authorised agent
       </h1>
 
-      <p class="govuk-body">Use this service to register your business as an authorised agent with Companies House. Authorised agents are also known as Authorised Corporate Service Providers (ACSPs). </p>
+      <p class="govuk-body">You should only continue if MORRIS ACCOUNTING LTD is no longer an authorised agent. This is also known as an Authorised Corporate Service Provider (ACSP). </p>
 
 
 
   
 
 
-      <p class="govuk-body">By closing the Authoirsed agent:</p>
+      <p class="govuk-body">If you confirm, we’ll permanently close the authorised agent account for MORRIS ACCOUNTING LTD. </p>
+
+      <p>You, and any users who have been added to the authorised agent, will not be able to: </p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>you will be shut down</li>
-        <li>you can't restore the authorised agent</li>
-        <li>... </li>
+        <li>access the authorised agent account </li>
+        <li>use services for MORRIS ACCOUNTING LTD</li>
+
       </ul>
 
+<p>We’ll also publish information to show it is no longer an authorised agent. We'll publish the:</p>
 
 
+      <ul class="govuk-list govuk-list--bullet">
+        <li>authorised agent’s name</li> 
+        <li>date it stopped being an authorised agent </li>
+      </ul>
 
     
 
@@ -71,7 +78,7 @@
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
         <label class="govuk-label govuk-checkboxes__label" for="waste">
-          I confirm I have read and understood the statements 
+          I confirm I have read and understood the statements. 
         </label>
       </div>
     </div>
@@ -79,10 +86,7 @@
 </div>
   
 
-        {{ govukWarningText({
-        text: "If you select continue, you will not be able to undo this change.",
-        iconFallbackText: "Warning"
-      }) }}
+
 
 <div class="govuk-button-group">
   {{ govukButton({

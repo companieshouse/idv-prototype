@@ -38,24 +38,22 @@
       <form class="form" action="confirm-closing" method="post">
 
       <h1 class="govuk-heading-l">
-        Confirm you want to close your Authorised corporate service provider (ACSP)
+        Confirm you want to close the authorised agent
       </h1>
 
 
 
-      <p class="govuk-body">Morris Accounting Limited will be closed ... </p>
+      <p class="govuk-body">Select to confirm if you want to close the authorised agent account for MORRIS ACCOUNTING LTD.</p>
 
 
       
 
 
 
-
-    {{ govukWarningText({
-      text: "Warning message ... ",
-      iconFallbackText: "Warning"
-    }) }}
-
+        {{ govukWarningText({
+        text: "If you select confirm, you will not be able to cancel this closure.",
+        iconFallbackText: "Warning"
+      }) }}
 
 
 
