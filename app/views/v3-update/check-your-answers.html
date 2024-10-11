@@ -27,28 +27,10 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
       <h2 class="govuk-heading-m">Your details</h2>
 
+
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-        <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Type of business
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Sole trader
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Role
-          </dt>
-          <dd class="govuk-summary-list__value">
-            I am the sole trader
-          </dd>
-
-        </div>
- -->
-        <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row ">
           <dt class="govuk-summary-list__key">
             Name
           </dt>
@@ -59,110 +41,48 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             <!-- Pending tag -->
             {% if data['name-has-been-updated'] == true %}
 
-               <div class="govuk-!-padding-top-3"> 
+               <div class="govuk-!-static-padding-top-3"> 
                 
-                <strong class="govuk-tag govuk-tag--blue">
-                  Details updated
+                <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                  Details updated 
                 </strong>
                 
-                <p class="govuk-body-s">Pending until submitted and accepted</p> 
+                <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
               </div> 
+            </dd>
+
+            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/name">Update<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+              </ul>
+            
+          </dd>
+
+          
             {% endif %}
 
+            {% if data['name-has-been-updated'] == undefined %}
+
+
+
+            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/name">Update<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+              
+              </ul>
+            
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="pages/name">
-              Update
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-
-        <!--   <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-
-            {% if (data['dob-day'] === "01") %}
-              1
-            {% elif (data['dob-day'] === "02") %}
-              2
-            {% elif (data['dob-day'] === "03") %}
-              3
-            {% elif (data['dob-day'] === "04") %}
-              4
-            {% elif (data['dob-day'] === "05") %}
-              5
-            {% elif (data['dob-day'] === "06") %}
-              6
-            {% elif (data['dob-day'] === "07") %}
-              7
-            {% elif (data['dob-day'] === "08") %}
-              8
-            {% elif (data['dob-day'] === "09") %}
-              9
-            {% else %}
-              {{data['dob-day']}}
-
-            {% endif %}
-
-            {% if (data['dob-month'] === "01") or (data['dob-month'] === "1") %}
-              January
-            {% elif (data['dob-month'] === "02") or (data['dob-month'] === "2") %}
-              February
-            {% elif (data['dob-month'] === "03") or (data['dob-month'] === "3") %}
-              March
-            {% elif (data['dob-month'] === "04") or (data['dob-month'] === "4") %}
-              April
-            {% elif (data['dob-month'] === "05") or (data['dob-month'] === "5") %}
-              May
-            {% elif (data['dob-month'] === "06") or (data['dob-month'] === "6") %}
-              June
-            {% elif (data['dob-month'] === "07") or (data['dob-month'] === "7") %}
-              July
-            {% elif (data['dob-month'] === "08") or (data['dob-month'] === "8") %}
-              August
-            {% elif (data['dob-month'] === "09") or (data['dob-month'] === "9") %}
-              September
-            {% elif (data['dob-month'] === "10") %}
-              October
-            {% elif (data['dob-month'] === "11") %}
-              November
-            {% elif (data['dob-month'] === "12") %}
-              December
-            {% else %}
-              {{data['dob-month']}}
-            {% endif %}
-            {{data['dob-year']}}
-
-
-    
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> date of birth</span>
-            </a>
-          </dd>
+          {% endif %}
         </div>
 
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Nationality
-          </dt>
-          <dd class="govuk-summary-list__value">
-            British
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> nationality</span>
-            </a>
-          </dd>
-        </div> -->
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -174,24 +94,49 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             <!-- Pending tag -->
             {% if data['location-has-been-updated'] == true %}
 
-               <div class="govuk-!-padding-top-3"> 
+            <div class="govuk-!-static-padding-top-3"> 
                 
-                <strong class="govuk-tag govuk-tag--blue">
-                  Details updated
-                </strong>
-                
-                <p class="govuk-body-s">Pending until submitted and accepted</p> 
-              </div> 
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated 
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
+            </div> 
+
+              <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="pages/location-lives">Update<span class="govuk-visually-hidden"> where do you live</span></a>
+                  </li>
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> where you live</span></a>
+                  </li>
+                </ul>
+              
+            </dd>
+
+        
+
             {% endif %}
 
 
+            {% if data['location-has-been-updated'] == undefined %}
+
+            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/location-lives">Update<span class="govuk-visually-hidden"> where do you live</span></a>
+                </li>
+              
+              </ul>
+            
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="pages/location-lives">
-              Update
-              <span class="govuk-visually-hidden"> where you live</span>
-            </a>
-          </dd>
+
+            {% endif %}
+         
+
+        
+
         </div>
 
         <div class="govuk-summary-list__row">
@@ -204,24 +149,45 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             <!-- Pending tag -->
             {% if data['business-name-has-been-updated'] == true %}
 
-               <div class="govuk-!-padding-top-3"> 
+            <div class="govuk-!-static-padding-top-3"> 
                 
-                <strong class="govuk-tag govuk-tag--blue">
-                  Details updated
-                </strong>
-                
-                <p class="govuk-body-s">Pending until submitted and accepted</p> 
-              </div> 
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated 
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
+            </div> 
+
+
+            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/name-of-business">Update<span class="govuk-visually-hidden"> business name</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> business name</span></a>
+                </li>
+              </ul>
+            
+          </dd>
+
+
+
             {% endif %}
 
 
           </dd>
+
+          {% if data['business-name-has-been-updated'] == undefined %}
+
           <dd class="govuk-summary-list__actions">
             <a href="pages/name-of-business">
               Update
               <span class="govuk-visually-hidden"> business name</span>
             </a>
           </dd>
+          {% endif %}
+
         </div>
 
 
@@ -251,7 +217,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             <br> CF5 1BR
 
              <!-- Pending tag -->
-             {% if data['cor-address-has-been-updated'] == true %}
+             {% if data['cor-address-has-been-updated'] == true %} 
 
              <div class="govuk-!-padding-top-3"> 
               
@@ -284,15 +250,33 @@ Check your answers before sending your application – {{ serviceName }} – GOV
              <!-- Pending tag -->
              {% if data['email-has-been-updated'] == true %}
 
-             <div class="govuk-!-padding-top-3"> 
-              
-              <strong class="govuk-tag govuk-tag--blue">
-                Details updated
+           
+             <div class="govuk-!-static-padding-top-3"> 
+                
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated 
               </strong>
               
-              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+              <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
             </div> 
+
+            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/name-of-business">Update<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                </li>
+              </ul>
+            
+          </dd>
+
+
           {% endif %}
+
+          {% if data['email-has-been-updated'] == undefined %}
+
 
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -302,7 +286,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             </a>
           </dd>
         </div>
-
+        {% endif %}
 
         
       </dl>
@@ -314,7 +298,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
       <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
 
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             AML supervisory body and membership number
@@ -341,8 +325,8 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
-              Update
-              <span class="govuk-visually-hidden"> Anti-Money Laundering details</span>
+              Remove
+              <span class="govuk-visually-hidden"> Association of Accounting Technicians</span>
             </a>
           </dd>
         </div>
@@ -361,12 +345,28 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="#">
-            Update
+            Remove
             <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
           </a>
         </dd>
       </div>
+
+   
+
+
+
       </dl>
+
+    <!--   <p class="govuk-body  govuk-!-margin-bottom-9">
+       <a href="#" class="govuk-link">An another Anti-Money Laundering (AML) details </a>
+      </p> -->
+
+      {{ govukButton({
+        text: "Add new AML details",
+        classes: "govuk-button--secondary govuk-!-margin-bottom-9"
+      }) }}
+
+      
 
 
 
@@ -497,7 +497,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             Correspondence email address
           </dt>
           <dd class="govuk-summary-list__value">
-            james@morrisaccounting.com
+            james@morrisa<br>ccounting.com
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -775,13 +775,17 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
       {% endif %}
 
-      {% if data['name-has-been-updated'] == true or data['business-has-been-updated'] == true  %}
+      {% if data['name-has-been-updated'] == true or data['business-has-been-updated'] == true or data['cor-address-has-been-updated'] == true or data['email-has-been-updated'] == true  %}
 
         <!-- if changes have been made -->
+        <div class="govuk-button-group">
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+          <a class="govuk-link" href="#">Cancel</a>
+        </div>
 
       {% else %}
 
