@@ -36,6 +36,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="confirm-closing" method="post">
+    <span class="govuk-caption-xl" >MORRIS ACCOUNTING LTD</span>
 
       <h1 class="govuk-heading-l">
         Confirm you want to close the authorised agent
@@ -43,7 +44,8 @@
 
 
 
-      <p class="govuk-body">Select to confirm if you want to close the authorised agent account for MORRIS ACCOUNTING LTD.</p>
+
+       <p class="govuk-body">You should only confirm if MORRIS ACCOUNTING LTD no longer needs to be an authorised agent. This is also known as an Authorised Corporate Service Provider (ACSP).</p>
 
 
       
@@ -51,7 +53,7 @@
 
 
         {{ govukWarningText({
-        text: "If you select confirm, you will not be able to cancel this closure.",
+        text: "If you select confirm, you will immediately close the authorised agent. You will not be able to cancel this closure.",
         iconFallbackText: "Warning"
       }) }}
 
@@ -60,7 +62,7 @@
 
     <div class="govuk-button-group">
       {{ govukButton({
-        text: "Continue",
+        text: "Confirm",
         href:"confirmation"
       }) }}
 
