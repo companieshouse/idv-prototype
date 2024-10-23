@@ -29,109 +29,38 @@
         View and update the authorised agent's details
       </h1>
 
+<p>Use this service to view and update details for JAMES MORRIS ACCOUNTING LTD.</p>
 
+{{ govukWarningText({
+  text: "If any of the details we hold about the authorised agent change, you must update them within 14 days",
+  iconFallbackText: "Warning"
+}) }}
 
+<p>You’ll need to tell us if there are any changes to the: </p>
 
-      <!-- Sole traders -->
-
-      {% if (data['prototype-set-up'] === "sole-trader")%}
-
-
-      <p class="govuk-body">Use this service to view and update details for James Morris. </p>
-
-
-
-         <p class="govuk-body">You can view and update:</p>
                  <ul class="govuk-list govuk-list--bullet">
-                  <li>your name </li>
-                  <li>the name of your business </li>
-                  <li>where you live</li>
-                  <li>your correspondence address </li>
-                  <li>your correspondence email address</li>
-                  <li>your Anti-Money Laundering (AML) registration details </li>
-                </ul>
+                    <li>agent's Anti-Money Laundering (AML) registration details </li>
+                    <li>details we hold about the business</li>
+                  </ul>
 
-      <p class="govuk-body">If your details have changed, you must update them within 14 days.</p>
-
-
- 
-
-
-      <!-- Limited companies, LLPs or LPs -->
-
-       {% elseif ((data['prototype-set-up'] === "limited")) %}
-
-
-
-   <p class="govuk-body">Use this service to view and update details for JAMES MORRIS ACCOUNTING LTD. </p>
-
-
-
-         <p class="govuk-body">You can view and update the authorised agent's:</p>
-                 <ul class="govuk-list govuk-list--bullet">
-                  <li>name </li>
-                  <li>correspondence address</li>
-                  <li>registered office address</li>
-                  <li>correspondence email address</li>
-                  <li>Anti-Money Laundering (AML) registration details</li>
-                </ul>
-
-<div class="govuk-inset-text">
-
-      <p class="govuk-body">If the agent's details have changed, you must update them within 14 days.</p>
-</div>
-      <p>Any updates you make using this service will only apply to the authorised agent account. </p>
-      <p>If the company name or registered office address has changed, you’ll also need to update this on the Companies House register. You can do this using our service to <a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house">Tell Companies House about changes to your limited company</a>. </p>
-
-
-
- 
-
-
-
-      <!--non-registrable partnerships -->
-      {% elseif ((data['prototype-set-up'] === "partnerships")) %}
-
-
-
-
-   <p class="govuk-body">Use this service to view and update details for James Morris Partnership. </p>
-
-
-
-         <p class="govuk-body">You can view and update the authorised agent's:</p>
-                 <ul class="govuk-list govuk-list--bullet">
-                  <li>name </li>
-                  <li>correspondence address</li>
-                  <li>business address</li>
-                  <li>correspondence email address</li>
-                  <li>Anti-Money Laundering (AML) registration details</li>
-                </ul>
-
-      <p class="govuk-body">If the agent's details have changed, you must update them within 14 days.</p>
-
-
-
-
-
-
-
-            {% endif %}
-
+          <p>We hold different details depending on the type of business an agent is. Select continue to view which details we hold for this authorised agent.</p> 
      <h2 class="govuk-heading-m">Updating your AML registration details </h2>  
 
-      <p class="govuk-body">You can update the details about an existing AML registration if the details have changed. For example, if you have a new membership number. </p>
+      <p class="govuk-body">You need to update the AML registration details if the agent has registered with a different AML supervisory body, or the AML membership number changes. </p>
 
-      <p>If you have registered with a new AML supervisory body, you’ll need the:</p>
+      <p>The agent must always be registered with at least one AML supervisory body. </p>
+
+     <h3 class="govuk-heading-s">Adding details for a new registration</h3>  
+
+      <p>If the agent has registered with a new AML supervisory body, you’ll need to tell us the:</p>
                  <ul class="govuk-list govuk-list--bullet">
                   <li>name of the AML supervisory body</li>
                   <li>AML membership number or ID</li>
-                  </ul>
-      
-      <p>Authorised agents must always be registered with at least one AML supervisory body. You can only remove registration details for a supervisory body if there are details for another registration on the account. </p>
+                </ul>
+     <h3 class="govuk-heading-s">Updating details for an existing registration </h3>  
+     <p>You cannot edit the details for an existing registration. If there has been a change, for example, the agent has a new membership number or ID from the supervisory body, you will need to add this as a new registration. </p>
+     <p>You’ll need to delete the previous details once you’ve added the new ones. </p>
 
-
-      <p>It takes around 5 minutes to use this service.</p>
 
       {{ govukButton({
         text: "Start now",
