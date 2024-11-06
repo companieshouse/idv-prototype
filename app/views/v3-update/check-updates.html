@@ -14,7 +14,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
       <form class="form" action="check-your-answers" method="post">
 
      
-        <h1 class="govuk-heading-l">View and update the authorised agent's details</h1>
+        <h1 class="govuk-heading-l">Check your answers before submitting the update</h1> 
 
         <div class="govuk-inset-text">
           Any updates you make to the authorised agent's details are pending until you’ve submitted this filing, and we’ve accepted it.
@@ -38,48 +38,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             {{ data['first-name'] }} {{ data['middle-name'] }} {{ data['last-name'] }}
 
 
-            <!-- Pending tag -->
-            {% if data['name-has-been-updated'] == true %}
-
-               <div class="govuk-!-static-padding-top-3"> 
-                
-                <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
-                  Details updated 
-                </strong>
-                
-                <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
-              </div> 
-            </dd>
-
-            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="pages/name">Update<span class="govuk-visually-hidden"> name</span></a>
-                </li>
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
-                </li>
-              </ul>
             
-          </dd>
-
-          
-            {% endif %}
-
-            {% if data['name-has-been-updated'] == undefined %}
-
-
-
-            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="pages/name">Update<span class="govuk-visually-hidden"> name</span></a>
-                </li>
-              
-              </ul>
-            
-          </dd>
-          {% endif %}
         </div>
 
 
@@ -92,48 +51,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             {{ data['home'] }}
 
             <!-- Pending tag -->
-            {% if data['location-has-been-updated'] == true %}
-
-            <div class="govuk-!-static-padding-top-3"> 
-                
-              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
-                Details updated 
-              </strong>
-              
-              <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
-            </div> 
-
-              <dd class="govuk-summary-list__actions govuk-!-width-one-third">
-                <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="pages/location-lives">Update<span class="govuk-visually-hidden"> where do you live</span></a>
-                  </li>
-                  <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> where you live</span></a>
-                  </li>
-                </ul>
-              
-            </dd>
-
-        
-
-            {% endif %}
-
-
-            {% if data['location-has-been-updated'] == undefined %}
-
-            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="pages/location-lives">Update<span class="govuk-visually-hidden"> where do you live</span></a>
-                </li>
-              
-              </ul>
             
-          </dd>
-
-            {% endif %}
-         
 
         
 
@@ -146,48 +64,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           <dd class="govuk-summary-list__value">
             {{ data['businessName'] }} 
 
-            <!-- Pending tag -->
-            {% if data['business-name-has-been-updated'] == true %}
-
-            <div class="govuk-!-static-padding-top-3"> 
-                
-              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
-                Details updated 
-              </strong>
-              
-              <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
-            </div> 
-
-
-            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="pages/name-of-business">Update<span class="govuk-visually-hidden"> business name</span></a>
-                </li>
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> business name</span></a>
-                </li>
-              </ul>
             
-          </dd>
-
-
-
-            {% endif %}
-
-
-          </dd>
-
-          {% if data['business-name-has-been-updated'] == undefined %}
-
-          <dd class="govuk-summary-list__actions">
-            <a href="pages/name-of-business">
-              Update
-              <span class="govuk-visually-hidden"> business name</span>
-            </a>
-          </dd>
-          {% endif %}
-
         </div>
 
 
@@ -216,27 +93,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             <br>Wales
             <br> CF5 1BR
 
-             <!-- Pending tag -->
-             {% if data['cor-address-has-been-updated'] == true %} 
-
-             <div class="govuk-!-padding-top-3"> 
-              
-              <strong class="govuk-tag govuk-tag--blue">
-                Details updated
-              </strong>
-              
-              <p class="govuk-body-s">Pending until submitted and accepted</p> 
-            </div> 
-          {% endif %}
-
-
-
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="pages/address-correspondance-lookup">
-              Update
-              <span class="govuk-visually-hidden">Correspondence address</span>
-            </a>
+            
           </dd>
         </div>
 
@@ -248,45 +105,10 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           <dd class="govuk-summary-list__value">
             {{ data['email'] }} 
              <!-- Pending tag -->
-             {% if data['email-has-been-updated'] == true %}
+         
 
-           
-             <div class="govuk-!-static-padding-top-3"> 
-                
-              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
-                Details updated 
-              </strong>
-              
-              <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
-            </div> 
-
-            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="pages/name-of-business">Update<span class="govuk-visually-hidden"> correspondence email address</span></a>
-                </li>
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> correspondence email address</span></a>
-                </li>
-              </ul>
-            
-          </dd>
-
-
-          {% endif %}
-
-          {% if data['email-has-been-updated'] == undefined %}
-
-
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="pages/email-address-correspondance">
-              Update
-              <span class="govuk-visually-hidden"> correspondence email address</span>
-            </a>
-          </dd>
         </div>
-        {% endif %}
+  
 
         
       </dl>
@@ -296,11 +118,6 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
 
       <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
-
-      {{ govukButton({
-        text: "Add new AML details",
-        classes: "govuk-button--secondary"
-      }) }}
 
 
       <dl class="govuk-summary-list">
@@ -314,26 +131,16 @@ Check your answers before sending your application – {{ serviceName }} – GOV
               <li>87654321</li>
             </ul>
 
-                  <!-- Pending tag -->
-      {% if data['aml-1-has-been-updated'] == true %}
-
-      <div class="govuk-!-padding-top-3"> 
-       
-       <strong class="govuk-tag govuk-tag--blue">
-         Details updated
-       </strong>
-       
-       <p class="govuk-body-s">Pending until submitted and accepted</p> 
-     </div> 
-   {% endif %}
 
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Remove
-              <span class="govuk-visually-hidden"> Association of Accounting Technicians</span>
-            </a>
+
+          <dd class="govuk-summary-list__value">
+
+            <strong class="govuk-tag govuk-tag--red">
+              Removed
+            </strong>
           </dd>
+          
         </div>
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -348,12 +155,13 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             
           </ul>
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Remove
-            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
-          </a>
+        <dd class="govuk-summary-list__value">
+
+          <strong class="govuk-tag">
+            Added
+          </strong>
         </dd>
+        
       </div>
 
    
@@ -800,7 +608,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
           {{ govukButton({
             text: "Continue",
-            href:"check-updates"
+            href:"confirmation"
           }) }}
 
           <a class="govuk-link" href="#">Cancel</a>
