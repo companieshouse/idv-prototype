@@ -21,7 +21,7 @@ router.post('/v14/start-page', function (req, res) {
  */
 router.post('/v14/account-interrupt', function (req, res) {
      
-    res.redirect('create-or-sign-in')
+ //do nothing if CHS is selected
     
 }) 
 
