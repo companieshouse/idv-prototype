@@ -60,7 +60,7 @@ router.post('/v14/enter-code', function (req, res) {
     }
     else{
 
-        res.redirect('before-idv')
+        res.redirect('idv-interrupt-release-1')
 
     }
 
@@ -100,7 +100,7 @@ router.post('/v14/enter-code', function (req, res) {
 /*
  * You need to prove your identity
  */
-router.post('/v14/before-idv', function (req, res) {
+router.post('/v14/idv-interrupt-release-1', function (req, res) {
      
     res.redirect('/v14/verify-identity-prototype')
     
