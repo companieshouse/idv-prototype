@@ -1,0 +1,268 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start - Verify your identity 
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-m">Guidance</span>
+      <h1 class="govuk-heading-l">
+        Tell Companies House you have verified someone's identity 
+      </h1>
+
+<p class="govuk-body-m">How to tell Companies House you have verified someone's identity.</p>
+
+      <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
+        <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
+            Contents
+          </h2>
+          <ol class="govuk-prototype-kit-common-templates-contents-list__list">
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#what">
+              What this service is for
+              </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#who">
+              Who can use this service
+              </a>
+            </li>
+            
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#before">
+              Before you start
+              </a>
+            </li>   
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#what-you-need">
+               What you’ll need  
+              </a>
+            </li>   
+                        <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#after">
+               What happens when you verify someone’s identity
+              </a>
+            </li>  
+                        <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#public-info">
+                What we’ll show on the public register
+              </a>
+            </li>  
+          </ol>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+
+   <!--     <h2 class="govuk-heading-m" id="who">Who needs to verify their identity</h2>
+
+        <p>Your clients will need to verify their identity for Companies House if they are:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>a person with significant control (PSC)</li>
+              <li>a director</li>
+              <li>the equivalent of a director - this includes members, general partners and managing officers</li>
+            </ul>
+
+        <h2 class="govuk-heading-m" id="how">How to verify someone's identity</h2>
+        
+        <p>Your clients can:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://prove-your-identity-prototype.herokuapp.com/v5/pre-one-login/start">verify their identity with Companies House</a></li>
+              <li>ask you or another authorised agent to verify their identity</li>
+            </ul> -->
+
+    <!--  <p>Your clients will need to verify their identity for Companies House if they are:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>a person with significant control (PSC)</li>
+              <li>a director</li>
+              <li>the equivalent of a director - this includes members, general partners and managing officers</li>
+            </ul>   -->
+
+
+      <h2 class="govuk-heading-m" id="what">What this service is for</h2>
+
+      <p>This service is for authorised agents to tell us when they have verified someone's identity for Companies House. Authorised agents are also known as Authorised Corporate Service Providers (ACSPs).</p>
+
+  <!--    <p>To find out who needs to verify, read the <a href="">guidance on how to verify your identity for Companies House</a>.</p>-->
+
+
+    <p>People need to verify their identity for Companies House if they are:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>a person with significant control (PSC)</li>
+              <li>a director</li>
+              <li>the equivalent of a director – this includes members, general partners and managing officers</li>
+              <li>someone who files for a company</li>
+            </ul>
+
+
+      <p>You cannot use this service to tell us about verification checks for the register of Overseas Entities. For this, you should read the <a href="">guidance on registering an overseas entity and its beneficial owners</a>.</p>
+
+      <h2 class="govuk-heading-m" id="who">Who can use this service</h2>
+
+      <p>You, or the business you work for, must be registered as a Companies House authorised agent to use this service. Authorised agents are also known as Authorised Corporate Service Providers (ACSPs). </p>
+
+
+
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What is a Companies House authorised agent? 
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  <p> Authorised agents are businesses that are registered with a UK Anti-Money Laundering (AML) supervisory body. For example, accountants, solicitors or company formation agents. </p>
+  <p>They must register with us to be able to: </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>form companies and registrable partnerships on behalf of clients</li>
+              <li>file on behalf of clients</li>
+              <li>verify the identity of clients for Companies House</li>
+            </ul>
+      <p>For more information, read the <a href="">guidance on how to register as a Companies House authorised agent</a> .</p>
+
+
+  </div>
+</details>
+
+      <h2 class="govuk-heading-m" id="before">Before you start</h2>
+
+<p>You must have completed identity checks that meet the Companies House identity verification standard. These are different to  customer due diligence checks to prevent money laundering.</p>
+
+<p>  Read the <a href="guidance">guidance on how to meet Companies House identity verification standard</a>. 
+</p>
+
+
+
+
+
+      <h2 class="govuk-heading-m" id="what-you-need">What you’ll need </h2>
+
+      <p>You'll need to tell us the person's details and information about the checks and documents you used to verify them.</p>
+
+      <h3 class="govuk-heading-s" >What you’ll need to tell us about the person </h2>
+
+
+      <p>You'll need to tell us the person's:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>name</li>
+              <li>date of birth</li>
+              <li>home address</li>
+              <li>email address</li>
+            </ul>
+              <h3 class="govuk-heading-s" >What you’ll need to tell us about the identity checks </h2>
+
+<p>You'll need to tell us:</p>
+              <ul class="govuk-list govuk-list--bullet">
+              <li>whether you used option 1 or 2 from the identity verification standard to check their identity documents</li>
+              <li>which documents you used as evidence</li>
+              <li>the date you completed the identity checks</li>
+            </ul>
+    <p>You do not need to submit copies of the documents you used to verify their identity. However, for relevant documents you'll need to give the:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>document reference number, or equivalent</li>
+                <li>expiry date</li>
+                <li>country of issue</li>
+              </ul>
+
+      <p>You’ll also need to complete a declaration to confirm that you: 
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>are satisfied that the person is who they claim to be</li>
+                      <li>have completed identity checks that meet the Companies House identity verification standard</li>
+                    </ul>
+
+<div class="govuk-inset-text">
+You must keep records of all identity checks you complete, including copies of the documents. You will need to keep records for 7 years from the date you completed the identity checks. </div>
+
+<p><a href="start-page">Tell Companies House you have verified someone's identity</a>. </p>
+
+      <h2 class="govuk-heading-m" id="after">What happens when you verify someone’s identity </h2>
+
+
+<p>We will email the person their Companies House personal code. This is an 11 character code they can use to connect their verified identity to our records. </p>
+
+<p>They can share their personal code with people they trust to file on their behalf. </p>
+
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      When they'll need their personal code
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>They may need their code for various reasons, including:</p>
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li>as part of some company filings, such as the confirmation statement</li>
+                          <li>if they are appointed as a director</li>
+                          <li>if they become a person with significant control (PSC)</li>
+                          </ul>
+  </div>
+</details>
+
+<p>We may ask for more information about the identity checks you completed if we need to. You must provide evidence of the identity checks you completed if we ask you. </p>
+     <p>We could suspend or stop your business from acting as an authorised agent if you:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>cannot provide records of identity checks when asked</li>
+      <li>have not met our identity verification standard</li>
+    </ul>
+
+
+
+
+
+
+                   <h2 class="govuk-heading-m" id="public-info">What we’ll show on the public register</h2>
+
+      <p>When the person uses their personal code to connect their verified identity to our records, we'll show the:</p>
+
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>ACSP name - this is the name of your authorised agent</li>
+              <li>names of the Anti-Money Laundering (AML) supervisory bodies the agent is registered with </li>
+              <li>date you completed the identity checks </li>
+            </ul>
+
+
+
+
+
+
+
+
+{% endblock %}
