@@ -115,8 +115,6 @@ Check your answers before sending your application – {{ serviceName }} – GOV
               
             </dd>
 
-        
-
             {% endif %}
 
 
@@ -288,23 +286,34 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         </div>
         {% endif %}
 
-        
-      </dl>
+        </dl>
 
+
+
+
+
+
+
+      <!-- AML supervisory body details -->
 
 
 
 
       <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
 
+
+      <!-- Add a new AML supervisory body --> 
+
       {{ govukButton({
         text: "Add new AML details",
+        href:"pages/aml-supervisor",
         classes: "govuk-button--secondary"
       }) }}
 
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
+
           <dt class="govuk-summary-list__key">
             AML supervisory body and membership number
           </dt>
@@ -314,27 +323,47 @@ Check your answers before sending your application – {{ serviceName }} – GOV
               <li>87654321</li>
             </ul>
 
-                  <!-- Pending tag -->
-      {% if data['aml-1-has-been-updated'] == true %}
+            <!-- If the AML details have been removed -->
+            {% if data['aml-1-has-been-removed'] == true %}
+            <div class="govuk-!-static-padding-top-3"> 
+                
+              <strong class="govuk-tag govuk-tag--red govuk-!-static-margin-bottom-1">
+                Remove details
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
+            </div> 
 
-      <div class="govuk-!-padding-top-3"> 
-       
-       <strong class="govuk-tag govuk-tag--blue">
-         Details updated
-       </strong>
-       
-       <p class="govuk-body-s">Pending until submitted and accepted</p> 
-     </div> 
-   {% endif %}
+            {% endif %}
 
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
+          <!-- If AML details have not been removed -->
+          {% if data['aml-1-has-been-removed'] == undefined %}
+          <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+            <a href="pages/remove-aml-details">
               Remove
               <span class="govuk-visually-hidden"> Association of Accounting Technicians</span>
             </a>
           </dd>
+          {% endif %}
+
+          <!-- If the AML details have been removed -->
+          {% if data['aml-1-has-been-removed'] == true %}
+
+          <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+            <ul class="govuk-summary-list__actions-list">
+  
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="pages/cancel-remove-aml-1">Cancel<span class="govuk-visually-hidden"> remove  Association of Accounting Technicians</span></a>
+              </li>
+            </ul>
+
+
+            {% endif %}
+          
+        </dd>
         </div>
+
+        <!-- AML details 2 -->
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           AML supervisory body and membership number
@@ -348,7 +377,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             
           </ul>
         </dd>
-        <dd class="govuk-summary-list__actions">
+        <dd class="govuk-summary-list__actions govuk-!-width-one-third">
           <a href="#">
             Remove
             <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
@@ -356,7 +385,49 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         </dd>
       </div>
 
-   
+
+       <!-- AML details 3 - New AML details -->
+      {% if data['new-aml-details'] == true %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          AML supervisory body and membership number
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>33333</li>
+            <li>554-6325-4555</li>
+
+          </ul>
+          <div class="govuk-!-static-padding-top-3"> 
+                
+            <strong class="govuk-tag govuk-tag govuk-!-static-margin-bottom-1">
+              New details   
+            </strong>
+            <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
+          </div> 
+
+        
+        </dd>
+        <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="">Update<span class="govuk-visually-hidden"> </span></a>
+            </li>
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> correspondence email address</span></a>
+            </li>
+          </ul>
+        
+        </dd>
+      </div>
+
+
+
+
+
+      {% endif %}
 
 
 

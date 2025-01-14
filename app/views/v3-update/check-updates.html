@@ -137,7 +137,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           <dd class="govuk-summary-list__value">
 
             <strong class="govuk-tag govuk-tag--red">
-              Removed
+              Remove details
             </strong>
           </dd>
           
@@ -157,12 +157,37 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         </dd>
         <dd class="govuk-summary-list__value">
 
-          <strong class="govuk-tag">
-            Added
-          </strong>
+          
         </dd>
         
       </div>
+
+       <!-- AML details 3 - New AML details -->
+       {% if data['new-aml-details'] == true %}
+
+       <dt class="govuk-summary-list__key">
+        AML supervisory body and membership number
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Association of Chartered Certified Accountants</li>
+          <li>554-6325-4555</li>
+
+        </ul>
+      </dd>
+      <dd class="govuk-summary-list__value">
+
+        <strong class="govuk-tag">
+          New details
+        </strong>
+      </dd>
+      
+ 
+ 
+ 
+ 
+       {% endif %}
 
    
 

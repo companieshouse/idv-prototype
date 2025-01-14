@@ -153,6 +153,68 @@ router.post('/v3-update/pages/email-address-correspondance', function (req, res)
 
 
 
+    /*
+     *  AML supervisory body -- add
+     */
+    
+    router.post('/v3-update/pages/aml-supervisor', function (req, res) {
+        
+         
+        res.redirect('aml-number-MVP')
+            
+    })
+
+    /*
+     *  AML supervisory body -- add 
+     */
+    
+    router.post('/v3-update/pages/aml-number-MVP', function (req, res) {
+        
+
+        // The users has added new AML details - set the flag to TRUE 
+        // New entry into check your answers with a added tag 
+
+        req.session.data['new-aml-details'] = true;
+
+        res.redirect('../check-your-answers')
+            
+    })
+
+    /*
+     *  AML supervisory body -- remove 
+     */
+    
+    router.get('/v3-update/pages/remove-aml-details', function (req, res) {
+        
+
+        // The users has added new AML details - set the flag to TRUE 
+        // New entry into check your answers with a added tag 
+
+        req.session.data['aml-1-has-been-removed'] = true;
+
+        res.redirect('../check-your-answers')
+            
+    })
+
+    /*
+     *  AML supervisory body -- cancel remove 
+     */
+    
+    router.get('/v3-update/pages/cancel-remove-aml-1', function (req, res) {
+        
+
+        // The users has added new AML details - set the flag to TRUE 
+        // New entry into check your answers with a added tag 
+
+        req.session.data['aml-1-has-been-removed'] = undefined;
+
+        res.redirect('../check-your-answers')
+            
+    })
+      
+
+   
+
 
 
 
