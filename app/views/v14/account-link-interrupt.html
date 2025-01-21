@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+
+
+
+{% set serviceName %}
+  
+{% endset%}
+
+
+{% block beforeContent %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds ">
+
+  <form action="account-link-interrupt" method="post" novalidate="">
+
+    <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+
+
+  <h1 class="govuk-heading-l">Before you continue, you need to connect your Companies House account to your GOV.UK One Login <strong class="govuk-tag">
+    Content TBC
+  </strong></h1>
+
+  <p class="govuk-body">To do this, go to 'Manage account', select continue and follow the instructions. </p>
+
+  <p class="govuk-body">Then come back to this service to apply to register as a Companies Houe authorised agent.</p>
+
+
+  {{ govukButton({
+    text: "Go to 'Manage account'",
+    href:"https://find-update-company-info.herokuapp.com/public-beta-dev-ready/your-details-public-beta-acsp"
+  }) }}   
+
+
+
+
+
+  </form>
+
+            </div>
+          </div>
+
+{% endblock %}
