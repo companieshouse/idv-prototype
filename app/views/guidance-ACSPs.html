@@ -67,7 +67,7 @@ Guidance - Applying to register as a Companies House authorised agent - {{servic
             </li>
             <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
               <a href="#enforcement">
-                What happens if you do not comply with your legal responsibilities 
+                What happens if an agent does not comply with legal requirements 
               </a>
             </li>
             <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
@@ -162,7 +162,11 @@ Guidance - Applying to register as a Companies House authorised agent - {{servic
                       <li>update the details on the authorised agent account, if there are any changes to the information we hold about the agent</li>
                       <li>close the authorised agent account, if the agent is no longer registered with an AML supervisory body</li>
                       </ul>
-        <p>This is a legal requirement. They must do this within 14 days or the agent will be committing an offence.</p>
+                      
+                      {{ govukWarningText({
+                        text: "This is a legal requirement. They must do this within 14 days or the agent will be committing an offence.",
+                        iconFallbackText: "Warning"
+                      }) }}     
 
        <!-- <p>If the agent is no longer an authorised agent, an account owner will need to close the account. </p> -->
 
@@ -218,52 +222,46 @@ Guidance - Applying to register as a Companies House authorised agent - {{servic
         
 
 
-
+<!--
       <div class="govuk-warning-text">
   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
   <strong class="govuk-warning-text__text">
     <span class="govuk-visually-hidden">Warning</span>
     We may suspend or stop authorised agents if they do not comply with these requirements. The company directors (or equivalent) could receive a fine or face criminal prosecution.  
   </strong>
-</div>
-
-   <!--   <h3 class="govuk-heading-s">Keep the agent details up to date</h3>
-
-        <p>You must tell us if there is a change to any of the information that was provided in the application to register. If there are changes to the AML registration details, you must tell us within 14 days. </p>
-        <p>You can do this using the ‘Update authorised agent's details’ service in the authorised agent account. </p>
+</div> -->
 
 
-      <h3 class="govuk-heading-s">Keep records of your filings with Companies House </h3>
 
-      <p>If we request it, you must provide more information about:</p>
+            <h2 id="enforcement" class="govuk-heading-m">What happens if an agent does not comply with legal requirements  </h2>
 
-            <ul class="govuk-list govuk-list--bullet">
-              <li>your filings with Companies House</li>
-              <li>identity checks, if you have verified someone’s identity for Companies House</li>
-            </ul>
-      <p>If you verify the identity of clients for Companies House, you must keep records of the checks you carry out. You must keep these for 7 years from the date you complete the checks.</p> -->
+<p>The agent will be committing an offence if they do not comply with legal requirements. This means the sole trader, or all company directors (or equivalent) could receive a fine or face criminal prosecution. </p>
+<p>
+  We may also suspend the authorised agent, or cease the agent’s status. If we cease the agent's status they will no longer be registered as an authorised agent with Companies House. 
+  </p>
 
-            <h2 id="enforcement" class="govuk-heading-m">What happens if we need to suspend or stop an authorised agent </h2>
-
-              <p>We'll send an email to the agent’s correspondence email address if we need to suspend or stop it from acting as an authorised agent.</p>
-          
             <h3 class="govuk-heading-s">If we need to suspend an authorised agent</h3>
-         <!--   <p>We'll send an email to the agent's correspondence email address with information about what to do next.</p> -->
-
+     <p>We'll send an email to the agent's correspondence email address with information about what to do next.</p> 
             <p>We may need to ask the agent to provide more information or records about their filings. The agent will have 28 days to do this. </p>
 
-            <p>Users that have been added to the authorised agent account will not be able to access services for the authorised agent. This means they will not be able to file on behalf of the agent while it is suspended. </p>
+            <p>Users that have been added to the authorised agent account will not be able to access services for the authorised agent while it is suspended. This means they will not be able to: </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>file as an authorised agent</li>
+              <li>verify people's identity for Companies House</li>
+            </ul>
 
             <p>People who have had their identity verified by the agent for Companies House may need to verify their identity again. We will contact anyone who needs to do this. </p>
 
             <p>We’ll also publish information to show that the authorised agent has been suspended. We’ll publish the agent’s name, status and the date it was suspended.</p>
 
-            <h3 class="govuk-heading-s">If we need to stop an authorised agent</h3>
-            <p>We will permanently stop (cease) an authorised agent if the agent does not comply with legal requirements.</p>
+            <h3 class="govuk-heading-s">If we need to cease an authorised agent’s status</h3>
+            <p>We will send an email to the agent’s correspondence email address to let them know we’ve ceased their status, and they are no longer registered as an authorised agent with Companies House. </p>
+            <p> The agent will not be able to file on behalf of clients, or verify people’s identities for Companies House.
+              </p>
             <p>We will: </p>
                 <ul class="govuk-list govuk-list--bullet">
             <!--      <li>send an email to the agent’s correspondence email address</li> -->
-                  <li>close the online account – users will not be able to access the agent account or services</li>
+                  <li>close the agent's online account – any users who have been added will no longer have access</li>
                   <li>publish the agent’s name, status and the date it was disqualified</li>
                   <li>contact anyone whose identity the agent has verified, if they need to verify again</li>
                 </ul>
