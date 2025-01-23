@@ -9,7 +9,7 @@
 
 
 {% block beforeContent %}
-
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 
@@ -20,21 +20,13 @@
 
   <form action="account-link-interrupt" method="post" novalidate="">
 
-    <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  <h1 class="govuk-heading-l"> Before you can apply, you need to connect your Companies House account to your GOV.UK One Login </h1>
 
-
-
-  <h1 class="govuk-heading-l">Before you continue, you need to connect your Companies House account to your GOV.UK One Login <strong class="govuk-tag">
-    Content TBC
-  </strong></h1>
-
-  <p class="govuk-body">To do this, go to 'Manage account', select continue and follow the instructions. </p>
-
-  <p class="govuk-body">Then come back to this service to apply to register as a Companies Houe authorised agent.</p>
+  <p class="govuk-body govuk-!-padding-bottom-3">After you’ve done this, come back to this service to apply to register as a Companies House authorised agent. </p>
 
 
   {{ govukButton({
-    text: "Go to 'Manage account'",
+    text: "Continue",
     href:"https://find-update-company-info.herokuapp.com/public-beta-dev-ready/your-details-public-beta-acsp"
   }) }}   
 
