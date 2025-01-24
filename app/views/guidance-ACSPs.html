@@ -156,17 +156,18 @@ Guidance - Applying to register as a Companies House authorised agent - {{servic
 
        <h3 class="govuk-heading-s">Update the authorised agent's details or close the account </h3>
 
-       <p>An account owner must: </p>
+       <p>An account owner must update the details on the authorised agent account if there are any changes to the information we hold about the agent. </p>
+
+       {{ govukWarningText({
+        text: "This is a legal requirement. They must do this within 14 days or the agent will be committing an offence.",
+        iconFallbackText: "Warning"
+      }) }}     
+
+      <p>If the agent is no longer registered with an AML supervisory body, or no longer needs to be an authorised agent, an account owner should close the authorised agent account. </p>
         
-                    <ul class="govuk-list govuk-list--bullet">
-                      <li>update the details on the authorised agent account, if there are any changes to the information we hold about the agent</li>
-                      <li>close the authorised agent account, if the agent is no longer registered with an AML supervisory body</li>
-                      </ul>
+     
                       
-                      {{ govukWarningText({
-                        text: "This is a legal requirement. They must do this within 14 days or the agent will be committing an offence.",
-                        iconFallbackText: "Warning"
-                      }) }}     
+   
 
        <!-- <p>If the agent is no longer an authorised agent, an account owner will need to close the account. </p> -->
 
@@ -262,7 +263,7 @@ Guidance - Applying to register as a Companies House authorised agent - {{servic
                 <ul class="govuk-list govuk-list--bullet">
             <!--      <li>send an email to the agent’s correspondence email address</li> -->
                   <li>close the agent's online account – any users who have been added will no longer have access</li>
-                  <li>publish the agent’s name, status and the date it was disqualified</li>
+                  <li>publish the agent’s name, status and the date we ceased their status</li>
                   <li>contact anyone whose identity the agent has verified, if they need to verify again</li>
                 </ul>
 
