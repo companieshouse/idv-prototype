@@ -36,21 +36,41 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="start-page" method="post">
+        
+
+              <!-- Notification banner -->
+              <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                <div class="govuk-notification-banner__header">
+                  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Important
+                  </h2>
+                </div>
+                <div class="govuk-notification-banner__content">
+      
+                  <h3 class="govuk-notification-banner__heading">
+                    This is a new service
+                  </h3>
+                  <p class="govuk-body">If you have any issues while we work to improve it, you can <a class="govuk-notification-banner__link" href="#">contact us</a> or tell us your <a class="govuk-notification-banner__link" href="#">feedback</a>. You'll also find contact and feedback links on each page of the service.</p>
+      
+        
+                </div>
+              </div>
+      
 
       <h1 class="govuk-heading-l">
         {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
 
-      <div class="ch-info-panel">
+      <!-- <div class="ch-info-panel">
         <div class="govuk-panel__body">
-         <!-- <h3 class="govuk-heading-s">Verify your indentity </h3> -->
-        <!-- <h2 class="govuk-heading-s">This is a new service</h2>  -->
+        
+       <h2 class="govuk-heading-s">This is a new service</h2> 
 
             <p class="govuk-body">This is a new service. If you have any issues while we work to improve it, you can <a href="">contact us</a> or tell us your <a href="">feedback</a>. You'll also find contact and feedback links on each page of the service.
             </p>
           
 </div>
-</div>
+</div> -->
 
       <p class="govuk-body">Use this service to register yourself, or your business as an Authorised Corporate Service Provider (ACSP). ACSPs are also known as authorised agents. </p>
       <p>
