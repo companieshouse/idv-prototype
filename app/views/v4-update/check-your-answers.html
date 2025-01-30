@@ -14,9 +14,9 @@ Check your answers before sending your application – {{ serviceName }} – GOV
       <form class="form" action="check-your-answers" method="post">
 
      
-        <h1 class="govuk-heading-l">View and update the authorised agent's details</h1> <strong class="govuk-tag govuk-tag--turquoise govuk-!-static-margin-bottom-1">
+        <h1 class="govuk-heading-l">View and update the authorised agent's details <strong class="govuk-tag govuk-tag--turquoise">
           Content TBC
-        </strong>
+        </strong></h1>
 
 
         <div class="govuk-inset-text">
@@ -158,7 +158,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         <!-- Business name pending tag -->
 
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
+          <dt class="govuk-summary-list__key ">
             Business name
           </dt>
           <dd class="govuk-summary-list__value">
@@ -171,17 +171,21 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             {% endif %}
 
           </dd>
-          <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
-
+        
             <!-- Pending tag -->
-            {% if data['business-name-has-been-updated'] == true %}
-
+         
+            <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+              {% if data['business-name-has-been-updated'] == true %}
  
               <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
                 Details updated 
               </strong>
               
               <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
+              {% endif %}
+            </dd>
+
+            {% if data['business-name-has-been-updated'] == true %}
 
             <dd class="govuk-summary-list__actions govuk-!-width-one-third">
               <ul class="govuk-summary-list__actions-list">
@@ -193,14 +197,11 @@ Check your answers before sending your application – {{ serviceName }} – GOV
                 </li>
               </ul>
             
-          </dd>
-
-
+            </dd>
 
             {% endif %}
 
-
-          </dd>
+     
 
           {% if data['business-name-has-been-updated'] == undefined %}
 
@@ -500,7 +501,6 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 </dl>
 
 
-
 <!--       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -530,94 +530,151 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
       <p>If the company name or registered office address has changed, you’ll also need to update this on the Companies House register.  </p>
    
-
-
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      How to update company details on the Companies House register
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p>You can do this using our service to <a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house">Tell Companies House about changes to your limited company</a>.
-  </div>
-</details>
-   
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            How to update company details on the Companies House register
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>You can do this using our service to <a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house">Tell Companies House about changes to your limited company</a>.
+        </div>
+      </details>
+        
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            MORRIS ACCOUNTING LTD
-          </dd>
-           <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Update
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd> 
-        </div>
-       <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Company number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            02050399
-          </dd>
-           <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd> 
-        </div>-->
-        <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Type of business
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Limited Company
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd> 
-        </div>-->
+       <!-- Name -->
 
-       <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Your role
-          </dt>
-          <dd class="govuk-summary-list__value">
-            I am a director
+       <div class="govuk-summary-list__row ">
+        <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+          Name
+
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+          James Morris Accounting LIMITED<br> <br> 
+
+          {% if data['business-name-has-been-updated'] == true %}
+
+          <p class="govuk-body">Name was changed on 18 September 2025</p>
+
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+
+          <!-- Name pending tag -->
+
+          {% if data['name-has-been-updated'] == true %}
+
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+          
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>-->
+
+          <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="pages/name-of-business">Update<span class="govuk-visually-hidden"> company name</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+              </li>
+            </ul>
+          
+        </dd>
+
+        
+          {% endif %}
+
+          {% if data['name-has-been-updated'] == undefined %}
+
+          <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="pages/name">Update<span class="govuk-visually-hidden"> name</span></a>
+              </li>
+            
+            </ul>
+          
+        </dd>
+        {% endif %}
+      </div>
+        
+
+
+
+
+    <!-- Registered office address -->
 
         <div class="govuk-summary-list__row">
-           <dt class="govuk-summary-list__key">
+           <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
             Registered office address
           </dt>
           <dd class="govuk-summary-list__value">
             72 Guild Street<br>London<br>SE23 6FH
           </dd>
-         <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Update
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd> 
+                 <!-- Name changed on -->
+                 {% if data['registered-address-has-been-updated'] == true %}
+
+                 <br> <br>
+                 <p class="govuk-body">Address was changed on 18 September 2025</p>
+                 {% endif %}
+               </dd>
+     
+               <!-- Name pending tag -->
+               <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+     
+                 {% if data['address-has-been-updated'] == true %}
+     
+                     <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                       Details updated
+                     </strong>
+                     
+                     <p class="govuk-body-s">Pending until submitted and accepted</p> 
+                 {% endif %}
+                 
+               </dd>
+     
+             
+               <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+                 <ul class="govuk-summary-list__actions-list">
+     
+                 {% if data['name-has-been-updated'] == true %}
+     
+     
+                 <li class="govuk-summary-list__actions-list-item">
+                   <a class="govuk-link" href="pages/name">Update<span class="govuk-visually-hidden"> name</span></a>
+                 </li>
+                 <li class="govuk-summary-list__actions-list-item">
+                   <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+                 </li>
+     
+                 {% endif %}
+     
+                 {% if data['name-has-been-updated'] == undefined %}
+     
+                 <a href="#">
+                   Update
+                   <span class="govuk-visually-hidden"> name</span>
+                 </a>
+     
+                 {% endif %}
+     
+             
+               </dd> 
+
         </div>
+
+
+
+
+
+
+        <!-- Correspondance address-->
+
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">

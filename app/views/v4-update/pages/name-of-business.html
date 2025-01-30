@@ -20,12 +20,6 @@ What is the name of your business? – {{ serviceName }}
 
         {% if ((data['prototype-set-up'] === "sole-trader")) %}
 
-        {% else %}
-
-        {% endif %}
-
-
-
 
         {{ govukInput({
           label: {
@@ -39,20 +33,38 @@ What is the name of your business? – {{ serviceName }}
         }) }}
 
 
-        {% if ((data['prototype-set-up'] === "sole-trader")) %}
+
+
+        {% else %}
+
+
+        {{ govukInput({
+          label: {
+            text: "What is the name of the company?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          id: "businessName",
+          name: "businessName",
+          value:"James Morris Accounting"
+        }) }}
+
+
+        {% endif %}
+
+
 
         <div class="govuk-inset-text">
           <p>We’ll show the business name on the public list of authorised agents.  </p>
         </div>
         
 
-        {% else %}
+
 
         {{ govukInsetText({
           text: "This must be the same as the name held by the anti-money laundering (AML) supervisory body. If the AML supervisory body has an incorrect name, you must update this before you apply. "
         }) }}
 
-        {% endif %}
 
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
