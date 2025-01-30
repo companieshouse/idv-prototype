@@ -1,0 +1,512 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers before sending your application – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+
+      <form class="form" action="update-details" method="post">
+
+      <h1 class="govuk-heading-xl">Tell Companies House about an update to the authorised agent details</h1>
+
+      <div class="govuk-inset-text">
+        Any updates you make to an authorised agent's details are pending until you’ve submitted this filing, and we’ve accepted it.
+      </div>
+
+
+      <!-- Sole traders -->
+
+      {% if (data['prototype-set-up'] === "sole-trader")%}
+
+      <h2 class="govuk-heading-m">Your details</h2>
+
+      <!--- Name -->
+
+
+      <h3 class="govuk-heading-s">Full name</h3>
+
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        classes: "govuk-input--width-20",
+        id: "first-name",
+        name: "first-name",
+        type: "first-name",
+        value: first-name,
+        autocomplete: "first-name",
+        spellcheck: false
+      }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Middle names"
+        },
+
+        classes: "govuk-input--width-20",
+        id: "middle-name",
+        value: middle-name,
+        name: "middle-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        classes: "govuk-input--width-20",
+        id: "last-name",
+        name: "last-name",
+        type: "last-name",
+        value: last-name,
+        autocomplete: "last-name",
+        spellcheck: false
+      }) }}
+     
+
+   <div class="govuk-inset-text">
+We'll show this on the public register, unless you have a different business name that you trade under. 
+</div>
+
+
+      <!--- Where you live  -->
+
+      {% call govukFieldset({
+        legend: {
+          text: "Home address",
+          classes: "govuk-fieldset__legend--s"
+        }
+      }) %}
+
+      {{ govukInput({
+        label: {
+          text: "UK postcode"
+        },
+        id: "cor-postcode",
+        classes: "govuk-input--width-10",
+        name: "cor-postcode"
+      }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Property name or number"
+        },
+        hint: {
+          text: "For example, 'The Mill', '116' or 'Flat 37a'"
+        },
+        id: "cor-number",
+        classes: "govuk-input--width-10",
+        name: "cor-number"
+      }) }}
+
+
+
+      
+        {{ govukButton({
+          text: "Find address",
+          classes: "govuk-button--secondary"
+        }) }}
+
+ 
+        {% endcall %}
+
+
+
+
+
+      
+
+
+
+
+
+
+      <!-- Business name -->
+
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-5"> Business details </h2>
+
+
+      <h3 class="govuk-heading-s"> Business name</h3>
+
+      {{ govukInput({
+        label: {
+          text: "Business name"
+        },
+        classes: "govuk-input--width-full",
+        id: "business-name",
+        name: "business-name",
+        type: "business-name",
+        value: business-name,
+        autocomplete: "business-name",
+        spellcheck: false
+      }) }}
+
+
+  
+
+      <!-- Correspondence address -->
+
+
+      {% call govukFieldset({
+        legend: {
+          text: "Correspondence address",
+          classes: "govuk-fieldset__legend--s"
+        }
+      }) %}
+
+      {{ govukInput({
+        label: {
+          text: "UK postcode"
+        },
+        id: "cor-postcode",
+        classes: "govuk-input--width-10",
+        name: "cor-postcode"
+      }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Property name or number"
+        },
+        hint: {
+          text: "For example, 'The Mill', '116' or 'Flat 37a'"
+        },
+        id: "cor-number",
+        classes: "govuk-input--width-10",
+        name: "cor-number"
+      }) }}
+
+
+
+      
+        {{ govukButton({
+          text: "Find address",
+          classes: "govuk-button--secondary"
+        }) }}
+
+ 
+        {% endcall %}
+
+
+    
+      <!-- Limited companies, LLPs or LPs -->
+
+       {% elseif ((data['prototype-set-up'] === "limited")) %}
+
+
+      <h2 class="govuk-heading-m">Company details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            MORRIS ACCOUNTING LTD
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Update
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd> 
+        </div>
+
+
+        <!-- 
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Company number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            02050399
+          </dd>
+         
+        </div> 
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type of business
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Limited Company
+          </dd>
+
+        </div>-->
+
+      
+        <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+            Registered office address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Update
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd> 
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Update
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd> 
+        </div>
+
+     
+
+
+ 
+<!--
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business sector 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Auditors, insolvency practitioners, external accountants and tax advisers
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Update
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>-->
+
+
+        
+      </dl>
+
+
+
+
+      <!--non-registrable partnerships -->
+      {% elseif ((data['prototype-set-up'] === "partnerships")) %}
+
+
+      <h2 class="govuk-heading-m">Business details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <!--  <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type of business
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Partnership
+          </dd>
+          
+        </div>-->
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name registered with the AML supervisory body
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Name of the business and your name
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Update
+              <span class="govuk-visually-hidden"> name registered with AML supervisory body</span>
+            </a>
+          </dd>
+        </div>
+        
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            James Morris
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Update
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            James Morris Accounting
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Update
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+      <!--  <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            I am a member
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Update
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div> 
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business sector 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Auditors, insolvency practitioners, external accountants and tax advisers
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Update
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+
+        </div>-->
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Update
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Update
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+
+ 
+
+
+
+
+        
+      </dl>
+
+      {% endif %}
+
+
+
+      <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
+
+      {{ govukSelect({
+        id: "aml",
+        name: "AML supervisory body",
+        label: {
+          text: "AML supervisory body"
+        },
+        items: [
+          {
+            value: "published",
+            text: "Association of Chartered Certified Accountants (ACCA)"
+          },
+          {
+            value: "updated",
+            text: "Association of Accounting Technicians (AAT)",
+            selected: true
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "AML membership number",
+          classes: "govuk-label--s"
+        },
+        id: "aml-number",
+        name: "aml-number"
+      }) }}
+
+      {{ govukButton({
+        text: "Add another AML supervisory body",
+        classes: "govuk-button--secondary"
+      }) }}
+
+
+
+
+
+
+
+
+
+
+      
+
+    
+      <form action="update-details" method="post" novalidate>
+
+      
+
+
+
+    <!-- if changes have been made -->
+
+    <p> 
+        {{ govukButton({
+          text: "Continue",
+          classes:"govuk-!-margin-top-9"
+        }) }}
+      </p>
+
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

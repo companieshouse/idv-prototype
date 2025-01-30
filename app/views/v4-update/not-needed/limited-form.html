@@ -1,0 +1,301 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers before sending your application – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+
+      <form class="form" action="update-form" method="post">
+
+     <!-- <div class="govuk-inset-text">
+        Any updates you make to an authorised agent's details are pending until you’ve submitted this filing, and we’ve accepted it.
+      </div> -->
+
+
+      <!-- Sole traders -->
+
+       <!--- Name -->
+
+       <h1 class="govuk-heading-l">Update authorised agent details</h1>
+
+
+      {{ govukInput({
+        label: {
+          text: "Company name",
+          classes: "govuk-label--m"
+        },
+        id: "business-name",
+        name: "businessName"
+      }) }}
+
+        
+
+          <div class="govuk-inset-text">
+          We'll show this on the public list of authorised agents, unless you have a different business name that you trade under. 
+          </div>
+
+  
+      <!--- Where you live  -->
+
+      {% call govukFieldset({
+        legend: {
+          text: "Home address",
+          classes: "govuk-fieldset__legend--m"
+        }
+      }) %}
+
+      {{ govukInput({
+        label: {
+          text: "Property name or number"
+        },
+        hint: {
+          text: "For example, 'The Mill', '116' or 'Flat 37a'"
+        },
+        id: "propertyName",
+        name: "propertyName"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Address line 1"
+        },
+        id: "addressOne",
+        name: "addressOne"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Address line 2 (optional)"
+        },
+        id: "addressTwo",
+        name: "addressTwo"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "City or town"
+        },
+        id: "town",
+        name: "town"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "County (optional)"
+        },
+        id: "county",
+        name: "county"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Country"
+        },
+        id: "country",
+        name: "country"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        id: "postcode",
+        name: "postcode"
+      }) }}
+
+  
+      
+      {% endcall %}
+
+
+           <!--- Correspondance address  -->
+
+           {% call govukFieldset({
+            legend: {
+              text: "Correspondence address",
+              classes: "govuk-fieldset__legend--m"
+            }
+          }) %}
+    
+          {{ govukInput({
+            label: {
+              text: "Property name or number"
+            },
+            hint: {
+              text: "For example, 'The Mill', '116' or 'Flat 37a'"
+            },
+            id: "propertyName",
+            name: "propertyName"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Address line 1"
+            },
+            id: "addressOne",
+            name: "addressOne"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Address line 2 (optional)"
+            },
+            id: "addressTwo",
+            name: "addressTwo"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "City or town"
+            },
+            id: "town",
+            name: "town"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "County (optional)"
+            },
+            id: "county",
+            name: "county"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Country"
+            },
+            id: "country",
+            name: "country"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            id: "postcode",
+            name: "postcode"
+          }) }}
+    
+      
+          
+          {% endcall %}
+
+
+<div class="govuk-inset-text">
+  <h2 class="govuk-heading-m">What information we’ll show on the public list of authorised agents </h2>
+  <p>We’ll show the town or city of the correspondence address. </p>
+</div>
+
+
+
+
+          <h2 class="govuk-heading-m">Anti-Money Laundering (AML) registration details</h2>
+
+
+          {{ govukInput({
+            label: {
+              text: "Name held by AML supervisory body"
+            },
+            id: "first-name",
+            name: "firstName",
+            spellcheck: false
+          }) }}
+
+
+
+
+          {{ govukSelect({
+            id: "aml",
+            name: "AML",
+            label: {
+              text: "AML supervisory body 1"
+            },
+            items: [
+              {
+                value: "published",
+                text: "Association of Chartered Certified Accountants (ACCA)"
+              },
+              {
+                value: "updated",
+                text: "Association of Accounting Technicians (AAT)",
+                selected: true
+              }
+            ]
+          }) }}
+    
+          {{ govukInput({
+            label: {
+              text: "AML membership number 1"
+            },
+            id: "aml-number",
+            name: "aml-number"
+          }) }}
+
+          {{ govukSelect({
+            id: "aml",
+            name: "AML",
+            label: {
+              text: "AML supervisory body 2"
+            },
+            items: [
+              {
+                value: "published",
+                text: "Association of Chartered Certified Accountants (ACCA)"
+              },
+              {
+                value: "updated",
+                text: "Association of Accounting Technicians (AAT)",
+                selected: true
+              }
+            ]
+          }) }}
+    
+          {{ govukInput({
+            label: {
+              text: "AML membership number 2"
+            },
+            id: "aml-number",
+            name: "aml-number"
+          }) }}
+
+
+          {{ govukSelect({
+            id: "aml",
+            name: "AML",
+            label: {
+              text: "AML supervisory body 3"
+            },
+            items: [
+              {
+                value: "published",
+                text: "Association of Chartered Certified Accountants (ACCA)"
+              },
+              {
+                value: "updated",
+                text: "Association of Accounting Technicians (AAT)",
+                selected: true
+              }
+            ]
+          }) }}
+    
+          {{ govukInput({
+            label: {
+              text: "AML membership number 3"
+            },
+            id: "aml-number",
+            name: "aml-number"
+          }) }}
+    
+    
+
+          
+       <div class="govuk-inset-text">
+    <h2 class="govuk-heading-m">What information we’ll show on the public list of authorised agents </h2>
+    <p>We'll show the names of the supervisory bodies the business is registered with.  </p>
+  </div>
+
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+  
+
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

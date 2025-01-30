@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is your name? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="date-of-change-business-name" method="post">
+
+        {{ govukDateInput({
+          id: "date-of-change",
+          namePrefix: "date-of-change",
+          fieldset: {
+            legend: {
+              text: "When did the business name change?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+              text: "For example, 27 1 2022"
+          }
+      }) }}
+
+
+    <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      <a class="govuk-link" href="../check-your-answers">Cancel</a>
+    </div>
+
+</form>
+
+</div> 
+</div>
+
+
+
+{% endblock %}
