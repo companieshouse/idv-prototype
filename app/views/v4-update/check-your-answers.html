@@ -216,20 +216,6 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         </div>
 
 
-      <!--  <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Business sector 
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Auditors, insolvency practitioners, external accountants and tax advisers
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> business sector</span>
-            </a>
-          </dd>
-        </div> -->
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -267,7 +253,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             <dd class="govuk-summary-list__actions govuk-!-width-one-third">
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="pages/name-of-business">Update<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                  <a class="govuk-link" href="pages/address-correspondance-lookup">Update<span class="govuk-visually-hidden"> correspondence email address</span></a>
                 </li>
                 <li class="govuk-summary-list__actions-list-item">
                   <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> correspondence email address</span></a>
@@ -314,7 +300,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             <dd class="govuk-summary-list__actions govuk-!-width-one-third">
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="pages/name-of-business">Update<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                  <a class="govuk-link" href="pages/email-address-correspondance">Update<span class="govuk-visually-hidden"> correspondence email address</span></a>
                 </li>
                 <li class="govuk-summary-list__actions-list-item">
                   <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> correspondence email address</span></a>
@@ -500,26 +486,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
 </dl>
 
-
-<!--       <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            If you need to update these AML details
-
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>You cannot edit the details for an existing registration.</p>
-          <p>If you need to update the membership number for an existing registration, you will need to add the new details, then remove the previous ones.</p>
-        </div>
-      </details> -->
-    
-
-
-
-
-    
-    
+ 
     
       <!-- Limited companies, LLPs or LPs -->
 
@@ -676,40 +643,70 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         <!-- Correspondance address-->
 
 
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Correspondence address
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street<br>London<br>SE23 6FH
+            15 New Road
+            <br>Cardiff
+            <br>Wales
+            <br> CF5 1BR 
+
+
+
+            {% if data['cor-address-has-been-updated'] == true %}
+
+            <br> <br> <p class="govuk-body"> Correspondence address was changed on 18 September 2025</p>
+
+            {% endif %}
+          
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Update
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+
+             <!-- Pending tag -->
+             {% if data['cor-address-has-been-updated'] == true %} 
+
+
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+
+
+          </dd>
+            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/address-correspondance-lookup">Update<span class="govuk-visually-hidden"> correspondence correspondence address</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> correspondence address updates</span></a>
+                </li>
+              </ul>
+            
           </dd> 
         </div>
+          {% endif %}
 
+
+          {% if data['cor-address-has-been-updated'] == undefined %} 
+
+
+          <dd class="govuk-summary-list__actions">
+            <a href="pages/address-correspondance-lookup">
+              Update
+              <span class="govuk-visually-hidden">Correspondence address</span>
+            </a>
+          </dd>
+     
+          </div>
+        {% endif %}
      
 
 
- <!-- 
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Business sector 
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Auditors, insolvency practitioners, external accountants and tax advisers
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div> -->
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -735,21 +732,6 @@ Check your answers before sending your application – {{ serviceName }} – GOV
       <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-       <!--  <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Name registered with the AML supervisory body
-          </dt>
-          <dd class="govuk-summary-list__value">
-            MORRIS ACCOUNTING LTD and your name
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> AML supervisory body</span>
-            </a>
-          </dd>
-        </div> -->
 
 
         <div class="govuk-summary-list__row">
