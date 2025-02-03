@@ -190,6 +190,73 @@ router.post('/v4-update/pages/date-of-change-correspondance-email', function (re
         
 
 
+    /*
+ * registered office address lookup
+    //if number and postcode added address-confirm
+ 
+    // only postcode  address-list
+ */
+    router.post('/v4-update/pages/address-registered-office-lookup', function (req, res) {
+
+
+        //if house number is empty
+        if (req.session.data['cor-number'] === '') {
+    
+            res.redirect('address-registered-office-list')
+    
+          } else {
+            // go to the confirm address page
+            res.redirect('address-registered-office-confirm')
+        
+          }
+         
+       
+    })
+
+    /*
+     *  RO list 
+     */
+        router.post('/v4-update/pages/address-registered-office-list', function (req, res) {
+        
+         
+            res.redirect('address-registered-office-confirm')
+            
+        })
+    
+    /*
+     *  Not registered with Companies House - ACSP address manually entering address
+     */
+    router.post('/v4-update/pages/address-registered-office-manual', function (req, res) {
+        
+         
+        res.redirect('address-registered-office-confirm')
+        
+    })
+    
+    
+    /*
+     *  Correspondance address confirm
+     */
+    
+    router.post('/v4-update/pages/address-registered-office-confirm', function (req, res) {
+        
+
+        req.session.data['registered-office-address-has-been-updated'] = true;
+       
+        res.redirect('date-of-change-registered-office-address')
+        
+    })
+
+
+    router.post('/v4-update/pages/date-of-change-registered-office-address', function (req, res) {
+
+        res.redirect('../check-your-answers')
+        
+    })
+        
+
+
+
 
     /*
      *  AML supervisory body -- add

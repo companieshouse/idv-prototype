@@ -37,17 +37,18 @@ What is the name of your business? – {{ serviceName }}
 
         {% else %}
 
-
-        {{ govukInput({
-          label: {
-            text: "What is the name of the company?",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          },
-          id: "businessName",
-          name: "businessName",
-          value:"James Morris Accounting"
-        }) }}
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="businessName">
+              What is the name of the company?
+            </label>
+          </h1>
+          <p class="govuk-body">
+            This must be the same as the name held by the anti-money laundering (AML) supervisory body. If the AML supervisory body has an incorrect name, you must update this before you apply.
+          </p>
+  
+          <input class="govuk-input" id="businessName" name="businessName" type="text">
+        </div>
 
 
         {% endif %}
@@ -60,10 +61,6 @@ What is the name of your business? – {{ serviceName }}
         
 
 
-
-        {{ govukInsetText({
-          text: "This must be the same as the name held by the anti-money laundering (AML) supervisory body. If the AML supervisory body has an incorrect name, you must update this before you apply. "
-        }) }}
 
 
 
