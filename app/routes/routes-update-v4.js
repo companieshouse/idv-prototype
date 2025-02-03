@@ -112,6 +112,18 @@ router.post('/v4-update/pages/address-principle-lookup', function (req, res) {
 })
 
 
+    /*
+     *  business address list 
+     */
+    router.post('/v4-update/pages/address-principle-office-list', function (req, res) {
+        
+         
+        res.redirect('address-principle-office-confirm')
+        
+    })
+
+
+
 
 /*
  * Location they live 
