@@ -50,11 +50,7 @@ Guidance - Applying to register as a Companies House authorised agent - {{servic
             </li>
 
 
-            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
-              <a href="#account">
-                How to use your authorised agent account
-              </a>
-            </li>
+
 
             <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
               <a href="#responsilibilities">
@@ -66,6 +62,13 @@ Guidance - Applying to register as a Companies House authorised agent - {{servic
                 What happens if an agent does not comply with legal requirements 
               </a>
             </li>
+
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+              <a href="#account">
+                How to use your authorised agent account
+              </a>
+            </li>
+        
             <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
               <a href="#services">
                 Services for authorised agents
@@ -127,63 +130,6 @@ Guidance - Applying to register as a Companies House authorised agent - {{servic
 
 
 
-
-
-      <h2 id="account" class="govuk-heading-m">How to use your authorised agent account</h2>
-
-      <p>You’ll be able to access the authorised agent account when you sign in to your Companies House account. </p>
-
-            <h3 id="submit-information" class="govuk-heading-s">Add and remove users</h3>
-
-      <p>When you add people who work for the agent to the account, they will not need to verify their identity.</p>
-      <p>All users you add to the account will be able to:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>file on behalf of clients</li>
-        <li>verify people's identities for Companies House</li>
-        </ul>
-
-    <p>You can manage what users can do by selecting their role when you add them to the account. There are 3 roles users can have for an authorised agent:</p>
-
-            <ul class="govuk-list govuk-list--bullet">
-              <li>account owners – can update the authorised agent's details, and add and remove all users </li>
-              <li>administrators – can add and remove administrators and standard users</li>
-              <li>standard users – cannot add and remove other users</li>
-            </ul>
-
-    <p>You can remove users from the account at any time. Once you remove a user, they will no longer be able to access the account or services for the authorised agent.</p>
-
-
-
-       <h3 class="govuk-heading-s">Update the authorised agent's details</h3>
-
-       <p>An account owner must tell us if there are any changes to the information we hold about the authorised agent. This includes if the agent is no longer registered with an AML supervisory body. </p>
-
-       {{ govukWarningText({
-        text: "This is a legal requirement. They must do this within 14 days or the agent will be committing an offence.",
-        iconFallbackText: "Warning"
-      }) }}     
-
-      <p>To tell us about changes, an account owner must email us using the same email address as they use to sign in. They’ll need to use the subject line ‘Update ACSP details’ and include the: 
-        </p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>authorised agent’s name and number</li>
-          <li>details they need to update – they’ll need to confirm the current details and tell us what the new ones are</li>
-          <li>date the details changed 
-            </li>
-          </ul>
-         
-          <p>In the future, account owners will be able to tell us about changes by updating the details on the authorised agent’s online account.  </p>
-
-          <h3 class="govuk-heading-s">Close the authorised agent</h3>
-          <p>To close the authorised agent, an account owner will need to send an email using the subject line ‘Close an ACSP’. They’ll need to confirm: </p>
-
-          <ul class="govuk-list govuk-list--bullet">
-            <li>the authorised agent’s name and number</li>
-            <li>their role for the agent, for example if they’re a director, partner or sole trader
-              </li>
-              <li>they want to close the authorised agent 
-              </li>
-   </ul>
 
 
        <!-- <p>If the agent is no longer an authorised agent, an account owner will need to close the account. </p> -->
@@ -287,6 +233,65 @@ Guidance - Applying to register as a Companies House authorised agent - {{servic
                   <li>contact anyone whose identity the agent has verified, if they need to verify again</li>
                 </ul>
 
+
+
+
+
+                <h2 id="account" class="govuk-heading-m">How to use your authorised agent account</h2>
+
+                <p>You’ll be able to access the authorised agent account when you sign in to your Companies House account. </p>
+          
+                      <h3 id="submit-information" class="govuk-heading-s">Add and remove users</h3>
+          
+                <p>When you add people who work for the agent to the account, they will not need to verify their identity.</p>
+                <p>All users you add to the account will be able to:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>file on behalf of clients</li>
+                  <li>verify people's identities for Companies House</li>
+                  </ul>
+          
+              <p>You can manage what users can do by selecting their role when you add them to the account. There are 3 roles users can have for an authorised agent:</p>
+          
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>account owners – can update the authorised agent's details, and add and remove all users </li>
+                        <li>administrators – can add and remove administrators and standard users</li>
+                        <li>standard users – cannot add and remove other users</li>
+                      </ul>
+          
+              <p>You can remove users from the account at any time. Once you remove a user, they will no longer be able to access the account or services for the authorised agent.</p>
+          
+          
+          
+                 <h3 class="govuk-heading-s">Update the authorised agent's details</h3>
+          
+                 <p>An account owner must tell us if there are any changes to the information we hold about the authorised agent. This includes if the agent is no longer registered with an AML supervisory body. </p>
+          
+                 {{ govukWarningText({
+                  text: "This is a legal requirement. They must do this within 14 days or the agent will be committing an offence.",
+                  iconFallbackText: "Warning"
+                }) }}     
+          
+                <p>To tell us about changes, an account owner must email <a href="">enquiries@companieshouse.gov.uk</a> using the same email address as they use to sign in. They’ll need to use the subject line ‘Update ACSP details’ and include the: 
+                  </p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>authorised agent’s name and number</li>
+                    <li>details they need to update – they’ll need to confirm the current details and tell us what the new ones are</li>
+                    <li>date the details changed 
+                      </li>
+                    </ul>
+                   
+                    <p>In the future, account owners will be able to tell us about changes by updating the details on the authorised agent’s online account.  </p>
+          
+                    <h3 class="govuk-heading-s">Close the authorised agent</h3>
+                    <p>To close the authorised agent, an account owner will need to send an email using the subject line ‘Close an ACSP’. They’ll need to confirm: </p>
+          
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>the authorised agent’s name and number</li>
+                      <li>their role for the agent, for example if they’re a director, partner or sole trader
+                        </li>
+                        <li>they want to close the authorised agent 
+                        </li>
+             </ul>
 
 
             <h2 id="services" class="govuk-heading-m">Services for authorised agents</h2>
