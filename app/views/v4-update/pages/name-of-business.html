@@ -40,26 +40,25 @@ What is the name of your business? – {{ serviceName }}
         <div class="govuk-form-group">
           <h1 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--l" for="businessName">
-              What is the name of the company?
+              What is the company name?
             </label>
           </h1>
-          <p class="govuk-body">
-            This must be the same as the name held by the anti-money laundering (AML) supervisory body. If the AML supervisory body has an incorrect name, you must update this before you apply.
+          <p class="govuk-hint">
+            This must be the same as the name held by the Anti-Money Laundering (AML) supervisory body. 
           </p>
   
           <input class="govuk-input" id="businessName" name="businessName" type="text">
         </div>
 
-
+       
+        <div class="govuk-inset-text">
+          <p>If the company name has changed, you’ll also need to update this on the Companies House register. <a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house">Tell Companies House about changes to your limited company (opens in a new tab)</a>.</p>
+        </div>
         {% endif %}
 
 
 
-        <div class="govuk-inset-text">
-          <p>We’ll show the business name on the public list of authorised agents.  </p>
-        </div>
-        
-
+ 
 
 
 
