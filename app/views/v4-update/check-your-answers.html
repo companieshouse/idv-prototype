@@ -61,27 +61,13 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
             {% if data['name-has-been-updated'] == true %}
 
-            <p class="govuk-body govuk-!-static-margin-top-2">Updated on 18 September 2025</p>
-
-            {% endif %}
+            <p class="govuk-body govuk-!-static-margin-top-2">Changed on 18 September 2025</p>
            
-
-            <!-- Name pending tag -->
-
-            {% if data['name-has-been-updated'] == true %}
-
-            <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+            <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-top-2 govuk-!-static-margin-bottom-1">
               Details updated
             </strong>
             
-            <p class="govuk-body-s">Pending until submitted and accepted</p> 
-            
-            <!-- <p class="govuk-body-s govuk-!-static-margin-bottom-1">Pending until submitted and accepted</p> -->
-  
-              <!--   <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-1"><span class="govuk-visually-hidden">Update</span>
-                  Pending until submitted and accepted<span class="govuk-visually-hidden">until you submit this filing, and we accept it</span></strong>
-                
-                 -->
+            <p class="govuk-body-s govuk-!-static-margin-bottom-1">Pending until submitted and accepted</p> 
             
             </dd>
 
@@ -122,26 +108,17 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             Where you live
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['home'] }} <br> <br> 
+            <p class="govuk-body">  {{ data['home'] }} </p>
 
             {% if data['location-has-been-updated'] == true %}
 
-            <p class="govuk-body">Location was changed on 18 September 2025</p>
-
-            {% endif %}
-
-    
-
-            <!-- Home pending tag -->
-
-            {% if data['location-has-been-updated'] == true %}
-
-
-              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
-                Details updated 
-              </strong>
-              
-              <p class="govuk-body-s">Pending until submitted<br> and accepted</p>
+            <p class="govuk-body govuk-!-static-margin-top-2">Changed on 18 September 2025</p>
+           
+            <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-top-2 govuk-!-static-margin-bottom-1">
+              Details updated
+            </strong>
+            
+            <p class="govuk-body-s govuk-!-static-margin-bottom-1">Pending until submitted and accepted</p> 
 
               </dd>
               <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
@@ -182,22 +159,22 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             Business name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['businessName'] }} <br> <br>
+            <p class="govuk-body"> {{ data['businessName'] }} </p>
 
             {% if data['business-name-has-been-updated'] == true %}
 
-            <p class="govuk-body">Business name was changed on 18 September 2025</p>
+            <p class="govuk-body">Changed on 18 September 2025</p>
 
             {% endif %}
 
     
               {% if data['business-name-has-been-updated'] == true %}
  
-              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-top-2 govuk-!-static-margin-bottom-1">
                 Details updated 
               </strong>
               
-              <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
+              <p class="govuk-body-s govuk-!-static-margin-bottom-1">Pending until submitted and accepted</p> 
               {% endif %}
             </dd>
 
@@ -298,17 +275,19 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             Correspondence email address
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['email'] }} 
+
+           <!--  {{ data['email'] }} -->
+            <p class="govuk-body">emailexample@gmail.com  </p> 
 
 
              <!-- Pending tag -->
              {% if data['email-has-been-updated'] == true %}
 
-              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-top-2 govuk-!-static-margin-bottom-1">
                 Details updated 
               </strong>
               
-              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+              <p class="govuk-body-s govuk-!-static-margin-bottom-1">Pending until submitted and accepted</p> 
 
 
             <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">

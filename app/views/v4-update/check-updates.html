@@ -40,8 +40,6 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             {{ data['first-name'] }} {{ data['middle-name'] }} {{ data['last-name'] }}
 
 
-
-
             <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Changed on 18 September 2025</p>  
            
      
@@ -54,8 +52,9 @@ Check your answers before sending your application – {{ serviceName }} – GOV
               <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
             </li>
           </ul>
+          </dd>
         </div>
-      </dd>
+
 
         {% endif %} 
 
@@ -95,8 +94,21 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           <dd class="govuk-summary-list__value">
             {{ data['businessName'] }} 
 
-            
+
+            <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Changed on 18 September 2025</p>  
+           
+        <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+            </li>
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+            </li>
+          </ul>
+          </dd>
         </div>
+
 
 
         {% endif %} 
@@ -127,10 +139,26 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             <br>Cardiff
             <br>Wales
             <br> CF5 1BR
+    
 
-            
-          </dd>
-        </div>
+
+          <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Changed on 18 September 2025</p>  
+           
+     </dd>
+          <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+              </li>
+            </ul>
+            </dd>
+          </div>
+
+
+
 
         {% endif %} 
 
@@ -142,8 +170,21 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             Correspondence email address
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['email'] }} 
+            newemail@address.co.uk
              <!-- Pending tag -->
+
+             </dd>
+
+             <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+              </ul>
+              </dd>
          
 
         </div>
@@ -512,36 +553,10 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           </dd>
         </div>
 
-       <!--  <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Your role
-          </dt>
-          <dd class="govuk-summary-list__value">
-            I am a member
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
+      
 
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Business sector 
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Auditors, insolvency practitioners, external accountants and tax advisers
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div> -->
+
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -661,7 +676,8 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
         <!-- if changes have been made -->
           {{ govukButton({
-            text: "Continue"
+            text: "Continue",
+            href:"check-your-answers"
           }) }}
 
 
