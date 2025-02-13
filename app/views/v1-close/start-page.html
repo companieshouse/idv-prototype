@@ -42,12 +42,17 @@
       </h1>
 
 
-<p>If you close the authorised agent, MORRIS ACCOUNTING LTD will no longer be able to file with Companies House on behalf of clients.  
+<p>If you close the authorised agent, MORRIS ACCOUNTING LTD will no longer be registered as an authorised agent with Companies House.  This is also known as an Authorised Corporate Service Provider (ACSP).  
 </p>
 
-<p>We will permanently close the authorised agent, including the online account. </p>
 
-<p>If there are other users who have been added to the account, you should make sure they know they will no longer be able to access the account, or services for the authorised agent.</p>
+
+<p>If there are other users who have been added to the account for this authorised agent, you should make sure they know the will no longer be able to access:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>the authorised agent account </li>
+  <li>services for the authorised agent</li>
+</ul>
 
 
 
@@ -72,18 +77,18 @@
 
 
 
-
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue",
+          href:"closing-details"
+        }) }}
+      
+        <a class="govuk-link" href="#">Cancel</a>
+      </div>
 
 
     
-      {{ govukButton({
-        text: "Continue",
-        isStartButton: true,
-        href:"closing-details"
-      }) }}
 
-
-      <p><a href="guidance-ACSPs">Read the guidance about closing a Companies House authorised agent</a>.  
 
 
 
