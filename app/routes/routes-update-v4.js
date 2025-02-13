@@ -43,25 +43,25 @@ router.post('/v4-update/pages/name', function (req, res) {
 
 router.post('/v4-update/pages/date-of-change', function (req, res) {
 
-    res.redirect('check-your-answers')
+    res.redirect('../check-updates')
     
 })
 
 
 router.post('/v4-update/pages/check-updates', function (req, res) {
 
-        if (req.session.data['anotherUpdate'] === "yes") {
+        if (req.session.data['anotherUpdate'] === "no") {
     
             res.redirect('check-your-answers')
     
-          } else if (req.session.data['anotherUpdate'] === "no") {
+          } else if (req.session.data['anotherUpdate'] === "yes") {
             // go to the confirm address page
             res.redirect('confirmation')
         
           }
    
    
-
+  
     
 })
 
@@ -81,7 +81,7 @@ router.post('/v4-update/pages/name-of-business', function (req, res) {
 
 router.post('/v4-update/pages/date-of-change-business-name', function (req, res) {
 
-    res.redirect('../check-your-answers')
+    res.redirect('../check-updates')
     
 })
 
@@ -151,15 +151,11 @@ router.post('/v4-update/pages/email-address-correspondance', function (req, res)
     //location-lives updated to TRUE
     req.session.data['email-has-been-updated'] = true;
 
-    res.redirect('date-of-change-correspondance-email')
+    res.redirect('../check-updates')
 
 })
 
-router.post('/v4-update/pages/date-of-change-correspondance-email', function (req, res) {
 
-    res.redirect('../check-your-answers')
-    
-})
 
 
 
@@ -214,7 +210,7 @@ router.post('/v4-update/pages/date-of-change-correspondance-email', function (re
 
     router.post('/v4-update/pages/date-of-change-correspondance-address', function (req, res) {
 
-        res.redirect('../check-your-answers')
+        res.redirect('../check-updates')
         
     })
         
