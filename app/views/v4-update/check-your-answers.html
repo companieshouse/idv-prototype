@@ -215,30 +215,23 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             Correspondence address
           </dt>
           <dd class="govuk-summary-list__value">
-            15 New Road
+            <p class="govuk-body">  15 New Road
             <br>Cardiff
             <br>Wales
-            <br> CF5 1BR 
+            <br> CF5 1BR </p>
 
 
 
             {% if data['cor-address-has-been-updated'] == true %}
 
-            <br> <br> <p class="govuk-body"> Correspondence address was changed on 18 September 2025</p>
+           <p class="govuk-body "> Changed on 18 September 2025</p>
 
-            {% endif %}
-          
-
-
-             <!-- Pending tag -->
-             {% if data['cor-address-has-been-updated'] == true %} 
-
-
-              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+  
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-top-2 govuk-!-static-margin-bottom-1">
                 Details updated
               </strong>
               
-              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+              <p class="govuk-body-s govuk-!-static-margin-bottom-1">Pending until submitted and accepted</p> 
 
 
           </dd>
@@ -376,10 +369,10 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             <!-- If the AML details have been removed -->
             {% if data['aml-1-has-been-removed'] == true %}
 
-            <p class="govuk-body govuk-!-static-margin-top-2">AML supervisor was changed on 18 September 2025</p>
+            <p class="govuk-body govuk-!-static-margin-top-2">Changed on 18 September 2025</p>
         
             <strong class="govuk-tag govuk-tag--red govuk-!-static-margin-top-1 govuk-!-static-margin-bottom-1">
-              AML supervision details removed
+              Details removed
             </strong>
             
             <p class="govuk-body-s govuk-!-static-margin-bottom-2">Pending until submitted and accepted</p> 
@@ -451,7 +444,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
 
 
-          <p class="govuk-body govuk-!-static-margin-top-3">AML supervisor was changed on 18 September 2025</p>
+          <p class="govuk-body govuk-!-static-margin-top-3">Changed on 18 September 2025</p>
 
     
                 
@@ -643,7 +636,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
             {% if data['cor-address-has-been-updated'] == true %}
 
-            <br> <br> <p class="govuk-body"> Correspondence address was changed on 18 September 2025</p>
+          <p class="govuk-body"> Changed on 18 September 2025</p>
 
             {% endif %}
           
