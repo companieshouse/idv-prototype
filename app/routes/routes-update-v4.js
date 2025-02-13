@@ -43,7 +43,25 @@ router.post('/v4-update/pages/name', function (req, res) {
 
 router.post('/v4-update/pages/date-of-change', function (req, res) {
 
-    res.redirect('../check-your-answers')
+    res.redirect('check-your-answers')
+    
+})
+
+
+router.post('/v4-update/pages/check-updates', function (req, res) {
+
+        if (req.session.data['anotherUpdate'] === "yes") {
+    
+            res.redirect('check-your-answers')
+    
+          } else if (req.session.data['anotherUpdate'] === "no") {
+            // go to the confirm address page
+            res.redirect('confirmation')
+        
+          }
+   
+   
+
     
 })
 
@@ -343,6 +361,17 @@ router.post('/v4-update/pages/date-of-change-correspondance-email', function (re
       
 
    
+  /*
+     *  Check your answers
+     */
+    
+  router.post('/v4-update/check-your-answers', function (req, res) {
+        
+
+    res.redirect('check-updates')
+        
+})
+  
 
 
 

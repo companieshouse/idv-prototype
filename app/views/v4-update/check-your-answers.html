@@ -70,9 +70,11 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
             {% if data['name-has-been-updated'] == true %}
 
-            <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-top-1 govuk-!-static-margin-bottom-1">
-              Pending until submitted and accepted
+            <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+              Details updated
             </strong>
+            
+            <p class="govuk-body-s">Pending until submitted and accepted</p> 
             
             <!-- <p class="govuk-body-s govuk-!-static-margin-bottom-1">Pending until submitted and accepted</p> -->
   
@@ -1449,8 +1451,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         <div class="govuk-button-group">
 
           {{ govukButton({
-            text: "Continue",
-            href:"check-updates"
+            text: "Continue"
           }) }}
 
           <a class="govuk-link" href="#">Cancel</a>

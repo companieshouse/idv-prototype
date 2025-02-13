@@ -11,10 +11,10 @@ Check your answers before sending your application – {{ serviceName }} – GOV
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
 
-      <form class="form" action="check-your-answers" method="post">
+      <form class="form" action="check-updates" method="post">
 
      
-        <h1 class="govuk-heading-l">Check your answers before submitting the update</h1> 
+        <h1 class="govuk-heading-l">Your updates</h1> 
 
         <div class="govuk-inset-text">
           The following updates are pending until you submit this filing, and we accept it.
@@ -44,7 +44,18 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
             <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Changed on 18 September 2025</p>  
            
+     
+        <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+            </li>
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+            </li>
+          </ul>
         </div>
+      </dd>
 
         {% endif %} 
 
@@ -57,7 +68,17 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           <dd class="govuk-summary-list__value">
             {{ data['home'] }}
 
-            <!-- Pending tag -->
+            <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Changed on 18 September 2025</p>  
+           
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+              </ul>
             
 
         
@@ -131,6 +152,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
         
       </dl>
+      
 
 
 
@@ -139,29 +161,29 @@ Check your answers before sending your application – {{ serviceName }} – GOV
       {% if data['aml-1-has-been-removed'] == true %}
       
       
-      <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
+      <h2 class="govuk-heading-m">Remove AML details</h2>
 
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            AML supervisory body and membership number
+            Association of Accounting Technicians
           </dt>
           <dd class="govuk-summary-list__value">
-            <ul class="govuk-list govuk-list--bullet">
-              <li>Association of Accounting Technicians</li>
-              <li>87654321</li>
-            </ul>
+
+        87654321
 
 
           </dd>
 
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__actions">
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
 
-            <strong class="govuk-tag govuk-tag--red govuk-!-static-margin-bottom-1">
-              Removed 
-            </strong>
-   
+              <a href="#">
+                Cancel
+                <span class="govuk-visually-hidden"> Association of Chartered Certified Accountants details</span>
+              </a>
+            </dd>
           </dd>
           
         </div>
@@ -173,44 +195,58 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          AML supervisory body and membership number
+          Association of Chartered Certified Accountants
         </dt>
         <dd class="govuk-summary-list__value">
 
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Association of Chartered Certified Accountants</li>
-            <li>554-6325-4555</li>
+         554-6325-4555
 
-            
-          </ul>
         </dd>
-        <dd class="govuk-summary-list__value">
+        <dd class="govuk-summary-list__actions">
+          <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
 
-          
+            <a href="#">
+              Cancel
+              <span class="govuk-visually-hidden"> Association of Chartered Certified Accountants details</span>
+            </a>
+          </dd>
         </dd>
         
       </div>
       {% endif %}
 
-       <!-- AML details 3 - New AML details -->
+
+      </dl>
+
        {% if data['new-aml-details'] == true %}
 
+
+      <h2 class="govuk-heading-m">Add AML details</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+       <!-- AML details 3 - New AML details -->
+
        <dt class="govuk-summary-list__key">
-        AML supervisory body and membership number
+        Association of Chartered Certified Accountants
       </dt>
       <dd class="govuk-summary-list__value">
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Association of Chartered Certified Accountants</li>
-          <li>554-6325-4555</li>
-
-        </ul>
+        
+        554-6325-4555
+      
       </dd>
-      <dd class="govuk-summary-list__value">
 
-        <strong class="govuk-tag">
-          New details
-        </strong>
+
+         <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+            </li>
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+            </li>
+          </ul>
+        </div>
       </dd>
       
  
@@ -277,49 +313,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             </a>
           </dd> 
         </div>
-       <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Company number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            02050399
-          </dd>
-           <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd> 
-        </div>-->
-        <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Type of business
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Limited Company
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd> 
-        </div>-->
-
-       <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Your role
-          </dt>
-          <dd class="govuk-summary-list__value">
-            I am a director
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>-->
+     
 
         <div class="govuk-summary-list__row">
            <dt class="govuk-summary-list__key">
@@ -353,23 +347,6 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
      
 
-
- <!-- 
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Business sector 
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Auditors, insolvency practitioners, external accountants and tax advisers
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div> -->
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -656,8 +633,27 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
       {% endif %}
 
-
-      <p class="govuk-body govuk-!-margin-bottom-7"> <a class="govuk-link" href="check-your-answers"> Make changes to these details </a> </p>
+     
+      {{ govukRadios({
+        name: "anotherUpdate",
+        fieldset: {
+          legend: {
+            text: "Do you need to update other details?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes, I need to add more"
+          },
+          {
+            value: "no",
+            text: "No, submit these details"
+          }
+        ]
+      }) }}
 
   
 
@@ -665,8 +661,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
         <!-- if changes have been made -->
           {{ govukButton({
-            text: "Submit",
-            href:"confirmation"
+            text: "Submit"
           }) }}
 
 
