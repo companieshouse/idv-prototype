@@ -1,0 +1,213 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<div class="govuk-width-container">
+
+  <nav class="govuk-language-select" aria-label="Choose a language">
+        <ul class="govuk-language-select__list">
+          <li class="govuk-language-select__list-item">
+            <span aria-current="true">English</span>
+          </li>
+          <li class="govuk-language-select__list-item">
+            <a href="#lang-cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg"><span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span><span aria-hidden="true">Cymraeg</span></a>
+          </li>
+        </ul>
+      </nav>
+
+</div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="start-page" method="post">
+        
+
+              <!-- Notification banner -->
+              <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                <div class="govuk-notification-banner__header">
+                  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Important
+                  </h2>
+                </div>
+                <div class="govuk-notification-banner__content">
+      
+                  <h3 class="govuk-notification-banner__heading">
+                    This is a new service
+                  </h3>
+                  <p class="govuk-body">If you have any issues while we work to improve it, you can contact us or tell us your <a class="govuk-notification-banner__link" href="#">feedback</a>. </p>
+      
+        
+                </div>
+              </div>
+      
+
+      <h1 class="govuk-heading-l">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+      <!-- <div class="ch-info-panel">
+        <div class="govuk-panel__body">
+        
+       <h2 class="govuk-heading-s">This is a new service</h2> 
+
+            <p class="govuk-body">This is a new service. If you have any issues while we work to improve it, you can <a href="">contact us</a> or tell us your <a href="">feedback</a>. You'll also find contact and feedback links on each page of the service.
+            </p>
+          
+</div>
+</div> -->
+
+      <p class="govuk-body">Use this service to register yourself, or your business as an Authorised Corporate Service Provider (ACSP). ACSPs are also known as authorised agents. </p>
+      <p>
+        For now, you only need to register if you plan to verify people's identities for Companies House. The service to tell us when you’ve verified someone’s identity will be available soon.</p>
+     <!--   <p>
+        In the future, you’ll also need to register to be able to file on behalf of clients. You will not need to do this until autumn 2025. 
+        </p> -->
+
+
+
+
+
+
+    <h2 class="govuk-heading-m">Who can apply</h2>
+
+      <p class="govuk-body">To register your business as an authorised agent, you must be one of the following:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>director</li>
+        <li>general partner</li>
+        <li>partner</li>
+        <li>member</li>
+        <li>sole trader</li>
+      </ul>
+
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     If you’re registering an unincorporated body or corporate body
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  
+                              <h3 class="govuk-heading-s">Corporate body</h3>
+              <p>If the body is managed by its members, you must be a member of the body. Otherwise, you must be the equivalent of a director. </p>
+              <h3 class="govuk-heading-s">Unincorporated entity</h3>
+              <p>If the body is managed by its members, you must be a member of the body. Otherwise, you must be a member of the governing body. </p>
+
+
+              
+  </div>
+</details>
+
+      <p class="govuk-body">
+  You’ll be able to add other people who work for the business to the authorised agent account once you’ve registered.
+</p>
+
+
+    
+     <div class="ch-info-panel">
+        <div class="govuk-panel__body">
+         <!-- <h3 class="govuk-heading-s">Verify your indentity </h3> -->
+         <h2 class="govuk-heading-m">Verify your identity</h2>  
+
+            <p class="govuk-body">You’ll need to verify your identity for Companies House before you can use this service.</p>
+            <p class="govuk-body"> <img src="/public/images/ons-icon-arrow-circle-medium.png" alt="" height="40">   <strong><a class="govuk-link govuk-link--no-visited-state" href="/v14/verify-identity-prototype">
+              Verify your identity for Companies House</a></strong>.
+            </p>
+          
+</div>
+</div>
+       
+        <h2 class="govuk-heading-m">What you'll need </h2>
+
+
+<p class="govuk-body">You’ll need to:</p>
+
+
+        <ul class="govuk-list govuk-list--bullet">
+    <li>sign in to or create a GOV.UK One Login to use this service</li>
+
+          <li>give details about the business, or yourself if you’re a sole trader</li>
+          <li>tell us which Anti-Money Laundering (AML) supervisory bodies the business is registered with</li>
+          <li>give the AML membership numbers or IDs</li>
+          <li>pay the £55 registration fee</li>
+        </ul>
+
+ <p class="govuk-body">Read the <a href="guidance-applying-to-register">guidance on applying to register as an authorised agent</a> to check you have everything you need to apply.</p>
+
+
+
+        </ul>
+
+
+    
+
+
+
+
+
+        
+ 
+
+    <!--  <p><a href="/v2/guidance-ACSPs">Read the guidance for more information about what you’ll need</a>.</p> -->
+     
+    <!--  {{ govukInsetText({
+        html: '
+             <p>You must be the person who is responsible for AML compliance within the business to use this service. This is known as a relevant officer.</p>'
+      }) }} -->
+
+      <p class="govuk-body">You can save your answers and resume your application later if you need to. </p>
+
+      <!--
+      <div class="govuk-inset-text">
+<p>You'll need to sign in to or create a GOV.UK One Login to use this service.</p>
+      </div> -->
+
+      {{ govukButton({
+        text: "Start now",
+        isStartButton: true
+      }) }}
+
+
+      
+      <h2 class="govuk-heading-m">Help to apply online</h2>
+      <p><a href="">Contact us</a> if you need help to use this service. </p>
+
+      <h2 class="govuk-heading-m">Adapt your device to meet your needs</h2>
+      <p><a href="https://mcmw.abilitynet.org.uk/">Read advice from AbilityNet on how to make your device easier to use</a>. For example, learn how to change the background colour or text size.</p>
+
+      <h2 class="govuk-heading-m">After you register as an authorised agent</h2>
+
+
+      <p class="govuk-body">We’ll create an authorised agent account, which you’ll be able to access when you sign in to your Companies House account.</p>
+
+      <p>Read the <a href="guidance-ACSPs">guidance for authorised agents</a> to find out how to use the authorised agent account. 
+
+</p> 
+
+
+
+
+
+    </div>
+
+
+  </form>
+  </div>
+{% endblock %}

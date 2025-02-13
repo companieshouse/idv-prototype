@@ -1,0 +1,147 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Register as an authorised agent: application approved
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+   <!--   {{ govukPanel({
+        titleText: "Register an authorised agent: application approved",
+        html: buttonHref
+      }) }} -->
+    <!--  <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Company number</th>
+            <td class="govuk-table__cell">00445790</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Company name</th>
+            <td class="govuk-table__cell"> MORRIS ACCOUNTING LTD </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Name </th>
+            <td class="govuk-table__cell">James Morris </td>
+          </tr>
+        </tbody>
+      </table> -->
+
+ <h1 style="font-family: Helvetica, Arial, sans-serif; font-size: 36px; line-height: 1.2; font-weight: 700;margin 0; mso-line-height-rule:exactly;">Register as an authorised agent: application approved</h1> 
+
+   <!-- <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Business name</th>
+            <td class="govuk-table__cell">MORRIS ACCOUNTING LTD</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Authorised agent number</th>
+            <td class="govuk-table__cell">06254821</td>
+          </tr>
+        </tbody>
+      </table> -->
+      <p class="govuk-body">We have approved your application and registered MORRIS ACCOUNTING LTD as an authorised agent. This is also known as an Authorised Corporate Service Provider (ACSP).</p>
+
+<!--
+<div class="govuk-inset-text">
+
+<p>The authorised agent number for MORRIS ACCOUNTING LTD is: <strong>06254821</strong>
+<p>
+
+Keep the number secure and do not share it with anyone outside of your organisation. You may need this for paper filings.</p>
+
+</div> -->
+
+
+
+
+
+<!--
+      <div class="highlight-box">
+
+      <p class="govuk-body">The authorised agent number for MORRIS ACCOUNTING LTD is: <strong>06254821</strong></p>
+
+      <p class="govuk-body">Keep the number secure and do not share it with anyone outside of your organisation. You will need this for paper filings.</p>
+
+
+      </div> -->
+      <h2 class="govuk-heading-m ">What to do next</h2>
+      
+      <p>We've created an online authorised agent account for MORRIS ACCOUNTING LTD. To access the account, select 'Authorised agent' when you sign in to Companies House.</p>
+      
+      <p class="govuk-body">As an account owner, you'll be able to:</p>
+
+   <!--   <h3 class="govuk-heading-s "">Add users to the account</h3>
+
+      <p>You can add other people who work for the business to the account if they need to verify peoples' identity for Companies House. 
+      
+      <p>You can choose if you want them to be able to update the authorised agent's details, and add and remove other users.</p> -->
+
+                          <ul class="govuk-list govuk-list--bullet">
+                            <li>add other people who work for the business so they can access the account and use services for the authorised agent</li>
+                            <li>update the authorised agent's details</li>
+                            </ul>
+      
+
+      <div class="govuk-inset-text">
+        <p>Sign in to Companies House to access the authorised agent account for MORRIS ACCOUNTING LTD:</p>
+        <p><a href="https://find-update-company-info.herokuapp.com/authorised-agent-v6/acsp-home-super-admin-tiles">https://find-and-update.company-information.service.gov.uk</a> </p>
+
+</div>
+
+ <p> Read the guidance for authorised agents to find out how to use your agent account: </p>
+ <p><a href="guidance-ACSPs">https://www.gov.uk/guidance/register-an-authorised-agent</a></p>
+
+     
+      <h2 class="govuk-heading-m ">Authorised agent details</h2>
+
+<p>The authorised agent number for MORRIS ACCOUNTING LTD is: <strong>06254821</strong>
+<p>Keep the number secure and do not share it with anyone outside of your organisation.</p>
+
+<p>You can view the agent's details, including the authorised agent number, in the authorised agent account.</p>
+
+
+
+      <h2 class="govuk-heading-m">Help us to improve this service</h2>
+      <p>Register as a Companies House authorised agent is a new service. Complete our quick survey to help us improve it: <a href="https://www.smartsurvey.co.uk/s/reg-as-acsp-email-conf-accepted/">https://www.smartsurvey.co.uk/s/reg-as-acsp-email-conf-accepted/</a></p>
+
+    <!--  <h3 class="govuk-heading-m">Feedback</h3>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p> -->
+      <h2 class="govuk-heading-m">Contact us</h2>
+            <h3 class="govuk-heading-s">Telephone</h3>
+      <ul class="govuk-list">
+        <li>0303 1234 500</li>
+        <li>Monday to Friday, 8:30am to 6pm</li>
+      </ul>
+
+
+      <h3 class="govuk-heading-s">Email</h3>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/call-charges">enquiries@companieshouse.gov.uk</a>
+        </li>
+      </ul>
+
+
+    </div>
+    </div>
+
+
+  </div>
+</div>
+{% endblock %}
