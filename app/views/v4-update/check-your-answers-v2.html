@@ -1,0 +1,1477 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers before sending your application – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+      <form class="form" action="check-your-answers" method="post">
+
+       
+
+        {% set html %}
+          <p class="govuk-notification-banner__heading">
+            Any updates you make to the authorised agent's details are pending until you submit this filing, and we accept it. 
+          </p>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html
+        }) }}
+
+
+
+
+     
+        <h1 class="govuk-heading-l">View and update the authorised agent's details <strong class="govuk-tag govuk-tag--turquoise">
+          Content TBC
+        </strong></h1>
+
+<!-- 
+        <div class="govuk-inset-text">
+          Any updates you make to the authorised agent's details are pending until you submit this filing, and we accept it.        </div>
+ -->
+
+      <!-- Sole traders -->
+
+      {% if (data['prototype-set-up'] === "sole-trader")%}
+
+
+      <!-- Your details  -->
+
+      <h2 class="govuk-heading-m">Your details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <!-- Name -->
+
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            Name
+
+          </dt>
+          <dd class="govuk-summary-list__value ">
+            {{ data['first-name'] }} {{ data['middle-name'] }} {{ data['last-name'] }} 
+
+            {% if data['name-has-been-updated'] == true %}
+
+            <p class="govuk-body govuk-!-static-margin-top-2">Updated on 18 September 2025</p>
+
+            {% endif %}
+           
+
+            <!-- Name pending tag -->
+
+            {% if data['name-has-been-updated'] == true %}
+
+            <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-top-1 govuk-!-static-margin-bottom-1">
+              Pending until submitted and accepted
+            </strong>
+            
+            <!-- <p class="govuk-body-s govuk-!-static-margin-bottom-1">Pending until submitted and accepted</p> -->
+  
+              <!--   <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-1"><span class="govuk-visually-hidden">Update</span>
+                  Pending until submitted and accepted<span class="govuk-visually-hidden">until you submit this filing, and we accept it</span></strong>
+                
+                 -->
+            
+            </dd>
+
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/name">Update<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+              </ul>
+            
+          </dd>
+
+          
+            {% endif %}
+
+            {% if data['name-has-been-updated'] == undefined %}
+
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/name">Update<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+              
+              </ul>
+            
+          </dd>
+          {% endif %}
+        </div>
+
+
+        <!-- Where you live -->
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Where you live
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['home'] }} <br> <br> 
+
+            {% if data['location-has-been-updated'] == true %}
+
+            <p class="govuk-body">Location was changed on 18 September 2025</p>
+
+            {% endif %}
+
+    
+
+            <!-- Home pending tag -->
+
+            {% if data['location-has-been-updated'] == true %}
+
+
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated 
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted<br> and accepted</p>
+
+              </dd>
+              <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="pages/location-lives">Update<span class="govuk-visually-hidden"> where do you live</span></a>
+                  </li>
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> where you live</span></a>
+                  </li>
+                </ul>
+              
+            </dd>
+
+            {% endif %}
+
+
+            {% if data['location-has-been-updated'] == undefined %}
+
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/location-lives">Update<span class="govuk-visually-hidden"> where do you live</span></a>
+                </li>
+              
+              </ul>
+            
+          </dd>
+
+            {% endif %}
+        
+        </div>
+
+        <!-- Business name pending tag -->
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key ">
+            Business name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['businessName'] }} <br> <br>
+
+            {% if data['business-name-has-been-updated'] == true %}
+
+            <p class="govuk-body">Business name was changed on 18 September 2025</p>
+
+            {% endif %}
+
+    
+              {% if data['business-name-has-been-updated'] == true %}
+ 
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated 
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
+              {% endif %}
+            </dd>
+
+            {% if data['business-name-has-been-updated'] == true %}
+
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/name-of-business">Update<span class="govuk-visually-hidden"> business name</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> business name</span></a>
+                </li>
+              </ul>
+            
+            </dd>
+
+            {% endif %}
+
+     
+
+          {% if data['business-name-has-been-updated'] == undefined %}
+
+          <dd class="govuk-summary-list__actions">
+            <a href="pages/name-of-business">
+              Update
+              <span class="govuk-visually-hidden"> business name</span>
+            </a>
+          </dd>
+          {% endif %}
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            15 New Road
+            <br>Cardiff
+            <br>Wales
+            <br> CF5 1BR 
+
+
+
+            {% if data['cor-address-has-been-updated'] == true %}
+
+            <br> <br> <p class="govuk-body"> Correspondence address was changed on 18 September 2025</p>
+
+            {% endif %}
+          
+
+
+             <!-- Pending tag -->
+             {% if data['cor-address-has-been-updated'] == true %} 
+
+
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+
+
+          </dd>
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/address-correspondance-lookup">Update<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                </li>
+              </ul>
+            
+          </dd> 
+        </div>
+          {% endif %}
+
+
+          {% if data['cor-address-has-been-updated'] == undefined %} 
+
+
+          <dd class="govuk-summary-list__actions">
+            <a href="pages/address-correspondance-lookup">
+              Update
+              <span class="govuk-visually-hidden">Correspondence address</span>
+            </a>
+          </dd>
+     
+          </div>
+        {% endif %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['email'] }} 
+
+
+             <!-- Pending tag -->
+             {% if data['email-has-been-updated'] == true %}
+
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated 
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+
+
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/email-address-correspondance">Update<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                </li>
+              </ul>
+            
+          </dd>
+
+
+          {% endif %}
+
+
+          {% if data['email-has-been-updated'] == undefined %}
+
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="pages/email-address-correspondance">
+              Update
+              <span class="govuk-visually-hidden"> correspondence email address</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        </dl>
+
+
+
+
+
+
+
+      <!-- AML supervisory body details -->
+
+      <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
+    
+
+
+      <p>You need to be supervised by one or more AML supervisory bodies.</p>
+      {{ govukWarningText({
+        text: "We'll check the name or business name matches what your AML supervisory body holds.",
+        iconFallbackText: "Warning"
+      }) }}
+
+
+     <!-- Add a new AML supervisory body --> 
+
+      {{ govukButton({
+        text: "Add new AML details",
+        href:"pages/aml-supervisor",
+        classes: "govuk-button--secondary govuk-!-margin-top-3"
+    }) }}
+
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+
+       <!--    <dt class="govuk-summary-list__key">
+            AML supervisory body and membership number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list">
+              <li>Association of Accounting Technicians</li>
+              <li>87654321</li>
+            </ul> -->
+
+            <dt class="govuk-summary-list__key">
+              Association of Accounting Technicians
+            </dt>
+            <dd class="govuk-summary-list__value">
+             
+            
+           87654321
+
+           
+
+
+
+            <!-- If the AML details have been removed -->
+            {% if data['aml-1-has-been-removed'] == true %}
+
+            <p class="govuk-body govuk-!-static-margin-top-2">AML supervisor was changed on 18 September 2025</p>
+        
+            <strong class="govuk-tag govuk-tag--red govuk-!-static-margin-top-1 govuk-!-static-margin-bottom-1">
+              AML supervision details removed
+            </strong>
+            
+            <p class="govuk-body-s govuk-!-static-margin-bottom-2">Pending until submitted and accepted</p> 
+
+
+            {% endif %}
+
+            </dd>
+          <!-- If AML details have not been removed -->
+          {% if data['aml-1-has-been-removed'] == undefined %}
+          <dd class="govuk-summary-list__actions">
+            <a href="pages/remove-aml-details">
+              Remove
+              <span class="govuk-visually-hidden"> Association of Accounting Technicians</span>
+            </a>
+          </dd>
+          {% endif %}
+
+          <!-- If the AML details have been removed -->
+          {% if data['aml-1-has-been-removed'] == true %}
+
+          <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+            <ul class="govuk-summary-list__actions-list">
+  
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="pages/cancel-remove-aml-1">Cancel<span class="govuk-visually-hidden"> remove  Association of Accounting Technicians</span></a>
+              </li>
+            </ul>
+
+
+            {% endif %}
+          
+        </dd>
+        </div>
+
+        <!-- AML details 2 -->
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Association of Chartered Certified Accountants
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+           554-6325-4555
+            
+ 
+
+      <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+
+          <a href="#">
+            Remove
+            <span class="govuk-visually-hidden"> Association of Chartered Certified Accountants details</span>
+          </a>
+        </dd>
+      </div>
+
+
+       <!-- AML details 3 - New AML details -->
+      {% if data['new-aml-details'] == true %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Association of Chartered Certified Accountants
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          Membership number: <br>
+          554-6325-4555
+
+
+
+          <p class="govuk-body govuk-!-static-margin-top-3">AML supervisor was changed on 18 September 2025</p>
+
+    
+                
+          <strong class="govuk-tag govuk-tag govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-1">
+            New details   
+          </strong>
+          <p class="govuk-body-s">Pending until submitted and accepted</p> 
+
+        
+        </dd>
+        <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="">Update<span class="govuk-visually-hidden"> </span></a>
+            </li>
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> correspondence email address</span></a>
+            </li>
+          </ul>
+        
+        </dd>
+      </div>
+
+
+
+      {% endif %}
+
+
+</dl>
+
+ 
+    
+      <!-- Limited companies, LLPs or LPs -->
+
+       {% elseif ((data['prototype-set-up'] === "limited")) %}
+
+
+      <h2 class="govuk-heading-m">Company details</h2>
+
+
+        
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+       <!-- Name -->
+
+       <div class="govuk-summary-list__row ">
+        <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+          Company name
+
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+          James Morris Accounting LIMITED<br> <br> 
+
+          {% if data['business-name-has-been-updated'] == true %}
+
+          <p class="govuk-body">Name was changed on 18 September 2025</p>
+
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+
+          <!-- Name pending tag -->
+
+          {% if data['name-has-been-updated'] == true %}
+
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+          
+          </dd>
+
+          <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="pages/name-of-business">Update<span class="govuk-visually-hidden"> company name</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+              </li>
+            </ul>
+          
+        </dd>
+
+        
+          {% endif %}
+
+          {% if data['name-has-been-updated'] == undefined %}
+
+          <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="pages/name-of-business">Update<span class="govuk-visually-hidden"> name</span></a>
+              </li>
+            
+            </ul>
+          
+        </dd>
+        {% endif %}
+      </div>
+        
+
+
+
+
+    <!-- Registered office address -->
+
+        <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Registered office address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+    
+                 <!-- Name changed on -->
+                 {% if data['registered-office-address-has-been-updated'] == true %}
+
+                 <br> <br>
+                 <p class="govuk-body">Address was changed on 18 September 2025</p>
+                 {% endif %}
+          </dd>
+     
+               <!-- Name pending tag -->
+               <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+     
+                 {% if data['registered-office-address-has-been-updated'] == true %}
+     
+                     <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                       Details updated
+                     </strong>
+                     
+                     <p class="govuk-body-s">Pending until submitted and accepted</p> 
+                 {% endif %}
+                 
+               </dd>
+     
+             
+               <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+                 <ul class="govuk-summary-list__actions-list">
+     
+                 {% if data['registered-office-address-has-been-updated'] == true %}
+     
+     
+                 <li class="govuk-summary-list__actions-list-item">
+                   <a class="govuk-link" href="pages/address-registered-office-lookup">Update<span class="govuk-visually-hidden"> name</span></a>
+                 </li>
+                 <li class="govuk-summary-list__actions-list-item">
+                   <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+                 </li>
+     
+                 {% endif %}
+     
+                 {% if data['registered-office-address-has-been-updated'] == undefined %}
+     
+                 <a href="pages/address-registered-office-lookup">
+                   Update
+                   <span class="govuk-visually-hidden"> name</span>
+                 </a>
+     
+                 {% endif %}
+     
+             
+               </dd> 
+
+        </div>
+
+
+
+
+
+
+        <!-- Correspondance address-->
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            15 New Road
+            <br>Cardiff
+            <br>Wales
+            <br> CF5 1BR 
+
+
+
+            {% if data['cor-address-has-been-updated'] == true %}
+
+            <br> <br> <p class="govuk-body"> Correspondence address was changed on 18 September 2025</p>
+
+            {% endif %}
+          
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+
+             <!-- Pending tag -->
+             {% if data['cor-address-has-been-updated'] == true %} 
+
+
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+
+
+          </dd>
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/address-correspondance-lookup">Update<span class="govuk-visually-hidden"> correspondence correspondence address</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> correspondence address updates</span></a>
+                </li>
+              </ul>
+            
+          </dd> 
+        </div>
+          {% endif %}
+
+
+          {% if data['cor-address-has-been-updated'] == undefined %} 
+
+
+          <dd class="govuk-summary-list__actions">
+            <a href="pages/address-correspondance-lookup">
+              Update
+              <span class="govuk-visually-hidden">Correspondence address</span>
+            </a>
+          </dd>
+     
+          </div>
+        {% endif %}
+     
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['email'] }} 
+
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+             <!-- Pending tag -->
+             {% if data['email-has-been-updated'] == true %}
+
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated 
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+
+
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/email-address-correspondance">Update<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                </li>
+              </ul>
+            
+          </dd>
+
+
+          {% endif %}
+
+
+          {% if data['email-has-been-updated'] == undefined %}
+
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="pages/email-address-correspondance">
+              Update
+              <span class="govuk-visually-hidden"> correspondence email address</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        
+      </dl>
+
+
+
+      
+
+
+      <!-- AML supervisory body details -->
+
+      <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
+    
+
+
+      <p>You need to be supervised by one or more AML supervisory bodies.</p>
+      {{ govukWarningText({
+        text: "We'll check the name or business name matches what your AML supervisory body holds.",
+        iconFallbackText: "Warning"
+      }) }}
+
+
+     <!-- Add a new AML supervisory body --> 
+
+      {{ govukButton({
+        text: "Add new AML details",
+        href:"pages/aml-supervisor",
+        classes: "govuk-button--secondary govuk-!-margin-top-3"
+    }) }}
+
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            AML supervisory body and membership number
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            <ul class="govuk-list">
+              <li>Association of Accounting Technicians</li>
+              <li>87654321</li>
+            </ul>
+
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-3">
+
+            <!-- If the AML details have been removed -->
+            {% if data['aml-1-has-been-removed'] == true %}
+        
+              <strong class="govuk-tag govuk-tag--red govuk-!-static-margin-bottom-1">
+                AML supervision details removed
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+
+            {% endif %}
+
+            </dd>
+          <!-- If AML details have not been removed -->
+          {% if data['aml-1-has-been-removed'] == undefined %}
+          <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+            <a href="pages/remove-aml-details">
+              Remove
+              <span class="govuk-visually-hidden"> Association of Accounting Technicians</span>
+            </a>
+          </dd>
+          {% endif %}
+
+          <!-- If the AML details have been removed -->
+          {% if data['aml-1-has-been-removed'] == true %}
+
+          <dd class="govuk-summary-list__actions govuk-!-width-one-quarter govuk-!-width-one-quarter">
+            <ul class="govuk-summary-list__actions-list">
+  
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="pages/cancel-remove-aml-1">Cancel<span class="govuk-visually-hidden"> remove  Association of Accounting Technicians</span></a>
+              </li>
+            </ul>
+
+
+            {% endif %}
+          
+        </dd>
+        </div>
+
+        <!-- AML details 2 -->
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          AML supervisory body and membership number
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>Association of Chartered Certified Accountants</li>
+            <li>554-6325-4555</li>
+            
+          </ul>
+        </dd>
+
+        <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+          </dd>
+
+      <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+
+          <a href="#">
+            Remove
+            <span class="govuk-visually-hidden"> Association of Chartered Certified Accountants details</span>
+          </a>
+        </dd>
+      </div>
+
+
+       <!-- AML details 3 - New AML details -->
+      {% if data['new-aml-details'] == true %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          AML supervisory body and membership number
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>Association of Chartered Certified Accountants</li>
+            <li>554-6325-4555</li>
+
+          </ul>
+          <p class="govuk-body">AML supervisor was changed on 18 September 2025</p>
+
+        </dd>
+
+      
+        <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-3">
+
+                
+            <strong class="govuk-tag govuk-tag govuk-!-static-margin-bottom-1">
+              New details   
+            </strong>
+            <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
+
+        
+        </dd>
+        <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="">Update<span class="govuk-visually-hidden"> </span></a>
+            </li>
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> correspondence email address</span></a>
+            </li>
+          </ul>
+        
+        </dd>
+      </div>
+
+
+
+      {% endif %}
+
+
+</dl>
+
+
+
+      <!--non-registrable partnerships -->
+      {% elseif ((data['prototype-set-up'] === "partnerships")) %}
+
+
+      <h2 class="govuk-heading-m">Business details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+ <!-- Name -->
+
+ <div class="govuk-summary-list__row ">
+  <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+    Name
+
+  </dt>
+  <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+    {{ data['first-name'] }} {{ data['middle-name'] }} {{ data['last-name'] }} <br> <br> 
+
+    {% if data['name-has-been-updated'] == true %}
+
+    <p class="govuk-body">Name was changed on 18 September 2025</p>
+
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+
+    <!-- Name pending tag -->
+
+    {% if data['name-has-been-updated'] == true %}
+
+        <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+          Details updated
+        </strong>
+        
+        <p class="govuk-body-s">Pending until submitted and accepted</p> 
+    
+    </dd>
+
+    <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+      <ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item">
+          <a class="govuk-link" href="pages/name">Update<span class="govuk-visually-hidden"> name</span></a>
+        </li>
+        <li class="govuk-summary-list__actions-list-item">
+          <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+        </li>
+      </ul>
+    
+  </dd>
+
+  
+    {% endif %}
+
+    {% if data['name-has-been-updated'] == undefined %}
+
+    <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+      <ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item">
+          <a class="govuk-link" href="pages/name">Update<span class="govuk-visually-hidden"> name</span></a>
+        </li>
+      
+      </ul>
+    
+  </dd>
+  {% endif %}
+</div>
+
+
+<!-- Where you live -->
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Where you live
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['home'] }} <br> <br> 
+
+    {% if data['location-has-been-updated'] == true %}
+
+    <p class="govuk-body">Location was changed on 18 September 2025</p>
+
+    {% endif %}
+
+  </dd>
+  <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+
+    <!-- Home pending tag -->
+
+    {% if data['location-has-been-updated'] == true %}
+
+
+      <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+        Details updated 
+      </strong>
+      
+      <p class="govuk-body-s">Pending until submitted<br> and accepted</p>
+
+      </dd>
+      <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+        <ul class="govuk-summary-list__actions-list">
+          <li class="govuk-summary-list__actions-list-item">
+            <a class="govuk-link" href="pages/location-lives">Update<span class="govuk-visually-hidden"> where do you live</span></a>
+          </li>
+          <li class="govuk-summary-list__actions-list-item">
+            <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> where you live</span></a>
+          </li>
+        </ul>
+      
+    </dd>
+
+    {% endif %}
+
+
+    {% if data['location-has-been-updated'] == undefined %}
+
+    <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+      <ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item">
+          <a class="govuk-link" href="pages/location-lives">Update<span class="govuk-visually-hidden"> where do you live</span></a>
+        </li>
+      
+      </ul>
+    
+  </dd>
+
+    {% endif %}
+
+</div>
+
+<!-- Business name pending tag -->
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key ">
+    Business name
+  </dt>
+  <dd class="govuk-summary-list__value">
+    James Morris Accounting <br> <br>
+
+    {% if data['business-name-has-been-updated'] == true %}
+
+    <p class="govuk-body">Business name was changed on 18 September 2025</p>
+
+    {% endif %}
+
+  </dd>
+
+    <!-- Pending tag -->
+ 
+    <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+      {% if data['business-name-has-been-updated'] == true %}
+
+      <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+        Details updated 
+      </strong>
+      
+      <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
+      {% endif %}
+    </dd>
+
+    {% if data['business-name-has-been-updated'] == true %}
+
+    <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+      <ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item">
+          <a class="govuk-link" href="pages/name-of-business">Update<span class="govuk-visually-hidden"> business name</span></a>
+        </li>
+        <li class="govuk-summary-list__actions-list-item">
+          <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> business name</span></a>
+        </li>
+      </ul>
+    
+    </dd>
+
+    {% endif %}
+
+
+
+  {% if data['business-name-has-been-updated'] == undefined %}
+
+  <dd class="govuk-summary-list__actions">
+    <a href="pages/name-of-business">
+      Update
+      <span class="govuk-visually-hidden"> business name</span>
+    </a>
+  </dd>
+  {% endif %}
+
+</div>
+
+
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Business address
+  </dt>
+  <dd class="govuk-summary-list__value">
+    72 Guild Street<br>London<br>SE23 6FH
+
+    {% if data['business-address-has-been-updated'] == true %}
+
+    <br> <br> <p class="govuk-body"> Business address was changed on 18 September 2025</p>
+
+    {% endif %}
+  
+  </dd>
+  <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+
+     <!-- Pending tag -->
+     {% if data['business-address-has-been-updated'] == true %} 
+
+
+      <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+        Details updated
+      </strong>
+      
+      <p class="govuk-body-s">Pending until submitted and accepted</p> 
+
+
+  </dd>
+    <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+      <ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item">
+          <a class="govuk-link" href="pages/address-principle-lookup">Update<span class="govuk-visually-hidden"> business address</span></a>
+        </li>
+        <li class="govuk-summary-list__actions-list-item">
+          <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> business address</span></a>
+        </li>
+      </ul>
+    
+  </dd> 
+</div>
+  {% endif %}
+
+
+  {% if data['business-address-has-been-updated'] == undefined %} 
+
+
+  <dd class="govuk-summary-list__actions">
+    <a href="pages/address-principle-lookup">
+      Update
+      <span class="govuk-visually-hidden">business address</span>
+    </a>
+  </dd>
+
+  </div>
+{% endif %}
+
+
+        
+
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            15 New Road
+            <br>Cardiff
+            <br>Wales
+            <br> CF5 1BR 
+
+
+
+            {% if data['cor-address-has-been-updated'] == true %}
+
+            <br> <br> <p class="govuk-body"> Correspondence address was changed on 18 September 2025</p>
+
+            {% endif %}
+          
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+
+             <!-- Pending tag -->
+             {% if data['cor-address-has-been-updated'] == true %} 
+
+
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+
+
+          </dd>
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/address-correspondance-lookup">Update<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                </li>
+              </ul>
+            
+          </dd> 
+        </div>
+          {% endif %}
+
+
+          {% if data['cor-address-has-been-updated'] == undefined %} 
+
+
+          <dd class="govuk-summary-list__actions">
+            <a href="pages/address-correspondance-lookup">
+              Update
+              <span class="govuk-visually-hidden">Correspondence address</span>
+            </a>
+          </dd>
+     
+          </div>
+        {% endif %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['email'] }} 
+
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-4">
+             <!-- Pending tag -->
+             {% if data['email-has-been-updated'] == true %}
+
+              <strong class="govuk-tag govuk-tag--blue govuk-!-static-margin-bottom-1">
+                Details updated 
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+
+
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/email-address-correspondance">Update<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> correspondence email address</span></a>
+                </li>
+              </ul>
+            
+          </dd>
+
+
+          {% endif %}
+
+
+          {% if data['email-has-been-updated'] == undefined %}
+
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="pages/email-address-correspondance">
+              Update
+              <span class="govuk-visually-hidden"> correspondence email address</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+      </dl>
+
+
+
+
+      <!-- AML supervisory body details -->
+
+      <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
+    
+
+
+      <p>You need to be supervised by one or more AML supervisory bodies.</p>
+      {{ govukWarningText({
+        text: "We'll check the name or business name matches what your AML supervisory body holds.",
+        iconFallbackText: "Warning"
+      }) }}
+
+
+     <!-- Add a new AML supervisory body --> 
+
+      {{ govukButton({
+        text: "Add new AML details",
+        href:"pages/aml-supervisor",
+        classes: "govuk-button--secondary govuk-!-margin-top-3"
+    }) }}
+
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            AML supervisory body and membership number
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            <ul class="govuk-list">
+              <li>Association of Accounting Technicians</li>
+              <li>87654321</li>
+            </ul>
+
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-3">
+
+            <!-- If the AML details have been removed -->
+            {% if data['aml-1-has-been-removed'] == true %}
+        
+              <strong class="govuk-tag govuk-tag--red govuk-!-static-margin-bottom-1">
+                Remove details
+              </strong>
+              
+              <p class="govuk-body-s">Pending until submitted and accepted</p> 
+
+            {% endif %}
+
+            </dd>
+          <!-- If AML details have not been removed -->
+          {% if data['aml-1-has-been-removed'] == undefined %}
+          <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+            <a href="pages/remove-aml-details">
+              Remove
+              <span class="govuk-visually-hidden"> Association of Accounting Technicians</span>
+            </a>
+          </dd>
+          {% endif %}
+
+          <!-- If the AML details have been removed -->
+          {% if data['aml-1-has-been-removed'] == true %}
+
+          <dd class="govuk-summary-list__actions govuk-!-width-one-quarter govuk-!-width-one-quarter">
+            <ul class="govuk-summary-list__actions-list">
+  
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="pages/cancel-remove-aml-1">Cancel<span class="govuk-visually-hidden"> remove  Association of Accounting Technicians</span></a>
+              </li>
+            </ul>
+
+
+            {% endif %}
+          
+        </dd>
+        </div>
+
+        <!-- AML details 2 -->
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          AML supervisory body and membership number
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>Association of Chartered Certified Accountants</li>
+            <li>554-6325-4555</li>
+            
+          </ul>
+        </dd>
+
+        <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+          </dd>
+
+      <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+
+          <a href="#">
+            Remove
+            <span class="govuk-visually-hidden"> Association of Chartered Certified Accountants details</span>
+          </a>
+        </dd>
+      </div>
+
+
+       <!-- AML details 3 - New AML details -->
+      {% if data['new-aml-details'] == true %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          AML supervisory body and membership number
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>Association of Chartered Certified Accountants</li>
+            <li>554-6325-4555</li>
+
+          </ul>
+          <p class="govuk-body">AML supervisor was changed on 18 September 2025</p>
+
+        </dd>
+
+      
+        <dd class="govuk-summary-list__value govuk-!-width-one-quarter govuk-!-static-padding-left-3">
+
+                
+            <strong class="govuk-tag govuk-tag govuk-!-static-margin-bottom-1">
+              New details   
+            </strong>
+            <p class="govuk-body-s">Pending until submitted<br> and accepted</p> 
+
+        
+        </dd>
+        <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="">Update<span class="govuk-visually-hidden"> </span></a>
+            </li>
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> correspondence email address</span></a>
+            </li>
+          </ul>
+        
+        </dd>
+      </div>
+
+
+
+      {% endif %}
+
+
+</dl>
+
+
+      {% endif %}
+
+      {% if data['name-has-been-updated'] == true or data['business-has-been-updated'] == true or data['cor-address-has-been-updated'] == true or data['email-has-been-updated'] == true  %}
+
+        <!-- if changes have been made -->
+        <div class="govuk-button-group">
+
+          {{ govukButton({
+            text: "Continue",
+            href:"check-updates"
+          }) }}
+
+          <a class="govuk-link" href="#">Cancel</a>
+        </div>
+
+      {% else %}
+
+      <a class="govuk-link govuk-!-margin-top-9" href="#">
+        Go back to authorised agent services
+      </a>
+
+
+
+
+    
+
+        {% endif %}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
+
