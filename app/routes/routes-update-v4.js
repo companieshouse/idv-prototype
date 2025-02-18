@@ -50,11 +50,11 @@ router.post('/v4-update/pages/date-of-change', function (req, res) {
 
 router.post('/v4-update/check-updates', function (req, res) {
 
-        if (req.session.data['checkBeforeSubmit'] === "no") {
+        if (req.session.data['checkBeforeSubmit'] === "yes") {
     
             res.redirect('check-your-answers')
     
-          } else if (req.session.data['checkBeforeSubmit'] === "yes") {
+          } else if (req.session.data['checkBeforeSubmit'] === "no") {
             // go to the confirm address page
             res.redirect('confirmation')
         
