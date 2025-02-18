@@ -48,13 +48,13 @@ router.post('/v4-update/pages/date-of-change', function (req, res) {
 })
 
 
-router.post('/v4-update/pages/check-updates', function (req, res) {
+router.post('/v4-update/check-updates', function (req, res) {
 
-        if (req.session.data['anotherUpdate'] === "no") {
+        if (req.session.data['checkBeforeSubmit'] === "no") {
     
             res.redirect('check-your-answers')
     
-          } else if (req.session.data['anotherUpdate'] === "yes") {
+          } else if (req.session.data['checkBeforeSubmit'] === "yes") {
             // go to the confirm address page
             res.redirect('confirmation')
         
@@ -327,17 +327,16 @@ router.post('/v4-update/pages/email-address-correspondance', function (req, res)
      *  AML supervisory body -- remove 
      */
     
-    router.get('/v4-update/pages/remove-aml-details', function (req, res) {
-        
-
-        // The users has added new AML details - set the flag to TRUE 
-        // New entry into check your answers with a added tag 
-
+    router.post('/v4-update/pages/date-of-removal-aml', function (req, res)      
+    {
         req.session.data['aml-1-has-been-removed'] = true;
 
-        res.redirect('../check-your-answers')
+        res.redirect('../check-updates')
             
     })
+
+
+
 
     /*
      *  AML supervisory body -- cancel remove 

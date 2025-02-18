@@ -341,14 +341,6 @@ Check your answers before sending your application – {{ serviceName }} – GOV
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
 
-       <!--    <dt class="govuk-summary-list__key">
-            AML supervisory body and membership number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <ul class="govuk-list">
-              <li>Association of Accounting Technicians</li>
-              <li>87654321</li>
-            </ul> -->
 
             <dt class="govuk-summary-list__key">
               Association of Accounting Technicians
@@ -358,14 +350,11 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             
            87654321
 
-           
-
-
 
             <!-- If the AML details have been removed -->
             {% if data['aml-1-has-been-removed'] == true %}
 
-            <p class="govuk-body govuk-!-static-margin-top-2">Changed on 18 September 2025</p>
+            <p class="govuk-body govuk-!-static-margin-top-2">Ended on 18 September 2025</p>
         
             <strong class="govuk-tag govuk-tag--red govuk-!-static-margin-top-1 govuk-!-static-margin-bottom-1">
               Details removed
@@ -380,7 +369,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           <!-- If AML details have not been removed -->
           {% if data['aml-1-has-been-removed'] == undefined %}
           <dd class="govuk-summary-list__actions">
-            <a href="pages/remove-aml-details">
+            <a href="pages/date-of-removal-aml">
               Remove
               <span class="govuk-visually-hidden"> Association of Accounting Technicians</span>
             </a>
@@ -440,7 +429,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
 
 
-          <p class="govuk-body govuk-!-static-margin-top-3">Changed on 18 September 2025</p>
+          <p class="govuk-body govuk-!-static-margin-top-3">Started on 18 September 2025</p>
 
     
                 

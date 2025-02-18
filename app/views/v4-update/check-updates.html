@@ -11,8 +11,6 @@ Check your answers before sending your application – {{ serviceName }} – GOV
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
 
-      <form class="form" action="check-updates" method="post">
-
      
         <h1 class="govuk-heading-l">Your updates</h1> 
 
@@ -214,7 +212,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
         87654321
 
-
+        <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Ended on 18 September 2025</p> 
           </dd>
 
           <dd class="govuk-summary-list__actions">
@@ -241,6 +239,8 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         <dd class="govuk-summary-list__value">
 
          554-6325-4555
+
+         <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Started on 18 September 2025</p> 
          
 
         </dd>
@@ -650,8 +650,9 @@ Check your answers before sending your application – {{ serviceName }} – GOV
       {% endif %}
 
      
+      <form class="form" action="check-updates" method="post">
       {{ govukRadios({
-        name: "anotherUpdate",
+        name: "checkBeforeSubmit",
         fieldset: {
           legend: {
             text: "Do you need to tell us about any other updates?",
@@ -675,10 +676,10 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
 
 
+
         <!-- if changes have been made -->
           {{ govukButton({
-            text: "Continue",
-            href:"check-your-answers"
+            text: "Continue"
           }) }}
 
 
