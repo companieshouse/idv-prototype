@@ -103,7 +103,7 @@ router.post('/v4-update/pages/location-lives', function (req, res) {
 
 router.post('/v4-update/pages/date-of-change-home', function (req, res) {
 
-    res.redirect('../check-your-answers')
+    res.redirect('../check-updates')
     
 })
 
