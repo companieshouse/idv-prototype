@@ -1,0 +1,34 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is your name? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="cancel-interrupt" method="post">
+
+
+     
+        <h1 class="govuk-heading-l">Are you sure you want to cancel all updates?</h1>
+
+
+        <p class="govuk-body">If you continue, we’ll return you to the authorised agent account. Any updates you’ve made to the authorised agent’s details will not be saved. Go back if you need to update the authorised agent’s details.</p>
+
+    <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      <a class="govuk-link" href="../check-your-answers">Go back to update details</a>
+    </div>
+
+</form>
+
+</div> 
+</div>
+
+
+
+{% endblock %}

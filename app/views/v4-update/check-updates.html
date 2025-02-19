@@ -327,23 +327,25 @@ Check your answers before sending your application – {{ serviceName }} – GOV
    
 
 
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      How to update company details on the Companies House register
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p>You can do this using our service to <a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house">Tell Companies House about changes to your limited company</a>.
-  </div>
-</details>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              How to update company details on the Companies House register
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>You can do this using our service to <a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house">Tell Companies House about changes to your limited company</a>.
+          </div>
+        </details>
    
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        {% if data['business-name-has-been-updated'] == true %}
 
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name
+            Company name
           </dt>
           <dd class="govuk-summary-list__value">
             MORRIS ACCOUNTING LTD
@@ -356,6 +358,9 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           </dd> 
         </div>
      
+      {% endif %}
+
+      {% if data['registered-office-address-has-been-updated'] == true %}
 
         <div class="govuk-summary-list__row">
            <dt class="govuk-summary-list__key">
@@ -371,6 +376,12 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             </a>
           </dd> 
         </div>
+
+          
+      {% endif %}
+
+
+      {% if data['cor-address-has-been-updated'] == true %} 
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -388,8 +399,9 @@ Check your answers before sending your application – {{ serviceName }} – GOV
         </div>
 
      
+ {% endif %}
 
-
+ {% if data['email-has-been-updated'] == true %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Correspondence email address
@@ -405,67 +417,126 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           </dd>
         </div>
 
+        {% endif %}
 
         
       </dl>
 
 
 
-      <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-       <!--  <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Name registered with the AML supervisory body
-          </dt>
-          <dd class="govuk-summary-list__value">
-            MORRIS ACCOUNTING LTD and your name
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> AML supervisory body</span>
-            </a>
-          </dd>
-        </div> -->
+      <!-- LTD AML -->
+       
 
 
+      {% if data['aml-1-has-been-removed'] == true %}
+      
+      
+      <h2 class="govuk-heading-m">Remove Anti-Money Laundering (AML) details</h2>
+
+
+      <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            AML supervisory body and membership number
+            Association of Accounting Technicians
           </dt>
           <dd class="govuk-summary-list__value">
-            <ul class="govuk-list govuk-list--bullet">
-              <li>Association of Accounting Technicians</li>
-              <li>87654321</li>
-            </ul>
+
+        87654321
+
+        <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Ended on 18 September 2025</p> 
           </dd>
+
           <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Update
-              <span class="govuk-visually-hidden"> AML supervisory body</span>
-            </a>
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+
+              <a href="#">
+                Cancel
+                <span class="govuk-visually-hidden"> Association of Chartered Certified Accountants details</span>
+              </a>
+            </dd>
           </dd>
+          
         </div>
+
+        {% endif %}
+
+        {% if data['aml-2-has-been-removed'] == true %}
+      
+
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          AML supervisory body and membership number
+          Association of Chartered Certified Accountants
         </dt>
         <dd class="govuk-summary-list__value">
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Association of Chartered Certified Accountants</li>
-            <li>554-6325-4555</li>
-          </ul>
+
+         554-6325-4555
+
+         <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Started on 18 September 2025</p> 
+         
+
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Update
-            <span class="govuk-visually-hidden"> AML supervisory body</span>
-          </a>
+          <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+
+            <a href="#">
+              Cancel
+              <span class="govuk-visually-hidden"> Association of Chartered Certified Accountants details</span>
+            </a>
+          </dd>
         </dd>
+        
       </div>
+      {% endif %}
+
+
       </dl>
+
+       {% if data['new-aml-details'] == true %}
+
+
+      <h2 class="govuk-heading-m">Add Anti-Money Laundering (AML) details</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+       <!-- AML details 3 - New AML details -->
+
+       <dt class="govuk-summary-list__key">
+        Association of Chartered Certified Accountants
+      </dt>
+      <dd class="govuk-summary-list__value">
+        
+        554-6325-4555
+      
+      </dd>
+
+
+         <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+            </li>
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+            </li>
+          </ul>
+        </div>
+      </dd>
+      
+ 
+ 
+ 
+ 
+       {% endif %}
+
+   
+
+
+
+      </dl>
+
+
+
+
 
 
 
@@ -678,10 +749,13 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
 
         <!-- if changes have been made -->
+        <div class="govuk-button-group">
+
           {{ govukButton({
             text: "Continue"
           }) }}
-
+          <a class="govuk-link" href="pages/cancel-interrupt">Cancel</a>
+        </div>
 
 
 

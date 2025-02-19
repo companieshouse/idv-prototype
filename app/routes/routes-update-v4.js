@@ -87,7 +87,6 @@ router.post('/v4-update/pages/date-of-change-business-name', function (req, res)
 
 
 
-
 /*
  * Location they live 
  */
@@ -276,9 +275,18 @@ router.post('/v4-update/pages/email-address-correspondance', function (req, res)
 
     router.post('/v4-update/pages/date-of-change-registered-office-address', function (req, res) {
 
+        res.redirect('../check-updates')
+        
+    })
+
+
+    router.post('/v4-update/pages/date-of-change-correspondance-email', function (req, res) {
+
         res.redirect('../check-your-answers')
         
     })
+
+
         
 
 
@@ -317,7 +325,7 @@ router.post('/v4-update/pages/email-address-correspondance', function (req, res)
 
         req.session.data['new-aml-details'] = true;
 
-        res.redirect('../check-your-answers')
+        res.redirect('../check-updates')
             
     })
 
