@@ -132,10 +132,10 @@ router.post('/v4-update/pages/address-principle-lookup', function (req, res) {
     /*
      *  business address list 
      */
-    router.post('/v4-update/pages/address-principle-office-list', function (req, res) {
+    router.post('/v4-update/pages/address-principle-list', function (req, res) {
         
          
-        res.redirect('address-principle-office-confirm')
+        res.redirect('address-principle-confirm')
         
     })
 
@@ -152,6 +152,17 @@ router.post('/v4-update/pages/email-address-correspondance', function (req, res)
 
     res.redirect('../check-updates')
 
+})
+
+
+
+router.post('/v4-update/pages/address-principle-confirm', function (req, res) {
+
+    req.session.data['registered-office-address-has-been-updated'] = true;
+
+
+    res.redirect('../check-updates')
+    
 })
 
 

@@ -540,7 +540,7 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
 
 
-      <!--non-registrable partnerships -->
+      <!-- **** non-registrable partnerships **** -->
       {% elseif ((data['prototype-set-up'] === "partnerships")) %}
 
 
@@ -548,178 +548,309 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-      <!--   <div class="govuk-summary-list__row">
+
+
+ 
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+          {% if data['name-has-been-updated'] == true %}
+          <div class="govuk-summary-list__row ">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['first-name'] }} {{ data['middle-name'] }} {{ data['last-name'] }}
+  
+  
+              <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Changed on 18 September 2025</p>  
+             
+       
+          <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+              </li>
+            </ul>
+            </dd>
+          </div>
+  
+  
+          {% endif %} 
+  
+          {% if data['location-has-been-updated'] == true %}
+  
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Where you live
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['home'] }}
+  
+              <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Changed on 18 September 2025</p>  
+             
+              <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+                  </li>
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+                  </li>
+                </ul>
+              
+  
+          
+  
+          </div>
+          {% endif %} 
+  
+          {% if data['business-name-has-been-updated'] == true %}
+  
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Business name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['businessName'] }} 
+  
+  
+              <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Changed on 18 September 2025</p>  
+             
+          <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+              </li>
+            </ul>
+            </dd>
+          </div>
+  
+  
+  
+          {% endif %} 
+          {% if data['registered-office-address-has-been-updated'] == true %}
+
+          <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+              Business address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              72 Guild Street<br>London<br>SE23 6FH
+            </dd>
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+              </ul>
+              </dd>
+          </div>
+  
+            
+        {% endif %}
+  
+  
+          {% if data['cor-address-has-been-updated'] == true %}
+  
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Correspondence address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              15 New Road
+              <br>Cardiff
+              <br>Wales
+              <br> CF5 1BR
+      
+  
+  
+            <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Changed on 18 September 2025</p>  
+             
+       </dd>
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+                </li>
+              </ul>
+              </dd>
+            </div>
+  
+  
+  
+  
+          {% endif %} 
+  
+          {% if data['email-has-been-updated'] == true %}
+  
+     
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Correspondence email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              newemail@address.co.uk
+               <!-- Pending tag -->
+  
+               </dd>
+  
+               <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+                  </li>
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+                  </li>
+                </ul>
+                </dd>
+           
+  
+          </div>
+    
+          {% endif %} 
+  
+          
+        </dl>
+        
+  
+  
+  
+  
+  
+        {% if data['aml-1-has-been-removed'] == true %}
+        
+        
+        <h2 class="govuk-heading-m">Remove Anti-Money Laundering (AML) details</h2>
+  
+  
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Association of Accounting Technicians
+            </dt>
+            <dd class="govuk-summary-list__value">
+  
+          87654321
+  
+          <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Ended on 18 September 2025</p> 
+            </dd>
+  
+            <dd class="govuk-summary-list__actions">
+              <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+  
+                <a href="#">
+                  Cancel
+                  <span class="govuk-visually-hidden"> Association of Chartered Certified Accountants details</span>
+                </a>
+              </dd>
+            </dd>
+            
+          </div>
+  
+          {% endif %}
+  
+          {% if data['aml-2-has-been-removed'] == true %}
+        
+  
+          <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Type of business
+            Association of Chartered Certified Accountants
           </dt>
           <dd class="govuk-summary-list__value">
-            Partnership
+  
+           554-6325-4555
+  
+           <p class="govuk-body govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-2">Started on 18 September 2025</p> 
+           
+  
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+  
+              <a href="#">
+                Cancel
+                <span class="govuk-visually-hidden"> Association of Chartered Certified Accountants details</span>
+              </a>
+            </dd>
           </dd>
           
         </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Name registered with the AML supervisory body
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Name of the business and your name
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name registered with AML supervisory body</span>
-            </a>
-          </dd>
-        </div> -->
-        
-        
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Your name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            James Morris
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Update
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Where do you live?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            15 New Road<br>
-            Cardiff<br>
-            Wales<br>
-            CF5 1BR
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Update
-              <span class="govuk-visually-hidden"> where you live</span>
-            </a>
-          </dd>
-        </div>
-
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Business name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            James Morris Accounting
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Update
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-
-      
-
-
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Business address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            72 Guild Street<br>London<br>SE23 6FH
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Update
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Correspondence address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            72 Guild Street<br>London<br>SE23 6FH
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Update
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Correspondence email address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            james@morrisaccounting.com
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Update
-              <span class="govuk-visually-hidden"> correspondence email address</span>
-            </a>
-          </dd>
-        </div>
-
-
-      </dl>
-
-      <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            AML supervisory body and membership number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <ul class="govuk-list govuk-list--bullet">
-              <li>Association of Accounting Technicians</li>
-              <li>87654321</li>
-            </ul>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Update
-              <span class="govuk-visually-hidden"> AML supervisory body</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          AML supervisory body and membership number
+        {% endif %}
+  
+  
+        </dl>
+  
+         {% if data['new-aml-details'] == true %}
+  
+  
+        <h2 class="govuk-heading-m">Add Anti-Money Laundering (AML) details</h2>
+  
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+         <!-- AML details 3 - New AML details -->
+  
+         <dt class="govuk-summary-list__key">
+          Association of Chartered Certified Accountants
         </dt>
         <dd class="govuk-summary-list__value">
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Association of Chartered Certified Accountants</li>
-            <li>554-6325-4555</li>
-          </ul>
+          
+          554-6325-4555
+        
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="#">
-            Update
-            <span class="govuk-visually-hidden"> AML supervisory body</span>
-          </a>
+  
+  
+           <dd class="govuk-summary-list__actions govuk-!-width-one-quarter">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="pages/name">Edit<span class="govuk-visually-hidden"> name</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="#">Cancel<span class="govuk-visually-hidden"> name</span></a>
+              </li>
+            </ul>
+          </div>
         </dd>
-      </div>
-      </dl>
+        
+   
+   
+   
+   
+         {% endif %}
+  
+     
+  
+  
+  
+        </dl>
+  
 
 
-      {% endif %}
 
+
+
+
+
+
+
+
+
+
+        {% endif %}
      
       <form class="form" action="check-updates" method="post">
       {{ govukRadios({
