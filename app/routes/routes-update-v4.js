@@ -320,7 +320,7 @@ router.post('/v4-update/pages/address-principle-confirm', function (req, res) {
         // The users has added new AML details - set the flag to TRUE 
         // New entry into check your answers with a added tag 
 
-        res.redirect('date-of-change-AML')
+        res.redirect('date-of-change-aml')
             
     })
 
