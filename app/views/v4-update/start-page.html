@@ -1,13 +1,21 @@
 {% extends "layouts/main.html" %}
 
+
+
 {% block pageTitle %}
-  {{ serviceName }} – GOV.UK Prototype Kit
+View and update the authorised agent's details  {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
+
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
   {{ govukHeader() }}
 {% endblock %}
+
+{% set serviceName %}
+
+{% endset %}
+
 
 {% block beforeContent %}
 
