@@ -29,18 +29,20 @@ Update an authorised agents details with Companies House
 
 
 
+         <!--hint: {
+    text: "If you're registered with more than one, you'll need to add them one at a time. "
+  }, -->
+
         {{ govukRadios({
           name: "aml-supervisor",
           fieldset: {
             legend: {
-              text: "Which Anti-Money Laundering (AML) supervisory bodies are you registered with?",
+              text: "Which Anti-Money Laundering (AML) supervisory body are you registered with?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
-  hint: {
-    text: "Select one option. "
-  },
+ 
           items: [
 
             {
