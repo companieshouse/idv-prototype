@@ -8,13 +8,15 @@ You need to add an AML supervisory body – {{ serviceName }} – GOV.UK Prototy
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">You need to add an AML supervisory body</h1>
+    <h1 class="govuk-heading-l">You need to add AML details</h1>
 
 
     <p class="govuk-body">
-      You will need to add the new AML supervisory body details. You need to be supervised by one or more supervisory bodies.
-    </p>
-   
+      You must be supervised by one or more AML supervisory body.</p>
+
+      <p>You cannot submit the update as you've removed all the AML details.  </p>
+      <p>To submit the update, you'll need to add AML details for one or more supervisory body. </p>
+
     {{ govukButton({
       text: "Add AML details",
       href:"aml-supervisor"
@@ -22,7 +24,7 @@ You need to add an AML supervisory body – {{ serviceName }} – GOV.UK Prototy
     
 
     <p class="govuk-body">
-      If you are <a href="#" class="govuk-link">no longer supervised by an anti-money laundering supervisory body you can tell Companies House</a>. 
+      If you are <a href="#" class="govuk-link">no longer supervised by an anti-money laundering supervisory body you need to close</a>. 
     </p>
 
   
