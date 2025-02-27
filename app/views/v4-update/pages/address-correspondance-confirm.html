@@ -58,10 +58,10 @@ Confirm your correspondence address – {{ serviceName }} – GOV.UK Prototype K
       {% endif %}
       
 
-
-       {{ govukButton({
-          text: "Continue"
-        }) }}
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <a class="govuk-link" href="../check-your-answers">Cancel</a>
+      </div>
 
 
       </form>
