@@ -192,6 +192,13 @@ router.post('/v4-update/pages/address-principle-confirm', function (req, res) {
          
        
     })
+
+    router.post('/v4-update/pages/address-correspondance-list', function (req, res) {
+        
+         
+        res.redirect('address-correspondance-confirm')
+        
+    })
     
     /*
      *  Not registered with Companies House - ACSP address manually entering address

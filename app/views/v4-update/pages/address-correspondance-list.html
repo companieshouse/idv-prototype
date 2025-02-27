@@ -85,11 +85,11 @@ Update an authorised agents details with Companies House
       {% endif %}
       
 
-           
-      {{ govukButton({
-        text: "Save and continue",
-        href:"address-correspondance-confirm"
-      }) }}
+      <div class="govuk-button-group">
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <a class="govuk-link" href="../check-your-answers">Cancel update</a>
+</div>
 
       <p class="govuk-body">
         <a href="/register-an-acsp/address-lookup/acsp-address-manual" class="govuk-link govuk-link--no-visited-state">Enter the address manually</a>
