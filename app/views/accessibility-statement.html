@@ -2,17 +2,11 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  {{title}}
-  -
+  Accessibility statement -
   {{serviceName}}
   - GOV.UK
 {% endblock %}
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:history.back()"
-}) }}
-{% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -106,7 +100,7 @@
 
        <p class="govuk-body">Companies House is committed to making its website accessible in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.</p>
        
-       <h3 class="govuk-heading-s" id="compliance-status">
+       <h3 class="govuk-heading-m" id="compliance-status">
         Compliance status 
       </h3>
 
