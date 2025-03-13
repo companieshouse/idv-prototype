@@ -45,10 +45,10 @@
 
        <p class="govuk-body">We've also made the service text as simple as possible to understand.</p>
 
-       <p class="govuk-body"><a class="govuk-link" href="https://www.gov.uk/guidance/accessibility-support-for-companies-house-users">Find out more about accessibility support for Companies House users.</a></p>
+       <p class="govuk-body"><a class="govuk-link" href="https://www.gov.uk/guidance/accessibility-support-for-companies-house-users">Find out more about accessibility support for Companies House users</a>.</p>
 
        {{ govukInsetText({
-          html: '<a class="govuk-link" href="https://mcmw.abilitynet.org.uk/">AbilityNet has advice on making your device easier to use if you have a disability.</a>'
+          html: '<a class="govuk-link" href="https://mcmw.abilitynet.org.uk/">AbilityNet has advice on making your device easier to use if you have a disability</a>.'
         }) }}
 
 
@@ -59,18 +59,18 @@
       <p class="govuk-body">We know some parts of this service are not fully accessible:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>the default language of some pages cannot be determined</li>
-        <li>some pages do not have titles that uniquely describe their topic or purpose</li>
-        <li>some pages require the user to unnecessarily re-enter previously supplied data</li>
+        <li>the language setting of some pages cannot be determined by screen readers or other assistive technologies</li>
+        <li>some pages have titles that do not uniquely describe their topic or purpose</li>
+        <li>some pages require the user to re-enter data they have previously entered </li>
         <li>some pages lack a correct heading hierarchy</li>
         <li>some pages lack correctly labelled form fields</li>
         <li>some forms do not feature the necessary fieldset component</li>
-        <li>one email page prevents users from copying and pasting data</li>
+        <li>one page prevents users from copying and pasting data</li>
         <li>some pages contain links which do not clearly describe their purpose or destination</li>
-        <li>some pages lack the necessary ARIA attributes</li>
-        <li>some pages lack the appropriate semantic markup</li>
+        <li>some pages feature expandable content which does not convey to assistive technologies whether it is in a collapsed or expanded state</li>
+        <li>one page visually presents information as a paired list, but the list does not have the semantic markup needed to convey the relationship to assistive technologies</li>
         <li>the focus order of some pages does not follow a logical order</li>
-        <li> images are present which do not contain descriptive alternative text</li>
+        <li>some images do not have descriptive alternative text</li>
         <li>some error messages lack accurate or sufficient descriptions</li>
       </ul>
 
@@ -81,7 +81,9 @@
           Feedback and contact information
        </h2>
 
-       <p class="govuk-body">We're always looking to improve the accessibility of this service. If you find any problems not listed on this page or think we're not meeting accessibility requirements, you can find contact details on our
+       <p class="govuk-body">We're always looking to improve the accessibility of this service.</p>
+       
+       <p>Contact us if you find any problems not listed on this page or think we're not meeting accessibility requirements. You can find contact details on our
            <a class="govuk-link" href="https://www.gov.uk/guidance/accessibility-support-for-companies-house-users">accessibility support for Companies House users</a> page.
        </p>
 
@@ -127,7 +129,7 @@
         <li>On some pages, text which visually labels a component does not correspond with the words associated with the component programmatically. This fails WCAG 2.2 success criterion 2.5.3 Label in Name (Level A). We plan to fix this issue by April 2025.</li>
         <li>Some links are not descriptive of their purpose or destination. This fails WCAG 2.2 success criterion 2.4.4 Link Purpose (In Context) (Level A). We plan to fix this issue by April 2025.</li>
         <li>On some pages, expandable content lacks the aria-expanded attribute to inform screen reader users of its state. This fails WCAG 2.2 success criterion 4.1.2 Name, Role, Value (Level A). We plan to fix this issue by April 2025.</li>
-        <li>On some pages, content visually presented or logically acting as a list does not use programmatic list markup to equivalently convey this to screen reader users. This fails WCAG 2.2 success criterion 1.3.1 Info and Relationships (Level A). We plan to fix this issue by April 2025.</li>
+        <li>On one page, content visually presented or logically acting as a list does not use programmatic list markup to equivalently convey this to screen reader users. This fails WCAG 2.2 success criterion 1.3.1 Info and Relationships (Level A). We plan to fix this issue by April 2025.</li>
         <li>On some pages, focusable components do not receive focus in an order that preserves meaning and operability. This fails WCAG 2.2 success criterion 2.4.3 Focus Order (Level A). We plan to fix this issue by April 2025.</li>
         <li>On some pages, there are nested main landmarks on the page that are not uniquely identifiable. This fails WCAG 2.2 success criteria 1.3.1 Info and Relationships (Level A) and 4.1.2 Name, Role, Value (Level A). We plan to fix this issue by April 2025.</li>
         <li>Informative images are present that are not accurately conveyed to assistive technologies. This fails WCAG 2.2 success criterion 1.1.1 Non-text Content (Level A). We plan to fix this issue by April 2025.</li>
