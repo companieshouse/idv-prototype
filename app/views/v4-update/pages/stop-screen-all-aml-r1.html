@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+You need to add an AML supervisory body – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">You need to add AML details</h1>
+
+
+
+<!--      
+
+      <p>You cannot submit the update as you've removed all Anti-Money Laundering (AML) details.</p>
+      <p>To submit the update, you'll need to add AML details for at least one supervisory body. </p> -->
+
+      <p class="govuk-!-margin-bottom-5">You must add Anti-Money Laundering (AML) details for at least one supervisory body before you submit the update. </p>
+
+
+      <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Add AML details",
+      href:"aml-supervisor"
+    }) }}
+
+    <a class="govuk-link" href="../check-your-answers.html">Go back to update details</a>
+  </div>
+
+
+
+    
+    <div class="govuk-inset-text govuk-!-margin-top-5">
+      If you're no longer registered with an AML supervisory body, you'll need to close the authorised agent. To find out how to close, read the <a href="https://www.gov.uk/guidance/being-an-authorised-corporate-service-provider#how-to-use-your-authorised-agent-account" target="_blank">guidance on using your authorised agent account (opens in a new tab)</a>. 
+    </div>
+
+    <!--
+    <h2 class="govuk-heading-m">If you're no longer registered with an AML supervisory body</h2>
+
+    <p>Authorised agents must always be registered with at least one AML supervisory body.</p>
+    <p class="govuk-body">If you are no longer registered, you must <a href="#" class="govuk-link">close the authorised agent</a>.  
+ 
+    </p> -->
+
+  
+  </div>
+</div>
+{% endblock %}
+
