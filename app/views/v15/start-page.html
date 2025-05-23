@@ -12,7 +12,7 @@
   tag: {
     text: "Prototype"
   },
-  html: 'We\'re testing a new service – to help us improve it, <a class="govuk-link" href="#">give your feedback (opens in a a new tab)</a>.'
+  html: 'We\'re testing a new service – to help us improve it,  <a class="govuk-link" href="#">give your feedback (opens in a a new tab)</a>.'
 }) }}
 
 <div class="govuk-width-container">
@@ -36,80 +36,116 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="start-page" method="post">
+        
+
+
+      
 
       <h1 class="govuk-heading-l">
         {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
 
-      <p class="govuk-body">Use this service to register your business as an authorised agent with Companies House. Authorised agents are also known as Authorised Corporate Service Providers (ACSPs). </p>
+      <!-- <div class="ch-info-panel">
+        <div class="govuk-panel__body">
+        
+       <h2 class="govuk-heading-s">This is a new service</h2> 
 
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Who needs to register as an authorised agent?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p>From XX DATE, individuals or organisations will need to register as a Companies House authorised agent to (do any of the following):</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>file on behalf of clients</li>
-      <li>form companies or registrable partnerships on behalf of clients</li>
-      <li>verify someone's identity for Companies House</li>
-    </ul>
-    <p>To apply, the business must already be registered with a UK Anti-Money Laundering (AML) supervisory body. For example, accountants, solicitors or company formation agents.</p>
-  </div>
-</details>
+            <p class="govuk-body">This is a new service. If you have any issues while we work to improve it, you can <a href="">contact us</a> or tell us your <a href="">feedback</a>. You'll also find contact and feedback links on each page of the service.
+            </p>
+          
+</div>
+</div> -->
 
-      <p class="govuk-body">To apply, you must be one of the following for the business you are registering:</p>
+      <p class="govuk-body">Use this service to register yourself, or your business as an Authorised Corporate Service Provider (ACSP). ACSPs are also known as authorised agents. </p>
+      <p>
+        For now, you only need to register if you plan to verify people's identities for Companies House. </p>
+     <!--   <p>
+        In the future, you’ll also need to register to be able to file on behalf of clients. You will not need to do this until autumn 2025. 
+        </p> -->
+
+
+
+
+
+
+    <h2 class="govuk-heading-m">Who can apply</h2>
+
+      <p class="govuk-body">To register your business as an authorised agent, you must be one of the following:</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>director</li>
         <li>general partner</li>
+        <li>partner</li>
         <li>member</li>
         <li>sole trader</li>
       </ul>
 
 
-<div class="govuk-inset-text">
-  You'll be able to add other people who work for the business once you have registered.
-</div>
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     If you’re registering an unincorporated body or corporate body
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  
+                              <h3 class="govuk-heading-s">Corporate body</h3>
+              <p>If the body is managed by its members, you must be a member of the body. Otherwise, you must be the equivalent of a director. </p>
+              <h3 class="govuk-heading-s">Unincorporated entity</h3>
+              <p>If the body is managed by its members, you must be a member of the body. Otherwise, you must be a member of the governing body. </p>
 
 
-  <div class="ch-info-panel">
-      <!-- <h2 class="govuk-panel__title">
-          <img src="/public/images/identity-alt.png" alt="" height="50">
+              
+  </div>
+</details>
 
-        
+      <p class="govuk-body">
+  You’ll be able to add other people who work for the business to the authorised agent account once you’ve registered.
+</p>
 
-        </h2> -->
 
+    
+
+       
+        <h2 class="govuk-heading-m">Before you start</h2>
+
+        <p>You’ll need to verify your identity for Companies House before you can use this service. <a href="">How to verify your identity for Companies House</a>.</p>
+
+
+        <h2 class="govuk-heading-m">What information you need to provide</h2>
+
+<p>You'll need to tell us:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>about the business, or yourself if you’re a sole trader</li>
+  <li>which Anti-Money Laundering (AML) supervisory bodies the business is registered with</li>
+  <li>the AML membership numbers (sometimes known as your AML number or firm ID)</li>
+</ul>
+
+      <div class="ch-info-panel">
         <div class="govuk-panel__body">
-          <h2 class="govuk-heading-m">Before you start </h2>
-
-            <p class="govuk-body">You’ll need to verify your identity for Companies House before you can use this service.</p>
-            <p class="govuk-body"> <img src="/public/images/ons-icon-arrow-circle-medium.png" alt="" height="40">   <strong><a class="govuk-link govuk-link--no-visited-state" href="/v13/verify-identity-prototype">
-              Verify your identity for Companies House</a></strong>.
-            </p>
-
-        </div>
-      </div>
-
-<br>
-      <h2 class="govuk-heading-m">What you'll need</h2>  
+         <!-- <h3 class="govuk-heading-s">Verify your indentity </h3> -->
+         <p class="govuk-body">Read the <a href="guidance-applying-to-register">guidance on applying to register as an authorised agent</a> to check you have everything you need to apply.</p>
+          
+          </div>
+</div>
+      
+<h2 class="govuk-heading-m">What you'll need </h2>
 
 
+<p class="govuk-body">You’ll need to:</p>
 
-     <p>You’ll need: </p> 
+
         <ul class="govuk-list govuk-list--bullet">
-          <li> to give details about your business, or yourself if you're a sole trader</li>
-          <li>the names of all Anti-Money Laundering (AML) supervisory bodies the business is registered with - you must have been registered for at least 2 weeks</li>
-          <li>the AML membership numbers or IDs </li>
-          <li>to pay the £XX registration fee using a credit or debit card</li>
+    <li>sign in to or create a GOV.UK One Login to use this service</li>
+          <li>pay the £55 registration fee</li>
+        </ul>
+
+
+
+
 
         </ul>
-        <div class="govuk-inset-text">
-          We'll confirm the AML supervisory body has the same name and membership number for your business. Contact your AML supervisory body if you need to check your details before you start.
-        </div>
+
 
     
 
@@ -127,20 +163,42 @@
              <p>You must be the person who is responsible for AML compliance within the business to use this service. This is known as a relevant officer.</p>'
       }) }} -->
 
-    <p>You can save your answers and resume your application later, if you need to. </p>
+      <p class="govuk-body">You can save your answers and resume your application later if you need to. </p>
+
+      <!--
+      <div class="govuk-inset-text">
+<p>You'll need to sign in to or create a GOV.UK One Login to use this service.</p>
+      </div> -->
+
+
 
       {{ govukButton({
         text: "Start now",
         isStartButton: true
-      }) }}
+      }) }}   
+
+      
+      <h2 class="govuk-heading-m">Help to apply online</h2>
+      <p><a href="">Contact us</a> if you need help to use this service. </p>
+
+      <h2 class="govuk-heading-m">Adapt your device to meet your needs</h2>
+      <p><a href="https://mcmw.abilitynet.org.uk/">Read advice from AbilityNet on how to make your device easier to use</a>. For example, learn how to change the background colour or text size.</p>
+
+      <h2 class="govuk-heading-m">After you register as an authorised agent</h2>
 
 
-      <p><a href="guidance-ACSPs">Read the guidance about applying to register as a Companies House authorised agent</a>.  
+      <p class="govuk-body">We’ll create an authorised agent account, which you’ll be able to access when you sign in to your Companies House account.</p>
+
+      <p>Read the <a href="guidance-ACSPs">guidance for authorised agents</a> to find out how to use the authorised agent account. 
+
+</p> 
+
+
 
 
 
     </div>
-</div>
+
 
   </form>
   </div>
