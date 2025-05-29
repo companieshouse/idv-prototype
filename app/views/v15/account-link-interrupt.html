@@ -1,44 +1,127 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-no-banner.html" %}
 
 
 
+
+{% block pageTitle %}
+We are changing the way you sign in to some of our services – {{ serviceName }} - GOV.UK
+{% endblock %}
 
 {% set serviceName %}
-  
-{% endset%}
-
+ 
+{% endset %}
 
 {% block beforeContent %}
 
 {% endblock %}
 
 
+
+
+
 {% block content %}
+<div class="govuk-width-container">
 
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds ">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <form action="start-page" method="post" novalidate>
 
-  <form action="account-link-interrupt" method="post" novalidate="">
-
-  <h1 class="govuk-heading-l"> Before you can apply, you need to connect your Companies House account to your GOV.UK One Login </h1>
-
-  <p class="govuk-body govuk-!-padding-bottom-3">After you’ve done this, come back to this service to apply to register as a Companies House authorised agent. </p>
-
-
-
-  {{ govukButton({
-    text: "Continue",
-    href:"https://find-update-company-info.herokuapp.com/public-beta-dev-ready/start-page-acsp"
-  }) }}   
+        <a href="#" class="govuk-back-link govuk-!-padding-top-0">Back</a>
+      <h1 class="govuk-heading-xl">We're taking you to GOV.UK One Login </h1>
+     
+      <p class="govuk-body">GOV.UK One Login will allow you to access many government services using the same email address and password. You can also use it to <a href="https://www.gov.uk/using-your-gov-uk-one-login/services" class="govuk-link" rel="noreferrer noopener" target="_blank">access other government services (opens in new tab)</a>.
+      </p>
 
 
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          To save your existing Companies House account information, you must sign in to or create a GOV.UK One Login using {% if (data['chs-email-2'] === "") %}
+          <strong>  {{data['email-address-2']}} </strong>
+          {% elseif (data['chs-email'] !== "") %}
+          <strong> {{data['chs-email']}} </strong>
+          {% else %}
+          <strong> email111@example.com</strong>
+          {% endif %}
+        </strong>
+      </div>
+       <p class="govuk-body"> This will enable us to connect your account to your GOV.UK One Login.</p>
+       <br>
+ 
+       <details class="govuk-details" data-module="govuk-details">
+         <summary class="govuk-details__summary">
+           <span class="govuk-details__summary-text">
+            What to do if you already have a GOV.UK One Login that uses a different email address
+           </span>
+         </summary>
+         <div class="govuk-details__text">
+           <p class="govuk-body">If you want to connect this Companies House account to a GOV.UK One Login that uses a different email address, you have 2 options:</p>
+           <h2 class="govuk-heading-m">Option 1</h2>
+           
+           <p class="govuk-body"><a href="#" class="govuk-link">Change your Companies House account email address</a> to match your GOV.UK One Login email address. Then go back to the ‘Manage account’ section and select continue.</p>
+           <h2 class="govuk-heading-m">Option 2</h2>
+           <p class="govuk-body"><a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Change your GOV.UK One Login email address (opens in a new tab)</a> to{% if (data['chs-email-2'] === "") %}
+            <strong>{{data['email-address-2']}}</strong>.
+            {% elseif (data['chs-email'] !== "") %}
+            <strong>{{data['chs-email']}}</strong>.
+            {% else %}
+            <strong>email111@example.com</strong>.
+            {% endif %} Then go back to the ‘Manage account’ section and select continue.</p>
+           </ul>
+         </div>
+       </details>
+ 
+       <details class="govuk-details" data-module="govuk-details">
+         <summary class="govuk-details__summary">
+           <span class="govuk-details__summary-text">
+         
+        What to do if you share access to this Companies House account with other people
+           </span>
+         </summary>
+         <div class="govuk-details__text">
+           <p class="govuk-body">This account uses the email address{% if (data['chs-email-2'] === "") %}
+            <strong>{{data['email-address-2']}}</strong>.
+            {% elseif (data['chs-email'] !== "") %}
+            <strong>{{data['chs-email']}}</strong>.
+            {% else %}
+            <strong>email111@example.com</strong>.
+            {% endif %}Only one person can connect it to their GOV.UK One Login.</p>
+           <p class="govuk-body">
+         Anyone else who shares access to this account will need to create their own GOV.UK One Login, using a different email address. They will no longer be able to access the information in this account.
+           </p>
+         </div>
+       </details>
+ 
+       <!--
+       <details class="govuk-details" data-module="govuk-details">
+         <summary class="govuk-details__summary">
+           <span class="govuk-details__summary-text">
+            What is a Companies House account?
+           </span>
+         </summary>
+         <div class="govuk-details__text">
+           <p class="govuk-body">This is the account you can use to sign in to:</p>
+           <ul class="govuk-list govuk-list--bullet">
+             <li>the Companies House register - sometimes known as 'Companies House service' or 'Find and update company information'</li>
+             <li>some of our online services - for example, 'Register your company' or 'Upload a document to Companies House'</li>
+           </ul>
+           <p class="govuk-body">A Companies House account is not the same as WebFiling.</p>
+         </div>
+       </details>
+       -->
+ 
+    
+       {{ govukButton({
+         text: "Go to GOV.UK One Login",
+         classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-8",
+         href:"create-or-sign-in"
+       }) }}
+ 
+     </form>
+   </div>
+ </div>
+ 
+ </div>
+ {% endblock %}
 
-
-
-
-  </form>
-
-            </div>
-          </div>
-
-{% endblock %}
