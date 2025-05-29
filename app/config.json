@@ -1,3 +1,11 @@
+
+
 {
-  "serviceName": "Apply to register as a Companies House authorised agent"
+  "serviceName": "Apply to register as a Companies House authorised agent",
+  "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
 }
+
