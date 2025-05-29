@@ -747,7 +747,7 @@ router.post('/v5/acsp-address-correspondance', function (req, res) {
  */
  router.post('/v15/aml-supervisor', function (req, res) {
     
-    res.redirect('aml-number-MVP')
+    res.redirect('aml-number')
 
 
 })
@@ -756,7 +756,7 @@ router.post('/v5/acsp-address-correspondance', function (req, res) {
 /*
  *  AML number for first supervisor
  */
-router.post('/v15/aml-number-MVP', function (req, res) {
+router.post('/v15/aml-number', function (req, res) {
      
     res.redirect('name-address-match-supervisor-mvp')
     
