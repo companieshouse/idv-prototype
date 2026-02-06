@@ -80,7 +80,7 @@ What is the membership number for Association of Chartered Certified Accountants
                          What is the AML membership ID for Association of International Accountants (AIA)?
                         </label>
                         <div id="aia-hint" class="govuk-hint">
-                          You can find this on the AIA practicing certificate, or by signing in to <a href="https://www.aiaworldwide.com/system/login/" class="govuk-link">MyAIA (opens in a new tab)</a>. It will be between 4 and 6 numbers long.
+                          You can find this on the AIA practicing certificate, or by signing in to <a href="https://www.aiaworldwide.com/system/login/" class="govuk-link" rel="noreferrer noopener" target="_blank">MyAIA (opens in a new tab)</a>. It will be between 4 and 6 numbers long.
                         </div>
                         <input class="govuk-input" id="aia" name="aiaDetails" type="text">
                       </div>
@@ -91,7 +91,8 @@ What is the membership number for Association of Chartered Certified Accountants
 
                       <!-- Association of Taxation Technicians (ATT) -->
 
-
+                    {% if data['aml-supervisor'] and 'att' in data['aml-supervisor'] %}
+                   
 
                        <div class="govuk-form-group">
                         <label class="govuk-label govuk-label--m" for="att">
@@ -102,26 +103,26 @@ What is the membership number for Association of Chartered Certified Accountants
                         </div>
                         <input class="govuk-input" id="att" name="attDetails" type="text">
                       </div>
-
+                      {% endif %}
 
 
                       <!-- Chartered Institute of Legal Executives (CILEx) -->
 
-
+ {% if data['aml-supervisor'] and 'CILEx' in data['aml-supervisor'] %}
                        <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--m" for="att">
+                        <label class="govuk-label govuk-label--m" for="CILEx">
                         What is the Regulation ID for the Chartered Institute of Legal Executives (CILEx)?
                         </label>
-                        <div id="att-hint" class="govuk-hint">
+                        <div id="CILEx-hint" class="govuk-hint">
                           This is the number that CILEx provided when you registered.
                         </div>
-                        <input class="govuk-input" id="att" name="attDetails" type="text">
+                        <input class="govuk-input" id="CILEx" name="CILExDetails" type="text">
                       </div>
-
+     {% endif %}
 
                        <!-- Chartered Institute of Management Accountants (CIMA) -->
 
-
+ {% if data['aml-supervisor'] and 'cima' in data['aml-supervisor'] %}
                        <div class="govuk-form-group">
                         <label class="govuk-label govuk-label--m" for="cima">
                         What is the Member ID for the Chartered Institute of Management Accountants (CIMA)?
@@ -131,11 +132,11 @@ What is the membership number for Association of Chartered Certified Accountants
                         </div>
                         <input class="govuk-input" id="cima" name="cimaDetails" type="text">
                       </div>
-
+     {% endif %}
 
                        <!-- Chartered Institute of Taxation (CIOT) -->
 
-
+ {% if data['aml-supervisor'] and 'ciot' in data['aml-supervisor'] %}
                        <div class="govuk-form-group">
                         <label class="govuk-label govuk-label--m" for="ciot">
                        What is the AML reference number for the Chartered Institute of Taxation (CIOT)?
@@ -145,11 +146,11 @@ What is the membership number for Association of Chartered Certified Accountants
                         </div>
                         <input class="govuk-input" id="ciot" name="ciotDetails" type="text">
                       </div>
-
+     {% endif %}
 
                        <!-- Council for Licensed Conveyors (CLC) -->
 
-
+ {% if data['aml-supervisor'] and 'clc' in data['aml-supervisor'] %}
                        <div class="govuk-form-group">
                         <label class="govuk-label govuk-label--m" for="clc">
                        What is the AML membership number for the Council for Licensed Conveyors (CLC)?
@@ -159,9 +160,267 @@ What is the membership number for Association of Chartered Certified Accountants
                         </div>
                         <input class="govuk-input" id="clc" name="clcDetails" type="text">
                       </div>
+     {% endif %}
+                      <!-- Department for the Economy Northern Ireland -->
+
+ {% if data['aml-supervisor'] and 'clc' in data['aml-supervisor'] %}
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="deni">
+                       What is the AML membership number for the Department for the Economy Northern Ireland?
+                        </label>
+                        <div id="deni-hint" class="govuk-hint">
+                          The supervisory body may have a different name for this, for example a ‘firm number’ or ‘regulation ID’. Contact them if you need to check what this is.
+                        </div>
+                        <input class="govuk-input" id="deni" name="deniDetails" type="text">
+                      </div>
+     {% endif %}
+                      <!-- Faculty of Advocates -->
+
+ {% if data['aml-supervisor'] and 'fa' in data['aml-supervisor'] %}
+
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="fa">
+                  What is the AML membership number for the Faculty of Advocates?
+                        </label>
+                        <div id="fa-hint" class="govuk-hint">
+                          The supervisory body may have a different name for this, for example a ‘firm number’ or ‘regulation ID’. Contact them if you need to check what this is.
+                        </div>
+                        <input class="govuk-input" id="fa" name="faDetails" type="text">
+                      </div>
+     {% endif %}
+                      <!-- Faculty Office of the Archbishop of Canterbury (FO) -->
+
+ {% if data['aml-supervisor'] and 'foac' in data['aml-supervisor'] %}
+
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="foac">
+                  What is the AML membership number for the Faculty Office of the Archbishop of Canterbury (FO)?
+                        </label>
+                        <div id="foac-hint" class="govuk-hint">
+                          The supervisory body may have a different name for this, for example a ‘firm number’ or ‘regulation ID’. Contact them if you need to check what this is.
+                        </div>
+                        <input class="govuk-input" id="foac" name="foacDetails" type="text">
+                      </div>
+     {% endif %}
+                      <!-- Financial Conduct Authority (FCA) -->
+
+
+ {% if data['aml-supervisor'] and 'fca' in data['aml-supervisor'] %}
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="fca">
+                  What is the AML membership number for the Financial Conduct Authority (FCA)?
+                        </label>
+                        <div id="fca-hint" class="govuk-hint">
+                          This starts with the letters ‘FCA_MLR’ and is followed by 6 or 7 numbers. For example, FCA_MLR_123456. Contact the FCA if you need to check what this is.
+                        </div>
+                        <input class="govuk-input" id="fca" name="fcaDetails" type="text">
+                      </div>
+     {% endif %}
+                      <!-- Gambling commission -->
+
+ {% if data['aml-supervisor'] and 'gc' in data['aml-supervisor'] %}
+
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="gc">
+                  What is the AML membership number for the Gambling Commission?
+                        </label>
+                        <div id="gc-hint" class="govuk-hint">
+                          The supervisory body may have a different name for this, for example a ‘firm number’ or ‘regulation ID’. Contact them if you need to check what this is.
+                        </div>
+                        <input class="govuk-input" id="gc" name="gcDetails" type="text">
+                      </div>
+     {% endif %}
+                       <!-- General Council of the Bar -->
+
+ {% if data['aml-supervisor'] and 'gbc' in data['aml-supervisor'] %}
+
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="gbc">
+                  What is the AML membership number for the General Council of the Bar?
+                        </label>
+                        <div id="gbc-hint" class="govuk-hint">
+                          The supervisory body may have a different name for this, for example a ‘firm number’ or ‘regulation ID’. Contact them if you need to check what this is.
+                        </div>
+                        <input class="govuk-input" id="gbc" name="gbcDetails" type="text">
+                      </div>
+     {% endif %}
+
+                      <!-- General Council of the Bar of Northern Ireland (BONI) -->
+
+ {% if data['aml-supervisor'] and 'gcbni' in data['aml-supervisor'] %}
+
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="gcbni">
+                  What is the AML membership number for the General Council of the Bar of Northern Ireland (BONI)?
+                        </label>
+                        <div id="gcbni-hint" class="govuk-hint">
+                          The supervisory body may have a different name for this, for example a ‘firm number’ or ‘regulation ID’. Contact them if you need to check what this is.
+                        </div>
+                        <input class="govuk-input" id="gcbni" name="gcbniDetails" type="text">
+                      </div>
+     {% endif %}
+                      <!-- HMRC-->
+
+ {% if data['aml-supervisor'] and 'hmrc' in data['aml-supervisor'] %}
+
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="hmrc">
+                  	      What is the MLR Registration Number for HMRC?
+                        </label>
+                        <div id="hmrc-hint" class="govuk-hint">
+                          You can find this on the <a href="https://www.gov.uk/guidance/money-laundering-regulations-supervised-business-register#check-if-a-business-is-registered" class="govuk-link" rel="noreferrer noopener" target="_blank">HMRC Supervised Business Register (opens in a new tab)</a>. It is 4 letters followed by 11 numbers. For example, XAML00000123456.
+                        </div>
+                        <input class="govuk-input" id="hmrc" name="hmrcDetails" type="text">
+                      </div>
+
+     {% endif %}
+                      <!-- Insolvency Practitioners Association (IPA)-->
+ {% if data['aml-supervisor'] and 'ipa' in data['aml-supervisor'] %}
+
+
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="ipa">
+                  	      What is the IP number for Insolvency Practitioners Association (IPA)?
+                        </label>
+                        <div id="ipa-hint" class="govuk-hint">
+                          This is 4 or 5 numbers long. If you agreed for your details to be included, you can find this using the service to 
+                          
+                          <a href="https://www.insolvencydirect.bis.gov.uk/fip1/" class="govuk-link" rel="noreferrer noopener" target="_blank">Find an insolvency practitioner (opens in a new tab)</a>.
+                        </div>
+                        <input class="govuk-input" id="ipa" name="ipaDetails" type="text">
+                      </div>
+
+     {% endif %}
+
+
+                      <!-- Institute of Accountants and Bookkeepers (IAB) -->
+
+ {% if data['aml-supervisor'] and 'iab' in data['aml-supervisor'] %}
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="iba">
+                  	      What is the Membership ID number for the Institute of Accountants and Bookkeepers (IAB)?
+                        </label>
+                        <div id="iba-hint" class="govuk-hint">
+                          This will be between 6 and 9 numbers long.
+                         
+                        </div>
+                        <input class="govuk-input" id="iba" name="ibaDetails" type="text">
+                      </div>
+     {% endif %}
+
+
+                <!-- Institute of Chartered Accountants in England and Wales (ICAEW) -->
+
+ {% if data['aml-supervisor'] and 'icb' in data['aml-supervisor'] %}
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="iab">
+                  	      What is the firm number for the Institute of Chartered Accountants in England and Wales (ICAEW)?
+                        </label>
+                        <div id="iba-hint" class="govuk-hint">
+                          You can find this on correspondence from the ICAEW or your annual return. It will start with a letter ‘C’ or ‘A’, followed by 9 by numbers. For example, C001234567 or A001234567.
+                         
+                        </div>
+                        <input class="govuk-input" id="iab" name="iabDetails" type="text">
+                      </div>
+     {% endif %}
 
 
 
+                         <!-- Institute of Chartered Accountants in England and Wales (ICAEW)  -->
+
+ {% if data['aml-supervisor'] and 'icaew' in data['aml-supervisor'] %}
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="icaew">
+                  	      What is the firm number for the Institute of Chartered Accountants in England and Wales (ICAEW)?
+                        </label>
+                        <div id="icaew-hint" class="govuk-hint">
+                          You can find this on correspondence from the ICAEW or your annual return. It will start with a letter ‘C’ or ‘A’, followed by 9 by numbers. For example, C001234567 or A001234567.
+                        </div>
+                        <input class="govuk-input" id="icaew" name="icaewDetails" type="text">
+                      </div>
+     {% endif %}
+                      <!-- Institute of Chartered Accountants in Ireland (ICAI) -->
+
+
+ {% if data['aml-supervisor'] and 'icai' in data['aml-supervisor'] %}
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="icai">
+                  	      What is the AML membership number for Institute of Chartered Accountants in Ireland (ICAI)?
+                        </label>
+                        <div id="icai-hint" class="govuk-hint">
+                          The supervisory body may have a different name for this, for example a ‘firm number’ or ‘regulation ID’. Contact them if you need to check what this is.
+                        </div>
+                        <input class="govuk-input" id="icai" name="icaiDetails" type="text">
+                      </div>
+     {% endif %}
+
+                      <!-- Institute of Chartered Accountants of Scotland (ICAS)
+                    -->
+ {% if data['aml-supervisor'] and 'icas' in data['aml-supervisor'] %}
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="icas">
+                  	      What is the firm number for the Institute of Chartered Accountants of Scotland (ICAS)?
+                        </label>
+                        <div id="icas-hint" class="govuk-hint">
+                          You can find this on correspondence from ICAS or your annual return. It starts with the letter F, followed by 4 numbers. For example, F1234.
+                        </div>
+                        <input class="govuk-input" id="icas" name="icasDetails" type="text">
+                      </div>
+     {% endif %}
+                        <!-- Institute of Financial Accountants (IFA)
+                    -->
+ {% if data['aml-supervisor'] and 'ifa' in data['aml-supervisor'] %}
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="ifa">
+                  	      What is the firm number for the Institute of Financial Accountants (IFA)?
+                        </label>
+                        <div id="ifa-hint" class="govuk-hint">
+                          You can find this on correspondence from the IFA. It is 6 numbers long.
+                        </div>
+                        <input class="govuk-input" id="ifa" name="ifaDetails" type="text">
+                      </div>
+     {% endif %}
+                       <!-- Law Society of Northern Ireland (LSNI)
+                    -->
+ {% if data['aml-supervisor'] and 'lsni' in data['aml-supervisor'] %}
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="lsni">
+                  	      What is the Roll Number or Firm Reference for Law Society of Northern Ireland (LSNI)?
+                        </label>
+                        <div id="lsni-hint" class="govuk-hint">
+                          You can find this on the Practising Certificate. If you have a Roll Number it will be 5 digits long. If you have a Firm Reference it will be 4 digits long.
+                        </div>
+                        <input class="govuk-input" id="lsni" name="lsniDetails" type="text">
+                      </div>
+     {% endif %}
+                       <!-- Law Society of Scotland
+                    -->
+ {% if data['aml-supervisor'] and 'lss' in data['aml-supervisor'] %}
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="lss">
+                  	      What is the AML membership number for Law Society of Scotland?
+                        </label>
+                        <div id="lss-hint" class="govuk-hint">
+                          The supervisory body may have a different name for this, for example a ‘firm number’ or ‘regulation ID’. Contact them if you need to check what this is.
+                        </div>
+                        <input class="govuk-input" id="lss" name="lssDetails" type="text">
+                      </div>
+     {% endif %}
+                        <!-- The Law Society of England and Wales (Solicitors Regulatory Authority - SRA)
+                    -->
+ {% if data['aml-supervisor'] and 'sra' in data['aml-supervisor'] %}
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="sra">
+                  	      What is the SRA ID number for The Law Society of England and Wales (Solicitors Regulatory Authority - SRA)?
+                        </label>
+                        <div id="lss-hint" class="govuk-hint">
+                          You can find this on the annual practising certificate, or by signing in to your <a href="https://sraukprodb2c.b2clogin.com/sraukprodb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=b2c_1_signin_mfa&response_type=code&client_id=15d40a9d-5f99-4ff0-8fe8-1e22e8f1dc0a&state=WWtWazBDamkwa0RxWmdMQ1h-MWVuakFyc0lhUU93RS1HU2tlTlRsRUM4djNm%3B%252Fdashboard&redirect_uri=https%3A%2F%2Fmy.sra.org.uk%2Fcallback&scope=openid%20offline_access%20https%3A%2F%2Fsraukprodb2c.onmicrosoft.com%2Fapi%2FAll&code_challenge=bxvE21sj3yra49EN1uQsj6Jl778xmengoyzWImv5ypU&code_challenge_method=S256&nonce=WWtWazBDamkwa0RxWmdMQ1h-MWVuakFyc0lhUU93RS1HU2tlTlRsRUM4djNm" class="govuk-link" rel="noreferrer noopener" target="_blank">mySRA account (opens in a new tab)</a>. It is usually around 6 digits long, but can be longer or shorter.
+                        </div>
+                        <input class="govuk-input" id="sra" name="sraDetails" type="text">
+                      </div>
+
+
+     {% endif %}
 
 
        </fieldset>
