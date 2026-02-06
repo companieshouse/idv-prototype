@@ -37,6 +37,7 @@ What is the membership number for Association of Chartered Certified Accountants
                       </div>
 
 
+                      {% if data['aml-supervisor'] and 'acca' in data['aml-supervisor'] %}
 
                       <!-- Association of Chartered Certified Accountants (ACCA) -->
 
@@ -50,10 +51,12 @@ What is the membership number for Association of Chartered Certified Accountants
                         <input class="govuk-input" id="acca" name="accaDetails" type="text">
                       </div>
 
-      
+                      {% endif %}
        
                       <!-- Association of Accounting Technicians (AAT) -->
           
+                       {% if data['aml-supervisor'] and 'aat' in data['aml-supervisor'] %}
+
 
                       <div class="govuk-form-group">
                         <label class="govuk-label govuk-label--m" for="aat">
@@ -65,12 +68,12 @@ What is the membership number for Association of Chartered Certified Accountants
                         <input class="govuk-input" id="aat" name="aatDetails" type="text">
                       </div>
 
-
+                      {% endif %}
               
 
                       <!-- Association of International Accountants (AIA) -->
      
-
+             {% if data['aml-supervisor'] and 'aia' in data['aml-supervisor'] %}
 
                       <div class="govuk-form-group">
                         <label class="govuk-label govuk-label--m" for="aia">
@@ -83,6 +86,7 @@ What is the membership number for Association of Chartered Certified Accountants
                       </div>
 
                       
+                      {% endif %}
 
 
                       <!-- Association of Taxation Technicians (ATT) -->
@@ -113,6 +117,49 @@ What is the membership number for Association of Chartered Certified Accountants
                         </div>
                         <input class="govuk-input" id="att" name="attDetails" type="text">
                       </div>
+
+
+                       <!-- Chartered Institute of Management Accountants (CIMA) -->
+
+
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="cima">
+                        What is the Member ID for the Chartered Institute of Management Accountants (CIMA)?
+                        </label>
+                        <div id="cima-hint" class="govuk-hint">
+                          CIMA provided this when you registered. It contains letters and numbers. It is usually 5 to 8 characters long.
+                        </div>
+                        <input class="govuk-input" id="cima" name="cimaDetails" type="text">
+                      </div>
+
+
+                       <!-- Chartered Institute of Taxation (CIOT) -->
+
+
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="ciot">
+                       What is the AML reference number for the Chartered Institute of Taxation (CIOT)?
+                        </label>
+                        <div id="ciot-hint" class="govuk-hint">
+                          This starts with the letters ‘AML’, followed by 2 sets of numbers. For example, ‘AML-1-999999’ or ‘AML-1234-999999’.
+                        </div>
+                        <input class="govuk-input" id="ciot" name="ciotDetails" type="text">
+                      </div>
+
+
+                       <!-- Council for Licensed Conveyors (CLC) -->
+
+
+                       <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="clc">
+                       What is the AML membership number for the Council for Licensed Conveyors (CLC)?
+                        </label>
+                        <div id="ciot-hint" class="govuk-hint">
+                          The supervisory body may have a different name for this, for example a ‘firm number’ or ‘regulation ID’. Contact them if you need to check what this is.
+                        </div>
+                        <input class="govuk-input" id="clc" name="clcDetails" type="text">
+                      </div>
+
 
 
 
