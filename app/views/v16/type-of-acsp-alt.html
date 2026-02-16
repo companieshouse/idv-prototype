@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What type of business are you registering? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="type-of-acsp" method="post">
+
+
+
+        
+
+        {{ govukRadios({
+          name: "registering-as",
+          fieldset: {
+            legend: {
+              text: "What type of business are you registering?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "The business must be supervised for Anti-Money Laundering (AML) purposes. If you're supervised as an individual, you'll need to register yourself."
+          },
+
+          items: [
+            {
+              value: "ltd",
+              text: "Limited company"
+            },
+
+            {
+              value: "partnership-ch",
+              text: "Limited partnership (LP)"
+            },
+            {
+              value: "partnership-llp",
+              text: "Limited liability partnership (LLP)"
+            },
+  
+            {
+              value: "partnership-not-ch",
+              text: "Partnership (not registered with Companies House)"
+            },
+
+
+            {
+              value: "other",
+              text: "Another type of business"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "sole",
+              text: "I am registering myself", 
+              hint: {
+                text: "You must be AML supervised as an individual."
+              }
+            }
+
+          ]
+        }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
