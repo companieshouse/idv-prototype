@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="correctly-supervised" method="post">
+
+
+       
+          <h1 class="govuk-heading-l">How are you registered for Anti-money laundering?</h1>
+
+
+     
+           
+          <h2 class="govuk-heading-m">Check you are supervised as an individual</h2>
+
+
+
+          <p class="govuk-body">Contact your supervisory body to check if you are supervised as a business (firm) or an individual.</p>
+
+          <p class="govuk-body">You’ll need to be supervised as an individual. Some AML supervisory bodies may supervise you as a business even if you are a sole trader.</p>
+
+           
+
+         <h2 class="govuk-heading-m">Check the name you are supervised under</h2>
+
+
+          <p class="govuk-body">We’ll check the supervisory body holds the same name that you provide in your application.</p>
+
+           <p class="govuk-body">** You need to be supervised under {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}} and we'll check this with the supervisory body. **</p>
+
+
+
+       
+ 
+          <div class="govuk-form-group govuk-!-padding-top-5">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              How are you AML supervised?
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="correctlySupervised" name="correctlyAMLSupervised" type="radio" value="individualName">
+                <label class="govuk-label govuk-radios__label" for="correctlyAMLSupervised">
+                  I am individually AML supervised as
+                      <span class="govuk-!-font-weight-bold">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}} </span>
+
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="correctlyAMLSupervised-2" name="correctlyAMLSupervised" type="radio" value="scotland">
+                <label class="govuk-label govuk-radios__label" for="correctlyAMLSupervised-2">
+                  I am supervised as a firm 
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

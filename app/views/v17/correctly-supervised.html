@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="correctly-supervised" method="post">
+
+
+       
+          <h1 class="govuk-heading-l">Check you are AML supervised as an individual under the name {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}} </h1>
+
+
+        <p class="govuk-body">Contact your supervisory body to check if you are supervised as a business (firm) or an individual.</p>
+
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>You’ll need to be supervised as an individual. Some AML supervisory bodies may supervise you as a business even if you are a sole trader.
+          </strong>
+        </div>
+  
+  
+
+
+    
+
+         <h2 class="govuk-heading-m">Companies House will check</h2>
+
+         <p class="govuk-body">We’ll check with the supervisory body that:</p>
+          <ul class="govuk-list govuk-list--number">
+            <li>you are individually AML supervised</li>
+            <li>you're registered under the exact name of <span class="govuk-!-font-weight-bold"> {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span> </li>
+          </ul>
+
+       
+ 
+          <div class="govuk-form-group govuk-!-padding-top-5">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Confirm you are ivdivually supervised for AML under {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="correctlySupervised" name="correctlyAMLSupervised" type="radio" value="individualName">
+                <label class="govuk-label govuk-radios__label" for="correctlyAMLSupervised">
+                  I am individually AML supervised as
+                      <span class="govuk-!-font-weight-bold">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}} </span>
+
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="correctlyAMLSupervised-2" name="correctlyAMLSupervised" type="radio" value="scotland">
+                <label class="govuk-label govuk-radios__label" for="correctlyAMLSupervised-2">
+                  I am supervised as a firm 
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="correctlyAMLSupervised-2" name="correctlyAMLSupervised" type="radio" value="scotland">
+                <label class="govuk-label govuk-radios__label" for="correctlyAMLSupervised-2">
+                  I am unsure how I am supervised 
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

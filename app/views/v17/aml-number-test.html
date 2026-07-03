@@ -1,0 +1,291 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the membership number for Association of Chartered Certified Accountants (ACCA)? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="aml-number" method="post">
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="aml-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                        {% if (data['registering-as'] == "sole-trader") %}
+
+                        <span class="govuk-caption-l"> {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}} </span>
+
+                        {% else %}
+
+                        <span class="govuk-caption-l">MORRIS ACCOUNTING LTD</span>
+
+                        {% endif %}
+                        <h1 class="govuk-fieldset__heading">
+                          Anti-Money Laundering (AML) supervisory body details
+                        </h1>
+                      </legend>
+
+
+                      <div class="govuk-inset-text">
+                        Contact the AML supervisory body if you need to check your details. 
+                      </div>
+
+
+
+                      <!-- Association of Chartered Certified Accountants (ACCA) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="acca">
+                          What is the name of the event?
+                        </label>
+                        <input class="govuk-input" id="acca" name="accaDetails" type="text">
+                      </div>
+
+                      {% endif %}
+       
+                      {% if (request.session.data['aml-supervisor'].includes("aat")) %}
+
+
+                      
+
+
+1
+                       {% endif %}
+                      <!-- Association of International Accountants (AIA) -->
+                      {% if (data['aml-supervisor'] == "aia") %}
+
+2
+                       {% endif %}
+                      <!-- Association of Taxation Technicians (ATT) -->
+                      {% if (data['aml-supervisor'] == "att") %}
+
+                      3
+                       {% endif %}
+                      <!-- Chartered Institute of Legal Executives (CILEx) -->
+                      {% if (data['aml-supervisor'] == "cilex") %}
+
+                      4
+                       {% endif %}
+                      <!-- Chartered Institute of Management Accountants (CIMA) -->
+
+                      {% if (data['aml-supervisor'] == "cima") %}
+
+
+                      5
+                       {% endif %}
+
+                      <!-- Chartered Institute of Taxation (CIOT) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+
+                       {% endif %}
+                      <!-- Council for Licensed Conveyors (CLC) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+
+                      {% endif %}
+
+                      <!-- Department for the Economy Northern Ireland -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+
+                       {% endif %}
+
+                      <!-- Faculty of Advocates -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                       {% endif %}
+
+
+                      <!-- Faculty Office of the Archbishop of Canterbury (FO) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                       {% endif %}
+
+
+
+                      <!-- Financial Conduct Authority (FCA) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                       {% endif %}
+
+                      <!-- Gambling Commission -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                       {% endif %}
+
+
+                      <!-- General Council of the Bar -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                       {% endif %}
+
+                      <!-- General Council of the Bar of Northern Ireland (BONI) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                       {% endif %}
+
+
+                      <!-- HMRC -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+
+                       {% endif %}
+
+
+                      <!-- Insolvency Practitioners Association (IPA) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                      {% endif %}
+
+
+                      <!-- Institute of Accountants and Bookkeepers (IAB) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                      {% endif %}
+
+
+                      <!-- Institute of Certified Bookkeepers (ICB) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                      {% endif %}
+
+
+                      <!-- Institute of Chartered Accountants in England and Wales (ICAEW) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                      {% endif %}
+
+                      <!-- Institute of Chartered Accountants in Ireland (ICAI) -->
+
+                      {% if (data['aml-supervisor'] == "acca") %}
+                      {% endif %}
+
+                      <!-- Institute of Chartered Accountants of Scotland (ICAS) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                      {% endif %}
+
+                      <!-- Institute of Financial Accountants (IFA) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                      {% endif %}
+
+                      <!-- Law Society of Northern Ireland (LSNI) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                      {% endif %}
+
+
+                      <!-- Law Society of Scotland -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+                      {% endif %}
+
+                     <!-- The Law Society of England and Wales (Solicitors Regulatory Authority - SRA) -->
+                      {% if (data['aml-supervisor'] == "acca") %}
+
+                      {% endif %}
+
+                      
+                       
+                      
+
+              
+
+
+                      <div class="govuk-form-group govuk-!-padding-top-3">
+                        <label class="govuk-label l govuk-label--m" for="acca-firm-id">
+                          What is the Association of Chartered Certified Accountants (ACCA) Firm ID?
+                        </label>
+                        <div id="firm-number-acca-hint" class="govuk-body">
+                        <p class="govuk-body govuk-!-padding-top-1">You can find this on the ACCA Practicing Certificate (PC). It should be between 7 and 10 digits long.  </p>
+              
+                  
+                        <input class="govuk-input govuk-input--extra-letter-spacing" id="ACCA" name="ACCA-input" type="text">
+              
+                        <!-- <details class="govuk-details " data-module="govuk-details">
+                          <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                            How to find your firm number or firm ID for ACCA
+                            </span>
+                          </summary>
+                          <div class="govuk-details__text">
+                            <p>You can find this on the ACCA practising certificate.</p>
+                            <p>If you cannot find your membership number, you should contact the AML supervisory body.</p>
+                          </div>
+                        </details>
+               -->
+                      </div>
+
+                      
+
+                      <div class="govuk-form-group govuk-!-padding-top-3">
+                        <label class="govuk-label l govuk-label--m" for="aat-member-id">
+                          What is the AML membership ID for Association of International Accountants (AIA)?
+                        </label>
+                        <div id="firm-number-acca-hint" class="govuk-body">
+                        <p class="govuk-body govuk-!-padding-top-1">You can find this on the AIA practicing certificate, or by signing in to <a href="https://www.aiaworldwide.com/system/login/">MyAIA (opens in a new tab)</a>. It should be between 4 and 6 digits long. </p>
+                  
+              
+                        <input class="govuk-input" id="event-name" name="eventName" type="text">
+              
+                      </div>
+              
+                      <div class="govuk-form-group govuk-!-padding-top-3">
+                        <label class="govuk-label l govuk-label--m" for="aat-member-id">
+                          What is the Chartered Institute of Management Accountants (CIMA) Member ID?
+                        </label>
+                        <div id="firm-number-acca-hint" class="govuk-hint">
+                        <p class="govuk-body govuk-!-padding-top-1">This will have been provided when you registered with CIMA. It can contain letters and numbers and is usually 5 to 8 characters long. </p>
+              
+                         
+              
+                        <input class="govuk-input" id="event-name" name="eventName" type="text">
+              
+                      </div>
+                      </div>
+
+
+               
+
+
+
+                    </fieldset>
+                  </div>
+             
+
+
+
+
+
+
+  
+
+      <!--   {{ govukInput({
+          label: {
+            text: "What is the membership number for Association of Accounting Technicians (AAT)?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "This is also known as a member ID."
+          },
+          id: "event-name",
+          name: "eventName"
+        }) }}
+
+
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                  How to find your membership number
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+              <p>You can find this on your AAT approval letter and certificate.</a>
+              </p>
+          <p>If you cannot find your membership number, you should contact the AML supervisory body.</p>
+        </div>
+      </details> -->
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
