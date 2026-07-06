@@ -769,7 +769,7 @@ router.post('/v5/acsp-address-correspondance', function (req, res) {
  */
 router.post('/v17/aml-number', function (req, res) {
      
-    res.redirect('name-address-match-supervisor-mvp')
+    res.redirect('name-address-match-supervisor-v2')
     
 })
 
@@ -787,7 +787,7 @@ router.post('/v17/aml-number-2', function (req, res) {
 /*
  * Name and address match those held with the supervisor
  */
-router.post('/v17/name-address-match-supervisor-mvp', function (req, res) {
+router.post('/v17/name-address-match-supervisor-v2', function (req, res) {
      
     res.redirect('terms-and-conditions')
     
