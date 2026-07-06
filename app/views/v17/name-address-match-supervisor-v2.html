@@ -326,37 +326,6 @@ Association of Taxation Technicians (ATT)</h2>
 
 
 
-  <dl class="govuk-summary-list">
-
-
-  <!-- sole trader -->
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-       <p> James Morris </p>
-
-        {% else %}
-
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
-        {% endif %}
-        
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-
-  {% endif %}
-
-
    <!-- Chartered Institute of Legal Executives (CILEx) -->
 
 
@@ -1088,36 +1057,6 @@ General Council of the Bar </h2>
 
 
 
-  <dl class="govuk-summary-list">
-
-
-  <!-- sole trader -->
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-       <p> James Morris </p>
-
-        {% else %}
-
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
-        {% endif %}
-        
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-
-  {% endif %}
-
 
 
 
@@ -1190,40 +1129,6 @@ General Council of the Bar of Northern Ireland (BONI)  </h2>
 </dl>
 
  {% endif %}
-
-
-
-
-  <dl class="govuk-summary-list">
-
-
-  <!-- sole trader -->
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-       <p> James Morris </p>
-
-        {% else %}
-
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
-        {% endif %}
-        
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-
-  {% endif %}
-
 
 
 
@@ -1302,36 +1207,6 @@ HMRC</h2>
 
 
 
-  <dl class="govuk-summary-list">
-
-
-  <!-- sole trader -->
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-       <p> James Morris </p>
-
-        {% else %}
-
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
-        {% endif %}
-        
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-
-  {% endif %}
-
 
 
 
@@ -1408,43 +1283,11 @@ Insolvency Practitioners Association (IPA)</h2>
 
 
 
-  <dl class="govuk-summary-list">
-
-
-  <!-- sole trader -->
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-       <p> James Morris </p>
-
-        {% else %}
-
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
-        {% endif %}
-        
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-
-  {% endif %}
 
 
 
 
-
-
-
-                      <!--  Institute of Accountants and Bookkeepers (IAB)-->
+<!--  Institute of Accountants and Bookkeepers (IAB)-->
 
  {% if data['aml-supervisor'] and 'iab' in data['aml-supervisor'] %}
 
@@ -1515,38 +1358,6 @@ Institute of Accountants and Bookkeepers (IAB)</h2>
 
  {% endif %}
 
-
-
-
-  <dl class="govuk-summary-list">
-
-
-  <!-- sole trader -->
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-       <p> James Morris </p>
-
-        {% else %}
-
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
-        {% endif %}
-        
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-
-  {% endif %}
 
 
 
@@ -1623,36 +1434,6 @@ Institute of Chartered Accountants in England and Wales (ICAEW)</h2>
 
 
 
-
-  <dl class="govuk-summary-list">
-
-
-  <!-- sole trader -->
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-       <p> James Morris </p>
-
-        {% else %}
-
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
-        {% endif %}
-        
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-
-  {% endif %}
 
 
 
@@ -1731,35 +1512,6 @@ Institute of Chartered Accountants in Ireland (ICAI) </h2>
 
 
 
-  <dl class="govuk-summary-list">
-
-
-  <!-- sole trader -->
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-       <p> James Morris </p>
-
-        {% else %}
-
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
-        {% endif %}
-        
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-
-  {% endif %}
 
 
 
@@ -1835,37 +1587,6 @@ Institute of Chartered Accountants of Scotland (ICAS)</h2>
  {% endif %}
 
 
-
-
-  <dl class="govuk-summary-list">
-
-
-  <!-- sole trader -->
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-       <p> James Morris </p>
-
-        {% else %}
-
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
-        {% endif %}
-        
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-
-  {% endif %}
 
 
 
@@ -1945,36 +1666,6 @@ Institute of Financial Accountants (IFA)</h2>
 
 
 
-  <dl class="govuk-summary-list">
-
-
-  <!-- sole trader -->
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-       <p> James Morris </p>
-
-        {% else %}
-
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
-        {% endif %}
-        
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-
-  {% endif %}
-
 
 
 
@@ -2053,35 +1744,7 @@ Law Society of Northern Ireland (LSNI)</h2>
 
 
 
-  <dl class="govuk-summary-list">
 
-
-  <!-- sole trader -->
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-       <p> James Morris </p>
-
-        {% else %}
-
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
-        {% endif %}
-        
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-
-  {% endif %}
 
 
 
@@ -2159,35 +1822,7 @@ Law Society of Scotland</h2>
 
 
 
-  <dl class="govuk-summary-list">
-
-
-  <!-- sole trader -->
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-       <p> James Morris </p>
-
-        {% else %}
-
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
-        {% endif %}
-        
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-
-  {% endif %}
+ 
 
 
 
@@ -2261,38 +1896,6 @@ The Law Society of England and Wales (Solicitors Regulatory Authority - SRA)</h2
 
  {% endif %}
 
-
-
-
-  <dl class="govuk-summary-list">
-
-
-  <!-- sole trader -->
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
-
-       <p> James Morris </p>
-
-        {% else %}
-
-        <span class="govuk-caption-l">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
-        {% endif %}
-        
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-
-  {% endif %}
 
 
 
