@@ -1,0 +1,36 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="not-sure-aml-individual" method="post">
+
+      <h1 class="govuk-heading-l">Check whether you are supervised as a business or an individual</h1>
+
+       
+      <p class="govuk-body">Contact your supervisory body or sign in to your AML account to check whether you are supervised as a business (firm) or an individual.</p>
+
+      <p class="govuk-body">** If you are supervised for AML indivudually, you can register as a sole practitioner. If you are AML supervised under your firm name, you need to register as a company (firm). ** </p>
+
+      <p class="govuk-body"><a href="https://www.gov.uk/guidance/how-to-check-your-anti-money-laundering-aml-details" class="govuk-link" rel="noreferrer noopener" target="_blank">Read about the different types of AML supervision and how to check your details (opens in a new tab)</a>.</p>
+
+      <h2 class="govuk-heading-m">Return to service</h2>
+      <p class="govuk-body">Once you have checked, you can return to the service and continue your application.</p>
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

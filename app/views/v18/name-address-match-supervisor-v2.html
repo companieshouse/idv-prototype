@@ -1,0 +1,2004 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Details may not match those held by the AML supervisory body – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <!-- The action will need to change depending on the location of the confirm-company page -->
+      <form action="name-address-match-supervisor-v2" method="post">
+
+        <h1 class="govuk-heading-l">Check the Anti-Money Laundering (AML) details</h1>
+        
+        <!-- Confirm the details are the same as those held by the AML supervisory body -->
+
+         <!-- Sole traders -->
+
+   <h2 class="govuk-heading-m">What you need to check</h2> 
+
+
+    <p class="govuk-body">Before you submit your application to register, you should check that your AML supervision:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>is for compliance with anti-money laundering regulations (some supervisory bodies offer other types of registrations and memberships, which we cannot accept) </li>
+      <li>is confirmed and you are on a list of supervised members</li>
+      <li>is in the same name as you have provided on this application - it must be an exact match</li>
+      </ul>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        We will reject your application if we cannot confirm your AML supervision.
+      </strong>
+    </div>
+
+
+  {% if data['aml-supervisor'] and 'acca' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">Association of Chartered Certified Accountants (ACCA) details </h2>
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+
+        <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+
+
+
+  
+
+
+ {% endif %}
+
+  {% if data['aml-supervisor'] and 'aat' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">Association of Accounting Technicians (AAT)</h2>
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+
+          <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+
+ {% endif %}
+
+
+
+     
+  {% if data['aml-supervisor'] and 'aia' in data['aml-supervisor'] %}
+
+
+  <h2 class="govuk-heading-m">
+  Association of International Accountants (AIA)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+      <!-- Association of Taxation Technicians (ATT) -->
+
+  {% if data['aml-supervisor'] and 'att' in data['aml-supervisor'] %}
+
+
+
+  <h2 class="govuk-heading-m">
+Association of Taxation Technicians (ATT)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+   <!-- Chartered Institute of Legal Executives (CILEx) -->
+
+
+ {% if data['aml-supervisor'] and 'cilex' in data['aml-supervisor'] %}
+
+
+  <h2 class="govuk-heading-m">
+Chartered Institute of Legal Executives (CILEx)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+  <!-- Chartered Institute of Management Accountants (CIMA) -->
+
+ {% if data['aml-supervisor'] and 'cima' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">
+Chartered Institute of Management Accountants (CIMA)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+ <!-- Chartered Institute of Taxation (CIOT) -->
+
+ {% if data['aml-supervisor'] and 'ciot' in data['aml-supervisor'] %}
+  <h2 class="govuk-heading-m">
+Chartered Institute of Taxation (CIOT)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+    <!-- Council for Licensed Conveyors (CLC) -->
+
+ {% if data['aml-supervisor'] and 'clc' in data['aml-supervisor'] %}
+  <h2 class="govuk-heading-m">
+Council for Licensed Conveyors (CLC)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+
+          <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+<!-- Department for the Economy Northern Ireland -->
+
+ {% if data['aml-supervisor'] and 'clc' in data['aml-supervisor'] %}
+  <h2 class="govuk-heading-m">
+Department for the Economy Northern Ireland</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+  <!-- Faculty of Advocates -->
+
+ {% if data['aml-supervisor'] and 'fa' in data['aml-supervisor'] %}
+  <h2 class="govuk-heading-m">
+Faculty of Advocates</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+ <!-- Faculty Office of the Archbishop of Canterbury (FO) -->
+
+ {% if data['aml-supervisor'] and 'foac' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">
+Faculty Office of the Archbishop of Canterbury (FO)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+
+<!-- Financial Conduct Authority (FCA) -->
+
+
+ {% if data['aml-supervisor'] and 'fca' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">
+Financial Conduct Authority (FCA)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+
+                      <!-- Gambling commission -->
+
+ {% if data['aml-supervisor'] and 'gc' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">
+Gambling commission</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+
+          <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+  <!-- General Council of the Bar -->
+
+ {% if data['aml-supervisor'] and 'gbc' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">
+General Council of the Bar </h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+
+
+
+<!-- General Council of the Bar of Northern Ireland (BONI) -->
+
+ {% if data['aml-supervisor'] and 'gcbni' in data['aml-supervisor'] %}
+  <h2 class="govuk-heading-m">
+General Council of the Bar of Northern Ireland (BONI)  </h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+
+<!-- HMRC-->
+
+ {% if data['aml-supervisor'] and 'hmrc' in data['aml-supervisor'] %}
+  <h2 class="govuk-heading-m">
+HMRC</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+
+          <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+
+
+
+          <!-- Insolvency Practitioners Association (IPA)-->
+ {% if data['aml-supervisor'] and 'ipa' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">
+Insolvency Practitioners Association (IPA)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+
+
+
+
+<!--  Institute of Accountants and Bookkeepers (IAB)-->
+
+ {% if data['aml-supervisor'] and 'iab' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">
+Institute of Accountants and Bookkeepers (IAB)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+ <!-- Institute of Chartered Accountants in England and Wales (ICAEW) -->
+
+ {% if data['aml-supervisor'] and 'icb' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">
+Institute of Chartered Accountants in England and Wales (ICAEW)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+
+
+        <!-- Institute of Chartered Accountants in Ireland (ICAI) -->
+
+
+ {% if data['aml-supervisor'] and 'icai' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">
+Institute of Chartered Accountants in Ireland (ICAI) </h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+
+
+
+ <!-- Institute of Chartered Accountants of Scotland (ICAS)
+                    -->
+ {% if data['aml-supervisor'] and 'icas' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">
+Institute of Chartered Accountants of Scotland (ICAS)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+
+  
+
+
+  <!-- Institute of Financial Accountants (IFA)
+                    -->
+ {% if data['aml-supervisor'] and 'ifa' in data['aml-supervisor'] %}
+  <h2 class="govuk-heading-m">
+Institute of Financial Accountants (IFA)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+
+
+
+
+<!-- Law Society of Northern Ireland (LSNI)
+                    -->
+ {% if data['aml-supervisor'] and 'lsni' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">
+Law Society of Northern Ireland (LSNI)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+
+
+
+
+ <!-- Law Society of Scotland
+                    -->
+ {% if data['aml-supervisor'] and 'lss' in data['aml-supervisor'] %}
+
+  <h2 class="govuk-heading-m">
+Law Society of Scotland</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+   <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+ 
+
+
+
+  <!-- The Law Society of England and Wales (Solicitors Regulatory Authority - SRA)
+                    -->
+ {% if data['aml-supervisor'] and 'sra' in data['aml-supervisor'] %}
+  <h2 class="govuk-heading-m">
+The Law Society of England and Wales (Solicitors Regulatory Authority - SRA)</h2>
+
+
+
+  <dl class="govuk-summary-list">
+
+
+  <!-- sole trader -->
+   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+   
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       <p> James Morris </p>
+
+        {% else %}
+
+          <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Company name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Morris Accounting LTD
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      AML membership number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      554-6325-4555
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+    </dd>
+  </div>
+
+</dl>
+
+ {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {{ govukRadios({
+        name: "AMLdetailsSame",
+        fieldset: {
+          legend: {
+            text: "The details are exactly the same as the details the AML supervisory bodies hold",
+            classes:"govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes, all the details are exactly the same"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+<!-- 
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">AML supervisory body</th>
+      <th scope="col" class="govuk-table__header">AML membership number</th>
+         <th scope="col" class="govuk-visually-hidden">Change the AML details </th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Association of Chartered Certified Accountants (ACCA)</th>
+      <td class="govuk-table__cell">554-6325-4555</td>
+            <td class="govuk-table__cell"><a href="#">
+                  Change
+                  <span class="govuk-visually-hidden"> AML supervisory body details for ACCA</span>
+                </a> </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Association of Accounting Technicians (AAT)</th>
+      <td class="govuk-table__cell">87654321</td>
+      <td class="govuk-table__cell"><a href="#">
+                  Change
+                  <span class="govuk-visually-hidden"> AML supervisory body details for AAT</span>
+                </a> </td>
+    </tr>
+
+  </tbody>
+</table> -->
+
+<!-- <p class="govuk-body">
+  <a href="aml-supervisor" class="govuk-link">Change AML details</a>
+</p> -->
+
+<!--
+
+<div class="govuk-inset-text">
+  You must have been registered with the AML supervisory body for at least 2 weeks.
+</div> -->
+
+
+<!--
+
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Name</dt>
+            <dd class="govuk-summary-list__value">James Morris</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              AML professional supervisory body and membership number
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>Association of Accounting Technicians</li>
+                  <li>87654321</li>
+                </ul>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                  <span class="govuk-visually-hidden"> AML professional supervisory body</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              AML professional supervisory body and membership number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Association of Chartered Certified Accountants</li>
+                <li>554-6325-4555</li>
+              </ul>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> AML professional supervisory body</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl> -->
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Confirm and continue"
+          }) }}
+
+         <!--  <a class="govuk-link" href="#">Change AML details</a>
+        
+          {{ govukButton({
+            text: "Change AML details",
+            classes: "govuk-button--secondary"
+          }) }} -->
+        </div>
+
+
+
+
+
+      </form>
+
+      </p>
+    </div>
+  </div>
+{% endblock %}

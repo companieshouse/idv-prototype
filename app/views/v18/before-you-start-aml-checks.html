@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+    <form class="form" action="confimed-aml-status" method="post">
+
+
+      <h1 class="govuk-heading-l">Before you apply you need to carry out these Anti-money laundering checks</h1>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+           <p class="govuk-body">We’ll need to check your details with the AML supervisory body.</p>
+
+  </strong>
+</div>
+
+
+    
+
+
+<h2 class="govuk-heading-m">1. Check you are registered for AML supervision</h2>
+
+
+<p class="govuk-body">You must be supervised for compliance with anti-money laundering regulations by a relevant supervisory body. Check the list of AML supervisory bodies.</p>
+
+<p class="govuk-body">Some supervisory bodies offer other types of registrations and memberships, which we cannot accept.</p>
+
+
+
+<h2 class="govuk-heading-m">2. Your supervision must be confirmed</h2>
+
+<h3 class="govuk-heading-s">If you’ve only recently become supervised</h3>
+
+<p class="govuk-body">Some supervisory bodies have a pending status for members. We cannot accept applications until the AML supervision is confirmed and active.</p>
+
+<h3 class="govuk-heading-s">If you’ve only recently become supervised</h3>
+<p class="govuk-body"> We’ll need to check your details with the AML supervisory body. We will not be able to do this until the supervisory body adds you to its list of supervised members.</p>
+
+<p class="govuk-body"> Some supervisory bodies have a public list of members which you can check to find out if you’ve been added. If your supervisory body does not have a public list, contact it to check.</p>
+
+<h2 class="govuk-heading-m">3. Check if you’re supervised as a business or individual</h2>
+<p class="govuk-body">Contact your supervisory body to check if you are supervised as a business (firm) or an individual.</p>
+
+<h3 class="govuk-heading-s">If you’re a sole trader registering as an ACSP</h3>
+<p class="govuk-body">You’ll need to be supervised as an individual. Some AML supervisory bodies may supervise you as a business even if you are a sole trader.</p>
+
+<p class="govuk-body">We’ll check the supervisory body holds the same name that you provide in your application.</p>
+
+<h3 class="govuk-heading-s">If you’re registering a limited company or limited liability partnership (LLP)</h3>
+<p class="govuk-body">The supervisory body must supervise the business (or firm). It must hold the same company name as the one shown on the Companies House register.</p>
+
+<p class="govuk-body">If there’s a difference, you should either update the name with the supervisory body, or request to change the company name on the Companies House register.</p>
+
+<h3 class="govuk-heading-s"> If you’re registering another type of business</h3>
+
+<p class="govuk-body">You’ll need to tell us how you are supervised so we can confirm the correct details.</p>
+
+<p class="govuk-body">We’ll check the supervisory body holds the same name that you provide in your application. If the names do not match, we’ll reject your application.</p>
+
+<h2 class="govuk-heading-m">4. Check your AML reference or membership number</h2>
+<p class="govuk-body">You’ll need the AML reference or membership number that the supervisory body provided you with. We’ll confirm this is correct with the supervisory body.</p>
+
+<p class="govuk-body">Your supervisory body may have a different name for the reference. Contact your supervisory body if you’re not sure which reference to provide, or where to find it.</p>
+
+<p class="govuk-body">Some supervisory bodies have multiple references for members. You’ll need to provide the correct one as part of your application.</p>
+
+<h2 class="govuk-heading-m">5. Consider how you want to register your business</h2>
+<p class="govuk-body"> We cannot register multiple ACSPs that have the same AML supervision details.</p>
+
+<p class="govuk-body">If you need to register multiple businesses that have the same supervision details, you can register one ACSP, then use the agent account to add users. All users you add to the account will be able to use services on behalf of the ACSP.</p>
+
+<p class="govuk-body"> For more information about adding users to the account, read the guidance on being an ACSP.</p>
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}
