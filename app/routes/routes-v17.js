@@ -179,6 +179,12 @@ router.post('/v17/type-of-acsp', function (req, res) {
         res.redirect('type-of-acsp-other')
 
     }
+    
+    else if ((req.session.data['registering-as'] === "none")){
+
+        res.redirect('type-of-acsp-company-st') 
+    
+    }
     else if ((req.session.data['registering-as'] === "sole-trader")){
 
         res.redirect('statement-relevant-officer') 
@@ -188,7 +194,7 @@ router.post('/v17/type-of-acsp', function (req, res) {
     /*
      * IDV Flow change - Needs to be moved 
      */
-    else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp")){
+    else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp") | (req.session.data['registering-as'] === "plc")){
 
         res.redirect('company-lookup') 
 
@@ -310,13 +316,13 @@ router.post('/v17/how-are-you-aml-supervised', function (req, res) {
     }
     else if ((req.session.data['registering-as'] === "partnership-ch")|(req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
 
-        if ((req.session.data['how-are-you-aml-supervised'] === "individually") | (req.session.data['how-are-you-aml-supervised'] === "both")){
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually") | (req.session.data['how-are-you-aml-supervised'] === "name")){
         
-            res.redirect('name')
+            res.redirect('aml-interrupt')
         }
         else{
 
-            res.redirect('name-of-business') 
+            res.redirect('not-sure-aml-company') 
 
         }
         
@@ -325,10 +331,6 @@ router.post('/v17/how-are-you-aml-supervised', function (req, res) {
      
     
 }) 
-
-
-
-
 
 
 
@@ -597,8 +599,25 @@ router.post('/v17/name', function (req, res) {
  *  Not registered with Companies House - Date of birth
  */
 router.post('/v17/correctly-supervised', function (req, res) {
-     
-    res.redirect('date-of-birth')
+
+
+     //sole trader 
+        if ((req.session.data['correctlyAMLSupervised'] === "individualName")) {
+            
+            res.redirect('date-of-birth')
+        }
+        else if ((req.session.data['correctlyAMLSupervised'] === "differentName")) {
+            
+            res.redirect('aml-interrupt-individual')
+        }
+        else if ((req.session.data['correctlyAMLSupervised'] === "notSure")) {
+            
+            res.redirect('not-sure-aml-individual')
+        }
+ 
+
+
+
     
 })
 
@@ -626,7 +645,17 @@ router.post('/v17/nationality', function (req, res) {
  */
 router.post('/v17/location-lives', function (req, res) {
 
-    res.redirect('name-of-business')    
+
+    if ((req.session.data['registering-as'] === "sole-trader")){
+            
+        res.redirect('type-of-business')
+    }
+    else{
+
+        res.redirect('name-of-business')
+    }
+
+ 
     
 })
 

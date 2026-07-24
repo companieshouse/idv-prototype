@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Design history -  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+      <h1 class="govuk-heading-xl">Design history <span class="govuk-caption-l">{{ serviceName }} </span></h1>
+     
+
+
+ 
+
+
+    <h2 class="govuk-heading-m">June 2026 {{ govukTag({
+      text: "V17"
+    }) }}</h2>
+    
+    <p>Workshops with operations and attended the IFA event in London. </p>
+
+
+
+    <h3 class="govuk-heading-s">Sole traders name interrupt</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+
+      <li>Reviewing the <a href="v17/correctly-supervised">sole trader interupt for checking the name they are AML supervised undery</a> to prompt the user to check the name early in the journey and before they apply.</li>
+
+
+    </ul>
+
+    <h3 class="govuk-heading-s">Check your AML details</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+
+      <li>Reviewing the design of the<a href="v17/name-address-match-supervisor-v2"> AML check your answers</a> page. Added a bullet point list of the AML checks they need to do before they apply.  
+      </li>
+
+    </ul>
+
+    <h3 class="govuk-heading-s">Check your AML details</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+
+      <li>Reviewing the interrupt for users who have recently become supervised and need to <a href="v17/aml-details-on-database">check their AML status on a public list or with their supervisory body</a>. <strong class="govuk-tag">
+          In progress
+        </strong> 
+      </li>
+    </ul>
+   
+    <h3 class="govuk-heading-s">Reviewing business types</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+
+
+       <li>Reviewing the <a href="v17/type-of-acsp"> business types </a>so they are clear for 'Limited Company includes Ltd by Shares, Ltd by Guarantee, and Public Limited Company'.<strong class="govuk-tag">
+          In progress
+        </strong>
+      </li>
+
+
+     
+
+    </ul>
+
+<!-- 
+      <ul class="govuk-list govuk-list--bullet">
+
+      <li>Iterated the <a href="v13/pscs/psc-person-alt-nature-individual">single dynamic page that displayed options for individuals</a></a>
+              
+      </li>
+
+    </ul>
+ -->
+   
+
+  </div>
+</div>
+{% endblock %}

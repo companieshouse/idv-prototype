@@ -109,7 +109,7 @@ What type of business are you registering? – {{ serviceName }} – GOV.UK Prot
           name: "registering-as",
           fieldset: {
             legend: {
-              text: "Are you registering as one of the following?",
+              text: "What type of organisation are you registering?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -117,25 +117,12 @@ What type of business are you registering? – {{ serviceName }} – GOV.UK Prot
 
           items: [
             {
-              value: "ltd",
-              text: "Private limited company"
+              value: "partnership-not-ch",
+              text: "a company or firm"
             },
             {
-              value: "plc",
-              text: "Public limited company"
-            },
-
-            {
-              value: "partnership-llp",
-              text: "Limited liability partnership (LLP)"
-            },
-   
-            {
-              divider: "or"
-            },
-            {
-              value: "none",
-              text: "None of these"
+              value: "sole-trader",
+              text: "a sole practitioner"
             }
 
           ]
@@ -150,21 +137,3 @@ What type of business are you registering? – {{ serviceName }} – GOV.UK Prot
   </div>
 
 {% endblock %}
-
- <!--           {
-              value: "partnership-ch",
-              text: "Limited partnership (LP)"
-            }, -->
-           <!--  {
-              value: "partnership-not-ch",
-              text: "Partnership (not registered with Companies House)"
-            },
-            {
-              value: "sole-trader",
-              text: "Sole trader"
-            },
-
-            {
-              value: "other",
-              text: "Other"
-            } -->
