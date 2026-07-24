@@ -316,7 +316,11 @@ router.post('/v17/how-are-you-aml-supervised', function (req, res) {
     }
     else if ((req.session.data['registering-as'] === "partnership-ch")|(req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
 
-        if ((req.session.data['how-are-you-aml-supervised'] === "individually") | (req.session.data['how-are-you-aml-supervised'] === "name")){
+        if ((req.session.data['how-are-you-aml-supervised'] === "company")){
+        
+            res.redirect('name-of-business')
+        }
+        else if (req.session.data['how-are-you-aml-supervised'] === "individually"){
         
             res.redirect('aml-interrupt')
         }
