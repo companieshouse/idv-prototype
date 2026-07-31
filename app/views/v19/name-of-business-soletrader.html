@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the name of your business? – {{ serviceName }} 
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="name-of-business-soletrader" method="post">
+
+
+        {{ govukInput({
+          label: {
+            text: "What is the name of the business?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+
+          id: "businessName",
+          name: "businessName"
+        }) }}
+
+
+<!--
+
+<div class="govuk-inset-text">
+  <p>We’ll publish the business name if we need to suspend or stop it from acting as an authorised agent.</p>
+</div> -->
+
+    
+
+
+
+
+
+   
+
+
+ <!--       {{ govukInsetText({
+          text: "This must be the same as the name held by the anti-money laundering (AML) supervisory body. If the AML supervisory body has an incorrect name, you must update this before you apply. "
+        }) }} -->
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

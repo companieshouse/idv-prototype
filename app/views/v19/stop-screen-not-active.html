@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Company not active – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+
+
+}) }}
+
+<ul id="navigation" class="mobile-hidden">
+  <li class="user" id="signed-in-user">
+    {{ data['email'] }}
+  </li>
+  <li>
+    <a href="/register/sign-out" id="user-signout">Sign out</a>
+  </li>
+</ul>
+
+
+<div class="govuk-width-container">
+
+  <nav class="govuk-language-select" aria-label="Choose a language">
+        <ul class="govuk-language-select__list">
+          <li class="govuk-language-select__list-item">
+            <span aria-current="true">English</span>
+          </li>
+          <li class="govuk-language-select__list-item">
+            <a href="#lang-cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg"><span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span><span aria-hidden="true">Cymraeg</span></a>
+          </li>
+        </ul>
+      </nav>
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">You cannot register this company</h1>
+    <p class="govuk-body">
+      You cannot register [COMPANY NAME] as an authorised agent because it has been dissolved, or is in the process of being dissolved.
+    </p>
+    <p class="govuk-body"><a class="govuk-link" href="https://www.gov.uk/guidance/company-restoration-guide#process-to-restore-a-company-name-to-the-register-of-companiesbrbr">Read the Company Restoration Guide</a> to find out about restoring a company name to the register. </p>
+    <p class="govuk-body">If this is the wrong company, you will need to <a class="govuk-link" href="start-page">start the application again</a>.
+    </p>
+
+        <p class="govuk-body"><a class="govuk-link" href="https://www.gov.uk/contact-companies-house">Contact us</a> if you have any questions.
+    </p>
+
+ <!--   <p class="govuk-body"> <a class="govuk-link" href="https://www.gov.uk/contact-companies-house">Contact us</a> if you have any questions.</p> -->
+
+ <h2 class="govuk-heading-s">Help us to improve this service</h2>
+
+ <p class="govuk-body govuk-!-margin-0">
+   This is a new service. <a href="https://www.smartsurvey.co.uk/s/reg-as-acsp-co-not-active/" class="govuk-link">Complete our quick survey (opens in a new tab)</a> to help us improve it.
+ </p>
+ 
+
+  </div>
+</div>
+{% endblock %}
+
