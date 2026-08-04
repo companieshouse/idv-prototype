@@ -18,11 +18,13 @@ What is the name of your business? – {{ serviceName }}
 
         {{ govukInput({
           label: {
-            text: "What is the name of the business?",
+            text: "What is your AML supervised name?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
-
+          hint: {
+            text: "This must be exactly the same as the name your Anti-Money Laundering (AML) supervisory body holds. Contact them if you need to check it."
+          },
           id: "businessName",
           name: "businessName"
         }) }}
