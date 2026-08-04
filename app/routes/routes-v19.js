@@ -162,7 +162,7 @@ router.post('/v19/saved-application', function (req, res) {
     // new application
     if (req.session.data['startingNew'] === 'yes') {
 
-        res.redirect('how-are-you-aml-supervised')
+        res.redirect('type-of-acsp')
 
     }
      // continue with a saved application
