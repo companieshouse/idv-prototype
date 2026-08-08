@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ADD HERE – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    {% if ((data['registering-as'] === "partnership-ch")) %}
+    <h1 class="govuk-heading-l">You must be a general partner </h1>
+        <p class="govuk-body">
+        You must be added as a general partner of the limited partnership (LP) before you can use this service. </p>
+    
+        <p>You will need to complete the <a href="https://www.gov.uk/government/publications/specify-the-nature-of-a-change-in-the-limited-partnership-lp6">change of details for a limited partnership form</a>.  </p>
+    
+                    {% elseif ((data['registering-as'] === "partnership-llp")) %}
+    <h1 class="govuk-heading-l">You must be a member  </h1>
+        <p class="govuk-body">
+        You must be appointed as a member of the limited liability partnership (LLP) before you can use this service.  </p>
+    
+        <p>You will need to complete the <a href="https://www.gov.uk/government/publications/appoint-a-member-of-a-limited-liability-partnership-ll-ap01">appoint a member of an LLP form</a>.   </p>
+    
+                    {% elseif ((data['registering-as'] === "ltd")) %}
+    <h1 class="govuk-heading-l">You must be a director  </h1>
+        <p class="govuk-body">
+        You must be appointed as a director for the company before you can use this service.  </p>
+    
+        <p>You will need to <a href="https://www.gov.uk/government/publications/appoint-a-director-ap01">complete the appoint a director form</a>. </p>
+                  {% endif %}      
+    
+      
+
+  
+  </div>
+</div>
+{% endblock %}
+

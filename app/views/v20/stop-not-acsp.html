@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+You have already submitted an application
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">You need to be an authorised agent to view this page</h1>
+
+<!--
+
+             <p class="govuk-body">You’ll either need to <a href="">register as a Companies House authorised agent</a>, or ask to be added to an authorised agent account to view this page.</p>-->
+
+
+
+
+             <p class="govuk-body">You'll need to <a href="">register as a Companies House authorised agent</a> to view this page. This is also known as Authorised Corporate Service Provider (ACSP).</p>
+             
+             <p>If your business is already registered, you'll need to ask to be added to the authorised agent account.</p>
+
+             <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  What a Companies House authorised agent is
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                These are businesses that have registered with Companies House to verify people’s identities and file on behalf of clients. 
+
+                To find out more, <a href="https://www.companieshouse.gov.uk/guidance/being-an-acsp">read the guidance on being an ACSP</a>. 
+              </div>
+            </details>
+    </div>
+  </div>
+{% endblock %}

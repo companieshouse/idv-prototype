@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="confimed-aml-status" method="post">
+
+
+       
+          <h1 class="govuk-heading-l">Check you're Anti-money laundering status</h1>
+
+
+        <h2 class="govuk-heading-m">If you’ve only recently become supervised</h2>
+
+
+          <p class="govuk-body">We’ll need to check your details with the AML supervisory body. We will not be able to do this until the supervisory body adds you to its list of supervised members.</p>
+
+           <p class="govuk-body">Some supervisory bodies have a public list of members which you can check to find out if you’ve been added. If your supervisory body does not have a public list, contact it to check.</p>
+
+          <p class="govuk-body">You need to wait..... before you register as an ACSP</p>
+
+
+           
+           
+          <h2 class="govuk-heading-m">Your supervision with HMRC must be confirmed</h2>
+
+          <p class="govuk-body">**Some** supervisory bodies have a pending status for members. We cannot accept applications until the AML supervision is confirmed and active.</p>
+
+
+          <p class="govuk-body">
+            Check your status is 'approved' on the <a href="https://www.gov.uk/guidance/money-laundering-regulations-supervised-business-register#check-if-a-business-is-registered" class="govuk-link" rel="noreferrer noopener" target="_blank">HMRC Supervised Business Register (opens in a new tab)</a>.
+
+          </p>
+          
+          
+          <p class="govuk-body">** If your status is 'applied' you need to wait until the application is 'approved'. Once you have received a letter/email to sat it's been approved, you can continue to register.** </p>
+
+
+
+         <h3 class="govuk-heading-s">*** What should I do if HMRC have approved my application but its not approved on the public list***</h3>
+
+           <p class="govuk-body">*** You need to contact Companies House and they will let you know what you can do. ***</p>
+
+
+     
+       
+ 
+          <div class="govuk-form-group govuk-!-padding-top-5">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Have you checked your AML status with your supervisory body?
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="correctlySupervised" name="correctlyAMLSupervised" type="radio" value="individualName">
+                <label class="govuk-label govuk-radios__label" for="correctlyAMLSupervised">
+                  yes, I have checked with my AML supervisory body 
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="correctlyAMLSupervised-2" name="correctlyAMLSupervised" type="radio" value="scotland">
+                <label class="govuk-label govuk-radios__label" for="correctlyAMLSupervised-2">
+                  I have checked with my AML body and I am not on the public list at the moment
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

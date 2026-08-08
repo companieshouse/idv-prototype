@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the name of your business? – {{ serviceName }} 
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="name-held-with-supervisor" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="amlSupervisorName-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What name is registered with your Anti-Money Laundering (AML) supervisory body?
+              </h1>
+            </legend>
+            <div id="amlSupervisorName-hint" class="govuk-hint">
+              We'll check this matches what your AML supervisory body holds.
+            </div>
+            <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="amlSupervisorName" name="amlSupervisorName" type="radio" value="individualsName">
+                <label class="govuk-label govuk-radios__label" for="amlSupervisorName">
+                  {% if (data['first-name'] == "") or  (data['last-name'] == "") %}
+
+                  James Morris 
+                  
+                  {% else %}
+        
+                  {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+          
+                  {% endif %}
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="amlSupervisorName-2" name="amlSupervisorName" type="radio" value="businessName">
+                <label class="govuk-label govuk-radios__label" for="amlSupervisorName-2">
+
+                  {% if (data['businessName'] == "") %}
+
+                  Morris Accounting 
+                  
+                  {% else %}
+        
+                  {{data['businesName']}}
+          
+                  {% endif %}
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="amlSupervisorName-3" name="amlSupervisorName" type="radio" value="businessName">
+                <label class="govuk-label govuk-radios__label" for="amlSupervisorName-3">
+
+                  Both
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+
+
+   <!--   <form class="form" action="name-of-business" method="post">
+
+
+
+
+        {{ govukInput({
+          label: {
+            text: "What is the name of your business?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          id: "trading-name",
+          name: "tradingName"
+        }) }} -->
+
+        
+
+
+ <!--       {{ govukInsetText({
+          text: "This must be the same as the name held by the anti-money laundering (AML) supervisory body. If the AML supervisory body has an incorrect name, you must update this before you apply. "
+        }) }} -->
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

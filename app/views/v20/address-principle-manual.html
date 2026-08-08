@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is your office address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="address-principle-manual" method="post">
+
+        {% call govukFieldset({
+          legend: {
+            text: "Enter the business address",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        {{ govukInput({
+          label: {
+            text: "Property name or number"
+          },
+          hint: {
+            text: "For example, 'The Mill', '116' or 'Flat 37a'"
+          },
+          id: "propertyName",
+          name: "propertyName"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          id: "addressOne",
+          name: "addressOne"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          id: "addressTwo",
+          name: "addressTwo"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          id: "town",
+          name: "town"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "County (optional)"
+          },
+          id: "county",
+          name: "county"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Country"
+          },
+          id: "country",
+          name: "country"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Postcode"
+          },
+          id: "postcode",
+          name: "postcode"
+        }) }}
+
+    
+        
+        {% endcall %}
+<!--
+<div class="govuk-inset-text">
+  <h2 class="govuk-heading-m">What information we’ll show on the public list of authorised agents</h2>
+  <p>We’ll show the town or city of the business address.  </p>
+</div> -->
+
+
+      
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

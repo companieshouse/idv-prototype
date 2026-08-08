@@ -9,7 +9,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 /*
  * Start page
  */
-router.post('/v19/start-page', function (req, res) {
+router.post('/v20/start-page', function (req, res) {
      
     res.redirect('account-interrupt')
     
@@ -19,7 +19,7 @@ router.post('/v19/start-page', function (req, res) {
 /*
  * We have changed the way you sign in to Companies House 
  */
-router.post('/v19/account-interrupt', function (req, res) {
+router.post('/v20/account-interrupt', function (req, res) {
      
  //do nothing if CHS is selected
     
@@ -28,7 +28,7 @@ router.post('/v19/account-interrupt', function (req, res) {
 /*
  * GOV.UK One Login
  */
-router.post('/v19/create-or-sign-in', function (req, res) {
+router.post('/v20/create-or-sign-in', function (req, res) {
      
     res.redirect('one-login-sign-in')
     
@@ -38,17 +38,17 @@ router.post('/v19/create-or-sign-in', function (req, res) {
 /*
  *  GOV.UK One Login
  */
-router.post('/v19/one-login-enter-password', function (req, res) {
+router.post('/v20/one-login-enter-password', function (req, res) {
      
     
-    res.redirect('/v19/enter-code')
+    res.redirect('/v20/enter-code')
     
 })
 
 /*
  * GOV.UK One Login
  */
-router.post('/v19/enter-code', function (req, res) {
+router.post('/v20/enter-code', function (req, res) {
 
 
     /*
@@ -100,16 +100,16 @@ router.post('/v19/enter-code', function (req, res) {
 /*
  * You need to prove your identity
  */
-router.post('/v19/idv-interrupt-release-1', function (req, res) {
+router.post('/v20/idv-interrupt-release-1', function (req, res) {
      
-    res.redirect('/v19/verify-identity-prototype')
+    res.redirect('/v20/verify-identity-prototype')
     
 }) 
 
 /*
  * Go to the Verify your identity prototype
  */
-router.get('/v19/verify-identity-prototype', function (req, res) {
+router.get('/v20/verify-identity-prototype', function (req, res) {
 
     // they have have done ID verification 
     req.session.data['verified-their-id'] = true;
@@ -123,7 +123,7 @@ router.get('/v19/verify-identity-prototype', function (req, res) {
 /*
  * New version 18 to identify 
  */
-router.post('/v19/type-of-acsp-company-st', function (req, res) {
+router.post('/v20/type-of-acsp-company-st', function (req, res) {
      
     res.redirect('name-of-business')
   
@@ -133,7 +133,7 @@ router.post('/v19/type-of-acsp-company-st', function (req, res) {
 /*
  * sole trader - do you have a uvid 
  */
-router.post('/v19/enter-uvid-code', function (req, res) {
+router.post('/v20/enter-uvid-code', function (req, res) {
      
    
     if ((req.session.data['enter-uvid'] === "yes")){
@@ -156,7 +156,7 @@ router.post('/v19/enter-uvid-code', function (req, res) {
 /*
  * Saved application 
  */
-router.post('/v19/saved-application', function (req, res) {
+router.post('/v20/saved-application', function (req, res) {
 
 
     // new application
@@ -181,7 +181,7 @@ router.post('/v19/saved-application', function (req, res) {
 /*
  * What type of business are you registering?
  */
-router.post('/v19/type-of-acsp', function (req, res) {
+router.post('/v20/type-of-acsp', function (req, res) {
 
 
      //Relevant officer
@@ -229,7 +229,7 @@ router.post('/v19/type-of-acsp', function (req, res) {
 /*
  * ACSP other business types 
  */
-router.post('/v19/type-of-acsp-other', function (req, res) {
+router.post('/v20/type-of-acsp-other', function (req, res) {
 
 
     res.redirect('how-are-you-aml-supervised') 
@@ -251,7 +251,7 @@ router.post('/v19/type-of-acsp-other', function (req, res) {
 /*
  * Confirm they are the relevant officer
  */
-router.post('/v19/statement-relevant-officer', function (req, res) {
+router.post('/v20/statement-relevant-officer', function (req, res) {
 
 
       //Relevant officer
@@ -261,8 +261,20 @@ router.post('/v19/statement-relevant-officer', function (req, res) {
         //sole traders need to verify their identity
         if ((req.session.data['registering-as'] === "sole-trader")){
 
+            if ((req.session.data['how-are-you-aml-supervised'] === "company")){
+
+
+             res.redirect('type-of-business')
+        
+            }else{
+
               res.redirect('name')
 
+        }
+
+
+        
+          
         }
 
         else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp")){
@@ -315,7 +327,7 @@ else{
 /*
  * Version 18 - complete change in approach AML supervision checed at the start
  */
-router.post('/v19/how-are-you-aml-supervised', function (req, res) {
+router.post('/v20/how-are-you-aml-supervised', function (req, res) {
 
 
         if ((req.session.data['how-are-you-aml-supervised'] === "company")){
@@ -344,7 +356,7 @@ router.post('/v19/how-are-you-aml-supervised', function (req, res) {
 /*
  * Registered with Companies House - Company lookup
  */
-router.post('/v19/company-lookup', function (req, res) {
+router.post('/v20/company-lookup', function (req, res) {
      
     res.redirect('confirm-company')
     
@@ -353,7 +365,7 @@ router.post('/v19/company-lookup', function (req, res) {
 /*
  * Confirm company
  */
-router.post('/v19/confirm-company', function (req, res) {
+router.post('/v20/confirm-company', function (req, res) {
    
     res.redirect('auth-code')
     
@@ -362,7 +374,7 @@ router.post('/v19/confirm-company', function (req, res) {
 /*
  * Auth code  ***have updated this to go to correspondence email as we need to collect this for firms
  */
-router.post('/v19/auth-code', function (req, res) {
+router.post('/v20/auth-code', function (req, res) {
      
  
     if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")){
@@ -383,7 +395,7 @@ router.post('/v19/auth-code', function (req, res) {
 /*
  * Director selection   
  */
-router.post('/v19/director-selection', function (req, res) {
+router.post('/v20/director-selection', function (req, res) {
      
     
     if ((req.session.data['director-selection'] === "not-listed")){
@@ -405,7 +417,7 @@ router.post('/v19/director-selection', function (req, res) {
 /*
  * Director details check   
  */
-router.post('/v19/check-director-details', function (req, res) {
+router.post('/v20/check-director-details', function (req, res) {
      
     res.redirect('type-of-business')
     
@@ -414,7 +426,7 @@ router.post('/v19/check-director-details', function (req, res) {
 /*
  * What specific type of business are you registering?
  */
-router.post('/v19/type-of-business', function (req, res) {
+router.post('/v20/type-of-business', function (req, res) {
 
 
     //if other is selected
@@ -451,7 +463,7 @@ router.post('/v19/type-of-business', function (req, res) {
  *  other business type
 */
 
-router.post('/v19/type-of-business-other', function (req, res) {
+router.post('/v20/type-of-business-other', function (req, res) {
 
  
 
@@ -484,7 +496,7 @@ router.post('/v19/type-of-business-other', function (req, res) {
  *
  * Principle/registered office address 
  */
- router.post('/v19/address-principle-lookup', function (req, res) {
+ router.post('/v20/address-principle-lookup', function (req, res) {
 
 
      //if house number is empty
@@ -505,7 +517,7 @@ router.post('/v19/type-of-business-other', function (req, res) {
 /*
  *  Principle/registered office address list
  */
-router.post('/v19/address-principle-list', function (req, res) {
+router.post('/v20/address-principle-list', function (req, res) {
     
      
     res.redirect('address-principle-confirm')
@@ -521,7 +533,7 @@ router.post('/v19/address-principle-list', function (req, res) {
 /*
  *  Principle/registered office address manually entering address
  */
-router.post('/v19/address-principle-manual', function (req, res) {
+router.post('/v20/address-principle-manual', function (req, res) {
     
      
     res.redirect('address-principle-confirm')
@@ -534,7 +546,7 @@ router.post('/v19/address-principle-manual', function (req, res) {
  *
  * Principle address 
  */
-router.post('/v19/address-principle-confirm', function (req, res) {
+router.post('/v20/address-principle-confirm', function (req, res) {
      
     res.redirect('address-correspondance-selector')
     
@@ -544,7 +556,7 @@ router.post('/v19/address-principle-confirm', function (req, res) {
  *
  * Correspondance address selector ----updated to go to correspondence email
  */
-router.post('/v19/address-correspondance-selector', function (req, res) {
+router.post('/v20/address-correspondance-selector', function (req, res) {
      
     if ((req.session.data['address-correspondance-selector'] === "different")){
         
@@ -581,7 +593,7 @@ router.post('/v13/email-address-correspondance', function (req, res) {
 /*
  *  Not registered with Companies House - Name
  */
-router.post('/v19/name', function (req, res) {
+router.post('/v20/name', function (req, res) {
 
         //sole trader 
         if ((req.session.data['registering-as'] === "sole-trader")) {
@@ -601,7 +613,7 @@ router.post('/v19/name', function (req, res) {
 /*
  *  Not registered with Companies House - Date of birth
  */
-router.post('/v19/correctly-supervised', function (req, res) {
+router.post('/v20/correctly-supervised', function (req, res) {
 
 
      //sole trader 
@@ -628,7 +640,7 @@ router.post('/v19/correctly-supervised', function (req, res) {
 /*
  *  Not registered with Companies House - Date of birth
  */
-router.post('/v19/date-of-birth', function (req, res) {
+router.post('/v20/date-of-birth', function (req, res) {
      
     res.redirect('nationality')
     
@@ -637,7 +649,7 @@ router.post('/v19/date-of-birth', function (req, res) {
 /*
  *  Not registered with Companies House - Date of birth
  */
-router.post('/v19/nationality', function (req, res) {
+router.post('/v20/nationality', function (req, res) {
      
     res.redirect('location-lives')
     
@@ -646,7 +658,7 @@ router.post('/v19/nationality', function (req, res) {
 /*
  *  Not registered with Companies House - Home address
  */
-router.post('/v19/location-lives', function (req, res) {
+router.post('/v20/location-lives', function (req, res) {
 
 
     if ((req.session.data['registering-as'] === "sole-trader")){
@@ -666,7 +678,7 @@ router.post('/v19/location-lives', function (req, res) {
 /*
  *  Not registered with Companies House - Name of business
  */
-router.post('/v19/name-of-business', function (req, res) {
+router.post('/v20/name-of-business', function (req, res) {
     
 
             res.redirect('statement-relevant-officer')
@@ -680,7 +692,7 @@ router.post('/v19/name-of-business', function (req, res) {
 /*
  *  Sole trader name with supervisory body - Name of business
  */
-router.post('/v19/name-of-business-soletrader', function (req, res) {
+router.post('/v20/name-of-business-soletrader', function (req, res) {
 
             res.redirect('date-of-birth')
 
@@ -694,7 +706,7 @@ router.post('/v19/name-of-business-soletrader', function (req, res) {
 /*
  *   Not registered with Companies House - Business/trading name
  */
-router.post('/v19/name-held-with-supervisor', function (req, res) {
+router.post('/v20/name-held-with-supervisor', function (req, res) {
      
     res.redirect('type-of-business')
     
@@ -709,7 +721,7 @@ router.post('/v19/name-held-with-supervisor', function (req, res) {
  
     // only postcode  address-correspondance-list
  */
-router.post('/v19/address-correspondance-lookup', function (req, res) {
+router.post('/v20/address-correspondance-lookup', function (req, res) {
 
 
 
@@ -730,7 +742,7 @@ router.post('/v19/address-correspondance-lookup', function (req, res) {
 /*
  *  Not registered with Companies House - ACSP address manually entering address
  */
-router.post('/v19/address-correspondance-manual', function (req, res) {
+router.post('/v20/address-correspondance-manual', function (req, res) {
     
      
     res.redirect('address-correspondance-confirm')
@@ -742,7 +754,7 @@ router.post('/v19/address-correspondance-manual', function (req, res) {
  *  Correspondance address confirm
  */
 
-router.post('/v19/address-correspondance-confirm', function (req, res) {
+router.post('/v20/address-correspondance-confirm', function (req, res) {
 
 
     //if ltd and LLP 
@@ -765,7 +777,7 @@ router.post('/v19/address-correspondance-confirm', function (req, res) {
 /*
  *  Correspondance email address 
  */
-router.post('/v19/email-address-correspondance', function (req, res) {
+router.post('/v20/email-address-correspondance', function (req, res) {
 
     res.redirect('aml-supervisor')
 
@@ -775,7 +787,7 @@ router.post('/v19/email-address-correspondance', function (req, res) {
 /*
  *  Not registered with Companies House - ACSP correspondace address confirming lookup ***I've updated this to go to the AML supervisor page as I don't think correspondence email is needed for sole traders. 
  */
-router.post('/v19/acsp-address-confirm', function (req, res) {
+router.post('/v20/acsp-address-confirm', function (req, res) {
      
     res.redirect('aml-supervisor')
     
@@ -796,7 +808,7 @@ router.post('/v5/acsp-address-correspondance', function (req, res) {
  /*
  *  AML supervisory body 
  */
- router.post('/v19/aml-supervisor', function (req, res) {
+ router.post('/v20/aml-supervisor', function (req, res) {
     
     res.redirect('aml-number')
 
@@ -807,7 +819,7 @@ router.post('/v5/acsp-address-correspondance', function (req, res) {
 /*
  *  AML number for first supervisor
  */
-router.post('/v19/aml-number', function (req, res) {
+router.post('/v20/aml-number', function (req, res) {
      
     res.redirect('name-address-match-supervisor-v2')
     
@@ -816,7 +828,7 @@ router.post('/v19/aml-number', function (req, res) {
 /*
  *  AML number for second  supervisor
  */
-router.post('/v19/aml-number-2', function (req, res) {
+router.post('/v20/aml-number-2', function (req, res) {
      
     res.redirect('name-address-match-supervisor')
     
@@ -827,7 +839,7 @@ router.post('/v19/aml-number-2', function (req, res) {
 /*
  * Name and address match those held with the supervisor
  */
-router.post('/v19/name-address-match-supervisor-v2', function (req, res) {
+router.post('/v20/name-address-match-supervisor-v2', function (req, res) {
      
     res.redirect('terms-and-conditions')
     
@@ -837,7 +849,7 @@ router.post('/v19/name-address-match-supervisor-v2', function (req, res) {
 /*
  *  Terms and conditions
  */
-router.post('/v19/terms-and-conditions', function (req, res) {
+router.post('/v20/terms-and-conditions', function (req, res) {
      
     res.redirect('check-your-answers')
     
@@ -846,7 +858,7 @@ router.post('/v19/terms-and-conditions', function (req, res) {
 /*
  *  Check your answers
  */
-router.post('/v19/check-your-answers', function (req, res) {
+router.post('/v20/check-your-answers', function (req, res) {
      
     res.redirect('payment')
     
@@ -855,7 +867,7 @@ router.post('/v19/check-your-answers', function (req, res) {
 /*
  *  Payment
  */
-router.post('/v19/payment', function (req, res) {
+router.post('/v20/payment', function (req, res) {
      
     res.redirect('confirmation')
     

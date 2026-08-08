@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the membership number for Association of Accounting Technicians (AAT)? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="aml-number-2" method="post">
+       
+<!--
+        {% call govukFieldset({
+          legend: {
+            text: " What is the membership number for Association of Accounting Technicians (AAT)?",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          },
+          hint:{
+            text:" We will check this with the AML supervisory body."
+          }
+        }) %}
+     
+        
+        {{ govukInput({
+          label: {
+            text: "Membership number  "
+          },
+          id: "aml-reg-number",
+          name: "aml-reg-number"
+        }) }}
+
+        {% endcall %}  -->
+
+                {{ govukInput({
+  label: {
+    text: "What is the membership number for Association of Accounting Technicians (AAT)?",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  hint: {
+    text: "This is also known as a member ID."
+  },
+  id: "event-name",
+  name: "eventName"
+}) }}
+
+
+
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+            How to find your membership number
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+        <p>You can find this on your AAT approval letter and certificate.</a>
+        </p>
+    <p>If you cannot find your membership number, you should contact the AML supervisory body.</p>
+  </div>
+</details>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+        
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
