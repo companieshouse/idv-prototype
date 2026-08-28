@@ -167,7 +167,7 @@ What is the membership number for Association of Chartered Certified Accountants
      {% endif %}
 <!-- Department for the Economy Northern Ireland -->
 
- {% if data['aml-supervisor'] and 'clc' in data['aml-supervisor'] %}
+ {% if data['aml-supervisor'] and 'deni' in data['aml-supervisor'] %}
                        <div class="govuk-form-group">
                         <label class="govuk-label govuk-label--m" for="deni">
                        What is the AML membership number for the Department for the Economy Northern Ireland?
@@ -317,18 +317,17 @@ What is the membership number for Association of Chartered Certified Accountants
      {% endif %}
 
 
-                <!-- Institute of Chartered Accountants in England and Wales (ICAEW) -->
+                <!-- Institute of Certified Bookkeepers (ICB) -->
 
  {% if data['aml-supervisor'] and 'icb' in data['aml-supervisor'] %}
                        <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--m" for="iab">
-                  	      What is the firm number for the Institute of Chartered Accountants in England and Wales (ICAEW)?
+                        <label class="govuk-label govuk-label--m" for="icb">
+                  	      What is the AML practice number for the Institute of Certified Bookkeepers (ICB)?
                         </label>
                         <div id="iba-hint" class="govuk-hint">
-                          You can find this on correspondence from the ICAEW or your annual return. It will start with a letter ‘C’ or ‘A’, followed by 9 by numbers. For example, C001234567 or A001234567.
-                         
+                         This will be between 4 and 6 digits long. You can find it on correspondence from the ICB.
                         </div>
-                        <input class="govuk-input" id="iab" name="iabDetails" type="text">
+                        <input class="govuk-input" id="icb" name="icbDetails" type="text">
                       </div>
      {% endif %}
 

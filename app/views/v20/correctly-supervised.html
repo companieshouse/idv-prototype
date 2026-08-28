@@ -26,7 +26,7 @@ Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prot
 
 
 
-        <div class="govuk-warning-text">
+        <div class="govuk-warning-text govuk-!-padding-top-5">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text">
             <span class="govuk-visually-hidden">Warning</span> Contact your supervisory body if you need to check your AML details. We'll reject your application if they do not match. 
@@ -35,12 +35,6 @@ Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prot
   
   
 
-
-    
-
-        
-
-       
  
           <div class="govuk-form-group govuk-!-padding-top-5">
           <fieldset class="govuk-fieldset">
@@ -49,14 +43,14 @@ Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prot
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="correctlySupervised" name="correctlyAMLSupervised" type="radio" value="individualName">
-                <label class="govuk-label govuk-radios__label" for="correctlyAMLSupervised">
+                <input class="govuk-radios__input" id="correctlySupervised" name="correctlySupervised" type="radio" value="individualName">
+                <label class="govuk-label govuk-radios__label" for="correctlySupervised">
                 {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="correctlyAMLSupervised-2" name="correctlyAMLSupervised" type="radio" value="differentName">
-                <label class="govuk-label govuk-radios__label" for="correctlyAMLSupervised-2">
+                <input class="govuk-radios__input" id="correctlySupervised-2" name="correctlySupervised" type="radio" value="differentName">
+                <label class="govuk-label govuk-radios__label" for="correctlySupervised-2">
                   A different name
                 </label>
               </div>

@@ -841,7 +841,24 @@ router.post('/v20/aml-number-2', function (req, res) {
  */
 router.post('/v20/name-address-match-supervisor-v2', function (req, res) {
      
-    res.redirect('terms-and-conditions')
+
+
+
+    //name is the same as the AML supervisor
+
+    if ((req.session.data['AMLdetailsSame'] === "no")){
+        
+        res.redirect('aml-details-do-not-match') 
+
+    }
+    else{
+
+        res.redirect('terms-and-conditions')
+
+    }
+
+
+    //name is different from the AML supervisor
     
 })
 
