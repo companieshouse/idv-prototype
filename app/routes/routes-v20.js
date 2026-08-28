@@ -848,7 +848,7 @@ router.post('/v20/name-address-match-supervisor-v2', function (req, res) {
 
     if ((req.session.data['AMLdetailsSame'] === "no")){
         
-        res.redirect('aml-individual-details-do-not-match') 
+        res.redirect('aml-details-do-not-match') 
 
     }
     else{
