@@ -24,140 +24,208 @@ What is the name of the Anti-Money Laundering (AML) supervisory body? – {{ ser
 
         {% endif %}
 
+  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="aml-supervisor-hint">
 
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Which Anti-Money Laundering (AML) supervisory bodies are you registered with?
+      </h1>
+    </legend>
 
-        {{ govukCheckboxes({
-          name: "aml-supervisor",
-          fieldset: {
-            legend: {
-              text: "Which Anti-Money Laundering (AML) supervisory bodies are you registered with?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-  hint: {
-    text: "Select all that apply. "
-  },
-          items: [
+    <div id="aml-supervisor-hint" class="govuk-hint">
+      Select all that apply.
+    </div>
 
-            {
-              value: "acca",
-              text: "Association of Chartered Certified Accountants (ACCA)"
-            },
-            {
-              value: "aat",
-              text: "Association of Accounting Technicians (AAT)"
-            },
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
-            {
-              value: "aia",
-              text: "Association of International Accountants (AIA)"
-            },
-            {
-              value: "att",
-              text: "Association of Taxation Technicians (ATT)"
-            },
-            {
-              value: "cilex",
-              text: "Chartered Institute of Legal Executives (CILEx)"
-            },
-            {
-              value: "cima",
-              text: "Chartered Institute of Management Accountants (CIMA)"
-            },
-            {
-              value: "ciot",
-              text: "Chartered Institute of Taxation (CIOT)"
-            },
-            {
-              value: "clc",
-              text: "Council for Licensed Conveyors (CLC)"
-            },
-            {
-              value: "deni",
-              text: "Department for the Economy Northern Ireland"
-            },
-            {
-              value: "fa",
-              text: "Faculty of Advocates"
-            },
-            {
-              value: "foac",
-              text: "Faculty Office of the Archbishop of Canterbury (FO)"
-            },
-            {
-              value: "fca",
-              text: "Financial Conduct Authority (FCA)"
-            },
-            {
-              value: "gc",
-              text: "Gambling Commission"
-            },
-            {
-              value: "gbc",
-              text: "General Council of the Bar"
-            },
-            {
-              value: "gcbni",
-              text: "General Council of the Bar of Northern Ireland (BONI)"
-            },
-            {
-              value: "hmrc",
-              text: "HMRC"
-            },
-            {
-              value: "ipa",
-              text: "Insolvency Practitioners Association (IPA)"
-            },
-            {
-              value: "iab",
-              text: "Institute of Accountants and Bookkeepers (IAB)"
-            },
-            {
-              value: "icb",
-              text: "Institute of Certified Bookkeepers (ICB)"
-            },
-            {
-              value: "icaew",
-              text: "Institute of Chartered Accountants in England and Wales (ICAEW)"
-            },
-            {
-              value: "icai",
-              text: "Institute of Chartered Accountants in Ireland (ICAI)"
-            },
-            {
-              value: "icas",
-              text: "Institute of Chartered Accountants of Scotland (ICAS)"
-            },
-            {
-              value: "ifa",
-              text: "Institute of Financial Accountants (IFA)"
-            },
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor" name="aml-supervisor" type="checkbox" value="acca" {% if checked("aml-supervisor", "acca") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor">
+          Association of Chartered Certified Accountants (ACCA)
+        </label>
+      </div>
 
-            {
-              value: "lsni",
-              text: "Law Society of Northern Ireland (LSNI)"
-            },
-            {
-              value: "lss",
-              text: " Law Society of Scotland"
-            },
-            {
-              value: "sra",
-              text: "The Law Society of England and Wales (Solicitors Regulatory Authority - SRA)"
-            }
-          ]
-        }) }}
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-2" name="aml-supervisor" type="checkbox" value="aat" {% if checked("aml-supervisor", "aat") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-2">
+          Association of Accounting Technicians (AAT)
+        </label>
+      </div>
 
-<!--
-    <div class="govuk-inset-text">
-  <h2 class="govuk-heading-m">What information we’ll show on the public list of authorised agents </h2>
-  <p>We'll show the names of the supervisory bodies the business is registered with. </p>
-</div> -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-3" name="aml-supervisor" type="checkbox" value="aia" {% if checked("aml-supervisor", "aia") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-3">
+          Association of International Accountants (AIA)
+        </label>
+      </div>
 
-        
-        
-        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-4" name="aml-supervisor" type="checkbox" value="att" {% if checked("aml-supervisor", "att") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-4">
+          Association of Taxation Technicians (ATT)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-5" name="aml-supervisor" type="checkbox" value="cilex" {% if checked("aml-supervisor", "cilex") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-5">
+          Chartered Institute of Legal Executives (CILEx)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-6" name="aml-supervisor" type="checkbox" value="cima" {% if checked("aml-supervisor", "cima") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-6">
+          Chartered Institute of Management Accountants (CIMA)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-7" name="aml-supervisor" type="checkbox" value="ciot" {% if checked("aml-supervisor", "ciot") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-7">
+          Chartered Institute of Taxation (CIOT)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-8" name="aml-supervisor" type="checkbox" value="clc" {% if checked("aml-supervisor", "clc") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-8">
+          Council for Licensed Conveyors (CLC)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-9" name="aml-supervisor" type="checkbox" value="deni" {% if checked("aml-supervisor", "deni") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-9">
+          Department for the Economy Northern Ireland
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-10" name="aml-supervisor" type="checkbox" value="fa" {% if checked("aml-supervisor", "fa") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-10">
+          Faculty of Advocates
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-11" name="aml-supervisor" type="checkbox" value="foac" {% if checked("aml-supervisor", "foac") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-11">
+          Faculty Office of the Archbishop of Canterbury (FO)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-12" name="aml-supervisor" type="checkbox" value="fca" {% if checked("aml-supervisor", "fca") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-12">
+          Financial Conduct Authority (FCA)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-13" name="aml-supervisor" type="checkbox" value="gc" {% if checked("aml-supervisor", "gc") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-13">
+          Gambling Commission
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-14" name="aml-supervisor" type="checkbox" value="gbc" {% if checked("aml-supervisor", "gbc") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-14">
+          General Council of the Bar
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-15" name="aml-supervisor" type="checkbox" value="gcbni" {% if checked("aml-supervisor", "gcbni") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-15">
+          General Council of the Bar of Northern Ireland (BONI)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-16" name="aml-supervisor" type="checkbox" value="hmrc" {% if checked("aml-supervisor", "hmrc") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-16">
+          HMRC
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-17" name="aml-supervisor" type="checkbox" value="ipa" {% if checked("aml-supervisor", "ipa") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-17">
+          Insolvency Practitioners Association (IPA)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-18" name="aml-supervisor" type="checkbox" value="iab" {% if checked("aml-supervisor", "iab") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-18">
+          Institute of Accountants and Bookkeepers (IAB)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-19" name="aml-supervisor" type="checkbox" value="icb" {% if checked("aml-supervisor", "icb") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-19">
+          Institute of Certified Bookkeepers (ICB)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-20" name="aml-supervisor" type="checkbox" value="icaew" {% if checked("aml-supervisor", "icaew") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-20">
+          Institute of Chartered Accountants in England and Wales (ICAEW)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-21" name="aml-supervisor" type="checkbox" value="icai" {% if checked("aml-supervisor", "icai") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-21">
+          Institute of Chartered Accountants in Ireland (ICAI)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-22" name="aml-supervisor" type="checkbox" value="icas" {% if checked("aml-supervisor", "icas") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-22">
+          Institute of Chartered Accountants of Scotland (ICAS)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-23" name="aml-supervisor" type="checkbox" value="ifa" {% if checked("aml-supervisor", "ifa") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-23">
+          Institute of Financial Accountants (IFA)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-24" name="aml-supervisor" type="checkbox" value="lsni" {% if checked("aml-supervisor", "lsni") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-24">
+          Law Society of Northern Ireland (LSNI)
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-25" name="aml-supervisor" type="checkbox" value="lss" {% if checked("aml-supervisor", "lss") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-25">
+          Law Society of Scotland
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="aml-supervisor-26" name="aml-supervisor" type="checkbox" value="sra" {% if checked("aml-supervisor", "sra") %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="aml-supervisor-26">
+          The Law Society of England and Wales (Solicitors Regulation Authority - SRA)
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+      <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       </form>
 
