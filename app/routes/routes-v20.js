@@ -305,29 +305,48 @@ router.post('/v20/statement-relevant-officer', function (req, res) {
 }) 
 
 
-/* //emma sort 
-if ((req.session.data['registering-as'] === "sole-trader")){
-        
-    // they have not done ID verification 
 
-    res.redirect('/v9/before-idv')
-}
-//limited company or corporate or PLC or partnership reg with CH
-else if ((req.session.data['registering-as'] === "ltd")| (req.session.data['registering-as'] === "partnership-llp")|(req.session.data['registering-as'] === "corporate-body")| (req.session.data['registering-as'] === "public-limited-company")| (req.session.data['registering-as'] === "puc") | (req.session.data['registering-as'] === "partnership-ch")){
-
-    res.redirect('company-lookup')
-}
-// partnership-not-ch | "unincorporated-body
-else{
-
-    res.redirect('name')
-} */
- 
 
 /*
  * Version 18 - complete change in approach AML supervision checed at the start
  */
 router.post('/v20/how-are-you-aml-supervised', function (req, res) {
+
+
+
+    //if selected company and they are individually supervised
+    if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp")){
+
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually")){
+        
+            res.redirect('aml-interrupt')
+        }
+        else{
+
+            res.redirect('address-correspondance-lookup') 
+
+        }
+    }
+    else if ((req.session.data['registering-as'] === "partnership-ch")|(req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
+
+        if ((req.session.data['how-are-you-aml-supervised'] === "company")){
+        
+            res.redirect('name-of-business')
+        }
+        else if (req.session.data['how-are-you-aml-supervised'] === "individually"){
+        
+            res.redirect('aml-interrupt')
+        }
+        else{
+
+            res.redirect('not-sure-aml-company') 
+
+        }
+        
+    }
+
+
+    //handle other types here 
 
 
         if ((req.session.data['how-are-you-aml-supervised'] === "company")){
@@ -617,15 +636,15 @@ router.post('/v20/correctly-supervised', function (req, res) {
 
 
      //sole trader 
-        if ((req.session.data['correctlyAMLSupervised'] === "individualName")) {
+        if ((req.session.data['correctlySupervised'] === "individualName")) {
             
             res.redirect('date-of-birth')
         }
-        else if ((req.session.data['correctlyAMLSupervised'] === "differentName")) {
+        else if ((req.session.data['correctlySupervised'] === "differentName")) {
             
             res.redirect('name-of-business-soletrader')
         }
-        else if ((req.session.data['correctlyAMLSupervised'] === "notSure")) {
+        else if ((req.session.data['correctlySupervised'] === "notSure")) {
             
             res.redirect('not-sure-aml-individual')
         }

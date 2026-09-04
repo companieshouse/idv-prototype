@@ -15,9 +15,9 @@
       <form action="how-are-you-aml-supervised" method="post">
 
 
-
        <!-- ltd --- {company name} -->
-<!-- 
+
+       {% if ((data['registering-as'] === "ltd")) %}
 
        {{ govukRadios({
         name: "how-are-you-aml-supervised",
@@ -41,8 +41,9 @@
             text: "A different name"
           }
         ]
-      }) }}-->
+      }) }}
 
+      {% else %}
 
 
         {{ govukRadios({
@@ -73,6 +74,7 @@
           ]
         }) }}
 
+      {% endif %}
 
         {{ govukButton({
           text: "Save and continue"

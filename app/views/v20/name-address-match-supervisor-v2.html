@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Details may not match those held by the AML supervisory body – {{ serviceName }} – GOV.UK Prototype Kit
+Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -137,7 +137,7 @@ Details may not match those held by the AML supervisory body – {{ serviceName 
         
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">name</span></a>
     </dd>
   </div>
 
@@ -324,19 +324,17 @@ Association of Taxation Technicians (ATT)</h2>
    <!-- Chartered Institute of Legal Executives (CILEx) -->
 
 
- {% if data['aml-supervisor'] and 'cilex' in data['aml-supervisor'] %}
+{% if data['aml-supervisor'] and 'cilex' in data['aml-supervisor'] %}
 
-
-  <h2 class="govuk-heading-m">
+<h2 class="govuk-heading-m">
 Chartered Institute of Legal Executives (CILEx)</h2>
 
-
-
   <dl class="govuk-summary-list">
-
-
   <!-- sole trader -->
    {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
+
+
+   
    
    <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
