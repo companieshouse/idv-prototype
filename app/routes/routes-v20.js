@@ -315,7 +315,8 @@ router.post('/v20/how-are-you-aml-supervised', function (req, res) {
 
 
     //if selected company and they are individually supervised
-    if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp")){
+    if ((req.session.data['registering-as'] === "ltd") | 
+    (req.session.data['registering-as'] === "partnership-llp")){
 
         if ((req.session.data['how-are-you-aml-supervised'] === "individually")){
         
@@ -327,7 +328,10 @@ router.post('/v20/how-are-you-aml-supervised', function (req, res) {
 
         }
     }
-    else if ((req.session.data['registering-as'] === "partnership-ch")|(req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
+    else if ((req.session.data['registering-as'] === "partnership-ch")|
+    (req.session.data['registering-as'] === "partnership-not-ch") |
+     (req.session.data['registering-as'] === "unincorporated-body") | 
+     (req.session.data['registering-as'] === "corporate-body")) {
 
         if ((req.session.data['how-are-you-aml-supervised'] === "company")){
         
@@ -344,24 +348,6 @@ router.post('/v20/how-are-you-aml-supervised', function (req, res) {
         }
         
     }
-
-
-    //handle other types here 
-
-
-        if ((req.session.data['how-are-you-aml-supervised'] === "company")){
-        
-            res.redirect('type-of-acsp')
-        }
-        else if (req.session.data['how-are-you-aml-supervised'] === "individually"){
-        
-            res.redirect('statement-relevant-officer')
-        }
-        else{
-
-            res.redirect('not-sure-aml-company-or-individual') 
-
-        }
      
     
 }) 
@@ -630,7 +616,7 @@ router.post('/v20/name', function (req, res) {
 
 
 /*
- *  Not registered with Companies House - Date of birth
+ *  check the name they are supervised for AML under 
  */
 router.post('/v20/correctly-supervised', function (req, res) {
 
@@ -657,7 +643,7 @@ router.post('/v20/correctly-supervised', function (req, res) {
 
 
 /*
- *  Not registered with Companies House - Date of birth
+ *  Not registered with Companies House - Nationality
  */
 router.post('/v20/date-of-birth', function (req, res) {
      

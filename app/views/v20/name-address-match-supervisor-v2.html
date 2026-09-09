@@ -44,10 +44,15 @@ Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK P
   <dl class="govuk-summary-list">
 
 
-  <!-- sole trader -->
+  <!-- Types of businesses that we allow both name and business name to be captured for AML -->
+
    {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
-   
-   <div class="govuk-summary-list__row">
+
+  
+    <!-- AML supervised under their name -->
+    {% if (data['correctlySupervised'] === "individualName") %}
+
+    <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Name
     </dt>
@@ -68,6 +73,36 @@ Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK P
       <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
     </dd>
   </div>
+
+    <!--  AML supervised under their business name -->
+    {% else %}
+
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     
+        {% if (data['businessName'] == "") %}
+
+       <p class="govuk-body">Morris Accounting </p>
+
+        {% else %}
+
+        <p class="govuk-body">{{data['businessName']}}</p>
+
+        {% endif %}
+        
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="name-of-business-soletrader">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+
+    {% endif %}
+
+
+   
 
   {% endif %}
 
@@ -92,22 +127,26 @@ Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK P
       AML membership number
     </dt>
     <dd class="govuk-summary-list__value">
-      554-6325-4555
+      {{data['accaDetails']}}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Change AML details</span></a>
+      <a class="govuk-link" href="aml-number">Change<span class="govuk-visually-hidden"> AML member number</span></a>
     </dd>
   </div>
 
 </dl>
 
 
-
-
-  
-
-
  {% endif %}
+
+
+
+
+
+
+
+
+
 
   {% if data['aml-supervisor'] and 'aat' in data['aml-supervisor'] %}
 
