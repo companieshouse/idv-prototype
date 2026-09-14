@@ -622,23 +622,19 @@ router.post('/v20/correctly-supervised', function (req, res) {
 
 
      //sole trader 
-        if ((req.session.data['correctlySupervised'] === "individualName")) {
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually")) {
             
             res.redirect('date-of-birth')
         }
-        else if ((req.session.data['correctlySupervised'] === "differentName")) {
-            
+        else if ((req.session.data['how-are-you-aml-supervised'] === "company")) {
+
             res.redirect('name-of-business-soletrader')
         }
-        else if ((req.session.data['correctlySupervised'] === "notSure")) {
-            
+        else if ((req.session.data['how-are-you-aml-supervised'] === "notSure")) {
+
             res.redirect('not-sure-aml-individual')
         }
  
-
-
-
-    
 })
 
 

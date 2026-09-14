@@ -6,16 +6,11 @@ Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK P
 
 {% block content %}
 
-<!-- ***** Macro for (ST) Name or AML name ***** -->
 
- <!-- Types of businesses that we allow both name and business name to be captured for AML -->
 {% macro nameOrBusinessNameif() %}
 
-   {% if (data['registering-as'] === "sole-trader") or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body"))%}
 
-  
-    <!-- AML supervised under their name -->
-    {% if (data['correctlySupervised'] === "individualName") %}
+    {% if (data['how-are-you-aml-supervised'] === "individually") %}
 
     <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -39,7 +34,6 @@ Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK P
     </dd>
   </div>
 
-    <!--  AML supervised under their business name -->
     {% else %}
 
     <div class="govuk-summary-list__row">
@@ -50,9 +44,34 @@ Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK P
      
         {% if (data['businessName'] == "") %}
 
-          //!!!!! ****** set the name for sole trader or ltd or LP and LLP etc here ********
 
-       <p class="govuk-body">Morris Accounting </p>
+            {% if ((data['registering-as'] === "ltd")) %}
+
+            MORRIS ACCOUNTING LTD
+
+            {% elif ((data['registering-as'] === "partnership-ch")) %}
+
+            MORRIS ACCOUNTING PARTNERSHIP
+
+            {% elif ((data['registering-as'] === "partnership-llp"))  %}
+
+            MORRIS ACCOUNTING LLP
+
+            {% elif ((data['registering-as'] === "corporate-body")) %}
+
+            MORRIS ACCOUNTING CORPORATION
+
+            {% elif ((data['registering-as'] === "unincorporated-body")) %}
+
+            MORRIS ACCOUNTING UNINCORPORATED
+
+
+            {% elif ((data['registering-as'] === "sole-trader")) %}
+
+            James Morris
+
+            {% endif %}
+
 
         {% else %}
 
@@ -68,36 +87,7 @@ Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK P
 
     {% endif %}
 
-  {% endif %}
 
-
-<!--    {% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp"))  or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Company name
-      </dt>
-      <dd class="govuk-summary-list__value">
-
-      {% if (data['businessName'] == "") %}
-
-      // ****** set the name for LP and LLP etc here ********
-
-       <p class="govuk-body">Morris Accounting LTD</p>
-
-        {% else %}
-
-        <p class="govuk-body">{{data['businessName']}}</p>
-
-        {% endif %}
-
-
-        
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> business name</span></a>
-      </dd>
-    </div>
-    {% endif %} -->
 
 {% endmacro %}
 
