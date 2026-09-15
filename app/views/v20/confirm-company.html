@@ -17,7 +17,17 @@ Is this your company? – {{ serviceName }} – GOV.UK Prototype Kit
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Company name</dt>
+
+           {% if data['registering-as'] === "ltd" %}
             <dd class="govuk-summary-list__value">MORRIS ACCOUNTING LTD</dd>
+
+           {% elif data['registering-as'] === "partnership-llp" %}
+                <dd class="govuk-summary-list__value">MORRIS ACCOUNTING LLP</dd>
+
+          {% else %}
+            <dd class="govuk-summary-list__value">MORRIS ACCOUNTING</dd>
+
+            {% endif %}
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Company number</dt>
@@ -51,45 +61,7 @@ Is this your company? – {{ serviceName }} – GOV.UK Prototype Kit
 
         </dl>
        
-    <!--     {{ govukRadios({
-          classes: "govuk-radios",
-          name: "aml-details-match",
-          classes: "govuk-!-padding-top-2",
-          fieldset: {
-            legend: {
-              text: "Does the company name and registered office address match the details held by the AML supervisory body?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--s govuk-!-padding-top-3"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }} -->
-
-
-     <!--    {{ govukInsetText({
-          html: "The company name and registered office address must be exactly the same as the details held by the AML supervisor."
-        }) }} 
-        
-
-      <p class="govuk-body">If the address shown is incorrect, you will need to <a href='' class=''>update the registered office address</a>. You should also check the AML supervisor holds the correct company name and registered office address. </p>
-      -->
-
-
-
-   <!--  <div class="govuk-inset-text">
-  <h2 class="govuk-heading-m">What information we’ll publish</h2>
-  <p>We’ll publish the company name if we need to suspend or stop it from acting as an authorised agent. </p>
-</div>  -->
-
+  
 
         {{ govukButton({
           text: "Confirm and continue"

@@ -202,9 +202,6 @@ router.post('/v20/type-of-acsp', function (req, res) {
     
     }
 
-
-
-    
     
     /*
      * IDV Flow change - Needs to be moved 
@@ -232,17 +229,16 @@ router.post('/v20/type-of-acsp', function (req, res) {
 router.post('/v20/type-of-acsp-other', function (req, res) {
 
 
-    res.redirect('how-are-you-aml-supervised') 
-
-    /* IMPORTANT TO KEEP TO REVIEW STARTING POINTS OF IDV FLOWS 
-     if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
+     if ((req.session.data['registering-as'] === "unincorporated-body")) {
 
         res.redirect('how-are-you-aml-supervised') 
 
     }
-    else{
+    else if ((req.session.data['registering-as'] === "corporate-body")) {
 
-    } */
+        res.redirect('company-lookup') 
+
+    } 
     
 }) 
 
@@ -277,13 +273,13 @@ router.post('/v20/statement-relevant-officer', function (req, res) {
           
         }
 
-        else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp")){
+        else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp") | (req.session.data['registering-as'] === "corporate-body")){
     
             res.redirect('how-are-you-aml-supervised') 
     
         }
-        else if ((req.session.data['registering-as'] === "partnership-ch")|(req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
-    
+        else if ((req.session.data['registering-as'] === "partnership-ch")|(req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body")) {
+
             res.redirect('type-of-business')
     
         }
@@ -316,7 +312,7 @@ router.post('/v20/how-are-you-aml-supervised', function (req, res) {
 
     //if selected company and they are individually supervised
     if ((req.session.data['registering-as'] === "ltd") | 
-    (req.session.data['registering-as'] === "partnership-llp")){
+    (req.session.data['registering-as'] === "partnership-llp") | (req.session.data['registering-as'] === "corporate-body")) {
 
         if ((req.session.data['how-are-you-aml-supervised'] === "individually")){
         
@@ -328,12 +324,56 @@ router.post('/v20/how-are-you-aml-supervised', function (req, res) {
 
         }
     }
-    else if ((req.session.data['registering-as'] === "partnership-ch")|
-    (req.session.data['registering-as'] === "partnership-not-ch") |
-     (req.session.data['registering-as'] === "unincorporated-body") | 
-     (req.session.data['registering-as'] === "corporate-body")) {
 
-        if ((req.session.data['how-are-you-aml-supervised'] === "company")){
+    else if ((req.session.data['registering-as'] === "partnership-ch")) {
+
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually")){
+
+            res.redirect('aml-interrupt')
+        }
+        else{
+
+            res.redirect('name-of-business')
+
+        }
+    }
+
+    else if ((req.session.data['registering-as'] === "partnership-not-ch") ) {
+
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually") | (req.session.data['how-are-you-aml-supervised'] === "both")){
+        
+            res.redirect('name')
+        }
+        else{
+
+            res.redirect('name-of-business') 
+
+        }
+        
+    }
+
+        else if ((req.session.data['registering-as'] === "unincorporated-body") ) {
+
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually") | (req.session.data['how-are-you-aml-supervised'] === "both")){
+        
+            res.redirect('aml-interrupt')
+        }
+        else{
+
+            res.redirect('name-of-business') 
+
+        }
+        
+    }
+  
+     
+    
+}) 
+
+
+
+/*
+ if ((req.session.data['how-are-you-aml-supervised'] === "company")){
         
             res.redirect('name-of-business')
         }
@@ -341,20 +381,8 @@ router.post('/v20/how-are-you-aml-supervised', function (req, res) {
         
             res.redirect('aml-interrupt')
         }
-        else{
 
-            res.redirect('not-sure-aml-company') 
-
-        }
-        
-    }
-     
-    
-}) 
-
-
-
-
+        */
 
 
 
@@ -382,7 +410,7 @@ router.post('/v20/confirm-company', function (req, res) {
 router.post('/v20/auth-code', function (req, res) {
      
  
-    if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")){
+    if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")|(req.session.data['registering-as'] === "corporate-body")){
 
         res.redirect('statement-relevant-officer') 
 

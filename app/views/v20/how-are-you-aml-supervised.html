@@ -43,7 +43,89 @@
         ]
       }) }}
 
+       {% elseif ((data['registering-as'] === "partnership-llp")) %}
+
+       {{ govukRadios({
+        name: "how-are-you-aml-supervised",
+        fieldset: {
+          legend: {
+            text: "Which name is registered with your Anti-Money Laundering (AML) supervisory body?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "We'll check this matches what your AML supervisory body holds."
+        },
+        items: [
+          {
+            value: "company",
+            text: "MORRIS ACCOUNTING LLP"
+          },
+          {
+            value: "individually",
+            text: "A different name"
+          }
+        ]
+      }) }}
+
+        {% elseif ((data['registering-as'] === "partnership-ch")) %}
+
+       {{ govukRadios({
+        name: "how-are-you-aml-supervised",
+        fieldset: {
+          legend: {
+            text: "Which name is registered with your Anti-Money Laundering (AML) supervisory body?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "We'll check this matches what your AML supervisory body holds."
+        },
+        items: [
+          {
+            value: "company",
+            text: "MORRIS ACCOUNTING LP"
+          },
+          {
+            value: "individually",
+            text: "A different name"
+          }
+        ]
+      }) }}
+
+       {% elseif ((data['registering-as'] === "corporate-body")) %}
+
+       {{ govukRadios({
+        name: "how-are-you-aml-supervised",
+        fieldset: {
+          legend: {
+            text: "Which name is registered with your Anti-Money Laundering (AML) supervisory body?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "We'll check this matches what your AML supervisory body holds."
+        },
+        items: [
+          {
+            value: "company",
+            text: "MORRIS ACCOUNTING"
+          },
+          {
+            value: "individually",
+            text: "A different name"
+          }
+        ]
+      }) }}
+
+
+
+
       {% else %}
+
 
 
         {{ govukRadios({
@@ -66,19 +148,21 @@
             {
               value: "individually",
               text: "Your name"
-            },
-            {
-              value: "notSure",
-              text: "Not sure"
             }
+            
           ]
         }) }}
+
 
       {% endif %}
 
         {{ govukButton({
           text: "Save and continue"
         }) }}
+
+      <p class="govuk-body">
+      <a href="https://www.gov.uk/guidance/how-to-check-your-anti-money-laundering-aml-details" class="govuk-link" rel="noreferrer noopener" target="_blank">Read guidance on how to check your AML details (opens in a new tab)</a>
+      </p>
       </form>
     </div>
   </div>
