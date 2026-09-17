@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="acca-check-how-you-are-supervised" method="post">
+
+
+       
+          <h1 class="govuk-heading-l">Check your Anti-Money Laundering (AML) supervision * for ACCA *</h1>
+
+
+        <p class="govuk-body">We'll confirm your name and AML reference number with your supervisory body. </p>
+        <p>The name you provide must exactly match the name held by your AML supervisory body. This may be your own name or another name, such as a business or trading name.</p>
+
+        <p>**You will provide your AML reference number later in the application.**</p>
+
+
+
+
+        <div class="govuk-warning-text govuk-!-padding-top-5">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span> Contact your supervisory body if you need to check your AML details. We'll reject your application if they do not match. 
+          </strong>
+        </div>
+  
+  
+
+ 
+          <div class="govuk-form-group govuk-!-padding-top-5">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              What name are you supervised under?
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-are-you-aml-supervised" name="how-are-you-aml-supervised" type="radio" value="individually">
+                <label class="govuk-label govuk-radios__label" for="how-are-you-aml-supervised">
+                {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="how-are-you-aml-supervised-2"
+                name="how-are-you-aml-supervised"
+                type="radio"
+                value="different-name"
+                data-aria-controls="conditional-how-are-you-aml-supervised-2">
+
+              <label
+                class="govuk-label govuk-radios__label"
+                for="how-are-you-aml-supervised-2">
+                A different name
+              </label>
+            </div>
+
+            <div
+              class="govuk-radios__conditional govuk-radios__conditional--hidden"
+              id="conditional-how-are-you-aml-supervised-2">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="aml-supervised-name">
+                  AML supervised name
+                </label>
+
+                <input
+                  class="govuk-input govuk-!-width-full"
+                  id="aml-supervised-name"
+                  name="aml-supervised-name"
+                  type="text"
+                  spellcheck="false"
+                  autocomplete="off">
+              </div>
+
+            </div>
+
+            </div>
+          </fieldset>
+        </div>
+
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

@@ -21,77 +21,42 @@
   <form action="account-interrupt" method="post" novalidate="">
 
 
-    {% set html %}
-    <p class="govuk-notification-banner__heading">
-      We are introducing a new way to sign in to some of our services.
-    </p>
-  {% endset %}
+ <h1 class="govuk-heading-l">Sign in to Companies House</h1>
 
-  {{ govukNotificationBanner({
-    html: html
-  }) }}
+  <h2 class="govuk-heading-m">Sign in with GOV.UK One Login</h2> 
 
-  <h1 class="govuk-heading-l">Sign in to Companies House</h1>
 
-  <p class="govuk-body">If you have an existing Companies House account, enter your email address.</p>
+  <p class="govuk-body">This is the new way to sign in to Companies House. You'll be able to create a GOV.UK One Login if you do not already have one.</p>
 
-  {{ govukInput({
-    label: {
-      text: "Email address",
-      classes:"govuk-!-font-weight-bold"
-    },
-    id: "chs-email",
-    name: "chs-email",
-    type: "email",
-    autocomplete: "email",
-    spellcheck: false
-  }) }}       
 
-     
-<!--   <details class="govuk-details" data-module="govuk-details">
+
+
+
+    {{ govukButton({
+      text: "Go to GOV.UK One Login",
+      href:"create-or-sign-in"
+    }) }}
+  
+
+  <details class="govuk-details">
     <summary class="govuk-details__summary">
       <span class="govuk-details__summary-text">
-       What is a Companies House account?
+        Benefits of GOV.UK One Login
       </span>
     </summary>
     <div class="govuk-details__text">
-      <p class="govuk-body">This is the account you can use to sign in to:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>the Companies House register - sometimes known as 'Companies House service'     
-   or 'Find and update company information'</li>
-        <li>some of our online services - for example, 'Register your company' or 'Upload a document to Companies House'</li>
-      </ul>
-        <p class="govuk-body">A Companies House account is not the same as WebFiling.</p>
-
-        
+    <p>A GOV.UK One Login allows you to access many government services using the same email address and password. It also makes your Companies House account more secure. </p> 
+  <p class="govuk-body">If you use the same email address for your GOV.UK One Login as your existing Companies House account, we'll save any information stored, such as: </p>
+   <ul class="govuk-list govuk-list--bullet">
+     <li>your filing history</li>
+     <li>companies you follow</li>
     
-    </div>
+   </ul></div>
   </details>
+  
+  <h2 class="govuk-heading-m">Other ways to sign in</h2> 
 
- -->
-
-  {{ govukButton({
-    text: "Continue",
-    href:"chs-sign-in-password"
-  }) }}   
-
- 
-  <p class="govuk-body"> <a href="create-new-sign-in-details" class="govuk-link">Create sign in details</a> </p>
-
-
-  <h2 class="govuk-heading-m">GOV.UK One Login</h2> 
-
-  <p class="govuk-body">This is the new way to sign in to some of our services.</p> 
-
-  <p class="govuk-body"><a href="create-or-sign-in" class="govuk-link">Sign in with GOV.UK One Login</a> if you already have one.</p> 
-
-
-
-
-
-
-
-
+  <p class="govuk-body">If you still access your Companies House account without signing in to GOV.UK One Login, you can <a href="chs-sign-in-email.html" class="govuk-link">sign in with existing Companies House account details</a> instead.</p> 
 
 
 
