@@ -257,12 +257,7 @@ router.post('/v20/statement-relevant-officer', function (req, res) {
         //sole traders need to verify their identity
         if ((req.session.data['registering-as'] === "sole-trader")){
 
-            if ((req.session.data['how-are-you-aml-supervised'] === "company")){
 
-
-             res.redirect('type-of-business')
-        
-            }else{
 
               res.redirect('name')
 
@@ -270,8 +265,6 @@ router.post('/v20/statement-relevant-officer', function (req, res) {
 
 
         
-          
-        }
 
         else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp") | (req.session.data['registering-as'] === "corporate-body")){
     
@@ -867,7 +860,7 @@ if (req.session.data['registering-as'] === "sole-trader") {
 
     //else go to the check AML details page
 
-     res.redirect('correctly-supervised-sole-trader')
+     res.redirect('name-address-match-supervisor-v2')
 
 
     }
@@ -917,17 +910,17 @@ router.post('/v20/acca-check-how-you-are-supervised', function (req, res) {
 
     //if  supervised not by ACCA
     
-    var supervisoryBody = req.session.data['aml-supervisor']
+ /*    var supervisoryBody = req.session.data['aml-supervisor']
 	if (supervisoryBody.some(item => ["aat", "aia", "att", "cilex", "cima", "ciot", "clc", "deni", "fa", "foac", "fca", "gc", "gbc", "gcbni", "hmrc", "ipa", "iab", "icb", "icaew", "icai", "icas", "ifa", "lsni", "lss", "sra"].includes(item))) {
 
 		 res.redirect('correctly-supervised-sole-trader')
 
-	}
-    else {
+	 */
+
 
         res.redirect('name-address-match-supervisor-v2')
 
-    }
+    
 })
 
 
