@@ -15,24 +15,16 @@ Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prot
 
 
        
-          <h1 class="govuk-heading-l">Check your Anti-Money Laundering (AML) supervision * for ACCA *</h1>
+          <h1 class="govuk-heading-l">Check the name ACCA has for you</h1>
 
 
-        <p class="govuk-body">We'll confirm your name and AML reference number with your supervisory body. </p>
-        <p>The name you provide must exactly match the name held by your AML supervisory body. This may be your own name or another name, such as a business or trading name.</p>
-
-        <p>**You will provide your AML reference number later in the application.**</p>
-
+        <p class="govuk-body">To confirm ACCA supervises you for anti-money laundering (AML) purposes, we need to match your details with ACCA's records.</p>
+         <p>Search for your record on the <a href="https://www.accaglobal.com/uk/en/member/find-an-accountant/find-firm.html?isocountry=UK" target="_blank">ACCA online directory (opens in a new tab)</a> to check the name ACCA has for you. 
+          </p>
 
 
 
-        <div class="govuk-warning-text govuk-!-padding-top-5">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-visually-hidden">Warning</span> Contact your supervisory body if you need to check your AML details. We'll reject your application if they do not match. 
-          </strong>
-        </div>
-  
+
   
 
  
@@ -41,6 +33,9 @@ Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prot
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               What name are you supervised under?
             </legend>
+            <div class="govuk-hint">
+              This must be exactly the same as the name on your ACCA record. 
+            </div>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="how-are-you-aml-supervised" name="how-are-you-aml-supervised" type="radio" value="individually">
@@ -70,7 +65,7 @@ Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prot
 
               <div class="govuk-form-group">
                 <label class="govuk-label" for="aml-supervised-name">
-                  AML supervised name
+                  Enter the name from your ACCA record
                 </label>
 
                 <input
