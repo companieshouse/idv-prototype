@@ -1,0 +1,35 @@
+{% set title = "Your company must be registered with an AML supervisory body" %}
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="hmrc-confirmed-status" method="post">
+
+<h1 class="govuk-heading-l">You need to be approved by HMRC before you can register
+              </h1>
+
+              <p class="govuk-body">You cannot register as a Companies House authorised agent until HMRC has approved your application for Anti-Money Laundering (AML) supervision.</p>
+              <p>
+                Check the <a href="https://www.gov.uk/guidance/money-laundering-regulations-supervised-business-register#check-if-a-business-is-registered" class="govuk-link" rel="noreferrer noopener" target="_blank">HMRC Supervised Business Register (opens in a new tab)</a> to check your supervision status.
+              </p>
+
+              <h2 class="govuk-heading-m">Save and sign out
+              </h2>
+              <p class="govuk-body">You can <a href="">save your application and sign out</a> while you wait for HMRC to approve your application. </p>
+
+              <p>Once HMRC has approved your application, sign in and go to Your filings to continue your application.</p>
+
+
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
