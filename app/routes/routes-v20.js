@@ -631,7 +631,7 @@ router.post('/v20/name', function (req, res) {
         //sole trader 
         if ((req.session.data['registering-as'] === "sole-trader")) {
             
-            res.redirect('correctly-supervised')
+            res.redirect('date-of-birth')
         }
         else{
 
@@ -849,10 +849,87 @@ router.post('/v5/acsp-address-correspondance', function (req, res) {
  *  AML number for first supervisor
  */
 router.post('/v20/aml-number', function (req, res) {
-     
+
+//if soletrader
+if (req.session.data['registering-as'] === "sole-trader") {
+    
+    /*
+     *  If sole trader and supervised by ACCA go to the check how you are supervised page
+     */
+
+
+    var supervisoryBody = req.session.data['aml-supervisor']
+	if (supervisoryBody.includes("acca")){
+		 res.redirect('acca-check-how-you-are-supervised')
+	}
+
+    else {
+
+    //else go to the check AML details page
+
+     res.redirect('correctly-supervised-sole-trader')
+
+
+    }
+
+}
+else{
+
+
     res.redirect('name-address-match-supervisor-v2')
+
+}
+
+
     
 })
+
+
+
+
+/*
+ *  AML number for second  supervisor
+ */
+router.post('/v20/correctly-supervised-sole-trader', function (req, res) {
+
+
+    if (req.session.data['how-are-you-aml-supervised'] === "individually") {
+
+        res.redirect('name-address-match-supervisor-v2')
+
+
+    }
+    else if (req.session.data['how-are-you-aml-supervised'] === "company") {
+
+        res.redirect('you-need-to-be-supervised-under-your-name')
+
+    }
+
+   
+    
+})
+
+
+/*
+ *  ACCA check name page 
+ */
+router.post('/v20/acca-check-how-you-are-supervised', function (req, res) {
+
+    //if  supervised not by ACCA
+    
+    var supervisoryBody = req.session.data['aml-supervisor']
+	if (supervisoryBody.some(item => ["aat", "aia", "att", "cilex", "cima", "ciot", "clc", "deni", "fa", "foac", "fca", "gc", "gbc", "gcbni", "hmrc", "ipa", "iab", "icb", "icaew", "icai", "icas", "ifa", "lsni", "lss", "sra"].includes(item))) {
+
+		 res.redirect('correctly-supervised-sole-trader')
+
+	}
+    else {
+
+        res.redirect('name-address-match-supervisor-v2')
+
+    }
+})
+
 
 /*
  *  AML number for second  supervisor
@@ -882,8 +959,17 @@ router.post('/v20/name-address-match-supervisor-v2', function (req, res) {
     }
     else{
 
+        var supervisoryBody = req.session.data['aml-supervisor']
+        if (supervisoryBody.some(item => item === "hmrc")) {
+
+            res.redirect('hmrc-are-you-confirmed')
+
+        }
+        else {
+
         res.redirect('terms-and-conditions')
 
+        }
     }
 
 
@@ -891,6 +977,31 @@ router.post('/v20/name-address-match-supervisor-v2', function (req, res) {
     
 })
 
+
+
+//if supervised by HMRC
+router.post('/v20/terms-and-conditions', function (req, res) {
+     
+    res.redirect('check-your-answers')
+    
+}) 
+
+/*
+ *  HMRC are you confirmed
+ */
+router.post('/v20/hmrc-are-you-confirmed', function (req, res) {
+
+    if ((req.session.data['hmrc-are-you-confirmed'] === "no")){
+
+        res.redirect('hmrc-confirmed-status')
+
+
+    }
+    else{
+        res.redirect('terms-and-conditions')
+    }
+
+})
 
 /*
  *  Terms and conditions
