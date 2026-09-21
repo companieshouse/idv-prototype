@@ -24,12 +24,42 @@ Register an ACSP: application approved
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Business name</th>
+
+            <!-- sole trader -->
+
+            {% if ((data['registering-as'] === "sole-trader")) %}
+
+            <td class="govuk-table__cell">
+
+               {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+                  James Morris 
+
+                  {% else %}
+
+                  {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+
+                  {% endif %}
+              </td>
+
+            {% else %}
+
             <td class="govuk-table__cell">MORRIS ACCOUNTING LTD</td>
+
+            {% endif %}
+
           </tr>
+
+
+          {% if ((data['registering-as'] !== "sole-trader")) %}
+
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Company number</th>
             <td class="govuk-table__cell">02050399</td>
           </tr>
+
+          {% endif %}
+
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Application reference</th>
             <td class="govuk-table__cell">HDJ2123F</td>
@@ -42,7 +72,33 @@ Register an ACSP: application approved
 
 
       <h2 class="govuk-heading-m">What happens if the application is accepted</h2>
-      <p>We’ll register MORRIS ACCOUNTING LTD as an Authorised Corporate Service Provider (ACSP).  </p>
+      <p>We’ll register 
+        
+
+        {% if ((data['registering-as'] === "sole-trader")) %}
+
+
+
+               {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+                  James Morris 
+
+                  {% else %}
+
+                  {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+
+                  {% endif %}
+     
+
+            {% else %}
+
+            MORRIS ACCOUNTING LTD
+
+            {% endif %}
+        
+
+      
+        as an Authorised Corporate Service Provider (ACSP).  </p>
       
       <p>We’ll create an agent account for the ACSP, which you’ll be able to sign in to using your GOV.UK One Login.  </p>
 
