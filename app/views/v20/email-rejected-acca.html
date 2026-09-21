@@ -22,19 +22,50 @@ Register an ACSP: application approved
     <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Business name</th>
+             <th scope="row" class="govuk-table__header">Business name</th>
+
+            <!-- sole trader -->
+
+            {% if ((data['registering-as'] === "sole-trader")) %}
+
+            <td class="govuk-table__cell">
+
+               {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+                  James Morris 
+
+                  {% else %}
+
+                  {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+
+                  {% endif %}
+              </td>
+
+            {% else %}
+
             <td class="govuk-table__cell">MORRIS ACCOUNTING LTD</td>
+
+            {% endif %}
+
           </tr>
+
+
+          {% if ((data['registering-as'] !== "sole-trader")) %}
+
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Company number</th>
             <td class="govuk-table__cell">02050399</td>
           </tr>
+
+          {% endif %}
+
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Application reference</th>
             <td class="govuk-table__cell">HDJ2123F</td>
           </tr>
         </tbody>
       </table>
+
 
       <p class="govuk-body">You application to register your business as a Companies House authorised agent (also known as an Authorised Corporate Service Proivder, or ACSP) was rejected for the following reasons: </p>
 

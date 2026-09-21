@@ -54,7 +54,31 @@ Register as an authorised agent: application approved
           </tr>
         </tbody>
       </table> -->
-      <p class="govuk-body">We have approved your application and registered MORRIS ACCOUNTING LTD as an Authorised Corporate Service Provider (ACSP). We’ve created an agent account for the ACSP.  </p>
+      <p class="govuk-body">We have approved your application and registered 
+        
+        
+        
+        {% if ((data['registering-as'] === "sole-trader")) %}
+
+
+
+               {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+                  James Morris 
+
+                  {% else %}
+
+                  {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+
+                  {% endif %}
+     
+
+            {% else %}
+
+            MORRIS ACCOUNTING LTD
+
+            {% endif %}
+         as an Authorised Corporate Service Provider (ACSP). We’ve created an agent account for the ACSP.  </p>
 
 <!--
 <div class="govuk-inset-text">
