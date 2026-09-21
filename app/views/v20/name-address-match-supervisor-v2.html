@@ -9,16 +9,19 @@ Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK P
 
 {% macro nameOrBusinessNameif() %}
 
+<!-- sole trader -->
 
-    {% if (data['how-are-you-aml-supervised'] === "individually") %}
+
+{% if ((data['registering-as'] === "sole-trader")) %}
+
 
     <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Name
     </dt>
     <dd class="govuk-summary-list__value">
-     
-        {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       {% if (data['first-name'] == "") and (data['last-name'] == "") %}
 
        <p> James Morris </p>
 
@@ -27,14 +30,18 @@ Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK P
         <p class="govuk-body">{{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}</p>
 
         {% endif %}
-        
+
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
     </dd>
   </div>
 
-    {% else %}
+  {% endif %}
+
+
+{% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+
 
     <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -73,7 +80,7 @@ Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK P
             {% endif %}
 
 
-        {% else %}
+          {% else %}
 
         <p class="govuk-body">{{data['businessName']}}</p>
 
@@ -85,16 +92,13 @@ Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK P
     </dd>
   </div>
 
-    {% endif %}
+{% endif %}
 
 
 
 {% endmacro %}
 
 {% macro ACCAnameOrBusinessNameif() %}
-
-
-
 
 
      <div class="govuk-summary-list__row">
@@ -122,53 +126,14 @@ Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK P
               {{data['aml-supervised-name-for-acca'] }}
 
             {%  endif %}
-            
-   </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="name-of-business-soletrader">Change<span class="govuk-visually-hidden"> business name</span></a>
-    </dd>
-  </div>
+  
    
 
     {% else %}
 
-     
-        {% if (data['businessName'] == "") %}
-
-
-            {% if ((data['registering-as'] === "ltd")) %}
-
-            MORRIS ACCOUNTING LTD
-
-            {% elif ((data['registering-as'] === "partnership-ch")) %}
-
-            MORRIS ACCOUNTING PARTNERSHIP
-
-            {% elif ((data['registering-as'] === "partnership-llp"))  %}
-
-            MORRIS ACCOUNTING LLP
-
-            {% elif ((data['registering-as'] === "corporate-body")) %}
-
-            MORRIS ACCOUNTING CORPORATION
-
-            {% elif ((data['registering-as'] === "unincorporated-body")) %}
-
-            MORRIS ACCOUNTING UNINCORPORATED
-
-
-            {% elif ((data['registering-as'] === "sole-trader")) %}
-
-            James Morris
-
-            {% endif %}
-
-
-        {% else %}
-
         <p class="govuk-body">{{data['businessName']}}</p>
 
-        {% endif %}
+  {% endif %}
         
     </dd>
     <dd class="govuk-summary-list__actions">
@@ -176,8 +141,6 @@ Check the Anti-Money Laundering (AML) details – {{ serviceName }} – GOV.UK P
     </dd>
   </div>
 
-
-    {% endif %}
 
 {% endmacro %}
 
