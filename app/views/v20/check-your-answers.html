@@ -4,6 +4,115 @@
 Check your answers before sending your application – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% macro ACCAnameOrBusinessNameif() %}
+
+
+
+        {% if ((data['registering-as'] === "sole-trader")) %}
+
+          {% if (data['acca-how-are-you-aml-supervised'] === "individually") %}
+        
+            {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+          James Morris 
+
+            {% else %}
+
+            {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+
+            {% endif %}
+
+            {% else %}
+
+              {{data['aml-supervised-name-for-acca'] }}
+
+            {%  endif %}
+  
+   
+
+    {% else %}
+
+        <p class="govuk-body">{{data['businessName']}}</p>
+
+  {% endif %}
+        
+
+{% endmacro %}
+
+
+
+{% macro nameOrBusinessNameif() %}
+
+<!-- sole trader -->
+
+
+{% if ((data['registering-as'] === "sole-trader")) %}
+
+
+    
+
+       {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+       James Morris
+
+        {% else %}
+
+        {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+
+        {% endif %}
+
+  {% endif %}
+
+
+{% if ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp")) or ((data['registering-as'] === "corporate-body")) or ((data['registering-as'] === "unincorporated-body")) %}
+
+
+    
+     
+        {% if (data['businessName'] == "") %}
+
+
+            {% if ((data['registering-as'] === "ltd")) %}
+
+            MORRIS ACCOUNTING LTD
+
+            {% elif ((data['registering-as'] === "partnership-ch")) %}
+
+            MORRIS ACCOUNTING PARTNERSHIP
+
+            {% elif ((data['registering-as'] === "partnership-llp"))  %}
+
+            MORRIS ACCOUNTING LLP
+
+            {% elif ((data['registering-as'] === "corporate-body")) %}
+
+            MORRIS ACCOUNTING CORPORATION
+
+            {% elif ((data['registering-as'] === "unincorporated-body")) %}
+
+            MORRIS ACCOUNTING UNINCORPORATED
+
+
+            {% elif ((data['registering-as'] === "sole-trader")) %}
+
+            James Morris
+
+            {% endif %}
+
+
+          {% else %}
+
+        {{data['businessName']}}
+
+        {% endif %}
+      
+
+{% endif %}
+
+
+
+{% endmacro %}
+
 
 
 {% block content %}
@@ -243,16 +352,19 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
 
       <h2 class="govuk-heading-m">Anti-Money Laundering (AML) details</h2>
+<!-- ACCA -->
+  {% if data['aml-supervisor'] and 'acca' in data['aml-supervisor'] %}
+
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            AML supervisory body and membership number
+            Association of Chartered Certified Accountants (ACCA) details
           </dt>
           <dd class="govuk-summary-list__value">
-            <ul class="govuk-list govuk-list--bullet">
-              <li>Association of Accounting Technicians</li>
-              <li>87654321</li>
+            <ul class="govuk-list">
+              <li>  {{ ACCAnameOrBusinessNameif() }}</li>
+              <li>{{data['accaDetails']}}</li>
             </ul>
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -262,15 +374,26 @@ Check your answers before sending your application – {{ serviceName }} – GOV
             </a>
           </dd>
         </div>
+  
+
+
+
+        
+    {% endif %}  
+
+
+    <!-- HMRC -->
+  {% if data['aml-supervisor'] and 'hmrc' in data['aml-supervisor'] %}
+
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          AML supervisory body and membership number
+          HMRC
         </dt>
         <dd class="govuk-summary-list__value">
 
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Association of Chartered Certified Accountants</li>
-            <li>554-6325-4555</li>
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['hmrcDetails']}}</li>
           </ul>
         </dd>
         <dd class="govuk-summary-list__actions">
@@ -285,9 +408,10 @@ Check your answers before sending your application – {{ serviceName }} – GOV
 
 
 
-    
-    
-    
+
+    {% endif %}  
+
+
       <!-- Limited companies, LLPs or LPs -->
 
        {% elseif ((data['registering-as'] === "ltd")) or ((data['registering-as'] === "partnership-ch")) or ((data['registering-as'] === "partnership-llp")) %}
