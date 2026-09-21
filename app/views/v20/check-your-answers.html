@@ -403,13 +403,754 @@ Check your answers before sending your application – {{ serviceName }} – GOV
           </a>
         </dd>
       </div>
-      </dl>
-
-
-
 
 
     {% endif %}  
+
+
+
+
+<!-- AAT --> 
+{% if data['aml-supervisor'] and 'aat' in data['aml-supervisor'] %}
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Association of Accounting Technicians (AAT)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['aatDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+ 
+ {% endif %}
+
+
+<!-- AIA -->
+
+{% if data['aml-supervisor'] and 'aia' in data['aml-supervisor'] %}
+
+
+  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Association of International Accountants (AIA)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['aiaDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+{% endif %}
+
+
+
+<!-- Association of Taxation Technicians (ATT) -->
+
+{% if data['aml-supervisor'] and 'att' in data['aml-supervisor'] %}
+
+
+
+  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Association of Taxation Technicians (ATT)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['attDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+
+{% endif %}
+
+
+
+<!-- Chartered Institute of Legal Executives (CILEx) -->
+
+
+{% if data['aml-supervisor'] and 'cilex' in data['aml-supervisor'] %}
+
+
+
+
+  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Chartered Institute of Legal Executives (CILEx)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['CILExDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+ {% endif %}
+
+  <!-- Chartered Institute of Management Accountants (CIMA) -->
+
+ {% if data['aml-supervisor'] and 'cima' in data['aml-supervisor'] %}
+
+
+  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Chartered Institute of Management Accountants (CIMA)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['cimaDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+ {% endif %}
+
+
+ <!-- Chartered Institute of Taxation (CIOT) -->
+
+ {% if data['aml-supervisor'] and 'ciot' in data['aml-supervisor'] %}
+
+
+
+  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Chartered Institute of Taxation (CIOT)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['ciotDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+ {% endif %}
+
+
+
+    <!-- Council for Licensed Conveyors (CLC) -->
+
+ {% if data['aml-supervisor'] and 'clc' in data['aml-supervisor'] %}
+
+
+
+  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Council for Licensed Conveyors (CLC)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['clcDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+ {% endif %}
+
+
+
+<!-- Department for the Economy Northern Ireland -->
+
+ {% if data['aml-supervisor'] and 'clc' in data['aml-supervisor'] %}
+
+  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Department for the Economy Northern Ireland
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['deniDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+
+ {% endif %}
+
+
+
+  <!-- Faculty of Advocates -->
+
+ {% if data['aml-supervisor'] and 'fa' in data['aml-supervisor'] %}
+
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Faculty of Advocates
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['faDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+
+
+ {% endif %}
+
+
+
+ <!-- Faculty Office of the Archbishop of Canterbury (FO) -->
+
+ {% if data['aml-supervisor'] and 'foac' in data['aml-supervisor'] %}
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Faculty Office of the Archbishop of Canterbury (FO)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['foacDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+
+ {% endif %}
+
+
+
+
+
+<!-- Financial Conduct Authority (FCA) -->
+
+
+ {% if data['aml-supervisor'] and 'fca' in data['aml-supervisor'] %}
+
+
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Financial Conduct Authority (FCA)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['fcaDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+ {% endif %}
+
+
+<!-- Gambling commission -->
+
+ {% if data['aml-supervisor'] and 'gc' in data['aml-supervisor'] %}
+
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Gambling commission
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['gcDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+
+ {% endif %}
+
+
+
+  <!-- General Council of the Bar -->
+
+ {% if data['aml-supervisor'] and 'gbc' in data['aml-supervisor'] %}
+
+
+
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         General Council of the Bar
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['gbcDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+
+ {% endif %}
+
+
+
+
+
+<!-- General Council of the Bar of Northern Ireland (BONI) -->
+
+ {% if data['aml-supervisor'] and 'gcbni' in data['aml-supervisor'] %}
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+       General Council of the Bar of Northern Ireland (BONI)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['gcbniDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+ {% endif %}
+
+
+
+
+
+
+
+
+
+<!-- Insolvency Practitioners Association (IPA)-->
+ {% if data['aml-supervisor'] and 'ipa' in data['aml-supervisor'] %}
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+       Insolvency Practitioners Association (IPA)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['ipaDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+
+
+ {% endif %}
+
+
+
+
+
+
+
+
+<!--  Institute of Accountants and Bookkeepers (IAB)-->
+
+ {% if data['aml-supervisor'] and 'iab' in data['aml-supervisor'] %}
+
+ 
+
+ <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+       Institute of Accountants and Bookkeepers (IAB)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['iabDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+ {% endif %}
+
+
+
+
+ <!-- Institute of Chartered Accountants in England and Wales (ICAEW) -->
+
+ {% if data['aml-supervisor'] and 'icb' in data['aml-supervisor'] %}
+
+
+ <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+  Institute of Chartered Accountants in England and Wales (ICAEW)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['icaewDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+ {% endif %}
+
+
+
+
+
+
+  <!-- Institute of Chartered Accountants in Ireland (ICAI) -->
+
+
+ {% if data['aml-supervisor'] and 'icai' in data['aml-supervisor'] %}
+
+
+
+ <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+  Institute of Chartered Accountants in Ireland (ICAI)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['icaiDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+ {% endif %}
+
+
+
+
+
+
+
+ <!-- Institute of Chartered Accountants of Scotland (ICAS)
+                    -->
+ {% if data['aml-supervisor'] and 'icas' in data['aml-supervisor'] %}
+
+
+ <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+  Institute of Chartered Accountants of Scotland (ICAS)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['icasDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+
+ {% endif %}
+
+
+
+
+
+  
+
+
+  <!-- Institute of Financial Accountants (IFA)
+                    -->
+ {% if data['aml-supervisor'] and 'ifa' in data['aml-supervisor'] %}
+  <h2 class="govuk-heading-m">
+</h2>
+
+
+
+ <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+  Institute of Financial Accountants (IFA)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['ifaDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+ {% endif %}
+
+
+
+
+
+
+
+
+<!-- Law Society of Northern Ireland (LSNI)
+                    -->
+ {% if data['aml-supervisor'] and 'lsni' in data['aml-supervisor'] %}
+
+
+
+ <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Law Society of Northern Ireland (LSNI)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['lsniDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+
+ {% endif %}
+
+
+
+
+
+
+
+
+ <!-- Law Society of Scotland
+                    -->
+ {% if data['aml-supervisor'] and 'lss' in data['aml-supervisor'] %}
+
+ 
+
+ <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Law Society of Scotland
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['lssDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+
+
+ {% endif %}
+
+
+
+
+ 
+
+
+
+  <!-- The Law Society of England and Wales (Solicitors Regulatory Authority - SRA)
+                    -->
+ {% if data['aml-supervisor'] and 'sra' in data['aml-supervisor'] %}
+  
+
+ <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+The Law Society of England and Wales (Solicitors Regulatory Authority - SRA)
+
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+            <li>{{ nameOrBusinessNameif() }}</li>
+            <li> {{data['sraDetails']}}</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden">  Anti-Money Laundering details</span>
+          </a>
+        </dd>
+      </div>
+
+
+
+ {% endif %}
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       <!-- Limited companies, LLPs or LPs -->
