@@ -5,7 +5,6 @@ module.exports = {
   "email": "james@morrisaccounting.com",
   "first-name": "James",
   "last-name": "Morris",
-  "home": "England",
-  "businessName": "James Morris Accounting",
+  "home": "England"
   
 }
