@@ -41,23 +41,25 @@ What type of business are you registering? – {{ serviceName }} – GOV.UK Prot
               text: "Limited liability partnership (LLP)"
             },
             {
-              value: "sole-trader",
-              text: "Sole trader",
-              hint: {
-                text: "This includes sole practitioners, self-employed people, and individuals who are supervised for Anti-Money Laundering (AML)."
-              }
+              value: "partnership-not-ch",
+              text: "Partnership (not registered with Companies House)"
             },
-
-            or 
-
-            
             {
               value: "other",
-              text: "Other type of business",
+              text: "Other type of business"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "sole-trader",
+              text: "I'm registering myself as an ACSP",
               hint: {
-                text: "This includes businesses that are supervised for Anti-Money Laundering (AML) under their business name."
+                text: "This includes sole traders, sole practitioners and anyone who's supervised for Anti-Money Laundering (AML) under their own name."
               }
             }
+
+        
 
           ]
         }) }}
