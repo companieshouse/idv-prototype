@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the correspondence address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="address-correspondance-selector" method="post">
+
+        {{ govukRadios({
+          idPrefix: "address-corresponance-selector",
+          name: "address-correspondance-selector",
+          fieldset: {
+            legend: {
+              text: "What is the correspondence address?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "wentloog1",
+              text: "70 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
+            },
+            {
+              value: "different",
+              text: "A different address"
+            }
+          ]
+        }) }}
+
+
+       <!--  {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>***PLACEHOLDER CONTENT*** We'll use this to send the unique ACSP reference.</p>"
+        }) }} -->
+
+ 
+        
+       {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+
+
+
+  
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

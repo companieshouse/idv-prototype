@@ -1,0 +1,152 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Register as an authorised agent: application approved
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+   <!--   {{ govukPanel({
+        titleText: "Register an authorised agent: application approved",
+        html: buttonHref
+      }) }} -->
+    <!--  <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Company number</th>
+            <td class="govuk-table__cell">00445790</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Company name</th>
+            <td class="govuk-table__cell"> MORRIS ACCOUNTING LTD </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Name </th>
+            <td class="govuk-table__cell">James Morris </td>
+          </tr>
+        </tbody>
+      </table> -->
+
+ <h2 style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; line-height: 1.2; font-weight: 700;">Register as an ACSP: application approved</h2> 
+
+   <!-- <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Business name</th>
+            <td class="govuk-table__cell">MORRIS ACCOUNTING LTD</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Authorised agent number</th>
+            <td class="govuk-table__cell">06254821</td>
+          </tr>
+        </tbody>
+      </table> -->
+      <p class="govuk-body">We have approved your application and registered 
+        
+        
+        
+        {% if ((data['registering-as'] === "sole-trader")) %}
+
+
+
+               {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+                  James Morris 
+
+                  {% else %}
+
+                  {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+
+                  {% endif %}
+     
+
+            {% else %}
+
+            MORRIS ACCOUNTING LTD
+
+            {% endif %}
+         as an Authorised Corporate Service Provider (ACSP). We’ve created an agent account for the ACSP.  </p>
+
+<!--
+<div class="govuk-inset-text">
+
+<p>The authorised agent number for MORRIS ACCOUNTING LTD is: <strong>06254821</strong>
+<p>
+
+Keep the number secure and do not share it with anyone outside of your organisation. You may need this for paper filings.</p>
+
+</div> -->
+
+
+
+
+
+<!--
+      <div class="highlight-box">
+
+      <p class="govuk-body">The authorised agent number for MORRIS ACCOUNTING LTD is: <strong>06254821</strong></p>
+
+      <p class="govuk-body">Keep the number secure and do not share it with anyone outside of your organisation. You will need this for paper filings.</p>
+
+
+      </div> -->
+      
+
+      <div class="govuk-inset-text">
+        <h2 class="govuk-heading-m ">Sign in to the agent account</h2>
+
+        <p>Sign in using your GOV.UK One Login to access the account for MORRIS ACCOUNTING LTD: </p>
+        <p><a href="https://www.gov.uk/guidance/sign-in-to-your-authorised-agent-account">https://www.gov.uk/guidance/sign-in-to-your-authorised-agent-account</a> </p>
+
+        <p>Save this link to access the account in future. </p>
+
+</div>
+      
+<h2 class="govuk-heading-m ">What to do next</h2>
+
+<ol class="govuk-list govuk-list--number govuk-list--spaced">
+ 
+  <li><strong>Save the link to our <a href="https://www.gov.uk/government/collections/services-and-guidance-for-authorised-corporate-service-providers-acsps">guidance and services for ACSPs</a>.</strong> <br>You can use it to access everything you need as an ACSP.</li>
+  <li><strong>Add other people who work for the business to the account.</strong> <br>They’ll be able to log in using their own GOV.UK One Login to use services for the ACSP.</li>
+
+  <li><strong>Make sure the ACSP details are correct and up to date.</strong><br> You, or another account owner, must tell us about any changes to the ACSP details within 14 days. You can view and update the details form the account dashboard. </li>
+</ol>
+
+<h2 class="govuk-heading-m ">Keep the account safe</h2>
+<p>Do not share your login details. This could cause your account to be blocked.</p>
+<p>
+  Instead, add people as a user if they need to access the account or file on behalf of the ACSP. They’ll need to have a GOV.UK One Login.</p>
+  <p> 
+  Adding other users will ensure your ACSP can continue to operate if you cannot access your GOV.UK One Login.
+  </p>
+
+
+      <h2 class="govuk-heading-m">Help us to improve this service</h2>
+      <p>Register as a Companies House authorised agent is a new service. Complete our quick survey to help us improve it: <a href="https://www.smartsurvey.co.uk/s/reg-as-acsp-email-conf-accepted/">https://www.smartsurvey.co.uk/s/reg-as-acsp-email-conf-accepted/</a></p>
+
+    <!--  <h3 class="govuk-heading-m">Feedback</h3>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p> -->
+      <h2 class="govuk-heading-m">Contact us</h2>
+
+<p><a href="">Contact us</a> if you have any questions about your application. </p>
+
+    </div>
+    </div>
+
+
+  </div>
+</div>
+{% endblock %}

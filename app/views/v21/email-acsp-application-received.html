@@ -1,0 +1,138 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Register an ACSP: application approved
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l">Register as a Companies House authorised agent: application received</h1>
+    <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Business name</th>
+
+            <!-- sole trader -->
+
+            {% if ((data['registering-as'] === "sole-trader")) %}
+
+            <td class="govuk-table__cell">
+
+               {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+                  James Morris 
+
+                  {% else %}
+
+                  {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+
+                  {% endif %}
+              </td>
+
+            {% else %}
+
+            <td class="govuk-table__cell">MORRIS ACCOUNTING LTD</td>
+
+            {% endif %}
+
+          </tr>
+
+
+          {% if ((data['registering-as'] !== "sole-trader")) %}
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Company number</th>
+            <td class="govuk-table__cell">02050399</td>
+          </tr>
+
+          {% endif %}
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Application reference</th>
+            <td class="govuk-table__cell">HDJ2123F</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <p class="govuk-body">We’ll send you an email to let you know if your application has been accepted or rejected. </p>
+
+
+      <h2 class="govuk-heading-m">What happens if the application is accepted</h2>
+      <p>We’ll register 
+        
+
+        {% if ((data['registering-as'] === "sole-trader")) %}
+
+
+
+               {% if (data['first-name'] == "") and (data['last-name'] == "") %}
+
+                  James Morris 
+
+                  {% else %}
+
+                  {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+
+                  {% endif %}
+     
+
+            {% else %}
+
+            MORRIS ACCOUNTING LTD
+
+            {% endif %}
+        
+
+      
+        as an Authorised Corporate Service Provider (ACSP).  </p>
+      
+      <p>We’ll create an agent account for the ACSP, which you’ll be able to sign in to using your GOV.UK One Login.  </p>
+
+      <p>We recommend saving a link to our <a href="https://www.gov.uk/government/collections/services-and-guidance-for-authorised-corporate-service-providers-acsps">guidance and services for ACSPs</a>. You can use it to access everything you need as an ACSP, including to sign in to the agent account when it’s ready. </p>
+      
+      
+        
+
+
+
+      <h2 class="govuk-heading-m">What happens if the application is rejected</h2>
+      
+      <p>We'll explain why it's been rejected and what you can do next. We'll also refund the £63 registration fee.</p>
+
+
+      <h2 class="govuk-heading-m">Help us to improve this service</h2>
+      <p>Register as a Companies House authorised agent is a new service. Complete our quick survey to help us improve it: <a href="https://www.smartsurvey.co.uk/s/reg-as-acsp-email-app-received/">https://www.smartsurvey.co.uk/s/reg-as-acsp-email-app-received/</a></p>
+
+
+
+
+     <!-- <h3 class="govuk-heading-m">Feedback</h3>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p> -->
+
+      <h2 class="govuk-heading-m">Contact us</h2>
+
+<p><a href="">Contact us</a> if you have any questions about your application. </p>
+
+            <h3 class="govuk-heading-m">Get news and updates</h3>
+      <p class="govuk-body">Sign up to our email newsletters to keep up to date with news and updates from Companies House: <a href="https://public.govdelivery.com/accounts/UKCH/subscriber/new" class="govuk-link govuk-link--no-visited-state">https://public.govdelivery.com/accounts/UKCH/subscriber/new</a></p>
+    </div>
+    </div>
+
+
+  </div>
+</div>
+{% endblock %}

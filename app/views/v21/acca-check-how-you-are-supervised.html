@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="acca-check-how-you-are-supervised" method="post">
+
+
+       
+          <h1 class="govuk-heading-l">Check the name ACCA has for you</h1>
+
+
+        <p class="govuk-body">To confirm ACCA supervises you for Anti-Money Laundering (AML) purposes, we need to match your details with ACCA's records.</p>
+         <p>Search for your record on the <a href="https://www.accaglobal.com/uk/en/member/find-an-accountant/find-firm.html?isocountry=UK" target="_blank">ACCA online directory (opens in a new tab)</a> to check the name ACCA has for you. 
+          </p>
+
+
+  
+
+ 
+          <div class="govuk-form-group govuk-!-padding-top-5">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              What name are you supervised under by ACCA?
+            </legend>
+            <div class="govuk-hint">
+              This must be exactly the same as the name on your ACCA record. 
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="acca-how-are-you-aml-supervised" name="acca-how-are-you-aml-supervised" type="radio" value="individually">
+                <label class="govuk-label govuk-radios__label" for="acca-how-are-you-aml-supervised">
+                {{data['first-name']}} {{data['middle-name']}} {{data['last-name']}}
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input
+                  class="govuk-radios__input"
+                  id="acca-how-are-you-aml-supervised-2"
+                  name="acca-how-are-you-aml-supervised"
+                  type="radio"
+                  value="different-name"
+                  data-aria-controls="conditional-how-are-you-aml-supervised-2">
+
+                <label
+                  class="govuk-label govuk-radios__label"
+                  for="acca-how-are-you-aml-supervised-2">
+                  A different name
+                </label>
+              </div>
+
+            <div
+              class="govuk-radios__conditional govuk-radios__conditional--hidden"
+              id="conditional-how-are-you-aml-supervised-2">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="aml-supervised-name">
+                  Enter the name from your ACCA record
+                </label>
+
+            
+
+                <input
+                  class="govuk-input govuk-!-width-full"
+                  id="aml-supervised-name-for-acca"
+                  name="aml-supervised-name-for-acca"
+                  type="text"
+                  spellcheck="false"
+                  autocomplete="off">
+              </div>
+
+            </div>
+
+            </div>
+          </fieldset>
+        </div>
+
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

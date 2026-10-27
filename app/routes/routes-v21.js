@@ -1,0 +1,1034 @@
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
+
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
+
+/*
+ * Start page
+ */
+router.post('/v21/start-page', function (req, res) {
+     
+    res.redirect('account-interrupt')
+    
+})
+
+
+/*
+ * We have changed the way you sign in to Companies House 
+ */
+router.post('/v21/account-interrupt', function (req, res) {
+     
+ //do nothing if CHS is selected
+    
+}) 
+
+/*
+ * GOV.UK One Login
+ */
+router.post('/v21/create-or-sign-in', function (req, res) {
+     
+    res.redirect('one-login-sign-in')
+    
+}) 
+
+
+/*
+ *  GOV.UK One Login
+ */
+router.post('/v21/one-login-enter-password', function (req, res) {
+     
+    
+    res.redirect('/v21/enter-code')
+    
+})
+
+/*
+ * GOV.UK One Login
+ */
+router.post('/v21/enter-code', function (req, res) {
+
+
+    /*
+    * Check to see if the account is verified 
+    */
+    if (req.session.data['verified-their-id'] == true ) {
+        
+        res.redirect('saved-application')
+    }
+    else{
+
+        res.redirect('idv-interrupt-release-1')
+
+    }
+
+
+
+    /*
+      * Important to know where to start each of the journeys
+      */
+
+/* 
+        if (req.session.data['confirm-relevant-person'] === 'relevant-officer') {
+
+            //sole traders need to verify their identity
+            if ((req.session.data['registering-as'] === "sole-trader") && (req.session.data['verified-their-id'] == true )){
+            
+                res.redirect('name')
+            }
+            else if ((req.session.data['registering-as'] === "sole-trader")){
+            
+                res.redirect('before-idv')
+            }
+            else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")){
+        
+                res.redirect('how-are-you-aml-supervised') 
+        
+            }
+            else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")) {
+        
+                res.redirect('type-of-business')
+        
+            }
+ */
+
+})
+
+
+/*
+ * You need to prove your identity
+ */
+router.post('/v21/idv-interrupt-release-1', function (req, res) {
+     
+    res.redirect('/v21/verify-identity-prototype')
+    
+}) 
+
+/*
+ * Go to the Verify your identity prototype
+ */
+router.get('/v21/verify-identity-prototype', function (req, res) {
+
+    // they have have done ID verification 
+    req.session.data['verified-their-id'] = true;
+     
+    res.redirect('https://prove-your-identity-prototype.herokuapp.com/release1-dev-v3/pre-one-login/start?version=sole-trader')
+    
+}) 
+
+
+
+/*
+ * New version 18 to identify 
+ */
+router.post('/v21/type-of-acsp-company-st', function (req, res) {
+     
+    res.redirect('name-of-business')
+  
+}) 
+
+
+/*
+ * sole trader - do you have a uvid 
+ */
+router.post('/v21/enter-uvid-code', function (req, res) {
+     
+   
+    if ((req.session.data['enter-uvid'] === "yes")){
+        
+        res.redirect('name')
+    }
+    // Otherwise ask for their name, address etc.
+    else{
+
+        res.redirect('before-idv')
+    }
+
+    
+})
+
+
+
+
+
+/*
+ * Saved application 
+ */
+router.post('/v21/saved-application', function (req, res) {
+
+
+    // new application
+    if (req.session.data['startingNew'] === 'yes') {
+
+        res.redirect('type-of-acsp')
+
+    }
+     // continue with a saved application
+    else{
+
+        res.redirect('your-filings')
+    }
+
+    
+})
+
+
+
+
+
+/*
+ * What type of business are you registering?
+ */
+router.post('/v21/type-of-acsp', function (req, res) {
+
+
+     //Relevant officer
+     if (req.session.data['registering-as'] === 'other') {
+
+        res.redirect('type-of-acsp-other')
+
+    }
+
+      else if ((req.session.data['registering-as'] === "unincorporated-body")) {
+
+        res.redirect('how-are-you-aml-supervised') 
+
+    }
+    
+    else if ((req.session.data['registering-as'] === "none")){
+
+        res.redirect('type-of-acsp-company-st') 
+    
+    }
+    else if ((req.session.data['registering-as'] === "sole-trader")){
+
+        res.redirect('statement-relevant-officer') 
+    
+    }
+
+    
+    /*
+     * IDV Flow change - Needs to be moved 
+     */
+    else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp") | (req.session.data['registering-as'] === "plc")){
+
+        res.redirect('company-lookup') 
+
+    }
+    else if ((req.session.data['registering-as'] === "partnership-ch") |(req.session.data['registering-as'] === "partnership-not-ch")){
+
+        res.redirect('how-are-you-aml-supervised') 
+
+    }
+
+
+    
+
+
+}) 
+
+/*
+ * ACSP other business types 
+ */
+router.post('/v21/type-of-acsp-other', function (req, res) {
+
+
+     if ((req.session.data['registering-as'] === "unincorporated-body")) {
+
+        res.redirect('how-are-you-aml-supervised') 
+
+    }
+    else if ((req.session.data['registering-as'] === "corporate-body")) {
+
+        res.redirect('company-lookup') 
+
+    } 
+    
+}) 
+
+// **** HERE ****
+
+/*
+ * Confirm they are the relevant officer
+ */
+router.post('/v21/statement-relevant-officer', function (req, res) {
+
+
+      //Relevant officer
+      if (req.session.data['confirm-relevant-person'] === 'relevant-officer') {
+
+      
+        //sole traders need to verify their identity
+        if ((req.session.data['registering-as'] === "sole-trader")){
+
+
+
+              res.redirect('name')
+
+        }
+
+
+        
+
+        else if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp") | (req.session.data['registering-as'] === "corporate-body")){
+    
+            res.redirect('how-are-you-aml-supervised') 
+    
+        }
+        else if ((req.session.data['registering-as'] === "partnership-ch")|(req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body")) {
+
+            res.redirect('type-of-business')
+    
+        }
+
+
+
+        
+        
+    }
+    // Otherwise take them to a stop screen
+    else{
+
+        res.redirect('stop-not-relevant-officer')
+    }
+
+
+
+    
+}) 
+
+
+
+
+/*
+ * Version 18 - complete change in approach AML supervision checed at the start
+ */
+router.post('/v21/how-are-you-aml-supervised', function (req, res) {
+
+
+
+    //if selected company and they are individually supervised
+    if ((req.session.data['registering-as'] === "ltd") | 
+    (req.session.data['registering-as'] === "partnership-llp") | (req.session.data['registering-as'] === "corporate-body")) {
+
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually")){
+        
+            res.redirect('aml-interrupt')
+        }
+        else{
+
+            res.redirect('address-correspondance-lookup') 
+
+        }
+    }
+
+    else if ((req.session.data['registering-as'] === "partnership-ch")) {
+
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually")){
+
+            res.redirect('aml-interrupt')
+        }
+        else{
+
+            res.redirect('name-of-business')
+
+        }
+    }
+
+    else if ((req.session.data['registering-as'] === "partnership-not-ch") ) {
+
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually") | (req.session.data['how-are-you-aml-supervised'] === "both")){
+        
+            res.redirect('name')
+        }
+        else{
+
+            res.redirect('name-of-business') 
+
+        }
+        
+    }
+
+        else if ((req.session.data['registering-as'] === "unincorporated-body") ) {
+
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually") | (req.session.data['how-are-you-aml-supervised'] === "both")){
+        
+            res.redirect('aml-interrupt')
+        }
+        else{
+
+            res.redirect('name-of-business') 
+
+        }
+        
+    }
+  
+     
+    
+}) 
+
+
+
+/*
+ if ((req.session.data['how-are-you-aml-supervised'] === "company")){
+        
+            res.redirect('name-of-business')
+        }
+        else if (req.session.data['how-are-you-aml-supervised'] === "individually"){
+        
+            res.redirect('aml-interrupt')
+        }
+
+        */
+
+
+
+/*
+ * Registered with Companies House - Company lookup
+ */
+router.post('/v21/company-lookup', function (req, res) {
+     
+    res.redirect('confirm-company')
+    
+})
+
+/*
+ * Confirm company
+ */
+router.post('/v21/confirm-company', function (req, res) {
+   
+    res.redirect('auth-code')
+    
+})
+
+/*
+ * Auth code  ***have updated this to go to correspondence email as we need to collect this for firms
+ */
+router.post('/v21/auth-code', function (req, res) {
+     
+ 
+    if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-ch") | (req.session.data['registering-as'] === "partnership-llp")|(req.session.data['registering-as'] === "corporate-body")){
+
+        res.redirect('statement-relevant-officer') 
+
+    }else{
+
+    }
+
+
+
+
+
+    
+})
+
+/*
+ * Director selection   
+ */
+router.post('/v21/director-selection', function (req, res) {
+     
+    
+    if ((req.session.data['director-selection'] === "not-listed")){
+        
+        res.redirect('stop-screen-appoint-director')
+        
+    }
+    // Otherwise ask for their name, address etc.
+    else{
+
+        res.redirect('check-director-details')
+    }
+    
+    
+
+    
+})
+
+/*
+ * Director details check   
+ */
+router.post('/v21/check-director-details', function (req, res) {
+     
+    res.redirect('type-of-business')
+    
+})
+
+/*
+ * What specific type of business are you registering?
+ */
+router.post('/v21/type-of-business', function (req, res) {
+
+
+    //if other is selected
+
+     if ((req.session.data['business-type'] === "other")){
+        
+        res.redirect('type-of-business-other')
+    }
+    else {
+
+        if ((req.session.data['registering-as'] === "sole-trader")){
+        
+            res.redirect('address-correspondance-lookup')
+        }
+        else if ((req.session.data['registering-as'] === "partnership-ch") |(req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") | (req.session.data['registering-as'] === "corporate-body")){
+            
+            res.redirect('address-principle-lookup')
+        }
+        // Otherwise ask for their name, address etc.
+        else if ((req.session.data['registering-as'] === "ltd")  | (req.session.data['registering-as'] === "partnership-llp")){
+    
+            res.redirect('email-address-correspondance')
+            
+        } 
+        
+        
+    }
+    
+  
+
+})
+
+/*
+ *  other business type
+*/
+
+router.post('/v21/type-of-business-other', function (req, res) {
+
+ 
+
+    if ((req.session.data['registering-as'] === "sole-trader")){
+        
+        res.redirect('address-correspondance-lookup')
+    }
+    else if ((req.session.data['registering-as'] === "partnership-not-ch") | (req.session.data['registering-as'] === "unincorporated-body") ){
+        
+        res.redirect('address-principle-lookup')
+    }
+    // aml supervisor if ltd 
+    else if ((req.session.data['registering-as'] === "partnership-ch")){
+
+        res.redirect('aml-supervisor')
+        
+    }
+     else if ((req.session.data['registering-as'] === "ltd")  | (req.session.data['registering-as'] === "partnership-llp")){
+    
+        res.redirect('email-address-correspondance')
+        
+    } 
+ 
+
+})  
+
+
+
+/*
+ *
+ * Principle/registered office address 
+ */
+ router.post('/v21/address-principle-lookup', function (req, res) {
+
+
+     //if house number is empty
+     if (req.session.data['principle-name'] === '') {
+
+        res.redirect('address-principle-list')
+
+      } else {
+        // go to the confirm address page
+        res.redirect('address-principle-confirm')
+    
+      }
+     
+
+    
+})
+
+/*
+ *  Principle/registered office address list
+ */
+router.post('/v21/address-principle-list', function (req, res) {
+    
+     
+    res.redirect('address-principle-confirm')
+    
+})
+
+
+
+
+
+
+
+/*
+ *  Principle/registered office address manually entering address
+ */
+router.post('/v21/address-principle-manual', function (req, res) {
+    
+     
+    res.redirect('address-principle-confirm')
+    
+})
+
+
+
+/*
+ *
+ * Principle address 
+ */
+router.post('/v21/address-principle-confirm', function (req, res) {
+     
+    res.redirect('address-correspondance-selector')
+    
+})
+
+/*
+ *
+ * Correspondance address selector ----updated to go to correspondence email
+ */
+router.post('/v21/address-correspondance-selector', function (req, res) {
+     
+    if ((req.session.data['address-correspondance-selector'] === "different")){
+        
+        res.redirect('address-correspondance-lookup')
+    }
+    else{
+
+        res.redirect('address-correspondance-confirm')
+
+    }
+    
+})
+
+
+
+ 
+
+/*
+ *  Correspondence email - REMOVED from version 8
+
+
+router.post('/v13/email-address-correspondance', function (req, res) {
+     
+    res.redirect('aml-supervisor')
+    
+})   */
+
+
+
+
+/* ******* Sole trader ******* */
+
+
+/*
+ *  Not registered with Companies House - Name
+ */
+router.post('/v21/name', function (req, res) {
+
+        //sole trader 
+        if ((req.session.data['registering-as'] === "sole-trader")) {
+            
+            res.redirect('date-of-birth')
+        }
+        else{
+
+            res.redirect('name-of-business')
+
+        }
+
+
+})
+
+
+/*
+ *  check the name they are supervised for AML under 
+ */
+router.post('/v21/correctly-supervised', function (req, res) {
+
+
+     //sole trader 
+        if ((req.session.data['how-are-you-aml-supervised'] === "individually")) {
+            
+            res.redirect('date-of-birth')
+        }
+        else if ((req.session.data['how-are-you-aml-supervised'] === "company")) {
+
+            res.redirect('name-of-business-soletrader')
+        }
+        else if ((req.session.data['how-are-you-aml-supervised'] === "notSure")) {
+
+            res.redirect('not-sure-aml-individual')
+        }
+ 
+})
+
+
+/*
+ *  Not registered with Companies House - Nationality
+ */
+router.post('/v21/date-of-birth', function (req, res) {
+     
+    res.redirect('nationality')
+    
+})
+
+/*
+ *  Not registered with Companies House - Date of birth
+ */
+router.post('/v21/nationality', function (req, res) {
+     
+    res.redirect('location-lives')
+    
+})
+
+/*
+ *  Not registered with Companies House - Home address
+ */
+router.post('/v21/location-lives', function (req, res) {
+
+
+    if ((req.session.data['registering-as'] === "sole-trader")){
+            
+        res.redirect('type-of-business')
+    }
+    else{
+
+        res.redirect('name-of-business')
+    }
+
+ 
+    
+})
+
+
+/*
+ *  Not registered with Companies House - Name of business
+ */
+router.post('/v21/name-of-business', function (req, res) {
+    
+
+            res.redirect('statement-relevant-officer')
+
+    
+
+})
+
+
+
+/*
+ *  Sole trader name with supervisory body - Name of business
+ */
+router.post('/v21/name-of-business-soletrader', function (req, res) {
+
+            res.redirect('date-of-birth')
+
+    
+
+})
+
+
+
+
+/*
+ *   Not registered with Companies House - Business/trading name
+ */
+router.post('/v21/name-held-with-supervisor', function (req, res) {
+     
+    res.redirect('type-of-business')
+    
+})
+
+
+
+
+/*
+ * correspondance address lookup
+    //if number and postcode added address-correspondance-confirm
+ 
+    // only postcode  address-correspondance-list
+ */
+router.post('/v21/address-correspondance-lookup', function (req, res) {
+
+
+
+    //if house number is empty
+    if (req.session.data['cor-number'] === '') {
+
+        res.redirect('address-correspondance-list')
+
+      } else {
+        // go to the confirm address page
+        res.redirect('address-correspondance-confirm')
+    
+      }
+     
+   
+})
+
+/*
+ *  Not registered with Companies House - ACSP address manually entering address
+ */
+router.post('/v21/address-correspondance-manual', function (req, res) {
+    
+     
+    res.redirect('address-correspondance-confirm')
+    
+})
+
+
+/*
+ *  Correspondance address confirm
+ */
+
+router.post('/v21/address-correspondance-confirm', function (req, res) {
+
+
+    //if ltd and LLP 
+    if ((req.session.data['registering-as'] === "ltd") | (req.session.data['registering-as'] === "partnership-llp")){
+        
+        res.redirect('type-of-business') 
+
+    }
+    else{
+
+        res.redirect('email-address-correspondance')
+
+    }
+     
+
+    
+})
+
+
+/*
+ *  Correspondance email address 
+ */
+router.post('/v21/email-address-correspondance', function (req, res) {
+
+    res.redirect('aml-supervisor')
+
+
+})
+
+/*
+ *  Not registered with Companies House - ACSP correspondace address confirming lookup ***I've updated this to go to the AML supervisor page as I don't think correspondence email is needed for sole traders. 
+ */
+router.post('/v21/acsp-address-confirm', function (req, res) {
+     
+    res.redirect('aml-supervisor')
+    
+})
+
+
+/*
+ *  Not registered with Companies House - ACSP correspondace address confirming lookup
+
+router.post('/v5/acsp-address-correspondance', function (req, res) {
+     
+    res.redirect('aml-supervisor')
+    
+})   */
+
+
+
+ /*
+ *  AML supervisory body 
+ */
+ router.post('/v21/aml-supervisor', function (req, res) {
+    
+    res.redirect('aml-number')
+
+
+})
+
+
+/*
+ *  AML number for first supervisor
+ */
+router.post('/v21/aml-number', function (req, res) {
+
+//if soletrader
+if (req.session.data['registering-as'] === "sole-trader") {
+    
+    /*
+     *  If sole trader and supervised by ACCA go to the check how you are supervised page
+     */
+
+
+    var supervisoryBody = req.session.data['aml-supervisor']
+	if (supervisoryBody.includes("acca")){
+		 res.redirect('acca-check-how-you-are-supervised')
+	}
+
+    else {
+
+    //else go to the check AML details page
+
+     res.redirect('name-address-match-supervisor-v2')
+
+
+    }
+
+}
+else{
+
+
+    res.redirect('name-address-match-supervisor-v2')
+
+}
+
+
+    
+})
+
+
+
+
+/*
+ *  AML number for second  supervisor
+ */
+router.post('/v21/correctly-supervised-sole-trader', function (req, res) {
+
+
+    if (req.session.data['how-are-you-aml-supervised'] === "individually") {
+
+        res.redirect('name-address-match-supervisor-v2')
+
+
+    }
+    else if (req.session.data['how-are-you-aml-supervised'] === "company") {
+
+        res.redirect('you-need-to-be-supervised-under-your-name')
+
+    }
+
+   
+    
+})
+
+
+/*
+ *  ACCA check name page 
+ */
+router.post('/v21/acca-check-how-you-are-supervised', function (req, res) {
+
+    //if  supervised not by ACCA
+    
+ /*    var supervisoryBody = req.session.data['aml-supervisor']
+	if (supervisoryBody.some(item => ["aat", "aia", "att", "cilex", "cima", "ciot", "clc", "deni", "fa", "foac", "fca", "gc", "gbc", "gcbni", "hmrc", "ipa", "iab", "icb", "icaew", "icai", "icas", "ifa", "lsni", "lss", "sra"].includes(item))) {
+
+		 res.redirect('correctly-supervised-sole-trader')
+
+	 */
+
+
+        res.redirect('name-address-match-supervisor-v2')
+
+    
+})
+
+
+/*
+ *  AML number for second  supervisor
+ */
+router.post('/v21/aml-number-2', function (req, res) {
+     
+    res.redirect('name-address-match-supervisor')
+    
+})
+
+
+
+/*
+ * Name and address match those held with the supervisor
+ */
+router.post('/v21/name-address-match-supervisor-v2', function (req, res) {
+     
+
+
+
+    //name is the same as the AML supervisor
+
+    if ((req.session.data['AMLdetailsSame'] === "no")){
+        
+        res.redirect('aml-details-do-not-match') 
+
+    }
+    else{
+
+        var supervisoryBody = req.session.data['aml-supervisor']
+        if (supervisoryBody.some(item => item === "hmrc")) {
+
+            res.redirect('hmrc-are-you-confirmed')
+
+        }
+        else {
+
+        res.redirect('terms-and-conditions')
+
+        }
+    }
+
+
+    //name is different from the AML supervisor
+    
+})
+
+
+
+//if supervised by HMRC
+router.post('/v21/terms-and-conditions', function (req, res) {
+     
+    res.redirect('check-your-answers')
+    
+}) 
+
+/*
+ *  HMRC are you confirmed
+ */
+router.post('/v21/hmrc-are-you-confirmed', function (req, res) {
+
+    if ((req.session.data['hmrc-are-you-confirmed'] === "no")){
+
+        res.redirect('hmrc-confirmed-status')
+
+
+    }
+    else{
+        res.redirect('terms-and-conditions')
+    }
+
+})
+
+/*
+ *  Terms and conditions
+ */
+router.post('/v21/terms-and-conditions', function (req, res) {
+     
+    res.redirect('check-your-answers')
+    
+}) 
+
+/*
+ *  Check your answers
+ */
+router.post('/v21/check-your-answers', function (req, res) {
+     
+    res.redirect('payment')
+    
+})
+
+/*
+ *  Payment
+ */
+router.post('/v21/payment', function (req, res) {
+     
+    res.redirect('confirmation')
+    
+})
+
+
+
+module.exports = router

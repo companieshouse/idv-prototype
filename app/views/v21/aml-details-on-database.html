@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check you're Anti-money laundering details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="aml-details-on-database" method="post">
+
+
+       
+    <h1 class="govuk-heading-l">Check your AML supervision status</h1>
+
+
+    <p class="govuk-body"> Before you can register, we need to verify your AML supervision with your supervisory body.</p> 
+
+    
+    <h2 class="govuk-heading-m">If you’ve only recently become supervised</h2> 
+
+
+   <p class="govuk-body"> Your supervisory body may not have added your details to its list of supervised members yet.</p>
+
+    <p class="govuk-body">We cannot verify your supervision until your details appear on that list.</p>
+
+    <p class="govuk-body"> Some supervisory bodies have a public list of members. If yours does not, contact them directly to check your status.</p>
+
+
+
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>Your AML supervision must be confirmed before you submit your application.
+          </strong>
+        </div>
+  
+  
+    {{ govukRadios({
+      name: "correctlyAMLSupervised",
+      fieldset: {
+        legend: {
+          text: "Have you checked that your AML supervision is confirmed and active?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes, the AML supervision is confirmed and can be verified"
+        },
+        {
+          value: "no",
+          text: "No, the AML supervision has not yet been confirmed"
+        }
+      ]
+    }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}
+
